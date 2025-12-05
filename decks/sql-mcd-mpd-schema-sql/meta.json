@@ -1,0 +1,33 @@
+{
+  "id": "sql-mcd-mpd-schema-sql",
+  "title": "Modélisation & Schémas de Bases de Données / SQL",
+  "description": "Comprendre la modélisation conceptuelle & logique, lire et créer un MCD (Merise), lire et créer un diagramme UML de base, passer d’un modèle à un schéma SQL (DDL), comprendre les contraintes (PK, FK, UNIQUE, CHECK…), créer / modifier / supprimer des tables, comprendre les index et leurs impacts",
+  "status": "published",
+  "objectives": [
+    "Comprendre la modélisation conceptuelle & logique",
+    "Lire et créer un MCD (Merise)",
+    "Lire et créer un diagramme UML de base",
+    "Passer d’un modèle à un schéma SQL (DDL)",
+    "Comprendre les contraintes (PK, FK, UNIQUE, CHECK…)",
+    "Créer / modifier / supprimer des tables",
+    "Comprendre les index et leurs impacts"
+  ],
+  "prerequisites": [
+    "SQL Basics",
+    "SQL Advanced Queries"
+  ],
+  "duration": "3 hours",
+  "theme": "simplon",
+  "thumbnail": "./assets/preview.svg",
+  "tags": ["sql", "database", "beginner", "merise", "uml", "schema", "bdd"],
+  "language": "fr",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Simplon Training Team",
+      "email": "training@simplon.co"
+    }
+  ],
+  "created": "2025-11-24",
+  "updated": "2025-11-24"
+}

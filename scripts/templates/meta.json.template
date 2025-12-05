@@ -1,0 +1,28 @@
+{
+  "id": "{{DECK_ID}}",
+  "title": "{{TITLE}}",
+  "description": "{{DESCRIPTION}}",
+  "status": "draft",
+  "objectives": [
+    "Premier objectif d'apprentissage",
+    "Deuxième objectif d'apprentissage",
+    "Troisième objectif d'apprentissage"
+  ],
+  "prerequisites": [
+    "Connaissance de base en programmation"
+  ],
+  "duration": "2 hours",
+  "theme": "simplon",
+  "thumbnail": "./assets/preview.svg",
+  "tags": ["sql", "database", "beginner"],
+  "language": "fr",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Simplon Training Team",
+      "email": "training@simplon.co"
+    }
+  ],
+  "created": "{{DATE}}",
+  "updated": "{{DATE}}"
+}

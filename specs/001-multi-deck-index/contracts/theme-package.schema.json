@@ -1,0 +1,177 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://simplon.co/schemas/slidev/theme-package.json",
+  "title": "ThemePackage",
+  "description": "Package.json schema for Slidev custom themes",
+  "type": "object",
+  "required": ["name", "version", "keywords", "engines"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Theme package name, must start with 'slidev-theme-'",
+      "pattern": "^(@[a-z0-9-~][a-z0-9-._~]*/)?slidev-theme-[a-z0-9-]+$",
+      "examples": [
+        "slidev-theme-simplon",
+        "slidev-theme-corporate",
+        "@myorg/slidev-theme-brand"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic version of the theme",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+      "examples": ["1.0.0", "2.3.1", "0.1.0-beta.2"]
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of the theme",
+      "minLength": 10,
+      "maxLength": 200,
+      "examples": [
+        "Simplon.co branded theme for educational presentations",
+        "Corporate theme with professional styling"
+      ]
+    },
+    "keywords": {
+      "type": "array",
+      "description": "Must include 'slidev-theme' and 'slidev'",
+      "minItems": 2,
+      "contains": {
+        "enum": ["slidev-theme", "slidev"]
+      },
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$"
+      },
+      "examples": [
+        ["slidev-theme", "slidev", "simplon", "education"],
+        ["slidev-theme", "slidev", "corporate", "professional"]
+      ]
+    },
+    "main": {
+      "type": "string",
+      "description": "Entry point file (optional)",
+      "examples": ["index.ts", "dist/index.js"]
+    },
+    "engines": {
+      "type": "object",
+      "description": "Slidev version requirements",
+      "required": ["slidev"],
+      "properties": {
+        "slidev": {
+          "type": "string",
+          "description": "Slidev version constraint",
+          "examples": [">=0.48.0", "^0.48.0", ">=0.50.0 <1.0.0"]
+        },
+        "node": {
+          "type": "string",
+          "description": "Node.js version constraint (optional)",
+          "examples": [">=18.0.0", "^18.0.0 || ^20.0.0"]
+        }
+      }
+    },
+    "slidev": {
+      "type": "object",
+      "description": "Slidev-specific configuration",
+      "properties": {
+        "defaults": {
+          "type": "object",
+          "description": "Default Slidev configuration for presentations using this theme",
+          "properties": {
+            "transition": {
+              "type": "string",
+              "description": "Default slide transition",
+              "examples": ["slide-left", "fade", "slide-up", "none"]
+            },
+            "aspectRatio": {
+              "type": "string",
+              "description": "Default aspect ratio",
+              "pattern": "^\\d+\\/\\d+$",
+              "examples": ["16/9", "4/3", "16/10"]
+            },
+            "fonts": {
+              "type": "object",
+              "description": "Font configuration",
+              "properties": {
+                "sans": {
+                  "type": "string",
+                  "description": "Sans-serif font stack",
+                  "examples": ["DM Sans, Arial, sans-serif"]
+                },
+                "serif": {
+                  "type": "string",
+                  "description": "Serif font stack",
+                  "examples": ["Georgia, serif"]
+                },
+                "mono": {
+                  "type": "string",
+                  "description": "Monospace font stack",
+                  "examples": ["Fira Code, monospace"]
+                }
+              }
+            }
+          },
+          "additionalProperties": true
+        },
+        "colorSchema": {
+          "type": "string",
+          "description": "Supported color schemes",
+          "enum": ["light", "dark", "both"],
+          "default": "both"
+        }
+      }
+    },
+    "author": {
+      "type": ["string", "object"],
+      "description": "Theme author information",
+      "examples": [
+        "Simplon Training Team <training@simplon.co>",
+        {
+          "name": "Simplon Training Team",
+          "email": "training@simplon.co"
+        }
+      ]
+    },
+    "license": {
+      "type": "string",
+      "description": "License identifier",
+      "examples": ["MIT", "Apache-2.0", "GPL-3.0"]
+    },
+    "repository": {
+      "type": ["string", "object"],
+      "description": "Repository information",
+      "examples": [
+        "github:simplon/slidev-theme-simplon",
+        {
+          "type": "git",
+          "url": "https://github.com/simplon/slidev-theme-simplon.git"
+        }
+      ]
+    }
+  },
+  "examples": [
+    {
+      "name": "slidev-theme-simplon",
+      "version": "1.0.0",
+      "description": "Simplon.co branded theme for educational presentations",
+      "keywords": ["slidev-theme", "slidev", "simplon", "education"],
+      "author": "Simplon Training Team <training@simplon.co>",
+      "license": "MIT",
+      "engines": {
+        "slidev": ">=0.48.0",
+        "node": ">=18.0.0"
+      },
+      "slidev": {
+        "defaults": {
+          "transition": "slide-left",
+          "aspectRatio": "16/9",
+          "fonts": {
+            "sans": "DM Sans, Arial, sans-serif",
+            "mono": "Fira Code, monospace"
+          }
+        },
+        "colorSchema": "both"
+      }
+    }
+  ]
+}

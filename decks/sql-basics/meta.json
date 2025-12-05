@@ -1,0 +1,27 @@
+{
+  "id": "sql-basics",
+  "title": "SQL Basics",
+  "description": "Learn SQL basics",
+  "status": "published",
+  "objectives": [
+    "Comprendre ce qu’est une base de données relationnelle",
+    "Comprendre les relations (has one / has many / belongs to)",
+    "Installer SQLite et exécuter des requêtes",
+    "Utiliser SELECT, WHERE, ORDER BY",
+    "Manipuler les données avec INSERT, UPDATE, DELETE"
+  ],
+  "duration": "2 hours",
+  "theme": "simplon",
+  "thumbnail": "./assets/preview.svg",
+  "tags": ["sql", "database", "beginner", "sqlite", "queries", "insert", "update", "delete"],
+  "language": "fr",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Simplon Training Team",
+      "email": "training@simplon.co"
+    }
+  ],
+  "created": "2025-11-24",
+  "updated": "2025-11-24"
+}

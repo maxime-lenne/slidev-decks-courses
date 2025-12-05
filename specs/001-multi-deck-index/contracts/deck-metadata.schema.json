@@ -1,0 +1,172 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://simplon.co/schemas/slidev/deck-metadata.json",
+  "title": "DeckMetadata",
+  "description": "Metadata schema for a Slidev slide deck, used for index discovery and display",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "description",
+    "status",
+    "objectives",
+    "prerequisites",
+    "duration",
+    "theme",
+    "thumbnail",
+    "tags",
+    "language",
+    "version",
+    "authors",
+    "created",
+    "updated"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the deck, must match directory name",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "minLength": 3,
+      "maxLength": 50,
+      "examples": ["sql-basics", "advanced-queries", "intro-to-python"]
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable title displayed in the index",
+      "minLength": 5,
+      "maxLength": 100,
+      "examples": ["SQL Fundamentals", "Advanced Query Optimization"]
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief summary of the deck content (max 160 chars for meta tags)",
+      "minLength": 20,
+      "maxLength": 160,
+      "examples": [
+        "Introduction to SQL queries, data types, and basic database operations for beginners."
+      ]
+    },
+    "status": {
+      "type": "string",
+      "description": "Publication status of the deck",
+      "enum": ["draft", "review", "published", "archived"],
+      "default": "draft"
+    },
+    "objectives": {
+      "type": "array",
+      "description": "Learning objectives for this deck (3-5 recommended)",
+      "minItems": 1,
+      "maxItems": 5,
+      "items": {
+        "type": "string",
+        "minLength": 10,
+        "maxLength": 150
+      },
+      "examples": [
+        [
+          "Write SELECT queries with WHERE clauses",
+          "Understand primary and foreign keys",
+          "Perform basic JOINs between tables"
+        ]
+      ]
+    },
+    "prerequisites": {
+      "type": "array",
+      "description": "Required knowledge before taking this deck (0-5 items)",
+      "maxItems": 5,
+      "items": {
+        "type": "string",
+        "minLength": 5,
+        "maxLength": 100
+      },
+      "examples": [
+        ["Basic programming concepts", "Understanding of tabular data"]
+      ]
+    },
+    "duration": {
+      "type": "string",
+      "description": "Estimated time to complete (e.g., '2 hours', '90 minutes')",
+      "pattern": "^\\d+\\s+(minutes?|hours?|days?)$",
+      "examples": ["2 hours", "90 minutes", "1 day", "30 minutes"]
+    },
+    "theme": {
+      "type": "string",
+      "description": "Slidev theme name to use for this deck",
+      "minLength": 1,
+      "examples": ["simplon", "default", "seriph", "academic"]
+    },
+    "thumbnail": {
+      "type": "string",
+      "description": "Relative path to preview image (400x300px recommended)",
+      "pattern": "^\\.\\/.*\\.(png|jpg|jpeg|webp|svg)$",
+      "examples": ["./assets/preview.png", "./assets/thumbnail.jpg"]
+    },
+    "tags": {
+      "type": "array",
+      "description": "Searchable tags (lowercase, max 10)",
+      "minItems": 1,
+      "maxItems": 10,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$",
+        "minLength": 2,
+        "maxLength": 20
+      },
+      "examples": [
+        ["sql", "database", "beginner", "queries"]
+      ]
+    },
+    "language": {
+      "type": "string",
+      "description": "ISO 639-1 language code",
+      "pattern": "^[a-z]{2}$",
+      "examples": ["fr", "en", "es", "de"]
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic version (major.minor.patch)",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$",
+      "examples": ["1.0.0", "2.1.3", "0.1.0-beta.1"]
+    },
+    "authors": {
+      "type": "array",
+      "description": "Content creators (at least one required)",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Full name of the author",
+            "minLength": 2,
+            "maxLength": 100,
+            "examples": ["Simplon Training Team", "Marie Dupont"]
+          },
+          "email": {
+            "type": "string",
+            "description": "Contact email (optional)",
+            "format": "email",
+            "examples": ["training@simplon.co", "marie@example.com"]
+          }
+        }
+      }
+    },
+    "created": {
+      "type": "string",
+      "description": "Creation date in ISO 8601 format (YYYY-MM-DD)",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "examples": ["2025-11-24", "2024-01-15"]
+    },
+    "updated": {
+      "type": "string",
+      "description": "Last update date in ISO 8601 format (YYYY-MM-DD)",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "examples": ["2025-11-24", "2024-03-20"]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,124 @@
+/**
+ * Simplon Theme Layouts
+ * Based on @slidev/theme-default layouts with minimal modifications
+ */
+
+.slidev-layout {
+  h1 + p {
+    @apply -mt-2 opacity-75 mb-4;
+  }
+
+  p + h2, ul + h2, table + h2 {
+    @apply mt-10;
+  }
+
+  h1 {
+    @apply text-4xl mb-4 -ml-[0.05em];
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  h5 {
+    @apply text-base;
+  }
+
+  h6 {
+    @apply text-sm pt-1 uppercase tracking-widest font-500 -ml-[0.05em];
+  }
+
+  h6:not(.opacity-100) {
+    @apply opacity-60;
+  }
+}
+
+.slidev-layout.cover,
+.slidev-layout.intro {
+  @apply h-full grid;
+
+  h1 {
+    @apply text-6xl leading-20;
+  }
+
+  h1 + p {
+    @apply opacity-75;
+  }
+}
+
+.slidev-layout.fact {
+  @apply text-center grid h-full;
+
+  h1 {
+    @apply text-8xl font-700;
+  }
+
+  h1 + p {
+    @apply font-700 text-2xl opacity-75;
+  }
+}
+
+.slidev-layout.statement {
+  @apply text-center grid h-full;
+
+  h1 {
+    @apply text-6xl font-700;
+  }
+
+  h1 + p {
+    @apply opacity-75;
+  }
+}
+
+.slidev-layout.quote {
+  @apply grid h-full;
+
+  h1 + p {
+    @apply mt-2;
+  }
+}
+
+.slidev-layout.section {
+  h1 {
+    @apply text-6xl font-500 leading-20;
+  }
+
+  h1 + p {
+    @apply opacity-75;
+  }
+}
+
+/* Custom Simplon layout enhancements */
+html:not(.light) .slidev-layout.cover,
+html:not(.light) .slidev-layout.section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+html:not(.light) .slidev-layout.cover h1,
+html:not(.light) .slidev-layout.section h1 {
+  color: #f26f5c;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Two columns layout */
+.slidev-layout.two-cols {
+  @apply grid grid-cols-2 gap-8;
+}
+
+.slidev-layout.two-cols .col-left,
+.slidev-layout.two-cols .col-right {
+  @apply px-4;
+}
+
+/* Center layout */
+.slidev-layout.center {
+  @apply flex items-center justify-center text-center;
+}

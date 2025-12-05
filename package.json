@@ -1,0 +1,45 @@
+{
+  "name": "slidev-simplon-sql-training",
+  "version": "1.0.0",
+  "description": "Multi-deck Slidev presentation project for SQL training with Simplon branding",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "generate-index": "./scripts/generate-index.sh",
+    "build:decks": "slidev build decks/*/slides.md --base /decks/ --out dist/decks",
+    "build:index": "vite build",
+    "build:all": "npm run generate-index && npm run build:decks && npm run build:index",
+    "dev:deck": "node scripts/dev-deck.js",
+    "dev:index": "vite",
+    "create-deck": "./scripts/create-deck.sh",
+    "validate": "node scripts/validate-metadata.js"
+  },
+  "keywords": [
+    "slidev",
+    "presentations",
+    "sql",
+    "training",
+    "simplon",
+    "education"
+  ],
+  "author": "Simplon Training Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.9.1",
+    "@slidev/theme-default": "^0.25.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.4",
+    "vue": "^3.5.25"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.2",
+    "@vue/test-utils": "^2.4.6",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "mermaid": "^11.12.1",
+    "vitest": "^4.0.13"
+  }
+}

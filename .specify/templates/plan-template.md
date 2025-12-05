@@ -31,7 +31,31 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Based on the project constitution (`.specify/memory/constitution.md`), verify compliance:
+
+### I. Content Quality & Clarity
+- [ ] Learning objectives clearly stated
+- [ ] Logical progression from fundamentals to advanced
+- [ ] Practical examples included and executable
+- [ ] Consistent terminology throughout
+- [ ] References provided for further learning
+
+### II. Accessibility & Performance
+- [ ] Semantic HTML structure planned
+- [ ] Color contrast requirements considered (WCAG AA)
+- [ ] Keyboard navigation supported
+- [ ] Mobile-responsive design
+- [ ] Performance budget defined (<3s load time)
+- [ ] Motion-safe animations only
+
+### III. Modularity & Reusability
+- [ ] Content organized into independent modules
+- [ ] Each module is self-contained
+- [ ] Dependencies and prerequisites documented
+- [ ] Component-based architecture for interactivity
+- [ ] Separation of content from styling
+
+**Complexity Justification Required If**: Adding non-modular content, skipping accessibility requirements, or using unverified SQL examples.
 
 ## Project Structure
 

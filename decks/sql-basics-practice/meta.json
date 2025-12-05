@@ -1,0 +1,26 @@
+{
+  "id": "sql-basics-practice",
+  "title": "SQL Basics Practice",
+  "description": "Practice SQL basics with practical examples and exercises.",
+  "status": "published",
+  "objectives": [
+    "Write SELECT queries with WHERE clauses"
+  ],
+  "prerequisites": [
+    "SQL Basics"
+  ],
+  "duration": "1 hour",
+  "theme": "default",
+  "thumbnail": "./assets/preview.svg",
+  "tags": ["sql", "database", "beginner", "queries", "sqlite", "exercices"],
+  "language": "fr",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Simplon Training Team",
+      "email": "training@simplon.co"
+    }
+  ],
+  "created": "2025-11-24",
+  "updated": "2025-11-24"
+}

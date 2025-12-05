@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.specify/scripts/bash/create-new-feature.sh:*)",
+      "SlashCommand(/speckit.plan)",
+      "Bash(.specify/scripts/bash/setup-plan.sh:*)",
+      "WebSearch",
+      "WebFetch(domain:sli.dev)",
+      "WebFetch(domain:brandfetch.com)",
+      "Bash(.specify/scripts/bash/update-agent-context.sh:*)",
+      "Bash(.specify/scripts/bash/check-prerequisites.sh:*)",
+      "Bash(for us in US1 US2 US3 US4)",
+      "Bash(do echo -n \"$us: \")",
+      "Bash(done)",
+      "Bash(if [ -d \"/Users/maxime-lenne/Documents_Non_iCloud/workspace_js_ts/slidev-simplon-sql-1st-day/specs/001-multi-deck-index/checklists\" ])",
+      "Bash(then find \"/Users/maxime-lenne/Documents_Non_iCloud/workspace_js_ts/slidev-simplon-sql-1st-day/specs/001-multi-deck-index/checklists\" -name \"*.md\" -type f)",
+      "Bash(else echo \"NO_CHECKLISTS\")",
+      "Bash(fi)",
+      "Bash(git rev-parse:*)",
+      "Bash(npm install:*)",
+      "Bash(chmod:*)",
+      "Bash(npm run generate-index:*)",
+      "Bash(./scripts/create-deck.sh:*)",
+      "Bash(npm run validate:*)",
+      "Bash(npm run dev:deck:*)",
+      "Bash(npm run dev:index:*)",
+      "Bash(npx slidev:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

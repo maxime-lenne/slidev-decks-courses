@@ -1,10 +1,10 @@
-# [PROJECT NAME] Development Guidelines
+# slidev-simplon-sql-1st-day Development Guidelines
 
-Auto-generated from all feature plans. Last updated: [DATE]
+Auto-generated from all feature plans. Last updated: 2025-11-24
 
 ## Active Technologies
 
-[EXTRACTED FROM ALL PLAN.MD FILES]
+- JavaScript/TypeScript with Node.js 18+ (Slidev requirement) + Slidev (latest stable), Vue 3, Vite, markdown-i (001-multi-deck-index)
 
 ### Slidev-Specific Technologies
 - **Framework**: Slidev (Vue 3-based presentation framework)
@@ -15,7 +15,8 @@ Auto-generated from all feature plans. Last updated: [DATE]
 ## Project Structure
 
 ```text
-[ACTUAL STRUCTURE FROM PLANS]
+src/
+tests/
 ```
 
 ### Typical Slidev Structure
@@ -33,7 +34,7 @@ examples/
 
 ## Commands
 
-[ONLY COMMANDS FOR ACTIVE TECHNOLOGIES]
+npm test && npm run lint
 
 ### Slidev Commands
 ```bash
@@ -52,7 +53,7 @@ npm run build -- --base /[repo-name]/
 
 ## Code Style
 
-[LANGUAGE-SPECIFIC, ONLY FOR LANGUAGES IN USE]
+JavaScript/TypeScript with Node.js 18+ (Slidev requirement): Follow standard conventions
 
 ### Markdown Content Style
 - Use `#` for slide titles (one per slide)
@@ -75,7 +76,7 @@ npm run build -- --base /[repo-name]/
 
 ## Recent Changes
 
-[LAST 3 FEATURES AND WHAT THEY ADDED]
+- 001-multi-deck-index: Added JavaScript/TypeScript with Node.js 18+ (Slidev requirement) + Slidev (latest stable), Vue 3, Vite, markdown-i
 
 <!-- MANUAL ADDITIONS START -->
 <!-- MANUAL ADDITIONS END -->

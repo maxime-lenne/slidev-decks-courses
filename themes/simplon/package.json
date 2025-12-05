@@ -1,0 +1,35 @@
+{
+  "name": "slidev-theme-simplon",
+  "version": "2.0.0",
+  "description": "Simplon.co dark theme for Slidev based on default theme",
+  "keywords": [
+    "slidev-theme",
+    "slidev",
+    "simplon",
+    "dark-theme"
+  ],
+  "author": "Simplon Training Team",
+  "license": "MIT",
+  "engines": {
+    "slidev": ">=0.48.0",
+    "node": ">=18.0.0"
+  },
+  "slidev": {
+    "defaults": {
+      "transition": "slide-left",
+      "aspectRatio": "16/9",
+      "colorSchema": "dark",
+      "fonts": {
+        "sans": "DM Sans",
+        "mono": "Fira Code",
+        "local": "DM Sans, Fira Code"
+      },
+      "highlighter": "shiki",
+      "lineNumbers": true,
+      "drawings": {
+        "persist": false
+      }
+    },
+    "colorSchema": "dark"
+  }
+}

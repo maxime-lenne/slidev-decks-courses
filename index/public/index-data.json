@@ -1,0 +1,255 @@
+{
+  "generated": "2025-11-26T13:25:18.516Z",
+  "version": "1.0.0",
+  "decks": [
+    {
+      "id": "sql-advanced-queries",
+      "title": "Advanced SQL Queries",
+      "description": "Mastering complex JOINs, subqueries, GROUP BY, HAVING, ORDER BY, and query optimization techniques.",
+      "status": "published",
+      "objectives": [
+        "Perform complex JOINs with multiple tables",
+        "Write efficient subqueries",
+        "Use GROUP BY, HAVING, ORDER BY",
+        "Optimize query performance"
+      ],
+      "prerequisites": [
+        "SQL Fundamentals",
+        "Basic SELECT and WHERE knowledge"
+      ],
+      "duration": "2 hours",
+      "theme": "default",
+      "thumbnail": "./assets/preview.svg",
+      "tags": [
+        "sql",
+        "database",
+        "advanced",
+        "optimization",
+        "joins",
+        "subqueries",
+        "query optimization"
+      ],
+      "language": "fr",
+      "version": "1.0.0",
+      "authors": [
+        {
+          "name": "Simplon Training Team",
+          "email": "training@simplon.co"
+        }
+      ],
+      "created": "2025-11-24",
+      "updated": "2025-11-24"
+    },
+    {
+      "id": "sql-advanced-queries-practice",
+      "title": "Advanced SQL Queries",
+      "description": "Mastering complex JOINs, subqueries, GROUP BY, HAVING, ORDER BY, and query optimization techniques.",
+      "status": "published",
+      "objectives": [
+        "Perform complex JOINs with multiple tables",
+        "Write efficient subqueries",
+        "Use GROUP BY, HAVING, ORDER BY",
+        "Optimize query performance",
+        "Solve practical exercises"
+      ],
+      "prerequisites": [
+        "SQL Advanced Queries"
+      ],
+      "duration": "2 hours",
+      "theme": "default",
+      "thumbnail": "./assets/preview.svg",
+      "tags": [
+        "sql",
+        "database",
+        "advanced",
+        "optimization",
+        "joins",
+        "subqueries",
+        "query optimization"
+      ],
+      "language": "fr",
+      "version": "1.0.0",
+      "authors": [
+        {
+          "name": "Simplon Training Team",
+          "email": "training@simplon.co"
+        }
+      ],
+      "created": "2025-11-24",
+      "updated": "2025-11-24"
+    },
+    {
+      "id": "sql-basics",
+      "title": "SQL Basics",
+      "description": "Learn SQL basics",
+      "status": "published",
+      "objectives": [
+        "Comprendre ce qu’est une base de données relationnelle",
+        "Comprendre les relations (has one / has many / belongs to)",
+        "Installer SQLite et exécuter des requêtes",
+        "Utiliser SELECT, WHERE, ORDER BY",
+        "Manipuler les données avec INSERT, UPDATE, DELETE"
+      ],
+      "duration": "2 hours",
+      "theme": "simplon",
+      "thumbnail": "./assets/preview.svg",
+      "tags": [
+        "sql",
+        "database",
+        "beginner",
+        "sqlite",
+        "queries",
+        "insert",
+        "update",
+        "delete"
+      ],
+      "language": "fr",
+      "version": "0.1.0",
+      "authors": [
+        {
+          "name": "Simplon Training Team",
+          "email": "training@simplon.co"
+        }
+      ],
+      "created": "2025-11-24",
+      "updated": "2025-11-24"
+    },
+    {
+      "id": "sql-basics-practice",
+      "title": "SQL Basics Practice",
+      "description": "Practice SQL basics with practical examples and exercises.",
+      "status": "published",
+      "objectives": [
+        "Write SELECT queries with WHERE clauses"
+      ],
+      "prerequisites": [
+        "SQL Basics"
+      ],
+      "duration": "1 hour",
+      "theme": "default",
+      "thumbnail": "./assets/preview.svg",
+      "tags": [
+        "sql",
+        "database",
+        "beginner",
+        "queries",
+        "sqlite",
+        "exercices"
+      ],
+      "language": "fr",
+      "version": "1.0.0",
+      "authors": [
+        {
+          "name": "Simplon Training Team",
+          "email": "training@simplon.co"
+        }
+      ],
+      "created": "2025-11-24",
+      "updated": "2025-11-24"
+    },
+    {
+      "id": "sql-mcd-mpd-schema-sql",
+      "title": "Modélisation & Schémas de Bases de Données / SQL",
+      "description": "Comprendre la modélisation conceptuelle & logique, lire et créer un MCD (Merise), lire et créer un diagramme UML de base, passer d’un modèle à un schéma SQL (DDL), comprendre les contraintes (PK, FK, UNIQUE, CHECK…), créer / modifier / supprimer des tables, comprendre les index et leurs impacts",
+      "status": "published",
+      "objectives": [
+        "Comprendre la modélisation conceptuelle & logique",
+        "Lire et créer un MCD (Merise)",
+        "Lire et créer un diagramme UML de base",
+        "Passer d’un modèle à un schéma SQL (DDL)",
+        "Comprendre les contraintes (PK, FK, UNIQUE, CHECK…)",
+        "Créer / modifier / supprimer des tables",
+        "Comprendre les index et leurs impacts"
+      ],
+      "prerequisites": [
+        "SQL Basics",
+        "SQL Advanced Queries"
+      ],
+      "duration": "3 hours",
+      "theme": "simplon",
+      "thumbnail": "./assets/preview.svg",
+      "tags": [
+        "sql",
+        "database",
+        "beginner",
+        "merise",
+        "uml",
+        "schema",
+        "bdd"
+      ],
+      "language": "fr",
+      "version": "0.1.0",
+      "authors": [
+        {
+          "name": "Simplon Training Team",
+          "email": "training@simplon.co"
+        }
+      ],
+      "created": "2025-11-24",
+      "updated": "2025-11-24"
+    },
+    {
+      "id": "sql-joins",
+      "title": "SQL Joins",
+      "description": "Learn table relationships",
+      "status": "published",
+      "objectives": [
+        "Premier objectif d'apprentissage",
+        "Deuxième objectif d'apprentissage",
+        "Troisième objectif d'apprentissage"
+      ],
+      "prerequisites": [
+        "Connaissance de base en programmation"
+      ],
+      "duration": "2 hours",
+      "theme": "simplon",
+      "thumbnail": "./assets/preview.svg",
+      "tags": [
+        "sql",
+        "database",
+        "beginner"
+      ],
+      "language": "fr",
+      "version": "0.1.0",
+      "authors": [
+        {
+          "name": "Simplon Training Team",
+          "email": "training@simplon.co"
+        }
+      ],
+      "created": "2025-11-24",
+      "updated": "2025-11-24"
+    }
+  ],
+  "stats": {
+    "totalDecks": 6,
+    "totalDuration": 720,
+    "languages": [
+      "fr"
+    ],
+    "themes": [
+      "default",
+      "simplon"
+    ],
+    "tags": [
+      "advanced",
+      "bdd",
+      "beginner",
+      "database",
+      "delete",
+      "exercices",
+      "insert",
+      "joins",
+      "merise",
+      "optimization",
+      "queries",
+      "query optimization",
+      "schema",
+      "sql",
+      "sqlite",
+      "subqueries",
+      "uml",
+      "update"
+    ]
+  }
+}

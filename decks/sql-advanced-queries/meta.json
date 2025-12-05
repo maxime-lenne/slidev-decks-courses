@@ -1,0 +1,30 @@
+{
+  "id": "sql-advanced-queries",
+  "title": "Advanced SQL Queries",
+  "description": "Mastering complex JOINs, subqueries, GROUP BY, HAVING, ORDER BY, and query optimization techniques.",
+  "status": "published",
+  "objectives": [
+    "Perform complex JOINs with multiple tables",
+    "Write efficient subqueries",
+    "Use GROUP BY, HAVING, ORDER BY",
+    "Optimize query performance"
+  ],
+  "prerequisites": [
+    "SQL Fundamentals",
+    "Basic SELECT and WHERE knowledge"
+  ],
+  "duration": "2 hours",
+  "theme": "default",
+  "thumbnail": "./assets/preview.svg",
+  "tags": ["sql", "database", "advanced", "optimization", "joins", "subqueries", "query optimization"],
+  "language": "fr",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Simplon Training Team",
+      "email": "training@simplon.co"
+    }
+  ],
+  "created": "2025-11-24",
+  "updated": "2025-11-24"
+}
