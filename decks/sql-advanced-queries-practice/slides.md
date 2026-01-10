@@ -26,7 +26,7 @@ Base SQLite pour tous les exercices :
 
   </div>
   <div>
-    <img src="/assets/diagram.png" alt="Database diagram" class="rounded-lg shadow-lg" />
+    <img src="./assets/diagram.png" alt="Database diagram" class="rounded-lg shadow-lg" />
   </div>
 </div>
 
