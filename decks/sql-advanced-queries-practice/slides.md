@@ -1,5 +1,5 @@
 ---
-theme: default
+theme: ../../themes/simplon
 title: Mise en pratique n°2 — Analyse des ventes
 subtitle: Jointures • Sous-requêtes • Group By
 layout: cover

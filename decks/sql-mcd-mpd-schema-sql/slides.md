@@ -1,5 +1,5 @@
 ---
-theme: default
+theme: ../../themes/simplon
 layout: cover
 title: Jour 3 — Modélisation & Schema BDD / SQL
 subtitle: MERISE • UML • SQL Schema • Index • Contraintes • DDL

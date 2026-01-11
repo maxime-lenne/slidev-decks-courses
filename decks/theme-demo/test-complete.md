@@ -1,5 +1,5 @@
 ---
-theme: ../../themes/maxime-lenne
+theme: ../../themes/simplon
 title: Test Exhaustif - Thème Maxime Lenne
 layout: cover
 transition: slide-left
@@ -84,12 +84,11 @@ Parfait pour les messages clés ou les transitions
 layout: full
 ---
 
-<div class="h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-green-500 text-white text-6xl font-bold">
-  <div class="text-center">
-    <div>Layout: Full</div>
-    <div class="text-2xl mt-4">Utilise tout l'espace de l'écran (pas de padding)</div>
-  </div>
-</div>
+# Layout: Full
+
+Utilise tout l'espace de l'écran avec un magnifique gradient d'arrière-plan
+
+Le gradient est défini directement dans le thème
 
 ---
 layout: quote

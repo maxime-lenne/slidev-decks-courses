@@ -1,7 +1,39 @@
 {
-  "generated": "2025-11-26T13:25:18.516Z",
+  "generated": "2026-01-08T14:57:21.543Z",
   "version": "1.0.0",
   "decks": [
+    {
+      "id": "audit-restitution",
+      "title": "Audit Restitution",
+      "description": "Audit Restitution",
+      "status": "published",
+      "objectives": [
+        "Audit Restitution"
+      ],
+      "prerequisites": [],
+      "duration": "1 hours",
+      "theme": "maxime-lenne",
+      "thumbnail": "./assets/preview.svg",
+      "tags": [
+        "audit",
+        "restitution",
+        "advanced",
+        "optimization",
+        "joins",
+        "subqueries",
+        "query optimization"
+      ],
+      "language": "fr",
+      "version": "1.0.0",
+      "authors": [
+        {
+          "name": "Maxime Lenne",
+          "email": "hello@maxime-lenne.fr"
+        }
+      ],
+      "created": "2025-12-20",
+      "updated": "2025-12-20"
+    },
     {
       "id": "sql-advanced-queries",
       "title": "Advanced SQL Queries",
@@ -222,17 +254,19 @@
     }
   ],
   "stats": {
-    "totalDecks": 6,
-    "totalDuration": 720,
+    "totalDecks": 7,
+    "totalDuration": 780,
     "languages": [
       "fr"
     ],
     "themes": [
       "default",
+      "maxime-lenne",
       "simplon"
     ],
     "tags": [
       "advanced",
+      "audit",
       "bdd",
       "beginner",
       "database",
@@ -244,6 +278,7 @@
       "optimization",
       "queries",
       "query optimization",
+      "restitution",
       "schema",
       "sql",
       "sqlite",

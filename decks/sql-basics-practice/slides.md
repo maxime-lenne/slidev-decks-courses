@@ -1,5 +1,5 @@
 ---
-theme: default
+theme: ../../themes/simplon
 layout: cover
 title: Introduction à SQLite
 subtitle: Installation • Premières requêtes • Exercices
@@ -145,7 +145,7 @@ class: text-center
 Continuer avec **Requêtes SQL Avancées** : Jointures complexes, Subqueries (select imbiquées)
 
 <div class="pt-12">
-  <a href="/decks/example-advanced-queries/" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+  <a href="/decks/example-advanced-queries/" class="px-4 py-2 text-white rounded ">
     Go →
   </a>
 </div>

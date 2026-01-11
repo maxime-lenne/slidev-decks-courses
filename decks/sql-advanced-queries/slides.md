@@ -1,5 +1,5 @@
 ---
-theme: default
+theme: ../../themes/simplon
 title: Advanced SQL Queries
 subtitle: Jointures • Sous-requêtes • Group By
 class: text-center

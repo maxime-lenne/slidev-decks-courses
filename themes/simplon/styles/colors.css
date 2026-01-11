@@ -37,7 +37,7 @@ html:not(.light) {
   --un-prose-lists: #cbd5e1;
   --un-prose-hr: #334155;
   --un-prose-captions: #94a3b8;
-  --un-prose-code: #5eead4;
+  --un-prose-code: var(--simplon-monza);
   --un-prose-pre-code: #cbd5e1;
   --un-prose-pre-bg: #1e293b;
   --un-prose-th-borders: #334155;
@@ -48,7 +48,7 @@ html:not(.light) {
   --un-prose-invert-lists: #cbd5e1;
   --un-prose-invert-hr: #334155;
   --un-prose-invert-captions: #94a3b8;
-  --un-prose-invert-code: #5eead4;
+  --un-prose-invert-code: var(--simplon-monza);;
   --un-prose-invert-pre-code: #cbd5e1;
   --un-prose-invert-pre-bg: #1e293b;
   --un-prose-invert-th-borders: #334155;
@@ -94,7 +94,7 @@ html:not(.light) a:hover {
 /* Code blocks */
 html:not(.light) code {
   background-color: #1e293b;
-  color: #5eead4;
+  color: var(--simplon-monza);
   padding: 0.125rem 0.375rem;
   border-radius: 0.25rem;
   font-size: 0.875em;
@@ -118,8 +118,8 @@ html:not(.light) table {
 }
 
 html:not(.light) th {
-  background-color: #123744;
-  color: #f26f5c;
+  background-color: #0f172a;
+  color: var(--simplon-monza);
   font-weight: 700;
   padding: 0.75rem;
   border: 1px solid #334155;
@@ -161,7 +161,7 @@ html:not(.light) strong {
 }
 
 html:not(.light) em {
-  color: #5eead4;
+  color: var(--simplon-monza);
   font-style: italic;
 }
 

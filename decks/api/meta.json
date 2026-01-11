@@ -1,0 +1,25 @@
+{
+  "id": "audit-restitution",
+  "title": "Audit Restitution",
+  "description": "Audit Restitution",
+  "status": "published",
+  "objectives": [
+    "Audit Restitution"
+  ],
+  "prerequisites": [
+  ],
+  "duration": "1 hours",
+  "theme": "maxime-lenne",
+  "thumbnail": "./assets/preview.svg",
+  "tags": ["audit", "restitution", "advanced", "optimization", "joins", "subqueries", "query optimization"],
+  "language": "fr",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Maxime Lenne",
+      "email": "hello@maxime-lenne.fr"
+    }
+  ],
+  "created": "2025-12-20",
+  "updated": "2025-12-20"
+}

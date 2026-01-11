@@ -1,5 +1,5 @@
 ---
-theme: default
+theme: ../../themes/simplon
 layout: cover
 title: Panorama des systèmes de stockage
 subtitle: Bases, usages & choix dans le développement IA

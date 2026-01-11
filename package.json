@@ -12,7 +12,9 @@
     "dev:deck": "node scripts/dev-deck.js",
     "dev:index": "vite",
     "create-deck": "./scripts/create-deck.sh",
-    "validate": "node scripts/validate-metadata.js"
+    "validate": "node scripts/validate-metadata.js",
+    "lint:md": "markdownlint '**/*.md' --ignore node_modules --ignore dist",
+    "lint:md:fix": "markdownlint '**/*.md' --ignore node_modules --ignore dist --fix"
   },
   "keywords": [
     "slidev",
@@ -39,6 +41,7 @@
     "@vue/test-utils": "^2.4.6",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
+    "markdownlint-cli": "^0.43.0",
     "mermaid": "^11.12.1",
     "vitest": "^4.0.13"
   }

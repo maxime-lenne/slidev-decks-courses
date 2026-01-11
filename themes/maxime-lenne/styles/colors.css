@@ -209,7 +209,7 @@ table {
 }
 
 th {
-  background: var(--ml-gradient-primary);
+  background: var(--ml-background);
   color: white;
   font-weight: 700;
   padding: 0.75rem;
@@ -238,6 +238,10 @@ blockquote {
   background-color: var(--ml-surface-hover);
   padding: 1rem;
   border-radius: var(--ml-radius-md);
+}
+
+.slidev-layout ul {
+  list-style: disc;
 }
 
 /* Lists */
