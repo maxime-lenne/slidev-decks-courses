@@ -3,20 +3,6 @@
   "version": "1.0.0",
   "description": "Multi-deck Slidev presentation project for SQL training with Simplon branding",
   "type": "module",
-  "scripts": {
-    "test": "vitest",
-    "generate-index": "./scripts/generate-index.sh",
-    "build:decks": "slidev build decks/*/slides.md --base /decks/ --out dist/decks",
-    "build:index": "vite build",
-    "build:all": "npm run generate-index && npm run build:decks && npm run build:index",
-    "dev:deck": "node scripts/dev-deck.js",
-    "dev:index": "vite",
-    "dev:all": "node scripts/dev-all.js",
-    "create-deck": "./scripts/create-deck.sh",
-    "validate": "node scripts/validate-metadata.js",
-    "lint:md": "markdownlint '**/*.md' --ignore node_modules --ignore dist",
-    "lint:md:fix": "markdownlint '**/*.md' --ignore node_modules --ignore dist --fix"
-  },
   "keywords": [
     "slidev",
     "presentations",
@@ -28,7 +14,31 @@
   "author": "Maxime Lenne",
   "license": "MIT",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.11.0"
+  },
+  "packageManager": "bun@1.1.45",
+  "scripts": {
+    "test": "vitest",
+    "generate-index": "./scripts/generate-index.sh",
+    "build:decks": "slidev build decks/*/slides.md --base /decks/ --out dist/decks",
+    "build:index": "vite build",
+    "build:all": "npm run generate-index && npm run build:decks && npm run build:index",
+    "dev:deck": "node scripts/dev-deck.js",
+    "dev:index": "vite",
+    "dev:all": "node scripts/dev-all.js",
+    "create-deck": "./scripts/create-deck.sh",
+    "validate": "node scripts/validate-metadata.js",
+    "lint": "bun run lint:md && bun run lint:yaml",
+    "lint:md": "markdownlint '**/*.md' --ignore node_modules --ignore dist",
+    "lint:md:fix": "markdownlint '**/*.md' --ignore node_modules --ignore dist --fix",
+    "lint:yaml": "yamllint .",
+    "lint:commit": "commitlint --last -V",
+    "prepare": "husky",
+    "commit": "gitmoji -c",
+    "changelog": "conventional-changelog -p gitmoji-config -i CHANGELOG.md -s",
+    "changelog:init": "conventional-changelog -p gitmoji-config -i CHANGELOG.md -s -r 0",
+    "release": "semantic-release",
+    "release:dry": "semantic-release --dry-run"
   },
   "dependencies": {
     "@slidev/cli": "^52.9.1",
@@ -38,12 +48,28 @@
     "vue": "^3.5.25"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.4.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/release-notes-generator": "^14.1.0",
+    "conventional-changelog-cli": "^5.0.0",
+    "conventional-changelog-conventionalcommits": "^9.1.0",
+    "conventional-changelog-gitmoji-config": "^1.5.2",
+    "gitmoji-cli": "^9.7.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "markdownlint-cli": "^0.47.0",
+    "semantic-release": "^25.0.3",
     "@vitejs/plugin-vue": "^6.0.2",
     "@vue/test-utils": "^2.4.6",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
-    "markdownlint-cli": "^0.43.0",
     "mermaid": "^11.12.1",
     "vitest": "^4.0.13"
+  },
+  "lint-staged": {
+    "*.md": "markdownlint --fix",
+    "*.{yml,yaml}": "yamllint"
   }
 }

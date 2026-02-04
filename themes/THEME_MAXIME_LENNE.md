@@ -9,11 +9,13 @@ Un thème Slidev personnalisé créé from scratch, basé sur le design system d
 ## 🎨 Système de design
 
 ### Couleurs principales
+
 - **Bleu primaire** : `#2563eb`
 - **Vert secondaire** : `#10b981`
 - **Dégradé** : `linear-gradient(135deg, #2563eb 0%, #10b981 100%)`
 
 ### Neutrals
+
 - Palette complète de gris slate : 50 → 900
 - Support mode clair et mode sombre
 - Variables CSS pour tous les composants
@@ -72,12 +74,14 @@ layout: cover
 ### Tester le thème
 
 1. **Avec l'exemple inclus** :
+
 ```bash
 cd themes/maxime-lenne
 npx slidev example.md
 ```
 
-2. **Avec le deck de démo** :
+1. **Avec le deck de démo** :
+
 ```bash
 npm run dev:deck theme-demo
 ```
@@ -102,6 +106,7 @@ npm run dev:deck theme-demo
 ## 🧩 Composants personnalisés
 
 ### Highlight Box
+
 ```html
 <div class="highlight-box">
   Texte mis en évidence
@@ -109,6 +114,7 @@ npm run dev:deck theme-demo
 ```
 
 ### Gradient Border
+
 ```html
 <div class="gradient-border">
   <div class="gradient-border-content">
@@ -118,11 +124,13 @@ npm run dev:deck theme-demo
 ```
 
 ### Badges
+
 ```html
 <span class="badge">Tag</span>
 ```
 
 ### Grilles
+
 ```html
 <div class="grid-2"><!-- 2 colonnes --></div>
 <div class="grid-3"><!-- 3 colonnes --></div>
@@ -132,6 +140,7 @@ npm run dev:deck theme-demo
 ## ✨ Fonctionnalités
 
 ### Typographie
+
 - ✅ Titres avec dégradé automatique
 - ✅ Texte **gras** avec effet gradient
 - ✅ Texte *italique* en vert
@@ -139,6 +148,7 @@ npm run dev:deck theme-demo
 - ✅ Blocs de code avec thème adapté
 
 ### Éléments
+
 - ✅ Tableaux avec en-tête gradient
 - ✅ Citations avec style personnalisé
 - ✅ Listes avec marqueurs colorés
@@ -147,6 +157,7 @@ npm run dev:deck theme-demo
 - ✅ Sélection de texte avec gradient
 
 ### Responsive
+
 - ✅ Support mode sombre/clair
 - ✅ Variables CSS pour personnalisation
 - ✅ Transitions fluides
@@ -182,12 +193,14 @@ Toutes les variables commencent par `--ml-` :
 ## 🎬 Deck de démonstration
 
 Un deck complet a été créé dans `decks/theme-demo/` montrant :
+
 - Tous les layouts en action
 - Exemples de tableaux SQL
 - Utilisation des composants personnalisés
 - Différents types de contenu
 
 Pour le tester :
+
 ```bash
 npm run dev:deck theme-demo
 ```
@@ -207,6 +220,7 @@ npm run dev:deck theme-demo
 ## 🎓 Cas d'usage
 
 Le thème est parfait pour :
+
 - ✅ Présentations techniques
 - ✅ Formations développement
 - ✅ Conférences tech
@@ -217,6 +231,7 @@ Le thème est parfait pour :
 ## 📝 Notes de version
 
 **Version 1.0.0** - 2024-12-09
+
 - Création initiale du thème
 - 12 layouts Vue
 - Système de couleurs complet
@@ -235,6 +250,7 @@ Le thème est parfait pour :
 ## 📧 Support
 
 Pour toute question ou suggestion :
+
 - Site web : [maxime-lenne.fr](https://maxime-lenne.fr)
 - Documentation : voir USAGE.md
 - Exemples : voir example.md
