@@ -1,0 +1,40 @@
+{
+  "id": "api-advanced",
+  "title": "API de gestion Simplon — FastAPI avancé",
+  "description": "Formation de 8 jours sur la conception d'une API REST professionnelle avec FastAPI, Pydantic v2, SQLModel, Alembic et pytest. Projet fil rouge : API de gestion des formations, sessions et inscriptions pour Simplon.",
+  "status": "published",
+  "objectives": [
+    "Mettre en place une architecture FastAPI en couches (models / schemas / services / routes)",
+    "Modéliser des entités avec SQLModel et définir les relations",
+    "Créer des DTOs robustes avec Pydantic v2 (Create / Update / Read)",
+    "Implémenter un CRUD complet avec gestion des règles métier",
+    "Écrire des tests automatisés avec pytest et HTTPX (couverture ≥ 70%)",
+    "Gérer les erreurs et les codes HTTP de façon centralisée",
+    "Implémenter filtres, pagination et tri",
+    "Générer et enrichir la documentation Swagger/OpenAPI",
+    "Gérer les migrations de base de données avec Alembic"
+  ],
+  "prerequisites": [
+    "Connaissances de base en Python (fonctions, classes, modules)",
+    "Notions de REST et HTTP (verbes, codes de statut)",
+    "Compréhension des bases de données relationnelles (SQL)"
+  ],
+  "duration": "8 days",
+  "theme": "simplon",
+  "thumbnail": "./assets/cover.jpeg",
+  "tags": [
+    "fastapi", "python", "pydantic", "sqlmodel", "sqlalchemy",
+    "alembic", "pytest", "rest", "api", "backend",
+    "formation", "simplon", "dto", "validation", "tests"
+  ],
+  "language": "fr",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Maxime Lenne",
+      "email": "hello@maxime-lenne.fr"
+    }
+  ],
+  "created": "2026-03-02",
+  "updated": "2026-03-02"
+}

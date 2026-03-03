@@ -70,6 +70,16 @@ html:not(.light) .slidev-page {
 }
 
 /* Headings with Simplon colors */
+
+html h1,
+html h2,
+html h3,
+html h4,
+html h5,
+html h6 {
+  color: #334155;
+}
+
 html:not(.light) h1,
 html:not(.light) h2,
 html:not(.light) h3,
@@ -93,15 +103,15 @@ html:not(.light) a:hover {
 
 /* Code blocks */
 html:not(.light) code {
-  background-color: #1e293b;
-  color: var(--simplon-monza);
+  background-color: #0f172a;
+  color: #f26f5c;
   padding: 0.125rem 0.375rem;
   border-radius: 0.25rem;
   font-size: 0.875em;
 }
 
 html:not(.light) pre {
-  background-color: #1e293b !important;
+  /*background-color: #1e293b !important;*/
   border: 1px solid #334155;
   border-radius: 0.5rem;
 }
@@ -109,6 +119,10 @@ html:not(.light) pre {
 html:not(.light) pre code {
   background-color: transparent;
   color: #cbd5e1;
+  /* Reset inline-code-only styles that incorrectly bleed into code blocks */
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
 }
 
 /* Tables */
@@ -119,7 +133,7 @@ html:not(.light) table {
 
 html:not(.light) th {
   background-color: #0f172a;
-  color: var(--simplon-monza);
+  color: #94a3b8;
   font-weight: 700;
   padding: 0.75rem;
   border: 1px solid #334155;
