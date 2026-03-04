@@ -34,6 +34,7 @@ We'll cover APIs, REST architecture, and HTTP fundamentals.
 -->
 
 ---
+
 layout: default
 class: text-center
 ---
@@ -76,6 +77,7 @@ On couvre à la fois la théorie et les outils pratiques.
 -->
 
 ---
+
 layout: section
 ---
 
@@ -84,6 +86,7 @@ layout: section
 Application Programming Interface
 
 ---
+
 layout: default
 ---
 
@@ -97,6 +100,7 @@ graph LR
     B -->|Response| A
     B <-->|Expose| C[Datas, Services]
 ```
+
 <v-clicks>
 
 - **Interface**: A set of rules and protocols (HTTP, REST, JSON...)
@@ -105,7 +109,6 @@ graph LR
 - **Server**: expose data / service through API to the outside world
 
 </v-clicks>
-
 
 <!--
 APIs are everywhere - when you check the weather on your phone,
@@ -117,8 +120,8 @@ Bénéfices :
 
 -->
 
-
 ---
+
 layout: default
 ---
 
@@ -133,6 +136,7 @@ Tout ce qui peut envoyer une requête HTTP est un client API
 <div class="border border-gray-600 rounded p-4">
 
 ### Navigateur web
+
 SPA (React, Vue), pages HTML classiques, extensions.
 Utilise `fetch()` ou `axios`.
 
@@ -141,6 +145,7 @@ Utilise `fetch()` ou `axios`.
 <div class="border border-gray-600 rounded p-4">
 
 ### Application mobile
+
 iOS (URLSession), Android (Retrofit), React Native.
 Même protocole HTTP, même JSON.
 
@@ -149,6 +154,7 @@ Même protocole HTTP, même JSON.
 <div class="border border-gray-600 rounded p-4">
 
 ### Serveur → Serveur
+
 Microservices, webhooks, jobs planifiés.
 `requests` (Python), `axios` (Node), `HttpClient` (Java).
 
@@ -157,6 +163,7 @@ Microservices, webhooks, jobs planifiés.
 <div class="border border-gray-600 rounded p-4">
 
 ### CLI & scripts
+
 Automatisation, CI/CD, migrations.
 `cURL`, `HTTPie`, scripts Python/bash.
 
@@ -165,6 +172,7 @@ Automatisation, CI/CD, migrations.
 <div class="border border-gray-600 rounded p-4">
 
 ### IoT & embarqué
+
 Capteurs connectés, domotique, montres.
 Contraintes de bande passante et d'énergie.
 
@@ -173,8 +181,8 @@ Contraintes de bande passante et d'énergie.
 <div class="border border-gray-600 rounded p-4">
 
 ### Intégrations tierces
-Zapier, Make, n8n — connectent des APIs sans code.
-**Webhooks** : l'API appelle le client (push vs pull).
+
+Zapier, Make, n8n connectent des APIs sans code.
 
 </div>
 
@@ -185,10 +193,10 @@ Zapier, Make, n8n — connectent des APIs sans code.
 <!--
 L'API ne sait pas qui l'appelle — c'est la force du protocole HTTP.
 Un même endpoint sert un mobile, un navigateur et un script bash identiquement.
-Les webhooks inversent le rôle : c'est le serveur qui pousse des événements vers le client.
 -->
 
 ---
+
 layout: default
 ---
 
@@ -201,6 +209,7 @@ layout: default
 <div>
 
 ## GitHub API
+
 ```javascript
 const response = await fetch(
   'https://api.github.com/users/octocat'
@@ -215,6 +224,7 @@ const user = await response.json();
 <div>
 
 ## OpenWeather API
+
 ```javascript
 const response = await fetch(
   'https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=YOUR_KEY'
@@ -229,6 +239,7 @@ const weather = await response.json();
 <div>
 
 ## Stripe API
+
 ```javascript
 const payment = await stripe.paymentIntents.create({
   amount: 2000,
@@ -243,6 +254,7 @@ const payment = await stripe.paymentIntents.create({
 <div>
 
 ## REST Countries
+
 ```javascript
 const response = await fetch(
   'https://restcountries.com/v3.1/name/france'
@@ -264,6 +276,7 @@ REST Countries is great for learning - no API key needed!
 -->
 
 ---
+
 layout: section
 ---
 
@@ -272,6 +285,7 @@ layout: section
 Hypertext Transfer Protocol
 
 ---
+
 layout: two-cols-header
 ---
 
@@ -327,6 +341,7 @@ and the server sends back a response.
 -->
 
 ---
+
 layout: default
 ---
 
@@ -358,12 +373,13 @@ L'URL est case-sensitive pour le path, mais pas pour le host.
 -->
 
 ---
+
 layout: default
 ---
 
 # Les méthodes HTTP (verbes)
 
-La méthode indique au serveur **l'intention** de la requête — indépendamment des APIs REST.
+La méthode indique au serveur **l'intention** de la requête. Quelques exemples :
 
 <div class="grid grid-cols-2 gap-6 mt-2">
 
@@ -378,6 +394,7 @@ GET /index.html HTTP/1.1       ← page web
 GET /images/logo.png HTTP/1.1  ← image
 GET /api/users HTTP/1.1        ← données JSON
 ```
+
 Lecture seule. Pas de body. Résultat identique peu importe le nombre d'appels.
 
 **POST** — Soumettre des données
@@ -386,6 +403,7 @@ Lecture seule. Pas de body. Résultat identique peu importe le nombre d'appels.
 POST /login HTTP/1.1           ← formulaire de connexion
 POST /upload HTTP/1.1          ← envoi de fichier
 ```
+
 Corps obligatoire. Chaque appel peut produire un effet différent.
 
 </div>
@@ -397,6 +415,7 @@ Corps obligatoire. Chaque appel peut produire un effet différent.
 ```http
 DELETE /cache HTTP/1.1         ← vide un cache
 ```
+
 Généralement sans body.
 
 **HEAD** — Comme GET, sans le body
@@ -404,6 +423,7 @@ Généralement sans body.
 ```http
 HEAD /fichier.zip HTTP/1.1     ← taille et type sans télécharger
 ```
+
 Utile pour vérifier l'existence ou la taille d'une ressource.
 
 **OPTIONS** — Capacités du serveur
@@ -411,6 +431,7 @@ Utile pour vérifier l'existence ou la taille d'une ressource.
 ```http
 OPTIONS /api/users HTTP/1.1    ← quelles méthodes sont autorisées ?
 ```
+
 Utilisé par les navigateurs pour le preflight CORS.
 
 </div>
@@ -427,108 +448,7 @@ HEAD et OPTIONS sont utilisés par l'infrastructure (cache, CORS, CDN).
 -->
 
 ---
-layout: two-cols-header
----
 
-# Request - Les paramètres
-
-Quatre façons de transmettre des données au serveur
-
-::left::
-
-<v-clicks>
-
-### **Path parameters** — dans l'URL
-
-```http
-GET /api/users/{id}
-GET /api/users/123          ← id = 123
-GET /api/sessions/42/inscriptions  ← session_id = 42
-```
-
-Identifient une ressource **spécifique**.
-Toujours obligatoires.
-
-</v-clicks>
-
-::right::
-
-<v-clicks>
-
-### **Query parameters** — après le `?`
-
-```http
-GET /api/users?role=apprenant&page=2&limit=20
-               ↑               ↑      ↑
-             filtre        pagination  taille
-```
-
-Pour le **filtrage**, la **pagination** et le **tri** ici par example.
-Toujours optionnels (ou avec valeur par défaut).
-
-</v-clicks>
-
-<!--
-Path param = QUI (quelle ressource), query param = COMMENT (filtrer, trier, paginer).
-Le body ne doit jamais contenir d'identifiant de ressource — c'est le rôle du path.
-Les headers customs commencent par X- par convention, bien que cette convention soit dépréciée en RFC 6648.
--->
-
----
-layout: two-cols-header
----
-
-# Request - Les paramètres
-
-::left::
-
-<v-click>
-
-### **Header parameters** — métadonnées de la requête
-
-```http
-GET /api/users HTTP/1.1
-Authorization: Bearer eyJhbGci...   ← authentification
-Content-Type: application/json      ← format du body
-Accept: application/json            ← format attendu en retour
-Accept-Language: fr-FR              ← langue préférée
-X-Request-ID: abc-123               ← traçabilité (custom)
-```
-
-Transportent l'**authentification**, le format des données, et les métadonnées techniques.
-
-</v-click>
-
-::right::
-
-
-<v-click>
-
-### **Body parameters** — corps de la requête
-
-```json
-POST /api/users
-Content-Type: application/json
-
-{
-  "nom": "Alice",
-  "email": "alice@example.com",
-  "role": "apprenant"
-}
-```
-
-Utilisé avec `POST`, `PUT`, `PATCH`.<br />
-`GET` et `DELETE` n'ont pas de body.
-
-</v-click>
-
-<!--
-Path param = QUI (quelle ressource), query param = COMMENT (filtrer, trier, paginer).
-Le body ne doit jamais contenir d'identifiant de ressource — c'est le rôle du path.
-Les headers customs commencent par X- par convention, bien que cette convention soit dépréciée en RFC 6648.
--->
-
----
 layout: default
 ---
 
@@ -543,6 +463,7 @@ Server responses telling you what happened
 <div>
 
 ## 2xx Success
+
 - **200 OK**: Request succeeded
 - **201 Created**: Resource created
 - **204 No Content**: Success, no data
@@ -552,6 +473,7 @@ Server responses telling you what happened
 <div>
 
 ## 3xx Redirection
+
 - **301 Moved Permanently**
 - **302 Found** (temporary)
 - **304 Not Modified** (cached)
@@ -561,6 +483,7 @@ Server responses telling you what happened
 <div>
 
 ## 4xx Client Errors
+
 - **400 Bad Request**: Invalid data
 - **401 Unauthorized**: Not authenticated
 - **403 Forbidden**: No permission
@@ -571,6 +494,7 @@ Server responses telling you what happened
 <div>
 
 ## 5xx Server Errors
+
 - **500 Internal Server Error**
 - **502 Bad Gateway**
 - **503 Service Unavailable**
@@ -587,6 +511,7 @@ Status codes are like HTTP's way of talking back to you.
 -->
 
 ---
+
 layout: section
 ---
 
@@ -595,6 +520,7 @@ layout: section
 Representational State Transfer
 
 ---
+
 layout: default
 ---
 
@@ -614,6 +540,7 @@ Utilise ressources, verbes HTTP et codes de statut
 6. **Code on Demand** (optional): Server can send executable code
 
 ---
+
 layout: default
 ---
 
@@ -635,11 +562,11 @@ that make APIs scalable, reliable, and easy to understand.
 -->
 
 ---
+
 layout: two-cols-header
 ---
 
 # Non RESTful Resource Design
-
 
 ::left::
 
@@ -680,6 +607,7 @@ The HTTP method tells us the action.
 -->
 
 ---
+
 layout: two-cols-header
 ---
 
@@ -733,43 +661,7 @@ The HTTP method tells us the action.
 -->
 
 ---
-layout: default
----
 
-# RESTful API Example
-
-Building a blog API
-
-```json
-// GET /api/posts - List all posts
-[
-  { "id": 1, "title": "Understanding REST", "author": "Alice", "published": true },
-  { "id": 2, "title": "HTTP Deep Dive", "author": "Bob", "published": false }
-]
-
-// POST /api/posts - Create a new post
-// Request body:
-{
-  "title": "My New Post",
-  "content": "This is the content...",
-  "author": "Charlie"
-}
-// Response: 201 Created
-{
-  "id": 3,
-  "title": "My New Post",
-  "content": "This is the content...",
-  "author": "Charlie,
-  "createdAt": "2024-01-10T10:30:00Z"
-}
-```
-
-<!--
-This shows how RESTful APIs handle collections and resource creation.
-Notice the 201 status code for successful creation.
--->
-
----
 layout: default
 ---
 
@@ -802,10 +694,114 @@ Retenez : l'URL identifie la ressource, la méthode HTTP identifie l'action.
 -->
 
 ---
+
 layout: two-cols-header
 ---
 
-# GET /users — Lister une collection
+# Request - Les paramètres
+
+Quatre façons de transmettre des données au serveur
+
+::left::
+
+<v-clicks>
+
+### **Path parameters** — dans l'URL
+
+```http
+GET /api/users/{id}
+GET /api/users/123          ← id = 123
+GET /api/sessions/42/inscriptions  ← session_id = 42
+```
+
+Identifient une ressource **spécifique**.
+Toujours obligatoires.
+
+</v-clicks>
+
+::right::
+
+<v-clicks>
+
+### **Query parameters** — après le `?`
+
+```http
+GET /api/users?role=apprenant&page=2&limit=20
+               ↑               ↑      ↑
+             filtre        pagination  taille
+```
+
+Pour le **filtrage**, la **pagination** et le **tri** ici par example.
+Toujours optionnels (ou avec valeur par défaut).
+
+</v-clicks>
+
+<!--
+Path param = QUI (quelle ressource), query param = COMMENT (filtrer, trier, paginer).
+Le body ne doit jamais contenir d'identifiant de ressource — c'est le rôle du path.
+Les headers customs commencent par X- par convention, bien que cette convention soit dépréciée en RFC 6648.
+-->
+
+---
+
+layout: two-cols-header
+---
+
+# Request - Les paramètres
+
+::left::
+
+<v-click>
+
+### **Header parameters** — métadonnées de la requête
+
+```http
+GET /api/users HTTP/1.1
+Authorization: Bearer eyJhbGci...   ← authentification
+Content-Type: application/json      ← format du body
+Accept: application/json            ← format attendu en retour
+Accept-Language: fr-FR              ← langue préférée
+X-Request-ID: abc-123               ← traçabilité (custom)
+```
+
+Transportent l'**authentification**, le format des données, et les métadonnées techniques.
+
+</v-click>
+
+::right::
+
+<v-click>
+
+### **Body parameters** — corps de la requête
+
+```json
+POST /api/users
+Content-Type: application/json
+
+{
+  "nom": "Alice",
+  "email": "alice@example.com",
+  "role": "apprenant"
+}
+```
+
+Utilisé avec `POST`, `PUT`, `PATCH`.<br />
+`GET` et `DELETE` n'ont pas de body.
+
+</v-click>
+
+<!--
+Path param = QUI (quelle ressource), query param = COMMENT (filtrer, trier, paginer).
+Le body ne doit jamais contenir d'identifiant de ressource — c'est le rôle du path.
+Les headers customs commencent par X- par convention, bien que cette convention soit dépréciée en RFC 6648.
+-->
+
+---
+
+layout: two-cols-header
+---
+
+# GET /users — Lister une collection - request
 
 ::left::
 
@@ -818,6 +814,8 @@ Authorization: Bearer <token>
 Accept: application/json
 ```
 
+::right::
+
 **Paramètres**
 
 | Type | Nom | Description |
@@ -827,7 +825,19 @@ Accept: application/json
 | Query | `?role=admin` | Filtre |
 | Query | `?sort=-created_at` | Tri |
 
-::right::
+<!--
+GET ne modifie jamais les données — il est safe et idempotent.
+Une réponse vide retourne [] (tableau vide), pas 404.
+-->
+
+---
+
+layout: two-cols-header
+---
+
+# GET /users — Lister une collection - response
+
+::left::
 
 **Réponse `200 OK`**
 
@@ -850,6 +860,8 @@ Accept: application/json
 ]
 ```
 
+::right::
+
 **Cas d'erreur**
 
 | Status | Cause |
@@ -863,6 +875,7 @@ Une réponse vide retourne [] (tableau vide), pas 404.
 -->
 
 ---
+
 layout: two-cols-header
 ---
 
@@ -912,6 +925,7 @@ Si l'id n'existe pas → 404, jamais 200 avec un body vide.
 -->
 
 ---
+
 layout: two-cols-header
 ---
 
@@ -976,6 +990,7 @@ Le header Location indique l'URL de la ressource créée — bonne pratique.
 -->
 
 ---
+
 layout: two-cols-header
 ---
 
@@ -1044,6 +1059,7 @@ En pratique, PATCH est préféré car PUT force à envoyer TOUT l'objet.
 -->
 
 ---
+
 layout: two-cols-header
 ---
 
@@ -1099,6 +1115,7 @@ La réponse contient toujours la ressource complète après modification.
 -->
 
 ---
+
 layout: two-cols-header
 ---
 
@@ -1159,6 +1176,7 @@ Appeler DELETE deux fois : 1ère fois 204, 2ème fois 404 — c'est normal (idem
 -->
 
 ---
+
 layout: section
 ---
 
@@ -1166,8 +1184,8 @@ layout: section
 
 Qui envoie des requêtes — et avec quels outils
 
-
 ---
+
 layout: two-cols-header
 ---
 
@@ -1236,6 +1254,7 @@ La doc Swagger génère souvent des exemples cURL directement — pratique pour 
 -->
 
 ---
+
 layout: default
 ---
 
@@ -1248,16 +1267,19 @@ Inspecter toutes les requêtes HTTP d'une page web en temps réel
 <div>
 
 **Ouvrir les DevTools :**
+
 - `F12` ou `Cmd+Option+I` (Mac)
 - Clic droit → **Inspecter**
 - Aller dans l'onglet **Réseau** (Network)
 
 **Filtrer les requêtes :**
+
 - **Fetch/XHR** → uniquement les appels API
 - **Doc** → le HTML de la page
 - **WS** → WebSockets (temps réel)
 
 **Actions utiles :**
+
 - Clic droit sur une requête → **Replay XHR** (rejouer)
 - **Copy → Copy as cURL** → réutiliser dans le terminal
 - Cocher **Preserve log** pour garder l'historique lors des navigations
@@ -1291,6 +1313,7 @@ Inspecter toutes les requêtes HTTP d'une page web en temps réel
 ```
 
 **Cas d'usage :**
+
 - Vérifier qu'une requête part bien (et avec les bons headers)
 - Diagnostiquer une erreur **CORS**
 - Inspecter un token JWT envoyé
@@ -1309,6 +1332,7 @@ TTFB (Time To First Byte) = temps d'attente serveur — indicateur clé de perfo
 -->
 
 ---
+
 layout: two-cols-header
 ---
 
@@ -1319,6 +1343,7 @@ L'outil de référence pour explorer, tester et documenter les APIs
 ::left::
 
 **Construire une requête :**
+
 - Choisir la méthode (GET, POST, PATCH...)
 - Saisir l'URL
 - Ajouter des **Headers** (Content-Type, Authorization...)
@@ -1329,10 +1354,12 @@ L'outil de référence pour explorer, tester et documenter les APIs
 Grouper les requêtes par projet ou par ressource (`/users`, `/sessions`...) et les partager avec l'équipe via un lien ou Git.
 
 **Variables d'environnement :**
+
 ```
 {{base_url}} = https://api.example.com
 {{token}}    = eyJhbGci...
 ```
+
 Switcher entre `dev`, `staging`, `prod` en un clic sans réécrire les URLs.
 
 ::right::
@@ -1358,6 +1385,7 @@ pm.environment.set("token", token);
 ```
 
 **Autres fonctionnalités :**
+
 - **Mock server** : simuler une API avant qu'elle existe
 - **Documentation** : générer une doc publique depuis les collections
 - **Runner** : rejouer une collection entière en séquence
@@ -1374,6 +1402,7 @@ Le Runner permet de tester un scénario complet : login → créer → modifier 
 -->
 
 ---
+
 layout: default
 ---
 
@@ -1415,6 +1444,7 @@ It's promise-based, making it work great with async/await.
 -->
 
 ---
+
 layout: two-cols-header
 ---
 
@@ -1464,6 +1494,7 @@ Use try-catch for network failures and parsing errors.
 -->
 
 ---
+
 layout: section
 ---
 
@@ -1472,6 +1503,7 @@ layout: section
 Sécuriser l'accès à une API
 
 ---
+
 layout: default
 ---
 
@@ -1522,6 +1554,7 @@ On peut être authentifié mais non autorisé — ex: utilisateur connecté sans
 -->
 
 ---
+
 layout: default
 ---
 
@@ -1559,9 +1592,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9
 ```
 
 Un JWT est composé de 3 parties encodées en base64 :
+
 ```
 Header.Payload.Signature
 ```
+
 ```json
 // Payload (décodé)
 {
@@ -1586,6 +1621,7 @@ Ne jamais mettre de données sensibles (mot de passe) dans le payload JWT.
 -->
 
 ---
+
 layout: default
 ---
 
@@ -1619,6 +1655,7 @@ Le refresh_token permet d'obtenir un nouveau access_token sans redemander à l'u
 -->
 
 ---
+
 layout: two-cols-header
 ---
 
@@ -1670,6 +1707,7 @@ Authorization: Bearer <access_token>
 ```
 
 **Flux alternatifs (grants)**
+
 - **Authorization Code** → apps web/mobile ✅
 - **Client Credentials** → serveur-à-serveur ✅
 - **Implicit** → déprécié ⚠️
@@ -1684,6 +1722,7 @@ OAuth 2.0 seul = autorisation. OIDC = authentification + autorisation.
 -->
 
 ---
+
 layout: section
 ---
 
@@ -1692,6 +1731,7 @@ layout: section
 Pagination · Filtres · Tri · Soft Delete
 
 ---
+
 layout: two-cols-header
 ---
 
@@ -1750,6 +1790,7 @@ Avantage : stable si des lignes sont insérées/supprimées entre deux pages.
 Inconvénient : impossible de sauter directement à la page N.
 
 **Pourquoi toujours paginer ?**
+
 - Une table peut contenir des millions de lignes
 - Protège la base de données et le réseau
 - L'interface ne peut pas afficher 100 000 lignes
@@ -1764,6 +1805,7 @@ Cursor-based est la référence pour les feeds temps-réel (Twitter, Instagram).
 -->
 
 ---
+
 layout: two-cols-header
 ---
 
@@ -1810,7 +1852,7 @@ GET /api/formations?niveau=débutant,intermédiaire
 
 | Suffixe | Signification | Exemple |
 |---------|--------------|---------|
-| _(aucun)_ | Égalité exacte | `?role=admin` |
+| *(aucun)* | Égalité exacte | `?role=admin` |
 | `_min` / `_max` | Borne numérique ou date | `?duree_min=10` |
 | `_not` | Exclusion | `?role_not=admin` |
 | `_in` | Parmi une liste | `?id_in=1,2,3` |
@@ -1835,6 +1877,7 @@ Documenter chaque filtre dans Swagger avec des exemples concrets.
 -->
 
 ---
+
 layout: two-cols-header
 ---
 
@@ -1906,6 +1949,7 @@ Le tri par défaut doit être documenté — les clients ne doivent pas dépendr
 -->
 
 ---
+
 layout: two-cols-header
 ---
 
@@ -1952,6 +1996,7 @@ DELETE /api/users/5
 <v-clicks>
 
 **Pourquoi soft delete ?**
+
 - **Récupération** : annuler une suppression accidentelle
 - **Audit trail** : historique complet conservé
 - **Intégrité référentielle** : les données liées restent cohérentes
@@ -1987,26 +2032,739 @@ La contrainte d'unicité devient : UNIQUE(email) WHERE deleted_at IS NULL.
 -->
 
 ---
-layout: two-cols
+
+layout: two-cols-header
+---
+
+# Recherche (Search)
+
+Chercher du texte libre dans les données
+
+::left::
+
+**Query param standard**
+
+```http
+# Recherche textuelle simple
+GET /api/formations?q=python
+GET /api/users?search=alice
+
+# Combinée avec filtres et pagination
+GET /api/formations?q=python&niveau=avancé&limit=10
+```
+
+**Multi-champs — côté serveur**
+
+```sql
+-- La recherche porte sur plusieurs colonnes
+WHERE titre ILIKE '%python%'
+   OR description ILIKE '%python%'
+   OR tags ILIKE '%python%'
+```
+
+**Recherche avancée (syntaxe structurée)**
+
+```http
+GET /api/formations?q=python+django&fields=titre,tags
+```
+
+::right::
+
+<v-clicks>
+
+**Réponse enrichie**
+
+```json
+{
+  "data": [ ... ],
+  "total": 12,
+  "query": "python",
+  "took_ms": 8
+}
+```
+
+**Bonnes pratiques**
+
+- Minimum 2–3 caractères avant de déclencher la recherche
+- Retourner `[]` si aucun résultat (jamais `404`)
+- Insensible à la casse et aux accents (`ILIKE`, `unaccent`)
+- Pour des volumes importants → **Elasticsearch**, **Typesense**, **Meilisearch**
+
+**Autocomplétion (suggest)**
+
+```http
+GET /api/formations/suggest?q=py
+→ ["Python", "PyTest", "PyDantic"]
+```
+
+</v-clicks>
+
+<!--
+La recherche textuelle simple s'implémente avec ILIKE en PostgreSQL.
+Pour la prod avec beaucoup de données, un moteur de recherche dédié est indispensable.
+Le champ `took_ms` est utile pour monitorer les performances de recherche.
+-->
+
+---
+
+layout: two-cols-header
+---
+
+# Upload de fichiers
+
+Envoyer des fichiers binaires via HTTP
+
+::left::
+
+**Multipart/form-data** (le plus courant)
+
+```http
+POST /api/users/42/avatar HTTP/1.1
+Content-Type: multipart/form-data; boundary=----boundary
+
+------boundary
+Content-Disposition: form-data; name="file"; filename="photo.jpg"
+Content-Type: image/jpeg
+
+<binary data>
+------boundary--
+```
+
+```bash
+# Avec cURL
+curl -X POST /api/users/42/avatar \
+     -F "file=@photo.jpg"
+```
+
+**Upload avec métadonnées**
+
+```bash
+curl -X POST /api/documents \
+     -F "file=@rapport.pdf" \
+     -F "titre=Rapport Q1" \
+     -F "categorie=finance"
+```
+
+::right::
+
+<v-clicks>
+
+**Réponse `201 Created`**
+
+```json
+{
+  "id": 7,
+  "filename": "photo.jpg",
+  "url": "https://cdn.example.com/avatars/42.jpg",
+  "size_bytes": 204800,
+  "mime_type": "image/jpeg",
+  "uploaded_at": "2026-03-04T10:00:00Z"
+}
+```
+
+**Validations côté serveur**
+
+- **Type MIME** : accepter uniquement `image/*`, `application/pdf`...
+- **Taille max** : rejeter au-delà d'un seuil (`413 Payload Too Large`)
+- **Nom de fichier** : ne jamais faire confiance — utiliser un nom généré
+- **Stockage** : ne pas stocker dans la base — utiliser S3, Cloudinary, etc.
+
+**Codes de réponse**
+
+| Status | Cause |
+|--------|-------|
+| `201` | Fichier uploadé avec succès |
+| `400` | Type de fichier non autorisé |
+| `413` | Fichier trop volumineux |
+
+</v-clicks>
+
+<!--
+Ne jamais stocker le nom de fichier envoyé par le client directement — risque de path traversal.
+Toujours valider le MIME type côté serveur (le client peut mentir sur l'extension).
+Le header Content-Length permet de rejeter les fichiers trop volumineux avant même de les lire.
+-->
+
+---
+
+layout: section
+---
+
+# Swagger / OpenAPI
+
+Documenter et exploiter son API
+
+---
+
+layout: two-cols-header
+---
+
+# Swagger UI — La documentation interactive
+
+Une interface générée automatiquement à partir du code
+
+::left::
+
+**Ce que Swagger UI offre**
+
+<v-clicks>
+
+- **Exploration** : tous les endpoints listés avec leurs paramètres
+- **Try it out** : exécuter des requêtes directement depuis le navigateur
+- **Schémas** : modèles de requête et de réponse détaillés
+- **Codes de statut** : tous les cas documentés
+
+</v-clicks>
+
+::right::
+
+<v-click>
+
+**Avec FastAPI — zéro configuration**
+
+```python
+# La doc est générée automatiquement
+# Swagger UI  → http://localhost:8000/docs
+# ReDoc       → http://localhost:8000/redoc
+# JSON brut   → http://localhost:8000/openapi.json
+```
+
+</v-click>
+
+<v-click>
+
+**Enrichir la doc**
+
+```python
+@router.post("/users", summary="Créer un utilisateur",
+             response_description="L'utilisateur créé")
+async def create_user(user: UserCreate):
+    """
+    Crée un nouvel utilisateur.
+    - **email** : doit être unique
+    - **role** : `user` ou `admin`
+    """
+```
+
+</v-click>
+
+---
+
+layout: two-cols-header
+---
+
+# OpenAPI spec — `openapi.json` source de vérité
+
+Une interface générée automatiquement à partir du code
+
+::left::
+
+<v-click>
+
+**Alternatives à Swagger UI**
+
+| Outil | Forces |
+|-------|--------|
+| **Swagger UI** | Standard, intégré FastAPI |
+| **ReDoc** | Plus lisible, meilleure nav |
+| **Scalar** | Moderne, beau design |
+| **Stoplight** | Portail dev complet |
+
+</v-click>
+
+::right::
+
+<v-click>
+
+```json
+{
+  "openapi": "3.1.0",
+  "info": { "title": "Mon API", "version": "1.0.0" },
+  "paths": {
+    "/users": {
+      "get": { "summary": "Lister les utilisateurs", ... },
+      "post": { "summary": "Créer un utilisateur", ... }
+    }
+  },
+  "components": { "schemas": { "User": { ... } } }
+}
+```
+
+Ce fichier JSON est **machine-readable** — il peut être exploité bien au-delà de la doc.
+
+</v-click>
+
+<!--
+FastAPI génère le openapi.json automatiquement à partir des types Pydantic et des annotations.
+Swagger UI est l'interface de test la plus utilisée en développement — pas besoin de Postman pour les tests simples.
+-->
+
+---
+
+layout: two-cols-header
+---
+
+# OpenAPI spec — `openapi.json` pour industrialiser le développement
+
+::left::
+
+<v-clicks>
+
+**🔌 Clients API (SDK typés)**
+
+Générer des clients typés pour consommer l'API :
+TypeScript, Python, Java, C#, Go, Swift...
+
+```bash
+npx openapi-generator-cli generate \
+  -i openapi.json -g typescript-fetch \
+  -o ./src/api-client
+```
+
+-> appels typés, autocomplétion, moins d'erreurs
+
+**🖥️ Stubs serveur (scaffold)**
+
+Générer contrôleurs, routes et modèles à partir du contrat.
+Structure générée — la logique métier reste à écrire.
+*Outils : OpenAPI Generator, NSwag*
+
+</v-clicks>
+
+::right::
+
+<v-clicks>
+
+**🧪 Tests automatisés**
+
+```bash
+# Tests de conformité contrat ↔ implémentation
+schemathesis run openapi.json --url http://localhost:8000
+```
+
+*Aussi : collections Postman, Newman, Dredd*
+
+**🎭 Mock servers**
+
+API simulée sans backend réel — idéal pour le front en avance de phase.
+*Outils : Prism, Mockoon, Stoplight*
+
+**🧱 Modèles & types**
+
+Générer DTOs, interfaces TypeScript, validateurs Zod/Yup.
+→ synchronise front ↔ back, évite la dérive de schéma.
+
+**🔍 Validation runtime**
+
+Valider requêtes entrantes et réponses sortantes en gateway ou middleware — contract enforcement automatique.
+
+**🚀 Gouvernance API**
+
+```bash
+# Détecter les breaking changes entre deux versions
+openapi-diff v1.json v2.json
+
+# Linter le contrat (règles de style)
+spectral lint openapi.json
+```
+
+→ changelog automatique, versioning, CI/CD
+
+**🤖 Intégrations IA**
+
+Le Swagger devient source de vérité **machine-readable** pour :
+
+- Tools OpenAI / function calling
+- Nodes LangChain / agents
+- Connecteurs n8n, Make
+- Serveurs MCP
+
+→ L'IA peut découvrir et appeler votre API automatiquement.
+
+</v-clicks>
+
+<!--
+Le openapi.json, c'est le contrat de l'API exprimé en JSON — lisible par les humains ET les machines.
+API-first : écrire le contrat avant le code, puis générer les stubs et les clients.
+Schemathesis fait du property-based testing : il génère des milliers de requêtes automatiquement pour trouver des bugs.
+-->
+
+---
+
+layout: two-cols-header
+---
+
+# Alternative à OpenAPI : JSON:API
+
+::left::
+
+<v-clicks>
+
+**JSON:API** — une convention stricte
+
+```json
+{
+  "data": {
+    "type": "users",
+    "id": "42",
+    "attributes": { "nom": "Alice", "email": "alice@example.com" },
+    "relationships": {
+      "formations": {
+        "data": [{ "type": "formations", "id": "5" }]
+      }
+    }
+  }
+}
+```
+
+- Spécification qui définit la structure exacte des réponses JSON
+- Inclut : pagination, relations, liens, erreurs — tous normalisés
+- Élimine les décisions de design au niveau du format
+- Moins répandu mais très cohérent pour des APIs complexes
+
+</v-clicks>
+
+::right::
+
+<v-clicks>
+
+**Autres specs**
+
+| Spec | Particularité |
+|------|--------------|
+| **HAL** | Liens hypermedia dans les réponses |
+| **AsyncAPI** | OpenAPI pour WebSockets / messages |
+| **gRPC + Protobuf** | Binaire, très performant (microservices) |
+
+</v-clicks>
+
+<!--
+OpenAPI décrit QUOI fait l'API. JSON:API définit COMMENT les données sont formatées.
+gRPC est souvent utilisé pour la communication interne entre microservices (pas pour les APIs publiques).
+-->
+
+---
+
+layout: section
+---
+
+# Les autres protocoles
+
+REST n'est pas le seul modèle
+
+---
+
+layout: two-cols-header
+---
+
+# Au-delà de REST
+
+::left::
+
+**Webhooks — le serveur appelle le client**
+
+REST = pull : le client interroge le serveur.
+Webhook = push : le serveur notifie le client.
+
+```http
+# Le serveur envoie un POST vers l'URL du client
+POST https://mon-app.fr/webhooks/paiement
+Content-Type: application/json
+
+{ "event": "payment.succeeded", "amount": 4900, "id": "pay_xyz" }
+```
+
+Exemples : Stripe, GitHub, Slack, n8n.
+→ Idéal pour les événements asynchrones (paiement, CI/CD, alertes).
+
+::right::
+
+<v-click>
+
+**SSE — Server-Sent Events**
+
+```javascript
+const stream = new EventSource('/api/notifications');
+stream.onmessage = (e) => console.log(e.data);
+```
+
+- Connexion HTTP longue maintenue ouverte
+- Le serveur pousse des événements texte (unidirectionnel)
+- Natif dans les navigateurs, pas besoin de WebSocket
+- Idéal : notifications temps réel, progression longue tâche
+
+</v-click>
+
+---
+
+layout: two-cols-header
+---
+
+# Au-delà de REST
+
+::left::
+
+<v-clicks>
+
+**GraphQL — requêtes flexibles**
+
+```graphql
+query {
+  user(id: 42) {
+    nom
+    email
+    formations { titre statut }
+  }
+}
+```
+
+- Le client choisit exactement les champs qu'il veut
+- Un seul endpoint (`POST /graphql`)
+- Évite l'over-fetching et l'under-fetching
+- Complexité côté serveur (resolver, N+1 queries)
+
+</v-clicks>
+
+::right::
+
+<v-clicks>
+
+**MCP — Model Context Protocol**
+
+Protocole d'Anthropic pour connecter les agents IA aux outils :
+
+```
+Agent IA ←→ MCP Server ←→ Base de données / API / Fichiers
+```
+
+- Standardise la découverte et l'appel d'outils par l'IA
+- Le Swagger de votre API peut devenir un serveur MCP
+- Permet à Claude / GPT d'appeler votre API automatiquement
+
+</v-clicks>
+
+<!--
+WebSockets = bidirectionnel temps réel (chat, jeux). SSE = push unidirectionnel (notifications, logs).
+GraphQL n'est pas "mieux" que REST — il répond à des besoins différents (front flexible, BFF).
+MCP est en train de devenir le standard pour l'intégration IA-outils.
+-->
+
+---
+
+layout: section
+---
+
+# Design & Méthodologie
+
+Comment aborder la conception d'une API
+
+---
+
+layout: two-cols-header
+---
+
+# Contract-First vs Code-First
+
+Deux philosophies de développement
+
+::left::
+
+**Contract-First (API-First)**
+
+On définit le contrat OpenAPI **avant** d'écrire le code.
+
+```
+1. Design OpenAPI  → revue métier/tech
+2. Mock server     → front peut démarrer
+3. Implémentation  → backend
+4. SDK généré      → clients typés
+5. Tests contrat   → schemathesis, Dredd
+```
+
+Avantages :
+
+- Front et back travaillent en parallèle
+- Contrat = source de vérité commune
+- Versioning et gouvernance propres
+- Industrialisation facile
+
+*Outils : Stoplight, SwaggerHub, Bruno*
+
+::right::
+
+<v-clicks>
+
+**Code-First**
+
+On code l'API, le Swagger est généré après coup.
+
+```python
+# FastAPI génère l'OpenAPI automatiquement
+@router.get("/users", response_model=list[UserRead])
+async def list_users(db: Session = Depends(get_db)):
+    ...
+```
+
+Avantages :
+
+- Rapide au démarrage
+- Simple pour petites équipes
+- Moins de fichiers à maintenir
+
+Risques :
+
+- Dérive entre code et doc
+- Plus difficile à gouverner à grande échelle
+
+**API-as-a-Product**
+
+Vision stratégique : l'API est un produit livré à des développeurs.
+
+- Portail développeur, versioning clair, SLA
+- Analytics d'usage, support, changelog public
+- Potentiellement monétisable
+- Exemples : Stripe, Twilio, Cloudinary
+
+</v-clicks>
+
+<!--
+Contract-First est la référence pour les APIs publiques ou partagées entre équipes.
+Code-First convient pour les projets rapides où l'API est consommée uniquement en interne.
+API-as-a-Product est le niveau de maturité des grandes plateformes.
+-->
+
+---
+
+layout: section
+---
+
+# Outiller & Industrialiser
+
+Les briques d'une API en production
+
+---
+
+layout: two-cols-header
+---
+
+# Infrastructure d'une API
+
+Healthcheck · Rate limiter · Gateway · Cache · Versioning
+
+::left::
+
+**Healthcheck — surveiller l'état de l'API**
+
+```http
+GET /health  →  200 OK
+
+{
+  "status": "ok",
+  "checks": {
+    "database": "ok",
+    "redis":    "ok",
+    "storage":  "degraded"
+  },
+  "uptime_s": 86400
+}
+```
+
+Un statut `degraded` retourne `200`, une panne retourne `503 Service Unavailable`. Utilisé par les load balancers et les status pages.
+
+<v-click>
+
+**Rate Limiter — protéger l'API**
+
+```http
+HTTP/1.1 429 Too Many Requests
+Retry-After: 60
+X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 0
+X-RateLimit-Reset: 1772000060
+```
+
+Règles typiques : 100 req/min par IP, 1000 req/min par API Key. Implémenté en gateway ou middleware.
+
+</v-click>
+
+::right::
+
+<v-clicks>
+
+**API Gateway — point d'entrée unique**
+
+```
+Client → [API Gateway] → Service A
+                       → Service B
+                       → Service C
+```
+
+Responsabilités : auth, routing, rate limiting, logging, CORS, SSL termination.
+*Outils : Kong, Traefik, AWS API Gateway, Nginx*
+
+**Cache — réduire la charge**
+
+```http
+# Réponse serveur
+Cache-Control: public, max-age=300
+ETag: "abc123"
+
+# Requête conditionnelle client
+If-None-Match: "abc123"
+→ 304 Not Modified  (pas de body = économie réseau)
+```
+
+*Niveaux : HTTP cache, Redis, CDN (Cloudflare)*
+
+**Versioning**
+
+```http
+# URI versioning (le plus courant)
+GET /api/v1/users
+GET /api/v2/users   ← breaking change
+
+# Header versioning
+Accept: application/vnd.myapi+json;version=2
+```
+
+Politique : déprécier avec `Sunset` header, maintenir N-1.
+
+</v-clicks>
+
+<!--
+Le healthcheck est la première chose à implémenter avant de mettre en prod.
+Le rate limiter est essentiel pour les APIs publiques — sans lui, un client défaillant peut mettre le serveur à genoux.
+L'API gateway centralise tout ce qui est transverse et évite de le dupliquer dans chaque service.
+-->
+
+---
+
+layout: section
 ---
 
 # Best Practices
 
 Building great APIs
 
+---
+
+layout: two-cols
+---
+
 <v-clicks>
 
 ## Design
+
 - Use meaningful resource names
 - Version your API (`/api/v1/`)
 - Support filtering & pagination
 - Provide clear error messages
 
 ## Performance
+
 - Implement caching
 - Use compression (gzip)
 - Rate limiting
-- Optimize database queries
 
 </v-clicks>
 
@@ -2015,6 +2773,7 @@ Building great APIs
 <v-clicks>
 
 ## Security
+
 - Use HTTPS always
 - Validate all inputs
 - Implement authentication
@@ -2022,6 +2781,7 @@ Building great APIs
 - Never expose sensitive data
 
 ## Documentation
+
 - Clear endpoint descriptions
 - Request/response examples
 - Error code explanations
@@ -2035,6 +2795,7 @@ Make it intuitive, secure, well-documented, and fast.
 -->
 
 ---
+
 layout: center
 class: text-center
 ---
@@ -2050,13 +2811,6 @@ class: text-center
 🔧 [Postman](https://www.postman.com/) - API testing tool
 📖 [Public APIs List](https://github.com/public-apis/public-apis)
 
-## Practice
-
-Build a simple REST API with Node.js/Express
-Explore public APIs with fetch()
-Use browser DevTools Network tab
-Try GraphQL (alternative to REST)
-
 </v-clicks>
 
 <!--
@@ -2065,6 +2819,7 @@ and gradually tackle more complex authentication and data structures.
 -->
 
 ---
+
 layout: end
 ---
 
