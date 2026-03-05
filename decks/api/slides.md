@@ -2354,6 +2354,19 @@ API simulée sans backend réel — idéal pour le front en avance de phase.
 Générer DTOs, interfaces TypeScript, validateurs Zod/Yup.
 → synchronise front ↔ back, évite la dérive de schéma.
 
+</v-clicks>
+
+---
+
+layout: two-cols-header
+---
+
+# OpenAPI spec — `openapi.json` pour industrialiser le développement
+
+::left::
+
+<v-clicks>
+
 **🔍 Validation runtime**
 
 Valider requêtes entrantes et réponses sortantes en gateway ou middleware — contract enforcement automatique.
@@ -2369,6 +2382,12 @@ spectral lint openapi.json
 ```
 
 → changelog automatique, versioning, CI/CD
+
+</v-clicks>
+
+::right::
+
+<v-clicks>
 
 **🤖 Intégrations IA**
 
@@ -2394,13 +2413,11 @@ Schemathesis fait du property-based testing : il génère des milliers de requê
 layout: two-cols-header
 ---
 
-# Alternative à OpenAPI : JSON:API
+# Alternative à OpenAPI : JSON:API — une convention stricte
 
 ::left::
 
 <v-clicks>
-
-**JSON:API** — une convention stricte
 
 ```json
 {
