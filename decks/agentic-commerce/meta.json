@@ -1,0 +1,34 @@
+{
+  "id": "agentic-commerce",
+  "title": "Commerce Agentique — L'IA au service de la vente",
+  "description": "Comprendre comment les agents IA autonomes transforment le commerce : cas d'usage, architecture et enjeux pour les équipes sales et business.",
+  "status": "published",
+  "objectives": [
+    "Distinguer IA classique et IA agentique",
+    "Identifier les 4 super-pouvoirs d'un agent commercial",
+    "Comprendre l'architecture d'un agent (LLM, mémoire, outils, objectif)",
+    "Reconnaître les opportunités et points de vigilance métier",
+    "Savoir quand garder l'humain dans la boucle"
+  ],
+  "prerequisites": [
+    "Notions de base sur l'IA et les LLMs (ChatGPT, Claude…)",
+    "Contexte commercial / sales (aucune compétence technique requise)"
+  ],
+  "duration": "30 minutes",
+  "theme": "simplon",
+  "thumbnail": "./assets/cover.png",
+  "tags": [
+    "ia", "agentic", "llm", "commerce", "sales", "automation",
+    "crm", "prospection", "langchain", "business"
+  ],
+  "language": "fr",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Maxime Lenne",
+      "email": "hello@maxime-lenne.fr"
+    }
+  ],
+  "created": "2026-03-12",
+  "updated": "2026-03-12"
+}

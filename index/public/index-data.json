@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-11T17:22:01.102Z",
+  "generated": "2026-03-12T01:00:55.570Z",
   "version": "1.0.0",
   "decks": [
     {
@@ -41,8 +41,8 @@
           "email": "hello@maxime-lenne.fr"
         }
       ],
-      "created": "2026-03-11",
-      "updated": "2026-03-11"
+      "created": "2026-03-12",
+      "updated": "2026-03-12"
     },
     {
       "id": "api",
