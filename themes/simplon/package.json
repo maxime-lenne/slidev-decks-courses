@@ -18,7 +18,7 @@
     "defaults": {
       "transition": "slide-left",
       "aspectRatio": "16/9",
-      "colorSchema": "dark",
+      "colorSchema": "auto",
       "fonts": {
         "sans": "DM Sans",
         "mono": "Fira Code",
@@ -30,6 +30,6 @@
         "persist": false
       }
     },
-    "colorSchema": "dark"
+    "colorSchema": "auto"
   }
 }

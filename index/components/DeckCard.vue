@@ -1,6 +1,6 @@
 <template>
   <article class="deck-card">
-    <a :href="deckUrl" class="deck-card-link">
+    <a :href="deckUrl" class="deck-card-link" @click.prevent="navigateToDeck">
       <div class="deck-card-image">
         <img :src="thumbnailUrl" :alt="`${deck.title} preview`" />
       </div>
@@ -14,8 +14,11 @@
         </div>
 
         <div class="deck-card-tags">
-          <span v-for="tag in deck.tags" :key="tag" class="deck-card-tag">
+          <span v-for="tag in deck.tags.slice(0, 5)" :key="tag" class="deck-card-tag">
             {{ tag }}
+          </span>
+          <span v-if="deck.tags.length > 5" class="deck-card-tag deck-card-tag--more">
+            +{{ deck.tags.length - 5 }}
           </span>
         </div>
       </div>
@@ -24,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import type { DeckMetadata } from '../utils/deckLoader'
 import { getDeckUrl, getThumbnailUrl } from '../utils/deckLoader'
 
@@ -34,8 +37,26 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const deckUrl = computed(() => getDeckUrl(props.deck.id))
+const deckUrl = ref<string>('#')
 const thumbnailUrl = computed(() => getThumbnailUrl(props.deck.id, props.deck.thumbnail))
+
+// Load deck URL asynchronously
+onMounted(async () => {
+  deckUrl.value = await getDeckUrl(props.deck.id)
+})
+
+// Force full page navigation to avoid Vite trying to resolve Slidev modules
+function navigateToDeck(event: MouseEvent) {
+  if (deckUrl.value === '#') return
+
+  // Allow Ctrl/Cmd+Click to open in new tab
+  if (event.ctrlKey || event.metaKey) {
+    window.open(deckUrl.value, '_blank')
+  } else {
+    // Force full page reload
+    window.location.href = deckUrl.value
+  }
+}
 </script>
 
 <style scoped>
@@ -118,6 +139,11 @@ const thumbnailUrl = computed(() => getThumbnailUrl(props.deck.id, props.deck.th
   border-radius: 999px;
   font-size: 0.75rem;
   font-weight: 500;
+}
+
+.deck-card-tag--more {
+  background: #f1f5f9;
+  color: #64748b;
 }
 
 @media (max-width: 768px) {

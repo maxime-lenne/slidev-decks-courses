@@ -1,6 +1,7 @@
 ---
-theme: default
+theme: ../../themes/simplon
 layout: cover
+background: https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920
 title: Panorama des systèmes de stockage
 subtitle: Bases, usages & choix dans le développement IA
 transition: fade
@@ -43,17 +44,20 @@ transition: slide-left
 # 🟦 1. Bases relationnelles (SQL)
 
 ### Exemples  
+
 - PostgreSQL  
 - MySQL / MariaDB  
 - SQLite  
 
 ### Caractéristiques
+
 - Schéma structuré  
 - Relations (PK/FK)  
 - Requêtes puissantes (JOIN, GROUP BY)  
 - Très bon pour : données structurées, cohérence forte
 
 ### Cas d’usage typiques
+
 - CRM / ERP  
 - Données métier  
 - Analytics classiques  
@@ -75,17 +79,20 @@ transition: slide-left
 # 🟧 2. Bases documentaires (NoSQL)
 
 ### Exemples  
+
 - MongoDB  
 - CouchDB  
 - Firestore  
 
 ### Caractéristiques
+
 - Stockage en **documents JSON**  
 - Structure flexible  
 - Pas de JOIN (ou limités)  
 - Très bon pour données hétérogènes
 
 ### Usages
+
 - APIs flexibles  
 - Données semi-structurées  
 - Applications mobiles / web rapides  
@@ -97,16 +104,19 @@ transition: slide-left
 # 🟩 3. Clé-valeur (KV Stores)
 
 ### Exemples  
+
 - Redis  
 - Memcached  
 - DynamoDB (mode KV)  
 
 ### Caractéristiques
+
 - Ultra rapide  
 - Lecture/écriture en O(1)  
 - Idéal pour caches, sessions
 
 ### Usages
+
 - Cache d’inférence IA  
 - Stockage temporaire de tokens / sessions  
 - Feature flags  
@@ -118,16 +128,19 @@ transition: slide-left
 # 🟨 4. Bases orientées colonnes
 
 ### Exemples  
+
 - BigQuery  
 - ClickHouse  
 - Apache Parquet / ORC  
 
 ### Caractéristiques
+
 - Optimisées pour les **analyses massives**  
 - Lecture par colonne (pas par ligne)  
 - Très performantes en analytics
 
 ### Usages
+
 - Data warehouses  
 - Entrepôts de données IA  
 - Préparation de datasets massifs  
@@ -139,15 +152,18 @@ transition: slide-left
 # 🟪 5. Bases orientées graphes
 
 ### Exemples  
+
 - Neo4j  
 - TigerGraph  
 - ArangoDB  
 
 ### Caractéristiques
+
 - Données modélisées en **nœuds + arêtes**  
 - Parfait pour relations complexes
 
 ### Usages
+
 - Détection de fraude  
 - Recommandation  
 - Analyse de réseaux sociaux  
@@ -158,17 +174,20 @@ transition: slide-left
 # 🟫 6. Stockage fichiers / objets
 
 ### Exemples
+
 - AWS S3, MinIO  
 - Google Cloud Storage  
 - Azure Blob Storage  
 - Systèmes locaux : disque, NAS, NFS  
 
 ### Caractéristiques
+
 - Stocke des fichiers : JSON, CSV, images, vidéos, Parquet…  
 - Scalabilité très forte  
 - Idéal pour IA car supporte formats volumineux
 
 ### Usages
+
 - Stockage datasets IA  
 - Stockage de modèles (weights)  
 - Pipelines ETL  
@@ -180,6 +199,7 @@ transition: slide-left
 # 🔵 7. Vector Stores — très important en IA
 
 ### Exemples  
+
 - **Supabase Vector**  
 - Pinecone  
 - Weaviate  
@@ -187,6 +207,7 @@ transition: slide-left
 - Chroma  
 
 ### Caractéristiques
+
 - Stocke des **embeddings** sous forme de vecteurs  
 - Permet la **recherche par similarité (cosine, euclidean)**  
 - Base indispensable pour :  
@@ -233,9 +254,7 @@ transition: fade
 | Objets | Scalabilité | Pas de requêtes | Datasets IA |
 | Vector Store | Similarité, RAG | Requêtes limitées | IA, embeddings |
 
-
 ---
-
 
 | Usage / Type de base                     | SQL (Postgre/SQLite)        | NoSQL Document (Mongo)       | Clé-valeur (Redis)                | Colonnes (BigQuery/ClickHouse)            | Graphes (Neo4j)                         | Stockage Objet (S3/GCS)                  | Vector Store (Pinecone/Supabase Vector) |
 |------------------------------------------|------------------------------|-------------------------------|-----------------------------------|---------------------------------------------|-------------------------------------------|--------------------------------------------|--------------------------------------------|
@@ -255,6 +274,7 @@ transition: center
 ---
 
 # 🎤 Questions pour débat
+
 - Un LLM peut-il remplacer un moteur de recherche ?  
 - Supabase Vector vs Pinecone : qu’est-ce qu’on privilégie pour un projet IA réel ?  
 - Pourquoi une base SQL reste essentielle même en IA ?  
@@ -266,4 +286,3 @@ layout: center
 
 # 🎉 Fin — Panorama des systèmes de stockage  
 Prêt pour la mise en pratique !
-

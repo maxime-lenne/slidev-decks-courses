@@ -10,6 +10,7 @@
 This document provides actionable, dependency-ordered tasks for implementing the multi-deck Slidev presentation system. Tasks are organized by user story to enable independent implementation and testing. Each user story represents a complete, testable increment.
 
 **Tech Stack**:
+
 - Slidev (latest stable) + Vue 3 + Vite
 - TypeScript for type safety
 - JSON Schema for validation
@@ -24,6 +25,7 @@ This document provides actionable, dependency-ordered tasks for implementing the
 
 ### Incremental Delivery
 After MVP, implement in priority order:
+
 1. **US1 (P1)**: Index page - Core navigation (MVP)
 2. **US2 (P2)**: Deck creation tooling - Content workflow
 3. **US3 (P3)**: Simplon theme - Brand identity
@@ -83,6 +85,7 @@ Tasks marked `[P]` can be executed in parallel with other `[P]` tasks in the sam
 **Completion Criteria**: All scripts defined, validation works, build pipeline structure exists
 
 **Parallel Execution Example**:
+
 ```bash
 # These foundational tasks can run in parallel:
 npm install vitest @vue/test-utils ajv &  # T006
@@ -101,6 +104,7 @@ wait
 **Why P1**: This is the entry point - without it, users cannot discover or access content.
 
 **Independent Test Criteria**:
+
 - Opening root URL displays index page with deck listing
 - Clicking a deck card navigates to that presentation
 - Each deck shows title, description, and thumbnail
@@ -135,8 +139,9 @@ wait
 **Story Test Validation**:
 
 Test US1 acceptance criteria:
+
 1. Run `npm run generate-index && npm run dev:index`
-2. Open http://localhost:5173 - verify both example decks appear
+2. Open <http://localhost:5173> - verify both example decks appear
 3. Click deck card - verify navigation to /decks/{deck-id}/
 4. Resize to 320px width - verify responsive layout
 5. Check color contrast with browser devtools
@@ -144,6 +149,7 @@ Test US1 acceptance criteria:
 **Completion Criteria**: Index page displays both example decks, navigation works, mobile responsive, passes accessibility checks
 
 **Parallel Execution Example**:
+
 ```bash
 # Example deck creation can happen in parallel:
 # Terminal 1
@@ -170,6 +176,7 @@ wait  # Wait for all to complete before T020
 **Why P2**: Once navigation exists, easy content creation is critical for project growth.
 
 **Independent Test Criteria**:
+
 - Running create-deck script generates valid deck structure
 - New deck includes template slides.md and meta.json
 - After setting status: "published", deck appears in index automatically
@@ -192,6 +199,7 @@ wait  # Wait for all to complete before T020
 **Story Test Validation**:
 
 Test US2 acceptance criteria:
+
 1. Run `npm run create-deck my-new-deck`
 2. Verify decks/my-new-deck/ created with slides.md, meta.json, assets/
 3. Edit meta.json, set status: "published"
@@ -202,6 +210,7 @@ Test US2 acceptance criteria:
 **Completion Criteria**: create-deck script works reliably, generates valid structure, new decks auto-appear in index, documentation complete
 
 **Parallel Execution Example**:
+
 ```bash
 # Template creation can happen in parallel:
 create scripts/templates/slides.md.template &    # T030
@@ -219,6 +228,7 @@ wait
 **Why P3**: Visual customization enhances learning experience and enables brand consistency.
 
 **Independent Test Criteria**:
+
 - Simplon theme package exists and follows Slidev conventions
 - Deck with theme: simplon displays with correct brand colors (#123744, #f26f5c, #ce0033)
 - DM Sans font loads correctly
@@ -241,6 +251,7 @@ wait
 **Story Test Validation**:
 
 Test US3 acceptance criteria:
+
 1. Open example-sql-basics deck with Simplon theme
 2. Verify brand colors visible on cover and slides
 3. Verify DM Sans font loads (check browser devtools)
@@ -250,6 +261,7 @@ Test US3 acceptance criteria:
 **Completion Criteria**: Simplon theme renders correctly with brand identity, supports light/dark modes, multiple themes coexist
 
 **Parallel Execution Example**:
+
 ```bash
 # Theme asset creation can happen in parallel:
 create themes/simplon/package.json &                  # T038
@@ -270,6 +282,7 @@ wait
 **Why P4**: Common foundation reduces duplication and speeds up theme/deck creation.
 
 **Independent Test Criteria**:
+
 - Common components (CodeBlock, LearningObjective, ExerciseCard) exist and render
 - Components work with both default and Simplon themes
 - Shared layouts (cover, section, two-cols) available across themes
@@ -291,6 +304,7 @@ wait
 **Story Test Validation**:
 
 Test US4 acceptance criteria:
+
 1. Add `<LearningObjective>` to example-sql-basics slide - verify renders
 2. Add `<CodeBlock>` with SQL code - verify syntax highlighting
 3. Change deck theme to default - verify components still work
@@ -299,6 +313,7 @@ Test US4 acceptance criteria:
 **Completion Criteria**: Common components work across themes, documentation complete, example usage exists
 
 **Parallel Execution Example**:
+
 ```bash
 # All common components can be created in parallel:
 create themes/common/components/CodeBlock.vue &          # T047
@@ -344,6 +359,7 @@ Phase 2 (Foundational)
 ```
 
 ### Critical Path
+
 1. Setup (Phase 1) - **5 tasks**
 2. Foundational (Phase 2) - **8 tasks**
 3. US1: Index Page (Phase 3) - **15 tasks** ← **MVP milestone**
@@ -358,6 +374,7 @@ Phase 2 (Foundational)
 
 **Phase 2 (Foundational)**: 8 parallel tasks (T006-T013)
 **Phase 3 (US1)**: 6 parallel groups possible
+
 - T014-T019: Example deck creation (6 parallel)
 - T024-T026: Index components (3 parallel)
 **Phase 4 (US2)**: 2 parallel tasks (T030-T031)
@@ -370,11 +387,13 @@ Phase 2 (Foundational)
 ## Testing Strategy
 
 **Note**: Tests are **not generated** in this plan as they were not explicitly requested in the feature specification. If TDD approach is desired:
+
 1. Add test tasks before implementation tasks in each phase
 2. Follow pattern: `[US#] Write test for [component]` → `[US#] Implement [component]`
 3. Use Vitest for component tests in tests/components/
 
 **Manual Testing Required**:
+
 - Visual inspection of themes and layouts
 - Browser testing across Chrome, Firefox, Safari, Edge
 - Mobile responsive testing (320px, 768px breakpoints)

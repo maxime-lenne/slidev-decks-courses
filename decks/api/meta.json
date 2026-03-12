@@ -1,0 +1,32 @@
+{
+  "id": "api",
+  "title": "Understanding APIs, REST & HTTP Requests",
+  "description": "Introduction complète aux APIs web, à l'architecture RESTful et aux fondamentaux des requêtes HTTP. Découvrez comment les applications modernes communiquent sur le web.",
+  "status": "published",
+  "objectives": [
+    "Comprendre les concepts fondamentaux des APIs",
+    "Maîtriser le protocole HTTP et ses méthodes",
+    "Concevoir des APIs RESTful selon les bonnes pratiques",
+    "Effectuer des requêtes HTTP avec l'API Fetch en JavaScript",
+    "Implémenter l'authentification et l'autorisation",
+    "Gérer les erreurs et les codes de statut HTTP"
+  ],
+  "prerequisites": [
+    "Connaissances de base en JavaScript",
+    "Compréhension des concepts web (client/serveur)"
+  ],
+  "duration": "3 hours",
+  "theme": "simplon",
+  "thumbnail": "./assets/cover.png",
+  "tags": ["api", "rest", "http", "swagger", "javascript", "fetch", "authentication", "backend", "web"],
+  "language": "fr",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Maxime Lenne",
+      "email": "hello@maxime-lenne.fr"
+    }
+  ],
+  "created": "2025-12-20",
+  "updated": "2026-01-11"
+}

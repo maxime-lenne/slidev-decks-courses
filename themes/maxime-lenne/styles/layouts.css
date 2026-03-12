@@ -1,0 +1,329 @@
+/**
+ * Maxime Lenne Theme - Layout Styles
+ * Custom layouts with gradient accents
+ */
+
+.slidev-layout {
+  padding: 2rem;
+}
+
+.slidev-layout h1 + p {
+  @apply -mt-2 opacity-75 mb-4;
+}
+
+.slidev-layout p + h2,
+.slidev-layout ul + h2,
+.slidev-layout table + h2 {
+  @apply mt-10;
+}
+
+.slidev-layout h1 {
+  @apply text-5xl mb-6 -ml-[0.05em];
+  line-height: 1.2;
+}
+
+.slidev-layout h2 {
+  @apply text-3xl mb-4;
+}
+
+.slidev-layout h3 {
+  @apply text-2xl mb-3;
+}
+
+.slidev-layout h4 {
+  @apply text-xl mb-2;
+}
+
+.slidev-layout h5 {
+  @apply text-lg mb-2;
+}
+
+.slidev-layout h6 {
+  @apply text-base pt-1 uppercase tracking-widest font-500 -ml-[0.05em];
+}
+
+.slidev-layout h6:not(.opacity-100) {
+  @apply opacity-60;
+}
+
+/* Cover Layout - Full screen with gradient background */
+.slidev-layout.cover {
+  @apply h-full grid place-items-center;
+  background: var(--ml-gradient-primary);
+  padding: 3rem;
+  position: relative;
+}
+
+.slidev-layout.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 70% 50%, rgba(16, 185, 129, 0.3) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.slidev-layout.cover h1 {
+  @apply text-7xl leading-tight;
+  color: white;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  -webkit-text-fill-color: white;
+  background: none;
+}
+
+.slidev-layout.cover h1 + p {
+  @apply text-xl opacity-90;
+  color: white;
+}
+
+.slidev-layout.cover * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Intro Layout - Similar to cover but less bold */
+.slidev-layout.intro {
+  @apply h-full grid place-items-center;
+  background: linear-gradient(135deg, var(--ml-background) 0%, var(--ml-background-alt) 100%);
+}
+
+.slidev-layout.intro h1 {
+  @apply text-6xl leading-tight;
+}
+
+.slidev-layout.intro h1 + p {
+  @apply opacity-75 text-lg;
+}
+
+/* Section Layout - Section divider */
+.slidev-layout.section {
+  @apply h-full grid place-items-center text-center;
+  background: var(--ml-gradient-primary);
+  position: relative;
+}
+
+.slidev-layout.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.slidev-layout.section h1 {
+  @apply text-7xl font-700 leading-tight;
+  color: white;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  -webkit-text-fill-color: white;
+  background: none;
+}
+
+.slidev-layout.section h1 + p {
+  @apply text-xl opacity-90;
+  color: white;
+}
+
+.slidev-layout.section * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Default Layout - Standard content layout */
+.slidev-layout.default {
+  @apply px-12 py-10;
+}
+
+/* Two Columns Layout */
+.slidev-layout.two-cols {
+  @apply grid grid-cols-2 gap-8 px-12 py-10;
+}
+
+.slidev-layout.two-cols .col-left,
+.slidev-layout.two-cols .col-right {
+  @apply flex flex-col;
+}
+
+/* Center Layout */
+.slidev-layout.center {
+  @apply h-full flex items-center justify-center text-center;
+}
+
+/* Quote Layout */
+.slidev-layout.quote {
+  @apply h-full grid place-items-center px-16;
+}
+
+.slidev-layout.quote blockquote {
+  @apply text-3xl font-300 italic;
+  border-left-width: 8px;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.slidev-layout.quote blockquote::before {
+  content: '"';
+  @apply text-8xl absolute -left-4 -top-8 opacity-20;
+  background: var(--ml-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Fact/Statement Layout - Big impact numbers or statements */
+.slidev-layout.fact,
+.slidev-layout.statement {
+  @apply h-full grid place-items-center text-center;
+}
+
+.slidev-layout.fact h1,
+.slidev-layout.statement h1 {
+  @apply text-9xl font-900 leading-none;
+}
+
+.slidev-layout.fact h1 + p,
+.slidev-layout.statement h1 + p {
+  @apply text-3xl font-500 mt-8;
+}
+
+/* Image-Right / Image-Left Layouts */
+.slidev-layout.image-right,
+.slidev-layout.image-left {
+  @apply grid grid-cols-2 gap-8 px-12 py-10;
+}
+
+.slidev-layout.image-right .content {
+  @apply pr-8;
+}
+
+.slidev-layout.image-left .content {
+  @apply pl-8;
+}
+
+.slidev-layout.image-right .image-container,
+.slidev-layout.image-left .image-container {
+  @apply overflow-hidden;
+  max-height: 100%;
+}
+
+.slidev-layout.image-right .image-container img,
+.slidev-layout.image-left .image-container img {
+  @apply w-full h-full object-cover rounded-lg;
+  max-height: calc(100vh - 8rem);
+}
+
+/* Full Layout - No padding, edge to edge with gradient */
+.slidev-layout.full {
+  @apply p-0 h-full flex items-center justify-center text-center;
+  background: var(--ml-gradient-primary);
+  color: white;
+  position: relative;
+}
+
+.slidev-layout.full::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 70% 50%, rgba(16, 185, 129, 0.3) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.slidev-layout.full * {
+  position: relative;
+  z-index: 1;
+}
+
+.slidev-layout.full h1,
+.slidev-layout.full h2,
+.slidev-layout.full h3,
+.slidev-layout.full h4,
+.slidev-layout.full h5,
+.slidev-layout.full h6 {
+  color: white;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  -webkit-text-fill-color: white;
+  background: none;
+}
+
+.slidev-layout.full p,
+.slidev-layout.full li {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Navigation Dots - Custom styling */
+.slidev-nav-go-last,
+.slidev-nav-go-next,
+.slidev-nav-go-prev,
+.slidev-nav-go-start {
+  border-radius: var(--ml-radius-md);
+  transition: all var(--ml-transition-fast);
+}
+
+.slidev-nav-go-last:hover,
+.slidev-nav-go-next:hover,
+.slidev-nav-go-prev:hover,
+.slidev-nav-go-start:hover {
+  background: var(--ml-gradient-primary);
+  color: white;
+}
+
+/* Page number indicator */
+.slidev-page-number {
+  background: var(--ml-gradient-primary);
+  color: white;
+  border-radius: var(--ml-radius-full);
+  padding: 0.25rem 0.75rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+/* Custom gradient border utility */
+.gradient-border {
+  position: relative;
+  border-radius: var(--ml-radius-lg);
+  padding: 2px;
+  background: var(--ml-gradient-primary);
+}
+
+.gradient-border-content {
+  background: var(--ml-background);
+  border-radius: calc(var(--ml-radius-lg) - 2px);
+  padding: 1.5rem;
+}
+
+/* Highlight box with gradient accent */
+.highlight-box {
+  background: var(--ml-surface-hover);
+  border-left: 4px solid;
+  border-image: var(--ml-gradient-primary) 1;
+  padding: 1rem 1.5rem;
+  border-radius: var(--ml-radius-md);
+  margin: 1rem 0;
+}
+
+/* Custom badge/tag */
+.badge {
+  display: inline-block;
+  background: var(--ml-gradient-primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--ml-radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0.25rem;
+}
+
+/* Grid utilities */
+.grid-2 {
+  @apply grid grid-cols-2 gap-6;
+}
+
+.grid-3 {
+  @apply grid grid-cols-3 gap-6;
+}
+
+.grid-4 {
+  @apply grid grid-cols-4 gap-6;
+}

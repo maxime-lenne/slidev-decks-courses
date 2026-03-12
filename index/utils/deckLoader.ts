@@ -33,7 +33,7 @@ export interface IndexData {
 
 export async function loadIndexData(): Promise<IndexData> {
   try {
-    const response = await fetch('/index-data.json')
+    const response = await fetch(import.meta.env.BASE_URL + 'index-data.json')
 
     if (!response.ok) {
       throw new Error(`Failed to load index data: ${response.statusText}`)
@@ -47,33 +47,40 @@ export async function loadIndexData(): Promise<IndexData> {
   }
 }
 
-// Port mapping for local development
-// Each deck runs on its own Slidev dev server
-const DEV_DECK_PORTS: Record<string, number> = {
-  'example-sql-basics': 3030,
-  'sql-basics': 3031,
-  'sql-basics-practice': 3032,
-  'sql-advanced-queries': 3033,
-  'sql-advanced-queries-practice': 3034,
-}
+// Deck port mapping for dev:all mode
+// This will be populated dynamically from vite.proxy.config.js
+let deckPortsCache: Record<string, number> | null = null
 
-export function getDeckUrl(deckId: string): string {
-  // In development, link to the deck's Slidev dev server
-  if (import.meta.env.DEV && DEV_DECK_PORTS[deckId]) {
-    return `http://localhost:${DEV_DECK_PORTS[deckId]}/`
+async function getDeckPorts(): Promise<Record<string, number>> {
+  if (deckPortsCache) return deckPortsCache
+
+  try {
+    const response = await fetch(import.meta.env.BASE_URL + 'deck-ports.json')
+    if (response.ok) {
+      deckPortsCache = await response.json()
+      return deckPortsCache!
+    }
+  } catch {
+    // Fallback to empty object in production
   }
 
-  // In production, use relative path
-  return `/decks/${deckId}/`
+  return {}
+}
+
+export async function getDeckUrl(deckId: string): Promise<string> {
+  // In dev:all mode, link directly to the deck's Slidev dev server
+  if (import.meta.env.DEV) {
+    const deckPorts = await getDeckPorts()
+    if (deckPorts[deckId]) {
+      return `http://localhost:${deckPorts[deckId]}/`
+    }
+  }
+
+  // In production, use base-relative path
+  return `${import.meta.env.BASE_URL}decks/${deckId}/`
 }
 
 export function getThumbnailUrl(deckId: string, thumbnailPath: string): string {
-  // In development, fetch thumbnail from the deck's Slidev dev server
-  if (import.meta.env.DEV && DEV_DECK_PORTS[deckId]) {
-    const cleanPath = thumbnailPath.replace('./', '')
-    return `http://localhost:${DEV_DECK_PORTS[deckId]}/${cleanPath}`
-  }
-
-  // In production, use relative path
-  return `/decks/${deckId}/${thumbnailPath.replace('./', '')}`
+  const cleanPath = thumbnailPath.replace('./', '')
+  return `${import.meta.env.BASE_URL}decks/${deckId}/${cleanPath}`
 }

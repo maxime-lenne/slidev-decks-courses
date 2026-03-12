@@ -7,19 +7,19 @@ echo ""
 
 # Step 1: Generate index data
 echo "📋 Step 1: Generating index data..."
-npm run generate-index
+bun run generate-index
 echo "✅ Index data generated"
 echo ""
 
 # Step 2: Build all decks
 echo "📊 Step 2: Building all slide decks..."
-npm run build:decks
+bun run build:decks
 echo "✅ Decks built"
 echo ""
 
 # Step 3: Build index page
 echo "🏠 Step 3: Building index page..."
-npm run build:index
+bun run build:index
 echo "✅ Index page built"
 echo ""
 

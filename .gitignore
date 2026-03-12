@@ -1,8 +1,5 @@
 # Dependencies
 node_modules/
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
 
 # Build outputs
 dist/
@@ -56,3 +53,8 @@ coverage/
 # Cache
 .cache/
 .parcel-cache/
+
+# Generated configuration files
+vite.proxy.config.js
+vite.proxy.config.json
+index/public/deck-ports.json

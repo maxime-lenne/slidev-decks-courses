@@ -1,0 +1,38 @@
+{
+  "id": "langchain",
+  "title": "Introduction à LangChain & langGraph",
+  "description": "Introduction à LangChain & langGraph — chaîner des opérations LLM pour créer des applications puissantes et modulaires.",
+  "status": "published",
+  "objectives": [
+    "Comprendre l'architecture de LangChain",
+    "Chaîner des opérations LLM (chains)",
+    "Utiliser des prompts templates",
+    "Intégrer des outils et agents"
+  ],
+  "prerequisites": [
+    "Notions de base en Python",
+    "Connaissance des LLMs (ChatGPT, etc.)"
+  ],
+  "duration": "30 minutes",
+  "theme": "maxime-lenne",
+  "thumbnail": "./assets/cover.png",
+  "tags": [
+    "langchain",
+    "llm",
+    "ai",
+    "python",
+    "langGraph",
+    "nlp",
+    "machine learning"
+  ],
+  "language": "fr",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Maxime Lenne",
+      "email": "hello@maxime-lenne.fr"
+    }
+  ],
+  "created": "2025-11-24",
+  "updated": "2026-03-11"
+}

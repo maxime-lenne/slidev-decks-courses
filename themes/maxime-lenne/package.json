@@ -1,0 +1,35 @@
+{
+  "name": "slidev-theme-maxime-lenne",
+  "version": "1.0.0",
+  "description": "Maxime Lenne personal brand theme for Slidev - Blue to Green gradient design",
+  "keywords": [
+    "slidev-theme",
+    "slidev",
+    "maxime-lenne",
+    "gradient"
+  ],
+  "author": "Maxime Lenne",
+  "license": "MIT",
+  "engines": {
+    "slidev": ">=0.48.0",
+    "node": ">=18.0.0"
+  },
+  "slidev": {
+    "defaults": {
+      "transition": "slide-left",
+      "aspectRatio": "16/9",
+      "colorSchema": "auto",
+      "fonts": {
+        "sans": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+        "mono": "SF Mono, Monaco, Cascadia Code, Roboto Mono, Consolas, Courier New, monospace",
+        "local": ""
+      },
+      "highlighter": "shiki",
+      "lineNumbers": true,
+      "drawings": {
+        "persist": false
+      }
+    },
+    "colorSchema": "auto"
+  }
+}

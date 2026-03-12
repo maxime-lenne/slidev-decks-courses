@@ -1,0 +1,291 @@
+/**
+ * Maxime Lenne Brand Theme - Color System
+ * Based on maxime-lenne.fr design system
+ * Blue to Green gradient signature style
+ */
+
+:root {
+  /* Primary Color Palette - Blue to Green Gradient */
+  --ml-color-primary: #2563eb;
+  --ml-color-primary-light: #1d4ed8;
+  --ml-color-primary-dark: #3b82f6;
+  --ml-color-secondary: #10b981;
+  --ml-color-secondary-light: #34d399;
+  --ml-color-secondary-dark: #059669;
+
+  /* Accent Colors */
+  --ml-color-accent: #64748b;
+  --ml-color-accent-light: #94a3b8;
+  --ml-color-accent-dark: #475569;
+
+  /* Status Colors */
+  --ml-color-success: #10b981;
+  --ml-color-warning: #f59e0b;
+  --ml-color-error: #ef4444;
+
+  /* Signature Gradients */
+  --ml-gradient-primary: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
+  --ml-gradient-primary-hover: linear-gradient(135deg, #1d4ed8 0%, #059669 100%);
+  --ml-gradient-text: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
+  --ml-gradient-border: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
+
+  /* Neutral Colors - Light Mode */
+  --ml-neutral-50: #f8fafc;
+  --ml-neutral-100: #f1f5f9;
+  --ml-neutral-200: #e2e8f0;
+  --ml-neutral-300: #cbd5e1;
+  --ml-neutral-400: #94a3b8;
+  --ml-neutral-500: #64748b;
+  --ml-neutral-600: #475569;
+  --ml-neutral-700: #334155;
+  --ml-neutral-800: #1e293b;
+  --ml-neutral-900: #0f172a;
+
+  /* Theme Colors - Light Mode */
+  --ml-background: #ffffff;
+  --ml-background-alt: #f8fafc;
+  --ml-surface: #ffffff;
+  --ml-surface-hover: #f8fafc;
+  --ml-text-primary: #0f172a;
+  --ml-text-secondary: #64748b;
+  --ml-text-tertiary: #94a3b8;
+  --ml-border: #e2e8f0;
+  --ml-border-hover: #cbd5e1;
+
+  /* Code/Terminal Colors */
+  --ml-code-bg: #0f172a;
+  --ml-code-text: #22c55e;
+  --ml-code-accent: #3b82f6;
+
+  /* Shadows */
+  --ml-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --ml-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --ml-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --ml-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* Border Radius */
+  --ml-radius-sm: 0.125rem;
+  --ml-radius-md: 0.375rem;
+  --ml-radius-lg: 0.5rem;
+  --ml-radius-xl: 0.75rem;
+  --ml-radius-2xl: 1rem;
+  --ml-radius-full: 9999px;
+
+  /* Transitions */
+  --ml-transition-fast: 150ms ease-in-out;
+  --ml-transition-normal: 250ms ease-in-out;
+  --ml-transition-slow: 350ms ease-in-out;
+}
+
+/* Dark Theme */
+html.dark {
+  /* Adjusted gradients for dark theme */
+  --ml-gradient-primary: linear-gradient(135deg, #3b82f6 0%, #22c55e 100%);
+  --ml-gradient-primary-hover: linear-gradient(135deg, #2563eb 0%, #16a34a 100%);
+  --ml-gradient-text: linear-gradient(135deg, #60a5fa 0%, #4ade80 100%);
+  --ml-gradient-border: linear-gradient(135deg, #3b82f6 0%, #22c55e 100%);
+
+  /* Theme Colors - Dark Mode */
+  --ml-background: #0f172a;
+  --ml-background-alt: #1e293b;
+  --ml-surface: #1e293b;
+  --ml-surface-hover: #334155;
+  --ml-text-primary: #f8fafc;
+  --ml-text-secondary: #cbd5e1;
+  --ml-text-tertiary: #94a3b8;
+  --ml-border: #334155;
+  --ml-border-hover: #475569;
+
+  /* Code/Terminal Colors (brighter in dark mode) */
+  --ml-code-bg: #000000;
+  --ml-code-text: #00ff41;
+  --ml-code-accent: #00d4ff;
+
+  /* Inverted neutrals for dark mode */
+  --ml-neutral-50: #0f172a;
+  --ml-neutral-100: #1e293b;
+  --ml-neutral-200: #334155;
+  --ml-neutral-300: #475569;
+  --ml-neutral-400: #64748b;
+  --ml-neutral-500: #94a3b8;
+  --ml-neutral-600: #cbd5e1;
+  --ml-neutral-700: #e2e8f0;
+  --ml-neutral-800: #f1f5f9;
+  --ml-neutral-900: #f8fafc;
+}
+
+/* Global Slidev Integration */
+:root {
+  --slidev-theme-primary: var(--ml-color-primary);
+  --slidev-theme-secondary: var(--ml-color-secondary);
+}
+
+/* Base styles */
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--ml-background);
+  color: var(--ml-text-primary);
+}
+
+#slide-container {
+  background-color: var(--ml-background);
+}
+
+.slidev-page {
+  background-color: var(--ml-surface);
+  color: var(--ml-text-primary);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  background: var(--ml-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.slidev-layout.cover {
+  h1, h2, h3, h4, h5, h6 {
+    background: var(--ml-gradient-text);
+    color: var(--ml-neutral-100);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
+}
+
+
+/* Links */
+a {
+  color: var(--ml-color-primary);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--ml-transition-fast);
+}
+
+a:hover {
+  border-bottom-color: var(--ml-color-primary);
+}
+
+/* Code blocks */
+code {
+  background-color: var(--ml-surface-hover);
+  color: var(--ml-code-accent);
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--ml-radius-sm);
+  font-size: 0.875em;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+}
+
+pre {
+  background-color: var(--ml-code-bg) !important;
+  border: 1px solid var(--ml-border);
+  border-radius: var(--ml-radius-lg);
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+pre code {
+  background-color: transparent;
+  color: var(--ml-code-text);
+  padding: 0;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+th {
+  background: var(--ml-background);
+  color: white;
+  font-weight: 700;
+  padding: 0.75rem;
+  border: 1px solid var(--ml-border);
+  text-align: left;
+}
+
+td {
+  padding: 0.75rem;
+  border: 1px solid var(--ml-border);
+  background-color: var(--ml-surface);
+}
+
+tr:hover td {
+  background-color: var(--ml-surface-hover);
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid;
+  border-image: var(--ml-gradient-primary) 1;
+  padding-left: 1rem;
+  margin-left: 0;
+  font-style: italic;
+  color: var(--ml-text-secondary);
+  background-color: var(--ml-surface-hover);
+  padding: 1rem;
+  border-radius: var(--ml-radius-md);
+}
+
+.slidev-layout ul {
+  list-style: disc;
+}
+
+/* Lists */
+ul li::marker,
+ol li::marker {
+  color: var(--ml-color-primary);
+  font-weight: 700;
+}
+
+/* Strong and emphasis */
+strong {
+  background: var(--ml-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+em {
+  color: var(--ml-color-secondary);
+  font-style: italic;
+}
+
+/* Selection */
+::selection {
+  background: var(--ml-gradient-primary);
+  color: white;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ml-background-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ml-gradient-primary);
+  border-radius: var(--ml-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ml-gradient-primary-hover);
+}

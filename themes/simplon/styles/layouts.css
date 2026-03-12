@@ -122,3 +122,25 @@ html:not(.light) .slidev-layout.section h1 {
 .slidev-layout.center {
   @apply flex items-center justify-center text-center;
 }
+
+/* Full layout with gradient background */
+html:not(.light) .slidev-layout.full {
+  @apply h-full flex items-center justify-center text-center p-0;
+  background: linear-gradient(135deg, #123744 0%, #f26f5c 100%);
+  color: white;
+}
+
+html:not(.light) .slidev-layout.full h1,
+html:not(.light) .slidev-layout.full h2,
+html:not(.light) .slidev-layout.full h3,
+html:not(.light) .slidev-layout.full h4,
+html:not(.light) .slidev-layout.full h5,
+html:not(.light) .slidev-layout.full h6 {
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+html:not(.light) .slidev-layout.full p,
+html:not(.light) .slidev-layout.full li {
+  color: rgba(255, 255, 255, 0.9);
+}

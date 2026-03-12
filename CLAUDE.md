@@ -7,6 +7,7 @@ Auto-generated from all feature plans. Last updated: 2025-11-24
 - JavaScript/TypeScript with Node.js 18+ (Slidev requirement) + Slidev (latest stable), Vue 3, Vite, markdown-i (001-multi-deck-index)
 
 ### Slidev-Specific Technologies
+
 - **Framework**: Slidev (Vue 3-based presentation framework)
 - **Markdown**: Extended markdown with Vue components
 - **Styling**: UnoCSS/Windi CSS for utility-first styling
@@ -20,6 +21,7 @@ tests/
 ```
 
 ### Typical Slidev Structure
+
 ```text
 slides/
 ├── slides.md           # Main slide content
@@ -34,21 +36,22 @@ examples/
 
 ## Commands
 
-npm test && npm run lint
+bun test && bun run lint
 
 ### Slidev Commands
+
 ```bash
 # Development server with hot reload
-npm run dev
+bun run dev
 
 # Build for production
-npm run build
+bun run build
 
 # Export to PDF
-npm run export
+bun run export
 
 # Export to SPA (static hosting)
-npm run build -- --base /[repo-name]/
+bun run build -- --base /[repo-name]/
 ```
 
 ## Code Style
@@ -56,6 +59,7 @@ npm run build -- --base /[repo-name]/
 JavaScript/TypeScript with Node.js 18+ (Slidev requirement): Follow standard conventions
 
 ### Markdown Content Style
+
 - Use `#` for slide titles (one per slide)
 - Use `---` to separate slides
 - Use `::code-group` for multiple code examples
@@ -63,12 +67,14 @@ JavaScript/TypeScript with Node.js 18+ (Slidev requirement): Follow standard con
 - Use Vue components with `<ComponentName />` syntax
 
 ### SQL Example Style
+
 - Include setup scripts (CREATE TABLE, INSERT)
 - Show expected output as comments
 - Keep queries under 20 lines for readability
 - Test all queries before committing
 
 ### Accessibility Guidelines
+
 - Alt text for all images
 - Descriptive link text (not "click here")
 - Sufficient color contrast (use devtools to verify)

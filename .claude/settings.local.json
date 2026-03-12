@@ -24,9 +24,37 @@
       "Bash(npm run validate:*)",
       "Bash(npm run dev:deck:*)",
       "Bash(npm run dev:index:*)",
-      "Bash(npx slidev:*)"
+      "Bash(npx slidev:*)",
+      "Bash(tree:*)",
+      "Bash(find:*)",
+      "mcp__plugin_context7_context7__query-docs",
+      "mcp__plugin_context7_context7__resolve-library-id",
+      "WebFetch(domain:python.langchain.com)",
+      "WebFetch(domain:docs.langchain.com)",
+      "Skill(wwt-claude-skills:slidev:plan)",
+      "Bash(npx playwright:*)",
+      "Bash(node:*)",
+      "Bash(curl:*)",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "Bash(find /Users/maxime-lenne/Documents_Non_iCloud/workspace_js_ts/slidev-simplon-sql-1st-day/decks -type f -name \"meta.json\" | xargs ls -la)",
+      "Bash(ls -d /Users/maxime-lenne/Documents_Non_iCloud/workspace_js_ts/slidev-simplon-sql-1st-day/decks/*/)",
+      "Bash(wc -l /Users/maxime-lenne/Documents_Non_iCloud/workspace_js_ts/slidev-simplon-sql-1st-day/decks/*/slides.md | tail -1)",
+      "Bash(bunx playwright:*)",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:images.unsplash.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(ls /Users/maxime-lenne/.claude/projects/-Users-maxime-lenne-Documents-Non-iCloud-workspace-js-ts-slidev-simplon-sql-1st-day/d2ec94d7-d374-4eaf-96d4-1295f5f24421/tool-results/*.jpg 2>/dev/null | tail -10)",
+      "Bash(for d:*)",
+      "Bash(do)",
+      "Bash(echo \"=== $d ===\")",
+      "Read(//Users/maxime-lenne/Documents_Non_iCloud/workspace_js_ts/slidev-simplon-sql-1st-day/decks/$d/**)",
+      "Bash(bun run:*)"
     ],
     "deny": [],
     "ask": []
+  },
+  "enabledPlugins": {
+    "wwt-claude-skills@wwt-claude-skills": true
   }
 }

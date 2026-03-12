@@ -1,7 +1,7 @@
 {
   "id": "sql-basics",
-  "title": "SQL Basics",
-  "description": "Learn SQL basics",
+  "title": "Jour 1 — Cours SQL & Bases Relationnelles",
+  "description": "Introduction aux bases de données relationnelles, aux relations entre tables et aux requêtes fondamentales : SELECT, INSERT, UPDATE, DELETE avec SQLite.",
   "status": "published",
   "objectives": [
     "Comprendre ce qu’est une base de données relationnelle",
@@ -12,14 +12,23 @@
   ],
   "duration": "2 hours",
   "theme": "simplon",
-  "thumbnail": "./assets/preview.svg",
-  "tags": ["sql", "database", "beginner", "sqlite", "queries", "insert", "update", "delete"],
+  "thumbnail": "./assets/cover.png",
+  "tags": [
+    "sql",
+    "database",
+    "beginner",
+    "sqlite",
+    "queries",
+    "insert",
+    "update",
+    "delete"
+  ],
   "language": "fr",
   "version": "0.1.0",
   "authors": [
     {
-      "name": "Simplon Training Team",
-      "email": "training@simplon.co"
+      "name": "Maxime Lenne",
+      "email": "hello@maxime-lenne.fr"
     }
   ],
   "created": "2025-11-24",

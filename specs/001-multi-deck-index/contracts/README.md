@@ -8,11 +8,13 @@ This directory contains JSON Schema definitions for data structures used through
 Defines the structure for `meta.json` files that describe each slide deck.
 
 **Used by:**
+
 - Individual deck `meta.json` files in `decks/{deck-id}/meta.json`
 - Validation scripts
 - Index generation scripts
 
 **Validates:**
+
 - Deck identification and metadata
 - Learning objectives and prerequisites
 - Publication status and versioning
@@ -22,11 +24,13 @@ Defines the structure for `meta.json` files that describe each slide deck.
 Defines the structure for the consolidated index catalog generated at build time.
 
 **Used by:**
+
 - `scripts/generate-index.sh` (generates this file)
 - Index page application (consumes this file)
 - CI/CD validation steps
 
 **Contains:**
+
 - Array of published deck metadata
 - Aggregate statistics (total decks, duration, languages, themes, tags)
 - Generation timestamp and version
@@ -35,10 +39,12 @@ Defines the structure for the consolidated index catalog generated at build time
 Defines the structure for Slidev theme `package.json` files.
 
 **Used by:**
+
 - Theme directories in `themes/{theme-name}/package.json`
 - Theme validation and publishing scripts
 
 **Validates:**
+
 - Theme naming conventions (must start with `slidev-theme-`)
 - Required keywords for Slidev theme discovery
 - Engine compatibility declarations
@@ -149,6 +155,7 @@ jobs:
 ## Schema Versioning
 
 These schemas follow semantic versioning:
+
 - **Major**: Breaking changes to required fields or types
 - **Minor**: New optional fields or expanded enums
 - **Patch**: Documentation updates, examples, clarifications
@@ -158,6 +165,7 @@ Current version: **1.0.0**
 ## Contributing
 
 When updating schemas:
+
 1. Update the schema file
 2. Increment the version in the schema's `$id` field if breaking
 3. Update this README with the change

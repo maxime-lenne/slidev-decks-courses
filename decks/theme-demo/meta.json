@@ -1,0 +1,26 @@
+{
+  "id": "theme-demo",
+  "title": "Démo Thème Maxime Lenne",
+  "description": "Présentation de démonstration des layouts et composants du thème Maxime Lenne pour Slidev.",
+  "status": "draft",
+  "objectives": [],
+  "prerequisites": [],
+  "duration": "10 minutes",
+  "theme": "maxime-lenne",
+  "thumbnail": "./assets/cover.png",
+  "tags": [
+    "theme",
+    "demo",
+    "internal"
+  ],
+  "language": "fr",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Maxime Lenne",
+      "email": "hello@maxime-lenne.fr"
+    }
+  ],
+  "created": "2025-11-24",
+  "updated": "2026-03-11"
+}

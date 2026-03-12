@@ -1,6 +1,7 @@
 ---
-theme: default
+theme: ../../themes/simplon
 layout: cover
+background: https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920
 title: Introduction à SQLite
 subtitle: Installation • Premières requêtes • Exercices
 class: text-center
@@ -18,6 +19,7 @@ Base fournie : **formation.db**
 ---
 
 # 🎯 Objectifs pédagogiques
+
 - Installer SQLite (macOS / Linux / Windows)
 - Ouvrir et explorer une base existante
 - Utiliser la ligne de commande SQLite
@@ -36,6 +38,7 @@ Téléchargez la base SQLite :
 ## macOS
 
 SQLite est **déjà installé**. Vérifier la version :
+
 ```bash
 sqlite3 --version
 ```
@@ -43,6 +46,7 @@ sqlite3 --version
 ## Linux
 
 Installer si besoin (Souvent préinstallé.) :
+
 ```bash
 sudo apt install sqlite3
 ```
@@ -52,11 +56,13 @@ sudo apt install sqlite3
 # 🚀 Installation de SQLite
 
 ## Windows
+
 1. Télécharger `sqlite-tools` depuis sqlite.org  
 2. Extraire l’archive  
 3. (Optionnel) Ajouter le dossier au PATH  
 
 Vérifier :
+
 ```powershell
 sqlite3 --version
 ```
@@ -66,22 +72,26 @@ sqlite3 --version
 # 🛠️ Démarrer avec SQLite (CLI)
 
 ## Ouvrir la base fournie
+
 ```bash
 sqlite3 formation.db
 ```
 
 ## Commandes utiles
 Lister les tables :
+
 ```sql
 .tables
 ```
 
 Voir la structure :
+
 ```sql
 .schema clients
 ```
 
 Quitter SQLite :
+
 ```
 .quit
 ```
@@ -90,7 +100,6 @@ Quitter SQLite :
 
 # 🧪 Exercices SQL — SELECT
 ### *But : découvrir et lire les données*
-
 
 - Afficher **tous les clients**.
 - Afficher les **noms et villes** des clients.
@@ -101,15 +110,14 @@ Quitter SQLite :
 - Afficher le **montant et la date** des commandes.
 - Trier les commandes de la **plus chère à la moins chère**.
 
-### BONUS : 
+### BONUS :
 
 - Compter le **nombre total** de clients.
 - Requête JOIN simple : afficher les commandes avec nom client
 
-
 ---
 
-# ✍️ Exercices SQL — INSERT / UPDATE / DELETE 
+# ✍️ Exercices SQL — INSERT / UPDATE / DELETE
 ### *But : manipuler et modifier les données*
 
 - INSERT : Ajouter un client
@@ -127,13 +135,13 @@ Quitter SQLite :
 
 ---
 
-# ✍️ Exercices SQL — INSERT / UPDATE / DELETE 
+# ✍️ Exercices SQL — INSERT / UPDATE / DELETE
 ### *But : manipuler et modifier les données*
 
-### BONUS : 
+### BONUS :
+
 - DELETE via sous-requête - Supprimer toutes les commandes du client **“David Moreau”**.
 - UPDATE ciblé - Réduire de **20%** toutes les commandes du client **“Camille Leroy”**.
-
 
 ---
 layout: center
@@ -145,7 +153,7 @@ class: text-center
 Continuer avec **Requêtes SQL Avancées** : Jointures complexes, Subqueries (select imbiquées)
 
 <div class="pt-12">
-  <a href="/decks/example-advanced-queries/" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+  <a href="/decks/example-advanced-queries/" class="px-4 py-2 text-white rounded ">
     Go →
   </a>
 </div>

@@ -19,6 +19,7 @@ This document defines the data entities, relationships, and validation rules for
 **Location**: `decks/{deck-id}/`
 
 **Structure**:
+
 ```
 decks/{deck-id}/
 ├── slides.md          # Slidev presentation content (markdown)
@@ -29,17 +30,20 @@ decks/{deck-id}/
 ```
 
 **Properties**:
+
 - `deck-id` (string, required): Unique identifier, kebab-case, used in URLs
 - `slides.md` (file, required): Markdown file with Slidev frontmatter
 - `meta.json` (file, required): Machine-readable metadata for index
 - `assets/` (directory, optional): Local resources for this deck
 
 **Relationships**:
+
 - Has one DeckMetadata (required)
 - Uses one Theme (via Slidev frontmatter)
 - Generates one BuildArtifact
 
 **Validation Rules**:
+
 - `deck-id` must be unique across all decks
 - `deck-id` must match directory name
 - `deck-id` must be valid URL slug (lowercase, hyphens, no spaces)
@@ -47,6 +51,7 @@ decks/{deck-id}/
 - `meta.json` must conform to DeckMetadata schema
 
 **State Transitions**:
+
 ```
 [Draft] → [Review] → [Published] → [Archived]
   ↓          ↓           ↓
@@ -54,6 +59,7 @@ decks/{deck-id}/
 ```
 
 **Example**:
+
 ```
 decks/sql-basics/
 ├── slides.md          # Contains: "---\ntheme: simplon\ntitle: SQL Basics\n---"
@@ -71,6 +77,7 @@ decks/sql-basics/
 **Location**: `decks/{deck-id}/meta.json`
 
 **Schema**:
+
 ```typescript
 interface DeckMetadata {
   id: string;                    // Unique identifier (must match deck-id)
@@ -99,6 +106,7 @@ interface Author {
 ```
 
 **Validation Rules**:
+
 - `id` must match parent directory name
 - `title` required, 5-100 characters
 - `description` required, max 160 characters (for meta tags)
@@ -116,6 +124,7 @@ interface Author {
 - `updated` must be ≥ `created` date
 
 **Example**:
+
 ```json
 {
   "id": "sql-basics",
@@ -157,6 +166,7 @@ interface Author {
 **Location**: `index/public/index-data.json` (generated)
 
 **Schema**:
+
 ```typescript
 interface IndexData {
   generated: string;             // ISO 8601 timestamp of generation
@@ -175,6 +185,7 @@ interface IndexStats {
 ```
 
 **Generation**: Created by `scripts/generate-index.sh` which:
+
 1. Scans `decks/` for all `meta.json` files
 2. Validates each against DeckMetadata schema
 3. Filters to only `status: "published"` decks
@@ -182,12 +193,14 @@ interface IndexStats {
 5. Writes consolidated JSON to `index/public/index-data.json`
 
 **Validation Rules**:
+
 - Only includes decks with `status: "published"`
 - Invalid `meta.json` files are logged but skipped
 - `generated` timestamp must be current build time
 - `stats` must reflect actual deck contents
 
 **Example**:
+
 ```json
 {
   "generated": "2025-11-24T10:30:00Z",
@@ -215,6 +228,7 @@ interface IndexStats {
 **Location**: `themes/{theme-name}/`
 
 **Structure**:
+
 ```
 themes/{theme-name}/
 ├── package.json         # Theme package definition
@@ -232,6 +246,7 @@ themes/{theme-name}/
 ```
 
 **Package.json Schema**:
+
 ```typescript
 interface ThemePackage {
   name: string;                  // Format: "slidev-theme-{name}"
@@ -255,11 +270,13 @@ interface SlidevConfig {
 ```
 
 **Properties**:
+
 - Common theme: Provides shared components/layouts for reuse
 - Simplon theme: Implements Simplon.co brand guidelines
 - Custom themes: Can be added for other brands or styles
 
 **Validation Rules**:
+
 - Package name must start with `slidev-theme-`
 - Must include keywords: `["slidev-theme", "slidev"]`
 - `engines.slidev` must specify version constraint
@@ -267,6 +284,7 @@ interface SlidevConfig {
 - Styles must compile without errors
 
 **Simplon Theme Specifics**:
+
 ```json
 {
   "name": "slidev-theme-simplon",
@@ -291,6 +309,7 @@ interface SlidevConfig {
 ```
 
 **CSS Variables** (Simplon theme):
+
 ```css
 :root {
   --simplon-elephant: #123744;      /* Primary dark */
@@ -312,6 +331,7 @@ interface SlidevConfig {
 **Location**: Root `package.json` scripts section
 
 **Schema**:
+
 ```typescript
 interface BuildConfiguration {
   scripts: {
@@ -333,6 +353,7 @@ interface BuildConfiguration {
 ```
 
 **Example**:
+
 ```json
 {
   "scripts": {
@@ -379,6 +400,7 @@ BuildConfiguration
 ```
 
 **Cardinality**:
+
 - One Slide Deck has exactly one DeckMetadata
 - One DeckMetadata describes exactly one Slide Deck
 - One Slide Deck uses zero or one Theme (default if none specified)
@@ -391,6 +413,7 @@ BuildConfiguration
 ## Data Flow
 
 ### Creation Flow (New Deck)
+
 ```
 1. User runs: npm run create-deck sql-advanced
    └─> Script creates: decks/sql-advanced/
@@ -410,6 +433,7 @@ BuildConfiguration
 ```
 
 ### Build Flow
+
 ```
 1. CI/CD: npm run build:all
    │
@@ -436,6 +460,7 @@ BuildConfiguration
 ```
 
 ### Runtime Flow (User Browsing)
+
 ```
 1. User visits https://example.com/
    └─> Loads index.html
@@ -467,6 +492,7 @@ BuildConfiguration
 ## Next Steps
 
 Data model is complete. Ready to generate:
+
 1. JSON Schema contracts for DeckMetadata and IndexData
 2. Quickstart guide referencing these entities
 3. Validation scripts to enforce rules

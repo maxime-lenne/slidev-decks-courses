@@ -23,7 +23,7 @@
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd slidev-simplon-sql-1st-day
+cd slidev-decks-simplon
 
 # Install dependencies
 npm install
@@ -113,6 +113,7 @@ Edit `decks/my-new-deck/meta.json`:
 ```
 
 **Important Fields:**
+
 - `id`: Must match directory name, lowercase with hyphens
 - `status`: Start with `"draft"`, change to `"published"` when ready
 - `duration`: Format as "X hours" or "Y minutes"
@@ -199,6 +200,7 @@ SELECT * FROM products;
 <v-click>
 
 **Solution:**
+
 ```sql
 SELECT product_id, name, price
 FROM products
@@ -212,6 +214,7 @@ ORDER BY price DESC;
 ### Using Slidev Features
 
 **Layouts:**
+
 ```markdown
 ---
 layout: cover
@@ -232,6 +235,7 @@ Centered content
 ```
 
 **Animations:**
+
 ```markdown
 <v-click>
 
@@ -249,6 +253,7 @@ This appears on click
 ```
 
 **Code Highlighting:**
+
 ```markdown
 ```sql {2,4|3|all}
 SELECT *
@@ -288,6 +293,7 @@ npx slidev decks/my-new-deck/slides.md
 Access at: `http://localhost:3030`
 
 **Dev Server Features:**
+
 - Auto-reload on file changes
 - Presenter mode: Add `?presenter` to URL
 - Drawing mode: Press `d` during presentation
@@ -322,6 +328,7 @@ theme: simplon
 ```
 
 **Included Features:**
+
 - Simplon.co brand colors
 - DM Sans typography
 - Custom layouts optimized for education
@@ -436,6 +443,7 @@ git push origin main
 ### Automatic Deployment
 
 After pushing:
+
 1. CI/CD pipeline runs automatically
 2. Validates all metadata
 3. Generates index data
@@ -513,6 +521,7 @@ Archived decks won't appear in the index but remain accessible via direct URL.
 ### Troubleshooting
 
 **Problem: Deck not appearing in index**
+
 ```bash
 # Check metadata status
 cat decks/my-deck/meta.json | grep status
@@ -526,6 +535,7 @@ npm run validate
 ```
 
 **Problem: Theme not loading**
+
 ```bash
 # Check theme name in slides.md frontmatter
 # Must match installed theme
@@ -537,6 +547,7 @@ theme: simplon
 ```
 
 **Problem: Images not displaying**
+
 ```markdown
 # Use relative paths from slides.md
 ![Correct](./assets/image.png)
@@ -556,9 +567,9 @@ theme: simplon
 
 ## Getting Help
 
-- **Slidev Documentation**: https://sli.dev/
+- **Slidev Documentation**: <https://sli.dev/>
 - **Project Issues**: <repository-url>/issues
-- **Team Contact**: training@simplon.co
+- **Team Contact**: <training@simplon.co>
 
 ---
 

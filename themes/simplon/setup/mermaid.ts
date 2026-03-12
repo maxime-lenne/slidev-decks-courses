@@ -51,14 +51,27 @@ export default function setup(): MermaidConfig {
       git1: '#5eead4',
       git2: '#ce0033',
       git3: '#123744',
-      git4: '#cbd5e1',
+      git4: '#475569',
 
       // Pie chart
       pie1: '#f26f5c',
       pie2: '#123744',
       pie3: '#5eead4',
       pie4: '#ce0033',
-      pie5: '#cbd5e1',
+      pie5: '#475569',
+
+      cScale0: '#f26f5c',
+      cScaleLabel0: '#000',
+      cScale1: '#ce0033',
+      cScaleLabel1: '#000',
+      cScale2: '#123744',
+      cScaleLabel2: '#cbd5e1',
+      cScale3: '#475569',
+      cScaleLabel3: '#cbd5e1',
+      cScale4: '#5eead4',
+      cScaleLabel4: '#000',
+
+
 
       // Class diagram
       classText: '#cbd5e1',

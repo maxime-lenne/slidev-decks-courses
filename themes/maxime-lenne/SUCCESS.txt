@@ -1,0 +1,36 @@
+
+==============================================
+✅ NOUVEAU THÈME SLIDEV CRÉÉ AVEC SUCCÈS \!
+==============================================
+
+📁 Emplacement: themes/maxime-lenne/
+
+📊 Statistiques:
+- 12 layouts Vue créés
+- 3 fichiers CSS de styles
+- 2 fichiers de configuration setup
+- 5 fichiers de documentation
+
+🎨 Design:
+- Dégradé signature: Bleu (#2563eb) → Vert (#10b981)
+- Support mode clair/sombre
+- Variables CSS personnalisables
+
+📚 Documentation:
+- README.md : Vue d'ensemble
+- USAGE.md : Guide détaillé
+- CHANGELOG.md : Historique
+- TEST.md : Guide de test
+- example.md : Démo complète
+
+🚀 Pour tester:
+1. cd themes/maxime-lenne
+2. npx slidev example.md
+
+Ou:
+npm run dev:deck theme-demo
+
+📄 Deck de démo créé dans: decks/theme-demo/
+
+==============================================
+

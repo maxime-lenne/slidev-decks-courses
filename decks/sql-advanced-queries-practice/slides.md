@@ -1,8 +1,9 @@
 ---
-theme: default
+theme: ../../themes/simplon
 title: Mise en pratique n°2 — Analyse des ventes
 subtitle: Jointures • Sous-requêtes • Group By
 layout: cover
+background: https://images.unsplash.com/photo-1580894894513-541e068a3e2b?w=1920
 class: text-center
 highlighter: shiki
 drawings:
@@ -26,7 +27,7 @@ Base SQLite pour tous les exercices :
 
   </div>
   <div>
-    <img src="/assets/diagram.png" alt="Database diagram" class="rounded-lg shadow-lg" />
+    <img src="./assets/diagram.png" alt="Database diagram" class="rounded-lg shadow-lg" />
   </div>
 </div>
 
@@ -50,6 +51,7 @@ Base SQLite pour tous les exercices :
 # Réponse 1 — INNER JOIN clients ↔ commandes
 
 ### Requête SQL
+
 ```sql
 SELECT c.id AS commande_id,
        c.date,
@@ -60,11 +62,13 @@ ORDER BY c.date DESC;
 ```
 
 ### Schéma JOIN (A ∩ B)
+
 ```text
    [ Clients ] ∩ [ Commandes ]
 ```
 
 ### Exemple de résultat
+
 | commande_id | date       | client        |
 |-------------|-----------|----------------|
 | 12          | 2025-02-01 | Camille Leroy |
@@ -75,6 +79,7 @@ ORDER BY c.date DESC;
 # Réponse 2 — LEFT JOIN commandes ↔ lignes
 
 ### Requête SQL
+
 ```sql
 SELECT c.id AS commande_id,
        c.date,
@@ -85,12 +90,14 @@ GROUP BY c.id;
 ```
 
 ### Schéma JOIN
+
 ```text
 LEFT JOIN = Tout A + Intersection
 (A = commandes, B = ligne_commandes)
 ```
 
 ### Exemple résultat
+
 | commande_id | date       | nb_lignes |
 |-------------|-----------|-----------|
 | 1           | 2025-01-10 | 2         |
@@ -101,6 +108,7 @@ LEFT JOIN = Tout A + Intersection
 # Réponse 3 — Lignes + Produits
 
 ### SQL
+
 ```sql
 SELECT lc.commande_id,
        p.nom AS produit,
@@ -112,11 +120,13 @@ JOIN produits p ON p.id = lc.produit_id;
 ```
 
 ### Schéma JOIN
+
 ```text
 ligne_commandes ⋂ produits
 ```
 
 ### Exemple résultat
+
 | commande_id | produit         | qte | total_ligne |
 |--------------|-----------------|-----|-------------|
 | 1            | Souris sans fil | 2   | 69.00       |
@@ -126,6 +136,7 @@ ligne_commandes ⋂ produits
 # Réponse 4 — Total par commande
 
 ### SQL
+
 ```sql
 SELECT c.id,
        cl.nom,
@@ -138,11 +149,13 @@ ORDER BY total_commande DESC;
 ```
 
 ### Schéma
+
 ```text
 clients ⋂ commandes ⋂ ligne_commandes
 ```
 
 ### Exemple résultat
+
 | commande_id | client       | total |
 |-------------|--------------|--------|
 | 1           | Alice Martin | 158.90 |
@@ -152,6 +165,7 @@ clients ⋂ commandes ⋂ ligne_commandes
 # Réponse 5 — Clients sans commandes
 
 ### SQL
+
 ```sql
 SELECT cl.*
 FROM clients cl
@@ -160,11 +174,13 @@ WHERE c.id IS NULL;
 ```
 
 ### Schéma
+
 ```text
 LEFT JOIN (partie A sans B)
 ```
 
 ### Résultat exemple
+
 | id | nom         | ville | age |
 |----|-------------|--------|-----|
 | 11 | Katia Russo | Nice   | 28  |
@@ -174,6 +190,7 @@ LEFT JOIN (partie A sans B)
 # Réponse 6 — Produits jamais vendus
 
 ### SQL
+
 ```sql
 SELECT p.*
 FROM produits p
@@ -182,6 +199,7 @@ WHERE lc.id IS NULL;
 ```
 
 ### Schéma
+
 ```text
 Produits LEFT JOIN ligne_commandes (A sans B)
 ```
@@ -191,6 +209,7 @@ Produits LEFT JOIN ligne_commandes (A sans B)
 # Réponse 7 — Top 3 clients dépensiers
 
 ### SQL
+
 ```sql
 SELECT cl.nom,
        SUM(lc.quantite * lc.prix_unitaire) AS total
@@ -207,6 +226,7 @@ LIMIT 3;
 # Réponse 8 — Ventes par ville
 
 ### SQL
+
 ```sql
 SELECT cl.ville,
        SUM(lc.quantite * lc.prix_unitaire) AS total
@@ -222,6 +242,7 @@ ORDER BY total DESC;
 # Réponse 9 — Ventes par catégorie
 
 ### SQL
+
 ```sql
 SELECT p.categorie,
        SUM(lc.quantite * lc.prix_unitaire) AS total
@@ -235,6 +256,7 @@ GROUP BY categorie;
 # Réponse 10 — Commandes > moyenne
 
 ### SQL
+
 ```sql
 WITH totals AS (
   SELECT c.id AS commande_id,
@@ -247,7 +269,6 @@ SELECT *
 FROM totals
 WHERE total > (SELECT AVG(total) FROM totals);
 ```
-
 
 ---
 layout: center

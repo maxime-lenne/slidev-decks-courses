@@ -19,6 +19,7 @@ SELECT * FROM users WHERE active = true;
 ```
 
 **Props:**
+
 - `title` (string, optional): Title for the code block
 - `lang` (string, optional): Language for syntax highlighting
 
@@ -43,6 +44,7 @@ Write a query to find all products under €20
 ```
 
 **Props:**
+
 - `difficulty` ('beginner' | 'intermediate' | 'advanced', optional): Exercise difficulty level
 - `duration` (string, optional): Estimated time to complete (e.g., "10 min", "30 minutes")
 

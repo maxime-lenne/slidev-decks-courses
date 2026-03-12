@@ -19,6 +19,7 @@ This document consolidates research findings for implementing a multi-deck Slide
 **Decision**: Use Simplon.co official brand assets with defined color palette and typography.
 
 **Findings**:
+
 - **Colors**:
   - Primary Dark: `#123744` (Elephant) - Deep blue-grey for text and headers
   - Primary Light: `#f26f5c` (Burnt Sienna) - Warm coral-orange for accents
@@ -37,6 +38,7 @@ This document consolidates research findings for implementing a multi-deck Slide
 **Rationale**: Official brand assets ensure consistency with Simplon.co's existing digital presence and maintain professional appearance for educational content.
 
 **Alternatives Considered**:
+
 - Generic educational themes - Rejected: Lacks brand recognition
 - Custom color schemes - Rejected: Would dilute Simplon.co brand identity
 
@@ -51,6 +53,7 @@ This document consolidates research findings for implementing a multi-deck Slide
 **Decision**: Use directory-based structure with separate slides.md per deck and custom build orchestration.
 
 **Findings**:
+
 - **Native Support**: Slidev can build multiple presentations via `slidev build *.md` or explicit file list
 - **Output Structure**: Each presentation generates its own folder in the output directory
 - **Limitation**: No built-in index page generator
@@ -60,6 +63,7 @@ This document consolidates research findings for implementing a multi-deck Slide
 - **Active Discussions**: GitHub issues [#248](https://github.com/slidevjs/slidev/issues/248), [#1777](https://github.com/slidevjs/slidev/discussions/1777), [#1791](https://github.com/slidevjs/slidev/issues/1791)
 
 **Implementation Approach**:
+
 ```bash
 # Project structure
 decks/
@@ -75,10 +79,12 @@ slidev build decks/*/slides.md --base /decks/ --out dist
 **Rationale**: Directory structure provides clear separation, version control isolation, and allows independent development of each deck.
 
 **Alternatives Considered**:
+
 - Monolithic slides with sections - Rejected: Doesn't support independent themes, harder to navigate
 - Separate repositories - Rejected: Increases maintenance overhead, no shared theme foundation
 
 **Sources**:
+
 - [Slidev: Building and Hosting](https://sli.dev/guide/hosting)
 - [GitHub Discussion #1777](https://github.com/slidevjs/slidev/discussions/1777)
 - [GitHub Issue #1791](https://github.com/slidevjs/slidev/issues/1791)
@@ -92,6 +98,7 @@ slidev build decks/*/slides.md --base /decks/ --out dist
 **Decision**: Build a custom Vue 3 SPA that reads deck metadata files and generates a searchable index.
 
 **Findings**:
+
 - **No Built-in Solution**: Slidev doesn't provide index page generation
 - **Best Practice**: Create separate Vite/Vue app alongside Slidev decks
 - **Metadata Approach**: Each deck has a `meta.json` file with:
@@ -102,6 +109,7 @@ slidev build decks/*/slides.md --base /decks/ --out dist
   - Thumbnail/preview image path
 
 **Implementation Strategy**:
+
 1. Create `index/` directory with Vue 3 app
 2. Build script scans `decks/` for `meta.json` files
 3. Generate `index-data.json` at build time
@@ -109,6 +117,7 @@ slidev build decks/*/slides.md --base /decks/ --out dist
 5. Deploy index to root, decks to `/decks/*` subdirectories
 
 **Example meta.json**:
+
 ```json
 {
   "id": "sql-basics",
@@ -128,6 +137,7 @@ slidev build decks/*/slides.md --base /decks/ --out dist
 **Rationale**: Metadata-driven approach enables auto-discovery, allows rich index features (search, filtering), and maintains single source of truth per deck.
 
 **Alternatives Considered**:
+
 - Manual index.html with hardcoded links - Rejected: Not maintainable, error-prone
 - Filesystem scanning at runtime - Rejected: Not possible with static hosting
 - Git-based discovery - Rejected: Couples index to Git, complicates CI/CD
@@ -141,10 +151,12 @@ slidev build decks/*/slides.md --base /decks/ --out dist
 **Decision**: Create two npm packages: `slidev-theme-common` (foundation) and `slidev-theme-simplon` (Simplon brand), using theme ejection for customization.
 
 **Findings**:
+
 - **Theme Creation**: Use `pnpm create slidev-theme` to scaffold
 - **Package Naming**: Must start with `slidev-theme-*`
 - **Required Keywords**: `["slidev-theme", "slidev"]` in package.json
 - **Default Configs**: Themes can provide defaults via `slidev.defaults` field:
+
   ```json
   {
     "slidev": {
@@ -156,12 +168,14 @@ slidev build decks/*/slides.md --base /decks/ --out dist
     }
   }
   ```
+
 - **Theme Inheritance**: No formal parent-child mechanism, but themes can:
   - Eject existing theme via `slidev theme eject`
   - Override layouts/components through loading order
   - Import components from other packages
 
 **Theme Structure**:
+
 ```
 themes/simplon/
 ├── package.json          # slidev-theme-simplon
@@ -176,6 +190,7 @@ themes/simplon/
 ```
 
 **Component Sharing Strategy**:
+
 - `themes/common/`: Shared Vue components (CodeBlock, LearningObjective, etc.)
 - `themes/simplon/`: Imports from common, adds Simplon-specific styling
 - Other themes can import from common for consistency
@@ -183,11 +198,13 @@ themes/simplon/
 **Rationale**: Package-based themes enable npm distribution, version control, and reuse. Common foundation reduces duplication while allowing brand-specific customization.
 
 **Alternatives Considered**:
+
 - Single theme with CSS variables - Rejected: Limits customization depth, harder to manage multiple brand identities
 - Copy-paste approach - Rejected: Maintenance nightmare, divergence over time
 - CSS preprocessing with extends - Rejected: Doesn't support component-level inheritance
 
 **Sources**:
+
 - [Slidev: Writing Themes](https://sli.dev/guide/write-theme)
 - [Slidev: Customizations](https://sli.dev/custom/)
 - [Slidev: Eject Theme](https://sli.dev/features/eject-theme)
@@ -203,6 +220,7 @@ themes/simplon/
 **Implementation**:
 
 **Build Script** (`scripts/generate-index.sh`):
+
 ```bash
 #!/bin/bash
 # Scan decks directory and consolidate metadata
@@ -211,6 +229,7 @@ find decks -name "meta.json" -type f | \
 ```
 
 **CI/CD Integration**:
+
 ```yaml
 # .github/workflows/build.yml
 - name: Generate Index Data
@@ -222,6 +241,7 @@ find decks -name "meta.json" -type f | \
 ```
 
 **Package.json Scripts**:
+
 ```json
 {
   "scripts": {
@@ -238,6 +258,7 @@ find decks -name "meta.json" -type f | \
 **Rationale**: Build-time generation is static-hosting compatible, provides single source of truth, and enables schema validation before deployment.
 
 **Alternatives Considered**:
+
 - Runtime filesystem access - Rejected: Impossible with static hosting (no Node.js runtime)
 - Database-backed index - Rejected: Adds infrastructure complexity, overkill for static content
 - Manual registration file - Rejected: Error-prone, requires remembering to update
@@ -251,6 +272,7 @@ find decks -name "meta.json" -type f | \
 **Decision**: GitHub Pages (primary recommendation) with Netlify as alternative.
 
 **Findings**:
+
 - **GitHub Pages**:
   - Pros: Free, integrated with repo, simple GitHub Actions workflow
   - Cons: Public repos only for free tier, some URL limitations
@@ -267,6 +289,7 @@ find decks -name "meta.json" -type f | \
   - Config: Uses `vercel.json` for rewrites
 
 **Recommended Setup** (GitHub Pages):
+
 ```yaml
 # .github/workflows/deploy.yml
 name: Deploy to GitHub Pages
@@ -291,12 +314,14 @@ jobs:
 ```
 
 **Base Path Configuration**:
+
 - GitHub Pages (org repo): `--base /repo-name/`
 - Custom domain: `--base /`
 
 **Rationale**: GitHub Pages provides zero-config hosting that integrates naturally with the development workflow. Free tier is sufficient for educational content.
 
 **Alternatives Considered**:
+
 - Self-hosted server - Rejected: Unnecessary maintenance, costs
 - AWS S3 + CloudFront - Rejected: Complexity not justified for static content
 - Firebase Hosting - Rejected: Requires Google account, less integrated with GitHub workflow
@@ -321,6 +346,7 @@ jobs:
 ## Next Steps
 
 All research is complete. Ready to proceed to Phase 1:
+
 1. Define data model for deck metadata and index structure
 2. Create API contracts (JSON schemas) for metadata files
 3. Generate quickstart documentation for creating new decks
@@ -329,6 +355,7 @@ All research is complete. Ready to proceed to Phase 1:
 ---
 
 **Sources Summary**:
+
 - [Brandfetch - Simplon.co Brand Assets](https://brandfetch.com/simplon.co)
 - [Slidev: Writing Themes](https://sli.dev/guide/write-theme)
 - [Slidev: Building and Hosting](https://sli.dev/guide/hosting)

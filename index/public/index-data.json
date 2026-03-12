@@ -1,25 +1,197 @@
 {
-  "generated": "2025-11-26T13:25:18.516Z",
+  "generated": "2026-03-11T17:22:01.102Z",
   "version": "1.0.0",
   "decks": [
     {
-      "id": "sql-advanced-queries",
-      "title": "Advanced SQL Queries",
-      "description": "Mastering complex JOINs, subqueries, GROUP BY, HAVING, ORDER BY, and query optimization techniques.",
+      "id": "agentic-commerce",
+      "title": "Commerce Agentique — L'IA au service de la vente",
+      "description": "Comprendre comment les agents IA autonomes transforment le commerce : cas d'usage, architecture et enjeux pour les équipes sales et business.",
       "status": "published",
       "objectives": [
-        "Perform complex JOINs with multiple tables",
-        "Write efficient subqueries",
-        "Use GROUP BY, HAVING, ORDER BY",
-        "Optimize query performance"
+        "Distinguer IA classique et IA agentique",
+        "Identifier les 4 super-pouvoirs d'un agent commercial",
+        "Comprendre l'architecture d'un agent (LLM, mémoire, outils, objectif)",
+        "Reconnaître les opportunités et points de vigilance métier",
+        "Savoir quand garder l'humain dans la boucle"
       ],
       "prerequisites": [
-        "SQL Fundamentals",
-        "Basic SELECT and WHERE knowledge"
+        "Notions de base sur l'IA et les LLMs (ChatGPT, Claude…)",
+        "Contexte commercial / sales (aucune compétence technique requise)"
+      ],
+      "duration": "30 minutes",
+      "theme": "simplon",
+      "thumbnail": "./assets/cover.png",
+      "tags": [
+        "ia",
+        "agentic",
+        "llm",
+        "commerce",
+        "sales",
+        "automation",
+        "crm",
+        "prospection",
+        "langchain",
+        "business"
+      ],
+      "language": "fr",
+      "version": "1.0.0",
+      "authors": [
+        {
+          "name": "Maxime Lenne",
+          "email": "hello@maxime-lenne.fr"
+        }
+      ],
+      "created": "2026-03-11",
+      "updated": "2026-03-11"
+    },
+    {
+      "id": "api",
+      "title": "Understanding APIs, REST & HTTP Requests",
+      "description": "Introduction complète aux APIs web, à l'architecture RESTful et aux fondamentaux des requêtes HTTP. Découvrez comment les applications modernes communiquent sur le web.",
+      "status": "published",
+      "objectives": [
+        "Comprendre les concepts fondamentaux des APIs",
+        "Maîtriser le protocole HTTP et ses méthodes",
+        "Concevoir des APIs RESTful selon les bonnes pratiques",
+        "Effectuer des requêtes HTTP avec l'API Fetch en JavaScript",
+        "Implémenter l'authentification et l'autorisation",
+        "Gérer les erreurs et les codes de statut HTTP"
+      ],
+      "prerequisites": [
+        "Connaissances de base en JavaScript",
+        "Compréhension des concepts web (client/serveur)"
+      ],
+      "duration": "3 hours",
+      "theme": "simplon",
+      "thumbnail": "./assets/cover.png",
+      "tags": [
+        "api",
+        "rest",
+        "http",
+        "swagger",
+        "javascript",
+        "fetch",
+        "authentication",
+        "backend",
+        "web"
+      ],
+      "language": "fr",
+      "version": "1.0.0",
+      "authors": [
+        {
+          "name": "Maxime Lenne",
+          "email": "hello@maxime-lenne.fr"
+        }
+      ],
+      "created": "2025-12-20",
+      "updated": "2026-01-11"
+    },
+    {
+      "id": "api-advanced",
+      "title": "Concevoir une API REST en Python avec FastAPI",
+      "description": "Conception d'une API REST professionnelle avec FastAPI, Pydantic v2... Projet fil rouge : API de gestion des formations, sessions et inscriptions pour Simplon.",
+      "status": "published",
+      "objectives": [
+        "Mettre en place une architecture FastAPI en couches (models / schemas / services / routes)",
+        "Modéliser des entités avec SQLModel et définir les relations",
+        "Créer des DTOs robustes avec Pydantic v2 (Create / Update / Read)",
+        "Implémenter un CRUD complet avec gestion des règles métier",
+        "Écrire des tests automatisés avec pytest et HTTPX (couverture ≥ 70%)",
+        "Gérer les erreurs et les codes HTTP de façon centralisée",
+        "Implémenter filtres, pagination et tri",
+        "Générer et enrichir la documentation Swagger/OpenAPI",
+        "Gérer les migrations de base de données avec Alembic"
+      ],
+      "prerequisites": [
+        "Connaissances de base en Python (fonctions, classes, modules)",
+        "Notions de REST et HTTP (verbes, codes de statut)",
+        "Compréhension des bases de données relationnelles (SQL)"
+      ],
+      "duration": "8 days",
+      "theme": "simplon",
+      "thumbnail": "./assets/cover.png",
+      "tags": [
+        "fastapi",
+        "python",
+        "pydantic",
+        "api",
+        "dto",
+        "sqlmodel",
+        "sqlalchemy",
+        "alembic",
+        "pytest",
+        "rest",
+        "backend",
+        "validation",
+        "tests"
+      ],
+      "language": "fr",
+      "version": "1.0.0",
+      "authors": [
+        {
+          "name": "Maxime Lenne",
+          "email": "hello@maxime-lenne.fr"
+        }
+      ],
+      "created": "2026-03-02",
+      "updated": "2026-03-02"
+    },
+    {
+      "id": "langchain",
+      "title": "Introduction à LangChain & langGraph",
+      "description": "Introduction à LangChain & langGraph — chaîner des opérations LLM pour créer des applications puissantes et modulaires.",
+      "status": "published",
+      "objectives": [
+        "Comprendre l'architecture de LangChain",
+        "Chaîner des opérations LLM (chains)",
+        "Utiliser des prompts templates",
+        "Intégrer des outils et agents"
+      ],
+      "prerequisites": [
+        "Notions de base en Python",
+        "Connaissance des LLMs (ChatGPT, etc.)"
+      ],
+      "duration": "30 minutes",
+      "theme": "maxime-lenne",
+      "thumbnail": "./assets/cover.png",
+      "tags": [
+        "langchain",
+        "llm",
+        "ai",
+        "python",
+        "langGraph",
+        "nlp",
+        "machine learning"
+      ],
+      "language": "fr",
+      "version": "1.0.0",
+      "authors": [
+        {
+          "name": "Maxime Lenne",
+          "email": "hello@maxime-lenne.fr"
+        }
+      ],
+      "created": "2025-11-24",
+      "updated": "2026-03-11"
+    },
+    {
+      "id": "sql-advanced-queries",
+      "title": "SQL — Jour 2 : Jointures complexes & Agrégations",
+      "description": "Maîtrise des JOINs (INNER, LEFT, RIGHT, FULL), sous-requêtes, GROUP BY, HAVING et ORDER BY pour des requêtes SQL avancées.",
+      "status": "published",
+      "objectives": [
+        "Réaliser des jointures complexes entre plusieurs tables",
+        "Écrire des sous-requêtes efficaces",
+        "Utiliser GROUP BY, HAVING et ORDER BY",
+        "Agréger et filtrer des données"
+      ],
+      "prerequisites": [
+        "Introduction à SQLite",
+        "SELECT, WHERE, INSERT, UPDATE, DELETE"
       ],
       "duration": "2 hours",
-      "theme": "default",
-      "thumbnail": "./assets/preview.svg",
+      "theme": "simplon",
+      "thumbnail": "./assets/cover.png",
       "tags": [
         "sql",
         "database",
@@ -33,8 +205,8 @@
       "version": "1.0.0",
       "authors": [
         {
-          "name": "Simplon Training Team",
-          "email": "training@simplon.co"
+          "name": "Maxime Lenne",
+          "email": "hello@maxime-lenne.fr"
         }
       ],
       "created": "2025-11-24",
@@ -42,22 +214,21 @@
     },
     {
       "id": "sql-advanced-queries-practice",
-      "title": "Advanced SQL Queries",
-      "description": "Mastering complex JOINs, subqueries, GROUP BY, HAVING, ORDER BY, and query optimization techniques.",
+      "title": "Mise en pratique n°2 — Analyse des ventes",
+      "description": "Exercices pratiques d'analyse de données de ventes : JOINs, GROUP BY et sous-requêtes sur un jeu de données réel.",
       "status": "published",
       "objectives": [
-        "Perform complex JOINs with multiple tables",
-        "Write efficient subqueries",
-        "Use GROUP BY, HAVING, ORDER BY",
-        "Optimize query performance",
-        "Solve practical exercises"
+        "Appliquer les jointures sur un dataset de ventes",
+        "Agréger et analyser des données avec GROUP BY",
+        "Écrire des sous-requêtes pour filtrer des résultats",
+        "Résoudre des cas pratiques progressifs"
       ],
       "prerequisites": [
-        "SQL Advanced Queries"
+        "SQL — Jour 2 : Jointures complexes & Agrégations"
       ],
-      "duration": "2 hours",
-      "theme": "default",
-      "thumbnail": "./assets/preview.svg",
+      "duration": "1 hour 30 minutes",
+      "theme": "simplon",
+      "thumbnail": "./assets/cover.png",
       "tags": [
         "sql",
         "database",
@@ -71,8 +242,8 @@
       "version": "1.0.0",
       "authors": [
         {
-          "name": "Simplon Training Team",
-          "email": "training@simplon.co"
+          "name": "Maxime Lenne",
+          "email": "hello@maxime-lenne.fr"
         }
       ],
       "created": "2025-11-24",
@@ -80,8 +251,8 @@
     },
     {
       "id": "sql-basics",
-      "title": "SQL Basics",
-      "description": "Learn SQL basics",
+      "title": "Jour 1 — Cours SQL & Bases Relationnelles",
+      "description": "Introduction aux bases de données relationnelles, aux relations entre tables et aux requêtes fondamentales : SELECT, INSERT, UPDATE, DELETE avec SQLite.",
       "status": "published",
       "objectives": [
         "Comprendre ce qu’est une base de données relationnelle",
@@ -92,7 +263,7 @@
       ],
       "duration": "2 hours",
       "theme": "simplon",
-      "thumbnail": "./assets/preview.svg",
+      "thumbnail": "./assets/cover.png",
       "tags": [
         "sql",
         "database",
@@ -107,8 +278,8 @@
       "version": "0.1.0",
       "authors": [
         {
-          "name": "Simplon Training Team",
-          "email": "training@simplon.co"
+          "name": "Maxime Lenne",
+          "email": "hello@maxime-lenne.fr"
         }
       ],
       "created": "2025-11-24",
@@ -116,18 +287,21 @@
     },
     {
       "id": "sql-basics-practice",
-      "title": "SQL Basics Practice",
-      "description": "Practice SQL basics with practical examples and exercises.",
+      "title": "Introduction à SQLite",
+      "description": "Installation de SQLite, premières requêtes et exercices pratiques pour découvrir la manipulation de données.",
       "status": "published",
       "objectives": [
-        "Write SELECT queries with WHERE clauses"
+        "Installer et configurer SQLite",
+        "Écrire des requêtes SELECT avec WHERE",
+        "Manipuler les données avec INSERT, UPDATE, DELETE",
+        "Résoudre des exercices pratiques guidés"
       ],
       "prerequisites": [
-        "SQL Basics"
+        "Jour 1 — Cours SQL & Bases Relationnelles"
       ],
       "duration": "1 hour",
-      "theme": "default",
-      "thumbnail": "./assets/preview.svg",
+      "theme": "simplon",
+      "thumbnail": "./assets/cover.png",
       "tags": [
         "sql",
         "database",
@@ -140,8 +314,8 @@
       "version": "1.0.0",
       "authors": [
         {
-          "name": "Simplon Training Team",
-          "email": "training@simplon.co"
+          "name": "Maxime Lenne",
+          "email": "hello@maxime-lenne.fr"
         }
       ],
       "created": "2025-11-24",
@@ -167,7 +341,7 @@
       ],
       "duration": "3 hours",
       "theme": "simplon",
-      "thumbnail": "./assets/preview.svg",
+      "thumbnail": "./assets/cover.png",
       "tags": [
         "sql",
         "database",
@@ -181,75 +355,119 @@
       "version": "0.1.0",
       "authors": [
         {
-          "name": "Simplon Training Team",
-          "email": "training@simplon.co"
+          "name": "Maxime Lenne",
+          "email": "hello@maxime-lenne.fr"
         }
       ],
       "created": "2025-11-24",
       "updated": "2025-11-24"
     },
     {
-      "id": "sql-joins",
-      "title": "SQL Joins",
-      "description": "Learn table relationships",
+      "id": "sql-panorama-systeme-stockage",
+      "title": "Panorama des systèmes de stockage",
+      "description": "Vue d'ensemble des systèmes de stockage dans le développement IA : bases relationnelles, NoSQL, bases vectorielles et leurs cas d'usage.",
       "status": "published",
       "objectives": [
-        "Premier objectif d'apprentissage",
-        "Deuxième objectif d'apprentissage",
-        "Troisième objectif d'apprentissage"
+        "Distinguer les types de bases de données (SQL, NoSQL, vectorielles)",
+        "Choisir le bon système de stockage selon le cas d'usage",
+        "Comprendre les usages dans le développement IA",
+        "Connaître les outils courants (PostgreSQL, MongoDB, Pinecone, etc.)"
       ],
       "prerequisites": [
-        "Connaissance de base en programmation"
+        "Notions de bases de données relationnelles"
       ],
       "duration": "2 hours",
       "theme": "simplon",
-      "thumbnail": "./assets/preview.svg",
+      "thumbnail": "./assets/cover.png",
       "tags": [
         "sql",
+        "nosql",
         "database",
-        "beginner"
+        "vector database",
+        "ai",
+        "storage",
+        "postgresql",
+        "mongodb"
       ],
       "language": "fr",
       "version": "0.1.0",
       "authors": [
         {
-          "name": "Simplon Training Team",
-          "email": "training@simplon.co"
+          "name": "Maxime Lenne",
+          "email": "hello@maxime-lenne.fr"
         }
       ],
       "created": "2025-11-24",
-      "updated": "2025-11-24"
+      "updated": "2026-03-11"
     }
   ],
   "stats": {
-    "totalDecks": 6,
-    "totalDuration": 720,
+    "totalDecks": 10,
+    "totalDuration": 900,
     "languages": [
       "fr"
     ],
     "themes": [
-      "default",
+      "maxime-lenne",
       "simplon"
     ],
     "tags": [
       "advanced",
+      "agentic",
+      "ai",
+      "alembic",
+      "api",
+      "authentication",
+      "automation",
+      "backend",
       "bdd",
       "beginner",
+      "business",
+      "commerce",
+      "crm",
       "database",
       "delete",
+      "dto",
       "exercices",
+      "fastapi",
+      "fetch",
+      "http",
+      "ia",
       "insert",
+      "javascript",
       "joins",
+      "langGraph",
+      "langchain",
+      "llm",
+      "machine learning",
       "merise",
+      "mongodb",
+      "nlp",
+      "nosql",
       "optimization",
+      "postgresql",
+      "prospection",
+      "pydantic",
+      "pytest",
+      "python",
       "queries",
       "query optimization",
+      "rest",
+      "sales",
       "schema",
       "sql",
+      "sqlalchemy",
       "sqlite",
+      "sqlmodel",
+      "storage",
       "subqueries",
+      "swagger",
+      "tests",
       "uml",
-      "update"
+      "update",
+      "validation",
+      "vector database",
+      "web"
     ]
   }
 }

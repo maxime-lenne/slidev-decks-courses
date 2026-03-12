@@ -25,7 +25,7 @@ npm run generate-index
 npm run dev:index
 ```
 
-Open http://localhost:5173 to see all available presentations.
+Open <http://localhost:5173> to see all available presentations.
 
 #### View a specific deck
 
@@ -34,7 +34,7 @@ Open http://localhost:5173 to see all available presentations.
 npm run dev:deck --deck=example-sql-basics
 ```
 
-Open http://localhost:3030 to view the Slidev presentation.
+Open <http://localhost:3030> to view the Slidev presentation.
 
 ### Build for Production
 
@@ -44,6 +44,7 @@ npm run build:all
 ```
 
 Output will be in `dist/`:
+
 - `dist/index.html` - Index page
 - `dist/decks/*/` - Built presentations
 
@@ -84,11 +85,13 @@ Output will be in `dist/`:
 ### Manual Creation
 
 1. Create deck directory:
+
 ```bash
 mkdir -p decks/my-new-deck/assets
 ```
 
-2. Create `decks/my-new-deck/slides.md`:
+1. Create `decks/my-new-deck/slides.md`:
+
 ```markdown
 ---
 theme: default
@@ -100,7 +103,8 @@ title: My New Deck
 Content goes here
 ```
 
-3. Create `decks/my-new-deck/meta.json`:
+1. Create `decks/my-new-deck/meta.json`:
+
 ```json
 {
   "id": "my-new-deck",
@@ -121,7 +125,8 @@ Content goes here
 }
 ```
 
-4. Generate index and view:
+1. Generate index and view:
+
 ```bash
 npm run generate-index
 npm run dev:index
@@ -153,6 +158,7 @@ theme: simplon
 ### Creating Custom Themes
 
 See `themes/` directory for examples. Follow Slidev theme conventions:
+
 - Package name: `slidev-theme-*`
 - Include layouts, components, and styles
 
@@ -165,6 +171,7 @@ npm run validate
 ```
 
 This checks:
+
 - Required fields present
 - Correct data types
 - Valid formats (dates, semver, etc.)
@@ -188,6 +195,7 @@ This checks:
 ### GitHub Pages
 
 The project includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) that automatically:
+
 1. Validates metadata
 2. Builds all decks and index
 3. Deploys to GitHub Pages

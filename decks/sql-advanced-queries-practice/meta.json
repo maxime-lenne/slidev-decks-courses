@@ -1,28 +1,35 @@
 {
   "id": "sql-advanced-queries-practice",
-  "title": "Advanced SQL Queries",
-  "description": "Mastering complex JOINs, subqueries, GROUP BY, HAVING, ORDER BY, and query optimization techniques.",
+  "title": "Mise en pratique n°2 — Analyse des ventes",
+  "description": "Exercices pratiques d'analyse de données de ventes : JOINs, GROUP BY et sous-requêtes sur un jeu de données réel.",
   "status": "published",
   "objectives": [
-    "Perform complex JOINs with multiple tables",
-    "Write efficient subqueries",
-    "Use GROUP BY, HAVING, ORDER BY",
-    "Optimize query performance",
-    "Solve practical exercises"
+    "Appliquer les jointures sur un dataset de ventes",
+    "Agréger et analyser des données avec GROUP BY",
+    "Écrire des sous-requêtes pour filtrer des résultats",
+    "Résoudre des cas pratiques progressifs"
   ],
   "prerequisites": [
-    "SQL Advanced Queries"
+    "SQL — Jour 2 : Jointures complexes & Agrégations"
   ],
-  "duration": "2 hours",
-  "theme": "default",
-  "thumbnail": "./assets/preview.svg",
-  "tags": ["sql", "database", "advanced", "optimization", "joins", "subqueries", "query optimization"],
+  "duration": "1 hour 30 minutes",
+  "theme": "simplon",
+  "thumbnail": "./assets/cover.png",
+  "tags": [
+    "sql",
+    "database",
+    "advanced",
+    "optimization",
+    "joins",
+    "subqueries",
+    "query optimization"
+  ],
   "language": "fr",
   "version": "1.0.0",
   "authors": [
     {
-      "name": "Simplon Training Team",
-      "email": "training@simplon.co"
+      "name": "Maxime Lenne",
+      "email": "hello@maxime-lenne.fr"
     }
   ],
   "created": "2025-11-24",

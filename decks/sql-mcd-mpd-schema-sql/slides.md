@@ -1,6 +1,7 @@
 ---
-theme: default
+theme: ../../themes/simplon
 layout: cover
+background: https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920
 title: Jour 3 — Modélisation & Schema BDD / SQL
 subtitle: MERISE • UML • SQL Schema • Index • Contraintes • DDL
 transition: fade
@@ -29,10 +30,10 @@ layout: center
 transition: slide-left
 ---
 
-
 # 🧩 Partie 1 — Modélisation MERISE
 
 ## MERISE = 3 niveaux
+
 1. **MCD — Modèle Conceptuel des Données**  
 2. **MLD — Modèle Logique des Données**  
 3. **MPD — Modèle Physique des Données**  
@@ -44,12 +45,14 @@ transition: appear
 # 🟦 MCD — Modèle conceptuel des données
 
 ### But :
+
 - Décrire **les entités**  
 - Décrire **les relations**  
 - Définir **les cardinalités**  
 - Pas de considération technique
 
 ### Exemple simple :
+
 ```
 CLIENT (id, nom, ville, age)
 COMMANDE (id, date)
@@ -67,12 +70,14 @@ transition: slide-left
 # 🟦 Cardinalités MERISE
 
 ### Types :
+
 - **(0,1)** optionnel  
 - **(1,1)** obligatoire  
 - **(0,n)** plusieurs optionnels  
 - **(1,n)** plusieurs obligatoires  
 
 ### Exemple :
+
 ```
 CLIENT (1,n) COMMANDE
 → un client peut avoir plusieurs commandes
@@ -88,6 +93,7 @@ transition: slide-left
 Transforme les entités et relations en **tables + clés étrangères**.
 
 ### Exemple :
+
 ```
 CLIENT(id PK, nom, ville, age)
 COMMANDE(id PK, client_id FK, date)
@@ -118,6 +124,7 @@ transition: slide-left
 # 🟧 UML pour les bases de données
 
 UML utilise :
+
 - **Classes** = tables  
 - **Attributs** = colonnes  
 - **Associations** = relations  
@@ -170,6 +177,7 @@ transition: slide-left
 ### (Créer et structurer)
 
 Commandes principales :
+
 - **CREATE TABLE**  
 - **ALTER TABLE**  
 - **DROP TABLE**  
@@ -208,6 +216,7 @@ transition: slide-left
 ## Pourquoi ? Pour garantir la qualité des données
 
 ### Types :
+
 - **PRIMARY KEY**
 - **FOREIGN KEY**
 - **UNIQUE**
@@ -262,11 +271,13 @@ transition: slide-left
 # 🟪 Index — Pourquoi ?
 
 ### Avantages :
+
 - Accélère les recherches  
 - Accélère les JOIN  
 - Accélère les filtres avec WHERE
 
 ### Inconvénients :
+
 - Plus de stockage  
 - Plus lent en insertion  
 
@@ -302,12 +313,14 @@ transition: slide-left
 # 🟫 ALTER TABLE — Modifier une table
 
 ### Ajouter une colonne :
+
 ```sql
 ALTER TABLE clients
 ADD COLUMN telephone TEXT;
 ```
 
 ### Renommer une colonne (SQLite) :
+
 ```sql
 ALTER TABLE clients
 RENAME COLUMN ville TO localisation;
@@ -340,21 +353,20 @@ transition: slide-left
 # Atelier : Créer votre Base de donnée
 
 Créer le MCD d’une application simple de gestion de formation :
-- Utilisateurs 
+
+- Utilisateurs
 - compétences
 - Projets  
 - Tâches  
 - Commentaires  
 
-
 🧱 Règles métier (extraits)
-	1.	Un commentaire doit toujours référencer une tâche et un auteur (apprenant).
-	2.	Une tâche appartient à un unique projet.
-	3.	Une participation lie un apprenant à un projet avec un rôle (et optionnellement un temps alloué).
-	4.	La maîtrise d’une compétence par un apprenant est versionnée par date, niveau atteint, et validateur (formateur/tuteur).
-	5.	Une tâche peut exiger plusieurs compétences avec un niveau attendu.
-	6.	Un apprenant ne peut avoir qu’une entrée active de maîtrise d’une compétence donnée à une date donnée.
-
+ 1. Un commentaire doit toujours référencer une tâche et un auteur (apprenant).
+ 2. Une tâche appartient à un unique projet.
+ 3. Une participation lie un apprenant à un projet avec un rôle (et optionnellement un temps alloué).
+ 4. La maîtrise d’une compétence par un apprenant est versionnée par date, niveau atteint, et validateur (formateur/tuteur).
+ 5. Une tâche peut exiger plusieurs compétences avec un niveau attendu.
+ 6. Un apprenant ne peut avoir qu’une entrée active de maîtrise d’une compétence donnée à une date donnée.
 
 ---
 transition: slide-left
@@ -365,13 +377,12 @@ transition: slide-left
 ## 1. MCD (entités + relations)
 
 Objectifs :
+
 - Entités  
 - Attributs  
 - Cardinalités  
 
-## 2. MLD (tables + PK/FK) 
-
-
+## 2. MLD (tables + PK/FK)
 
 ## 3. SQL (CREATE TABLE)
 

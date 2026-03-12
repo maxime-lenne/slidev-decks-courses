@@ -1,28 +1,36 @@
 {
   "id": "sql-advanced-queries",
-  "title": "Advanced SQL Queries",
-  "description": "Mastering complex JOINs, subqueries, GROUP BY, HAVING, ORDER BY, and query optimization techniques.",
+  "title": "SQL — Jour 2 : Jointures complexes & Agrégations",
+  "description": "Maîtrise des JOINs (INNER, LEFT, RIGHT, FULL), sous-requêtes, GROUP BY, HAVING et ORDER BY pour des requêtes SQL avancées.",
   "status": "published",
   "objectives": [
-    "Perform complex JOINs with multiple tables",
-    "Write efficient subqueries",
-    "Use GROUP BY, HAVING, ORDER BY",
-    "Optimize query performance"
+    "Réaliser des jointures complexes entre plusieurs tables",
+    "Écrire des sous-requêtes efficaces",
+    "Utiliser GROUP BY, HAVING et ORDER BY",
+    "Agréger et filtrer des données"
   ],
   "prerequisites": [
-    "SQL Fundamentals",
-    "Basic SELECT and WHERE knowledge"
+    "Introduction à SQLite",
+    "SELECT, WHERE, INSERT, UPDATE, DELETE"
   ],
   "duration": "2 hours",
-  "theme": "default",
-  "thumbnail": "./assets/preview.svg",
-  "tags": ["sql", "database", "advanced", "optimization", "joins", "subqueries", "query optimization"],
+  "theme": "simplon",
+  "thumbnail": "./assets/cover.png",
+  "tags": [
+    "sql",
+    "database",
+    "advanced",
+    "optimization",
+    "joins",
+    "subqueries",
+    "query optimization"
+  ],
   "language": "fr",
   "version": "1.0.0",
   "authors": [
     {
-      "name": "Simplon Training Team",
-      "email": "training@simplon.co"
+      "name": "Maxime Lenne",
+      "email": "hello@maxime-lenne.fr"
     }
   ],
   "created": "2025-11-24",
