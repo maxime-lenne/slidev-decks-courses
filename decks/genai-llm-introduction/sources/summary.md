@@ -3,10 +3,8 @@
 - Module 1 : Base IA Gen - IA c’est quoi ? → transformer, GAN image ?
 - Module 2 : LLM : Inferance, token, type de model, multimodal
 - Module 3 : Prompt engigineering
-- module 4 : Base RAG
-- module 5 :  Base Agent
-- module 6 : mcp
-- Module 7 : Quels usage Vibe coding, agentic… (intro des 3 formation)
+- module 4 : Concept clef Base RAG -  Base Agent -mcp
+- Module 5 : Quels usage Vibe coding, agentic… (intro des 3 formation)
   - destination des métiers (usage gen ai, chat, agents, rag, nocode)
   - destinations des AI builders (coding agents)
   - destination des AI engineer (création rag, agents…)
@@ -49,7 +47,7 @@
 - Patterns (few-shot, chain of thought)
 - Les 4 stratégies Anthropic (Write, Select, Compress, Isolate)
 
-**Module 6 — MCP : Concepts** *(30min)*
+**Module 4 — MCP : Concepts** *(30min)*
 
 - Model Context Protocol = "USB-C de l'IA"
 - Architecture (Host ↔ Protocol ↔ Server)
