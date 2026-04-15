@@ -1,20 +1,21 @@
 {
   "id": "genai-llm-introduction",
-  "title": "Gen AI LLM Introduction",
-  "description": "A new Slidev presentation",
+  "title": "Fondamentaux de l'IA Générative",
+  "description": "Socle commun Bootcamp IA — 1 journée intensive. LLM, tokens, prompt engineering, RAG, agents, MCP.",
   "status": "draft",
   "objectives": [
-    "Premier objectif d'apprentissage",
-    "Deuxième objectif d'apprentissage",
-    "Troisième objectif d'apprentissage"
+    "Comprendre les mécanismes de l'IA générative (LLM, Transformer, inférence, tokens)",
+    "Écrire des prompts structurés et efficaces",
+    "Connaître les concepts clefs : RAG, agents, MCP",
+    "Choisir sa trajectoire parmi les 3 formations IA"
   ],
   "prerequisites": [
-    "Connaissance de base en programmation"
+    "Aucun prérequis technique"
   ],
-  "duration": "2 hours",
+  "duration": "8 hours",
   "theme": "simplon",
   "thumbnail": "./assets/preview.svg",
-  "tags": ["sql", "database", "beginner"],
+  "tags": ["ai", "llm", "prompt-engineering", "rag", "agents", "mcp", "beginner"],
   "language": "fr",
   "version": "0.1.0",
   "authors": [
@@ -24,5 +25,5 @@
     }
   ],
   "created": "2026-04-06",
-  "updated": "2026-04-06"
+  "updated": "2026-04-07"
 }

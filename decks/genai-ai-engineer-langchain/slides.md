@@ -237,6 +237,7 @@ layout: two-cols-header
 ---
 
 ::left::
+
 <v-clicks>
 
 - **Models** 🤖
@@ -251,6 +252,7 @@ layout: two-cols-header
 </v-clicks>
 
 ::right::
+
 <v-clicks>
 
 - **Output Parsers** 🔍
@@ -397,7 +399,7 @@ flowchart LR
 
     F[Web / PDF / DB] -.-> A
 
-    style A fill:#a8dadc
+    style A fill:#475569
     style D fill:#457b9d
     style C fill:#1d3557
 ```
@@ -459,10 +461,9 @@ sequenceDiagram
     U->>R: Question
     R->>V: similarity_search(question)
     V->>R: Top-K chunks
-    R->>L: Question + contexte formaté
+    R->>L: Question + contexte formaté (chunks pertinents)
     L->>U: Réponse
-
-    Note over R,V: Les chunks pertinents sont injectés dans le prompt
+    
 ```
 
 <!--
@@ -567,25 +568,27 @@ Le LLM lui-même orchestre les actions à entreprendre
 
 ```mermaid
 flowchart LR
-    A[Question Utilisateur] --> B[Thought: Que dois-je faire?]
+    A[Question Utilisateur] --> B[Thought : Que dois-je faire?]
     B --> C{Action nécessaire?}
-    C -- Oui --> D[Action: Appeler un outil]
-    D --> E[Observation: Résultat de l'outil]
+    C -- Oui --> D[Action : Appeler un outil]
+    D --> E[Observation : Résultat de l'outil]
     E --> B
     C -- Non --> F[Final Answer]
 
     style A fill:#1d3557
+    style B fill:#457b9d
+    style C fill:#123744
+    style D fill:#123744
+    style E fill:#475569
     style F fill:#1d3557
-    style D fill:#457b9d
-    style B fill:#1d3557
 ```
 
 <v-clicks>
 
-- **Thought**: le LLM raisonne sur ce qu'il doit faire
-- **Action**: il appelle un outil avec des arguments
-- **Observation**: il reçoit le résultat et réitère
-- **Final Answer**: quand aucun outil supplémentaire n'est nécessaire
+- **Thought** : le LLM raisonne sur ce qu'il doit faire
+- **Action** : il appelle un outil avec des arguments
+- **Observation** : il reçoit le résultat et réitère
+- **Final Answer** : quand aucun outil supplémentaire n'est nécessaire
 
 </v-clicks>
 
@@ -596,8 +599,12 @@ Le LLM sait s'arrêter quand il a suffisamment d'informations
 -->
 
 ---
+layout: two-cols-header
+---
 
 # Définir un Tool
+
+::left::
 
 ```python {1|3-5|7-11|13-17|all}
 from langchain.tools import tool
@@ -621,6 +628,8 @@ def fahrenheit_to_celsius(fahrenheit: float) -> str:
 
 tools = [get_current_time, celsius_to_fahrenheit, fahrenheit_to_celsius]
 ```
+
+::right::
 
 <v-clicks>
 
@@ -857,12 +866,13 @@ graph TD
     E --> P[Vector]
     E --> Q[Summary]
 
-    style A fill:#a8dadc
-    style B fill:#457b9d
-    style C fill:#1d3557
-    style D fill:#1d3557
-    style E fill:#1d3557
-    style F fill:#1d3557
+    style A fill:#457b9d
+    style B fill:#1d3557
+    style C fill:#123744
+    style D fill:#123744
+    style E fill:#123744
+    style F fill:#123744
+    
 ```
 
 <!--

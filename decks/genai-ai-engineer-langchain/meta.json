@@ -1,5 +1,5 @@
 {
-  "id": "langchain",
+  "id": "genai-ai-engineer-langchain",
   "title": "Introduction à LangChain & langGraph",
   "description": "Introduction à LangChain & langGraph — chaîner des opérations LLM pour créer des applications puissantes et modulaires.",
   "status": "published",
@@ -22,8 +22,7 @@
     "ai",
     "python",
     "langGraph",
-    "nlp",
-    "machine learning"
+    "nlp"
   ],
   "language": "fr",
   "version": "1.0.0",

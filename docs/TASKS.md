@@ -16,6 +16,11 @@ Project task tracking.
 - Ajouter un logo pour theme simplon
 - taille des slides
 - deploiement sur github pages
+- En t'inspirant du style simplon, créer un setup pour mermaid pour le theme maxime-lene en t'inspirant du decks @decks/genai-ai-engineer-langchain/slides.md et des couleurs style A fill:#1d3557
+  style B fill:#457b9d
+  style C fill:#123744
+  style D fill:#475569
+  style E fill:#1d3557
 
 ## Completed
 
