@@ -30,6 +30,14 @@
   @apply text-2xl mb-3;
 }
 
+/* h3 as slide title in two-cols-header / default / end — same visual as h1 */
+.slidev-layout.two-cols-header > div:first-child > h3,
+.slidev-layout.default > h3,
+.slidev-layout.end > h3 {
+  @apply text-5xl mb-6 -ml-[0.05em];
+  line-height: 1.2;
+}
+
 .slidev-layout h4 {
   @apply text-xl mb-2;
 }
@@ -46,6 +54,21 @@
   @apply opacity-60;
 }
 
+.slidev-layout a,
+.slidev-layout a:hover {
+  color: var(--ml-text-primary);
+  border-style: dashed;
+  border-color: var(--ml-text-primary);
+}
+.slidev-layout a[target=_blank] {
+  color: var(--ml-text-primary);
+  border-style: solid;
+}
+
+.slidev-layout ul.contains-task-list {
+  list-style: none;
+  li label::before {content: " ";}
+}
 /* Cover Layout - Full screen with gradient background */
 .slidev-layout.cover {
   @apply h-full grid place-items-center;
@@ -112,7 +135,8 @@
   pointer-events: none;
 }
 
-.slidev-layout.section h1 {
+.slidev-layout.section h1,
+.slidev-layout.section h2 {
   @apply text-7xl font-700 leading-tight;
   color: white;
   text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
@@ -120,7 +144,8 @@
   background: none;
 }
 
-.slidev-layout.section h1 + p {
+.slidev-layout.section h1 + p,
+.slidev-layout.section h2 + p {
   @apply text-xl opacity-90;
   color: white;
 }
@@ -143,6 +168,8 @@
 .slidev-layout.two-cols .col-left,
 .slidev-layout.two-cols .col-right {
   @apply flex flex-col;
+  min-width: 0;
+  overflow: hidden;
 }
 
 /* Center Layout */
@@ -160,6 +187,9 @@
   border-left-width: 8px;
   padding-left: 2rem;
   position: relative;
+  p {
+    line-height: 2.5rem;
+  }
 }
 
 .slidev-layout.quote blockquote::before {
@@ -250,6 +280,11 @@
 .slidev-layout.full p,
 .slidev-layout.full li {
   color: rgba(255, 255, 255, 0.9);
+}
+
+
+slidev-layout.end {
+  background-color: var(--ml-gradient-primary);
 }
 
 /* Navigation Dots - Custom styling */

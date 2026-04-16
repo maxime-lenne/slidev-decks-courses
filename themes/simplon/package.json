@@ -6,6 +6,8 @@
     "slidev-theme",
     "slidev",
     "simplon",
+    "education",
+    "training",
     "dark-theme"
   ],
   "author": "Simplon Training Team",
@@ -31,5 +33,9 @@
       }
     },
     "colorSchema": "auto"
+  },
+  "scripts": {
+    "dev": "slidev example.md",
+    "build": "slidev build example.md"
   }
 }

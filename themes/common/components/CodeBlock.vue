@@ -50,6 +50,9 @@ function copyCode(event: MouseEvent) {
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background: #f8f9fa;
+  max-height: calc(100vh - 5rem);
+  display: flex;
+  flex-direction: column;
 }
 
 html.dark .code-block-wrapper {
@@ -113,6 +116,8 @@ html.dark .copy-button:hover {
 .code-block-content {
   padding: 1rem;
   overflow-x: auto;
+  overflow-y: auto;
+  flex: 1;
 }
 
 .code-block-content :deep(pre) {
