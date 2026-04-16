@@ -31,5 +31,9 @@
       }
     },
     "colorSchema": "auto"
+  },
+  "scripts": {
+    "dev": "slidev example.md",
+    "build": "slidev build example.md"
   }
 }

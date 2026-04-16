@@ -88,7 +88,7 @@ html.dark {
   /* Theme Colors - Dark Mode */
   --ml-background: #0f172a;
   --ml-background-alt: #1e293b;
-  --ml-surface: #1e293b;
+  --ml-surface: #0e1729;
   --ml-surface-hover: #334155;
   --ml-text-primary: #f8fafc;
   --ml-text-secondary: #cbd5e1;
@@ -141,7 +141,7 @@ body {
 
 .slidev-page {
   background-color: var(--ml-surface);
-  color: var(--ml-text-primary);
+  color: var(--ml-text-secondary);
 }
 
 /* Typography */
@@ -193,6 +193,26 @@ pre {
   border-radius: var(--ml-radius-lg);
   padding: 1rem;
   overflow-x: auto;
+  overflow-y: auto;
+  max-height: 28rem;
+}
+
+pre::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: var(--ml-neutral-600);
+  border-radius: var(--ml-radius-full);
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+  background: var(--ml-color-primary);
 }
 
 pre code {
@@ -233,6 +253,7 @@ blockquote {
   border-image: var(--ml-gradient-primary) 1;
   padding-left: 1rem;
   margin-left: 0;
+  line-height: 2.5rem;
   font-style: italic;
   color: var(--ml-text-secondary);
   background-color: var(--ml-surface-hover);
@@ -247,13 +268,13 @@ blockquote {
 /* Lists */
 ul li::marker,
 ol li::marker {
-  color: var(--ml-color-primary);
+  color: var(--ml-text-tertiary);
   font-weight: 700;
 }
 
 /* Strong and emphasis */
 strong {
-  background: var(--ml-gradient-text);
+  background: var(--ml-text-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

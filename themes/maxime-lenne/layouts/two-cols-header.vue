@@ -3,11 +3,11 @@
     <div>
       <slot />
     </div>
-    <div class="flex gap-12">
-      <div class="col-left flex-1 overflow-auto">
+    <div class="flex gap-12 min-w-0">
+      <div class="col-left flex-1 min-w-0 overflow-auto">
         <slot name="left" />
       </div>
-      <div class="col-right flex-1 overflow-auto">
+      <div class="col-right flex-1 min-w-0 overflow-auto">
         <slot name="right" />
       </div>
     </div>

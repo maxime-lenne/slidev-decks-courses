@@ -27,8 +27,91 @@ Context: Pour développeurs techniques qui veulent construire des apps LLM
 -->
 
 ---
+layout: two-cols-header
+---
 
-# Chronologie de LangChain
+### Prérequis & Objectifs
+
+::left::
+
+### Prérequis
+
+- **Python** intermédiaire — fonctions, classes, décorateurs
+- Notions d'**API REST** et JSON
+- Clé API **OpenAI** ou **Mistral AI**
+- `pip install langchain langchain-openai`
+
+**Niveau :** développeurs avec une première expérience Python
+
+::right::
+
+### Objectifs
+
+À l'issue du module vous serez capable de :
+
+- Utiliser les composants fondamentaux de LangChain
+- Composer des **chaînes** avec l'opérateur `|` (LCEL)
+- Construire un **pipeline RAG** complet (ingestion → retrieval)
+- Créer un **agent** avec outils et mémoire persistante
+- Appréhender LangGraph &amp; LangSmith en production
+
+---
+layout: default
+---
+
+<div class="h-full flex items-center gap-16 px-4">
+  <div class="w-2/5">
+    <h1 class="text-[4.5rem] font-black leading-[1.05] text-[#457b9d] uppercase tracking-tight">
+      Table<br>of<br>Contents
+    </h1>
+  </div>
+  <div class="w-3/5">
+<ol class="space-y-4 text-lg list-none">
+      <li class="flex gap-5 items-start">
+        <span class="text-[#457b9d] font-black text-xl min-w-[2rem]">01</span>
+        <Link to="5" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Présentation &amp; Contexte</Link>
+      </li>
+      <li class="flex gap-5 items-start">
+        <span class="text-[#457b9d] font-black text-xl min-w-[2rem]">02</span>
+        <Link to="9" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Les Composants Fondamentaux</Link>
+      </li>
+      <li class="flex gap-5 items-start">
+        <span class="text-[#457b9d] font-black text-xl min-w-[2rem]">03</span>
+        <Link to="14" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Les Chaînes &amp; LCEL</Link>
+      </li>
+      <li class="flex gap-5 items-start"><span class="text-[#457b9d] font-black text-xl min-w-[2rem]">04</span>
+        <Link to="19" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">RAG Pattern</Link>
+      </li>
+      <li class="flex gap-5 items-start"><span class="text-[#457b9d] font-black text-xl min-w-[2rem]">05</span>
+        <Link to="25" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Agents &amp; Tools</Link>
+      </li>
+      <li class="flex gap-5 items-start"><span class="text-[#457b9d] font-black text-xl min-w-[2rem]">06</span>
+        <Link to="31" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Agent RAG — Exemple Complet</Link>
+      </li>
+      <li class="flex gap-5 items-start"><span class="text-[#457b9d] font-black text-xl min-w-[2rem]">07</span>
+        <Link to="36" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Conclusion</Link>
+      </li>
+      <li class="flex gap-5 items-start"><span class="text-[#457b9d] font-black text-xl min-w-[2rem]">08</span>
+        <Link to="41" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Au-delà de LangChain</Link>
+      </li>
+    </ol>
+  </div>
+</div>
+
+---
+src: ../templates/slides.md#1
+---
+
+---
+layout: section
+---
+
+# Contexte et présentation
+
+
+---
+
+### Chronologie de LangChain
 
 ```mermaid
 timeline
@@ -59,7 +142,7 @@ En 3 ans : open-source → licorne → standard de facto pour les apps LLM
 layout: two-cols-header
 ---
 
-# L'Écosystème LangChain
+### L'Écosystème LangChain
 
 ::left::
 
@@ -87,7 +170,7 @@ graph BT
 - **langchain-core** — Abstractions fondamentales : ChatModels, Tools, Prompts, `Runnable`
 - **langchain** — Framework applicatif : `create_agent()`, LCEL, middleware
 - **LangGraph** — Runtime graphe : agents stateful, durables, human-in-the-loop
-- **Intégrations** — `langchain-openai`, `langchain-anthropic`, `langchain-mcp-adapters`…
+- **Intégrations** — chat models, embedding models, vector stores, tools, documents loader...
 - **LangSmith** — Observabilité, tracing, évaluation en production
 - **Deep Agents** — Meta-toolkit pour tâches complexes longue durée
 
@@ -102,7 +185,7 @@ langchain-core est le seul package sans dépendances externes — tout repose de
 layout: two-cols-header
 ---
 
-# Le Défi
+### Le Défi
 
 ::left::
 
@@ -172,7 +255,7 @@ Le "plumbing code" est géré par LangChain
 
 ---
 
-# Le Problème
+### Le Problème
 
 <v-clicks>
 
@@ -197,8 +280,180 @@ Les LLMs sont puissants mais nécessitent de l'infrastructure
 -->
 
 ---
+layout: section
+---
 
-# Le Chaînage d'Opérations
+# Les Composants Fondamentaux
+
+<!--
+Ces 4 composants sont la base de toute application LangChain
+Chacun résout un problème spécifique — on va les détailler un par un
+-->
+
+---
+layout: two-cols-header
+---
+
+### Models
+
+::left::
+
+```python {3-4|6-8|all}
+from langchain.chat_models import init_chat_model
+
+# Interface unifiée — changer de modèle = changer une ligne
+model_openai    = init_chat_model("gpt-4o-mini")
+model_ollama    = init_chat_model(
+    "llama3.2", model_provider="ollama"
+)
+
+# Même API .invoke() pour tous
+response = model_openai.invoke("Explique LangChain.")
+print(response.content)
+```
+
+::right::
+
+**Models** 🤖 — Interface unifiée pour tous les LLMs (OpenAI, Anthropic, Ollama…)
+
+<v-clicks>
+
+- `init_chat_model()` — instancie **n'importe quel** modèle par son nom
+- Changez de provider sans toucher au reste de la chaîne
+- Même interface : `.invoke()` · `.stream()` · `.batch()`
+- Retourne un `AIMessage` avec `.content` et les métadonnées
+
+</v-clicks>
+
+<!--
+init_chat_model() remplace ChatOpenAI/ChatAnthropic directs depuis LangChain v0.2
+Le model_provider est auto-détecté à partir du nom si non précisé
+-->
+
+---
+layout: two-cols-header
+---
+
+### Prompts
+
+::left::
+
+```python {3-7|9-14|all}
+from langchain_core.prompts import ChatPromptTemplate
+
+# Messages structurés : system + human
+# Les variables {langue} et {texte} sont auto-inférées
+prompt = ChatPromptTemplate.from_messages([
+    ("system", "Tu es un traducteur expert."),
+    ("human", "Traduire en {langue}: {texte}"),
+])
+
+chain = prompt | model
+
+result = chain.invoke(
+  {"langue": "français", "texte": "Hello World"}
+)
+# Output: AIMessage(content="Bonjour le monde")
+```
+
+::right::
+
+**Prompts** 📝 — Templates réutilisables avec variables dynamiques
+
+<v-clicks>
+
+- `from_messages()` — définit les rôles `system` / `human` / `ai`
+- Variables **auto-inférées** — `input_variables` n'est plus requis
+- `PromptTemplate` pour les modèles texte, `ChatPromptTemplate` pour les chat models
+- Composable avec `|` : `prompt | model | parser`
+
+</v-clicks>
+
+<!--
+langchain_core.prompts remplace langchain.prompts (package stable sans dépendances)
+Le pipe | connecte chaque Runnable — pattern central de LCEL
+-->
+
+---
+layout: two-cols-header
+---
+
+### Output Parsers
+
+::left::
+
+```python {3-8|10-16|all}
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.output_parsers import JsonOutputParser
+
+# Texte brut
+chain = ChatPromptTemplate.from_messages([
+    ("human", "Explique {concept} en une phrase."),
+]) | model | StrOutputParser()
+
+result = chain.invoke({"concept": "LangChain"})
+# → str: "LangChain est un framework..."
+
+# JSON structuré
+chain_json = ChatPromptTemplate.from_messages([
+    ("system", "Réponds uniquement en JSON valide."),
+    ("human", "Donne-moi {n} frameworks Python pour l'IA."),
+]) | model | JsonOutputParser()
+
+result = chain_json.invoke({"n": 3})
+# → dict: {"frameworks": ["LangChain", "LlamaIndex", ...]}
+```
+
+::right::
+
+**Output Parsers** 🔍 — Structurer les réponses LLM (texte, JSON, objets)
+
+<v-clicks>
+
+- `StrOutputParser` — extrait `.content` de l'`AIMessage` en `str`
+- `JsonOutputParser` — parse automatiquement le JSON de la réponse
+- `PydanticOutputParser` — valide et type la réponse via un schéma Pydantic
+- En cas d'erreur de parsing : `OutputFixingParser` ré-essaie avec le LLM
+
+</v-clicks>
+
+<!--
+StrOutputParser est le plus courant — il termine presque toutes les chaînes
+JsonOutputParser injecte les instructions de format dans le prompt automatiquement
+-->
+
+---
+layout: end
+---
+
+### Exercice
+
+<div class="flex flex-col items-center gap-4 pt-8">
+  <a href="https://github.com/maxime-lenne/course-langchain-introduction" target="_blank" class="flex items-center gap-3 text-xl no-underline opacity-80 hover:opacity-100 transition-opacity">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+    <code>maxime-lenne/course-langchain-introduction</code>
+  </a>
+</div>
+
+---
+layout: section
+---
+
+# Les Chaînes (Chains)
+
+Le coeur de LangChain
+
+---
+
+### Le Chaînage d'Opérations
+
+
+<div class="highlight-box">
+  📚 <strong>Définition :</strong> un pipeline réutilisable et composable qui fait circuler les données étape par étape à travers des prompts,
+  des modèles, des outils, des transformations et des output parsers.
+</div>
+
+<v-clicks>
 
 ```mermaid
 flowchart LR
@@ -212,6 +467,8 @@ flowchart LR
     style F fill:#475569
     style D fill:#457b9d
 ```
+
+</v-clicks>
 
 <v-clicks>
 
@@ -227,99 +484,8 @@ LangChain standardise ces patterns
 -->
 
 ---
-layout: section
----
 
-# Les Composants Fondamentaux
-
----
-layout: two-cols-header
----
-
-::left::
-
-<v-clicks>
-
-- **Models** 🤖
-  - Interface unifiée pour tous les LLMs
-  - OpenAI, Anthropic, Cohere, HuggingFace...
-  - Changez de modèle en changeant une ligne
-
-- **Prompts** 📝
-  - Templates réutilisables et composables
-  - Variables dynamiques
-  - Validation automatique
-</v-clicks>
-
-::right::
-
-<v-clicks>
-
-- **Output Parsers** 🔍
-  - Structurer les réponses LLM
-  - JSON, listes, objets personnalisés
-  - Gestion des erreurs de parsing
-
-- **Memory** 💾
-  - Maintenir le contexte entre interactions
-  - `MemorySaver` (LangGraph) avec isolation par `thread_id`
-  - Historique géré automatiquement par session
-
-</v-clicks>
-
-<!--
-Ces 4 composants sont la base de toute application LangChain
-Chacun résout un problème spécifique
--->
-
----
-
-# Exemple: Prompt Template
-
-```python {all|1-2|4-8|10-12|all}
-from langchain_core.prompts import ChatPromptTemplate
-from langchain.chat_models import init_chat_model
-
-# ChatPromptTemplate pour les chat models (messages structurés)
-# Les variables {langue} et {texte} sont auto-inférées
-prompt = ChatPromptTemplate.from_messages([
-    ("system", "Tu es un traducteur expert."),
-    ("human", "Traduire en {langue}: {texte}"),
-])
-
-model = init_chat_model("gpt-4o-mini")
-chain = prompt | model
-
-# Utilisation
-result = chain.invoke({"langue": "français", "texte": "Hello World"})
-# Output: "Bonjour le monde"
-```
-
-<v-clicks>
-
-- `ChatPromptTemplate` pour les chat models (system + human)
-- Variables **auto-inférées** — `input_variables` n'est plus requis
-- `init_chat_model()` instancie n'importe quel modèle par son nom
-
-</v-clicks>
-
-<!--
-langchain_core.prompts remplace langchain.prompts
-init_chat_model() remplace ChatOpenAI/ChatAnthropic directs (plus flexible)
-Le pipe | connecte prompt → model (pattern LCEL)
--->
-
----
-layout: section
----
-
-# Les Chaînes (Chains)
-
-Le coeur de LangChain
-
----
-
-# LCEL — Composer des Chaînes
+### LCEL — Composer des Chaînes
 
 <v-clicks>
 
@@ -345,16 +511,14 @@ Tous les composants implémentent l'interface Runnable : .invoke() / .stream() /
 
 ---
 
-```python {1-4|6-9|11-14|16-19|21-22|all}
+```python {1-6|8-12|14-19|21-23|all}
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain_core.runnables import RunnableParallel
 from langchain.chat_models import init_chat_model
 
 model = init_chat_model("gpt-4o-mini")
 parser = StrOutputParser()
 
-# Chaîne séquentielle avec l'opérateur |
 prompt_titre = ChatPromptTemplate.from_messages([
     ("system", "Tu es un rédacteur expert."),
     ("human", "Génère un titre accrocheur pour un article sur: {sujet}"),
@@ -380,28 +544,38 @@ LCEL : chaque composant est un Runnable, l'opérateur | passe l'output au suivan
 -->
 
 ---
+layout: end
+---
+
+### Exercice
+
+<div class="flex flex-col items-center gap-4 pt-8">
+  <a href="https://github.com/maxime-lenne/course-langchain-runnable-chain" target="_blank" class="flex items-center gap-3 text-xl no-underline opacity-80 hover:opacity-100 transition-opacity">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+    <code>maxime-lenne/course-langchain-runnable-chain</code>
+  </a>
+</div>
+
+---
 layout: section
 ---
 
-# RAG Pattern
+# RAG
 
 Retrieval-Augmented Generation
 
 ---
 
-# RAG: Phase 1 — Pipeline d'Ingestion
+### RAG: Phase 1 — Pipeline d'Ingestion
 
 ```mermaid
 flowchart LR
-    A[Documents Sources] --> B[Document Loader]
-    B --> C[Text Splitter]
-    C --> D[Vector Store]
+    A[Document Loader] --> B[Text Splitter]
+    B --> C[Vector Store]
 
-    F[Web / PDF / DB] -.-> A
+    D[Web / PDF / DB] -.-> A
 
-    style A fill:#475569
     style D fill:#457b9d
-    style C fill:#1d3557
 ```
 
 <v-clicks>
@@ -419,11 +593,11 @@ add_start_index permet de retrouver la position exacte dans le document source
 
 ---
 
-# Exemple: Pipeline d'Ingestion
-
-```python {1-2|4-5|7-12|14-15|all}
+```python {1-4|6-8|10-16|18-21|all}
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_mistralai import MistralAIEmbeddings
+from langchain_chroma import Chroma
 
 # 1. Charger les documents
 loader = WebBaseLoader(web_paths=("https://example.com/docs",))
@@ -435,10 +609,12 @@ text_splitter = RecursiveCharacterTextSplitter(
     chunk_overlap=200,
     add_start_index=True,
 )
-splits = text_splitter.split_documents(docs)
+chunks = text_splitter.split_documents(docs)
 
 # 3. Indexer dans le vector store (embeddings inclus)
-document_ids = vector_store.add_documents(documents=splits)
+embeddings = MistralAIEmbeddings(model="mistral-embed")
+vector_store = Chroma(collection_name="example_collection", embedding_function=embeddings)
+document_ids = vector_store.add_documents(documents=chunks)
 ```
 
 <!--
@@ -449,7 +625,7 @@ vector_store.add_documents() gère embeddings + persistance en une seule ligne
 
 ---
 
-# RAG: Phase 2 — Retrieval
+### RAG: Phase 2 — Retrieval
 
 ```mermaid
 sequenceDiagram
@@ -473,18 +649,24 @@ Le contexte est injecté dans le prompt avant l'appel au LLM
 
 ---
 
-# Exemple: RAG Chain
-
-```python {1-4|6-9|11-17|19|all}
+```python {8-11|13-17|19-24|26-33|all}
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from langchain.chat_models import init_chat_model
+from langchain_mistralai import MistralAIEmbeddings
+from langchain_chroma import Chroma
 
 model = init_chat_model("gpt-4o-mini")
+embeddings = MistralAIEmbeddings(model="mistral-embed")
+vector_store = Chroma(collection_name="example_collection", embedding_function=embeddings)
+retriever = vector_store.as_retriever(search_kwargs={"k": 2})
 
 def format_docs(docs):
-    return "\n\n".join(doc.page_content for doc in docs)
+    return "\n\n".join(
+        f"Source: {doc.metadata}\nContent: {doc.page_content}"
+        for doc in docs
+    )
 
 prompt = ChatPromptTemplate.from_messages([
     ("system",
@@ -510,6 +692,19 @@ Tiré du notebook src/rag/langchain.ipynb
 -->
 
 ---
+layout: end
+---
+
+### Exercice
+
+<div class="flex flex-col items-center gap-4 pt-8">
+  <a href="https://github.com/maxime-lenne/course-langchain-rag" target="_blank" class="flex items-center gap-3 text-xl no-underline opacity-80 hover:opacity-100 transition-opacity">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+    <code>maxime-lenne/course-langchain-rag</code>
+  </a>
+</div>
+
+---
 layout: section
 ---
 
@@ -521,7 +716,7 @@ Raisonner, Agir, Itérer
 layout: two-cols-header
 ---
 
-# Chains vs Agents
+### Chains vs Agents
 
 ::left::
 
@@ -564,7 +759,7 @@ Le LLM lui-même orchestre les actions à entreprendre
 
 ---
 
-# Pattern ReAct
+### Pattern ReAct
 
 ```mermaid
 flowchart LR
@@ -598,11 +793,43 @@ Ce cycle peut se répéter autant de fois que nécessaire
 Le LLM sait s'arrêter quand il a suffisamment d'informations
 -->
 
+
+---
+
+### Créer un Agent
+
+```python {1-2|4-9|11-17|all}
+from langchain.agents import create_agent
+from langchain_openai import ChatOpenAI
+
+model = ChatOpenAI(model="gpt-4o-mini")
+
+# Agent stateless : pas de mémoire entre les invocations
+agent = create_agent(
+    model,
+    tools=tools,
+    system_prompt="Tu es un assistant utile. Utilise les outils disponibles."
+)
+
+# Invocation : format basé sur les messages
+response = agent.invoke({
+    "messages": [{"role": "user", "content": "Quelle heure est-il ?"}]
+})
+
+print(response["messages"][-1].content)
+# → "Il est 14:32."
+```
+
+<!--
+create_agent remplace l'ancienne API AgentExecutor (dépréciée)
+Le LLM décide automatiquement si un outil est nécessaire
+-->
+
 ---
 layout: two-cols-header
 ---
 
-# Définir un Tool
+### Définir un Tool
 
 ::left::
 
@@ -645,122 +872,73 @@ Le LLM choisit le bon outil parmi la liste selon la question posée
 -->
 
 ---
+layout: two-cols-header
+---
 
-# Tool avec Artefact (RAG)
+### Memory
 
-```python {1-2|4-9|11-16|all}
-from langchain.tools import tool
-from langchain_core.documents import Document
+::left::
 
-# response_format="content_and_artifact" : retourne texte + documents bruts
-# Le texte sert au LLM, les documents sont accessibles dans la réponse finale
-@tool(response_format="content_and_artifact")
-def retrieve(query: str):
-    """Recherche des informations dans la base de documents internes."""
-    retrieved_docs = retriever.invoke(query)
-    serialized = "\n\n".join(
-        f"Source : {doc.metadata.get('source', 'inconnue')}\n"
-        f"Contenu : {doc.page_content}"
-        for doc in retrieved_docs
-    )
-    return serialized, retrieved_docs  # (contenu_llm, artefact_brut)
+```python {4-6|8-19|all}
+from langchain.agents import create_agent
+from langgraph.checkpoint.memory import MemorySaver
 
-tools = [retrieve]
+memory = MemorySaver()
+agent = create_agent(model, tools=[], checkpointer=memory)
+config = {"configurable": {"thread_id": "utilisateur_42"}}
+
+agent.invoke(
+    {"messages": [{
+      "role": "user", "content": "Je m'appelle Alice"
+    }]},
+    config=config,
+)
+response = agent.invoke(
+    {"messages": [{
+      "role": "user", "content": "Quel est mon nom ?"
+    }]},
+    config=config,
+)
+print(response["messages"][-1].content)
+# → "Votre nom est Alice."
 ```
+
+::right::
+
+**Memory** 💾 — Maintenir le contexte entre interactions via `MemorySaver`
 
 <v-clicks>
 
-- `content` → texte injecté dans le prompt du LLM
-- `artifact` → documents bruts accessibles via `step["artifact"]`
-- Permet de **tracer les sources** sans polluer le contexte LLM
+- `MemorySaver` — stocke l'historique **en mémoire** par `thread_id`
+- Chaque `thread_id` = session complètement isolée
+- Persistance durable : remplacer par `SqliteSaver` ou `PostgresSaver`
+- L'historique est injecté automatiquement dans chaque appel
 
 </v-clicks>
 
 <!--
-Pattern utilisé dans le notebook langgraph/rag.ipynb
-content_and_artifact sépare ce que voit le LLM de ce qu'on expose à l'utilisateur
+MemorySaver fait partie de LangGraph — intégré via le paramètre checkpointer
+thread_id permet de gérer plusieurs utilisateurs simultanément sans collision
 -->
 
 ---
-
-# Créer un Agent
-
-```python {1-2|4-9|11-17|all}
-from langchain.agents import create_agent
-from langchain_openai import ChatOpenAI
-
-model = ChatOpenAI(model="gpt-4o-mini")
-
-# Agent stateless : pas de mémoire entre les invocations
-agent = create_agent(
-    model,
-    tools=tools,
-    system_prompt="Tu es un assistant utile. Utilise les outils disponibles."
-)
-
-# Invocation : format basé sur les messages
-response = agent.invoke({
-    "messages": [{"role": "user", "content": "Quelle heure est-il ?"}]
-})
-
-print(response["messages"][-1].content)
-# → "Il est 14:32."
-```
-
-<!--
-create_agent remplace l'ancienne API AgentExecutor (dépréciée)
-Le LLM décide automatiquement si un outil est nécessaire
--->
-
----
-
-# Agent Conversationnel avec Mémoire
-
-```python {1-2|4-8|10-11|13-18|20-24|all}
-from langchain.agents import create_agent
-from langgraph.checkpoint.memory import MemorySaver
-
-# MemorySaver stocke l'historique par thread_id
-memory = MemorySaver()
-
-agent = create_agent(
-    model,
-    tools=tools,
-    checkpointer=memory
-)
-
-# Chaque thread_id = une session indépendante
-config_a = {"configurable": {"thread_id": "utilisateur_A"}}
-config_b = {"configurable": {"thread_id": "utilisateur_B"}}
-
-# Session A — Tour 1
-agent.invoke(
-    {"messages": [{"role": "user", "content": "Je m'appelle Alice"}]},
-    config=config_a
-)
-
-# Session A — Tour 2 : l'agent se souvient du contexte A
-agent.invoke(
-    {"messages": [{"role": "user", "content": "Quel est mon nom ?"}]},
-    config=config_a
-)
-# → "Votre nom est Alice."
-```
-
-<!--
-MemorySaver isole automatiquement l'historique par thread_id
-Session B ne voit jamais le contexte de la session A
-Tiré du notebook langgraph/rag.ipynb
--->
-
+layout: section
 ---
 
 # Exemple Complet: Agent RAG
 
-```python {1-4|6-12|14-21|23-27|all}
+Tool · Prompt · Mémoire · Invocation
+
+---
+layout: two-cols-header
+---
+
+### Agent RAG — 1/3 : Le Tool
+
+::left::
+
+```python {1-2|4-10|all}
 from langchain.tools import tool
-from langchain.agents import create_agent
-from langgraph.checkpoint.memory import MemorySaver
 from langchain_core.documents import Document
 
 @tool(response_format="content_and_artifact")
@@ -768,111 +946,186 @@ def retrieve(query: str):
     """Recherche des informations dans la base de documents internes."""
     docs = retriever.invoke(query)
     serialized = "\n\n".join(
-        f"Source: {doc.metadata.get('source')}\n{doc.page_content}"
+        f"Source: {doc.metadata.get('source', 'inconnue')}\n{doc.page_content}"
         for doc in docs
     )
     return serialized, docs
+```
+
+::right::
+
+<v-clicks>
+
+- `response_format="content_and_artifact"` — retourne un tuple `(str, list)`
+- `serialized` → texte injecté dans le contexte du LLM
+- `docs` → artefact brut, accessible pour tracer les sources
+- Le **docstring** guide le LLM sur quand appeler cet outil
+
+</v-clicks>
+
+<!--
+content_and_artifact : sépare ce que voit le LLM (texte) de ce qu'on expose (documents)
+Le retriever est celui créé en phase d'ingestion : vector_store.as_retriever()
+-->
+
+---
+layout: two-cols-header
+---
+
+### Agent RAG — 2/3 : Prompt & Agent
+
+::left::
+
+```python {1-7|9-16|all}
+from langchain.agents import create_agent
+from langchain.chat_models import init_chat_model
+
+model = init_chat_model("gpt-4o-mini")
+
+system_prompt = (
+    "Tu es un assistant RAG. "
+    "Utilise toujours l'outil `retrieve` pour rechercher "
+    "des informations avant de répondre. "
+    "Si l'information n'est pas dans les documents, "
+    "dis-le clairement."
+)
 
 agent = create_agent(
     model,
     tools=[retrieve],
-    system_prompt=(
-        "Utilise l'outil de recherche pour trouver des informations pertinentes. "
-        "Si l'information n'est pas dans les documents, dis-le clairement."
-    ),
-    checkpointer=MemorySaver()
+    system_prompt=system_prompt,
+)
+```
+
+::right::
+
+<v-clicks>
+
+- `system_prompt` — dit à l'agent **quand** et **comment** utiliser l'outil
+- `tools=[retrieve]` — liste des outils disponibles
+- L'agent est **stateless** par défaut (pas de mémoire entre sessions)
+- `create_agent` construit un graph LangGraph en arrière-plan
+
+</v-clicks>
+
+<!--
+Le system_prompt est critique : sans instruction explicite, le LLM peut décider de ne pas appeler retrieve()
+create_agent remplace AgentExecutor (déprécié depuis v0.2)
+-->
+
+---
+layout: two-cols-header
+---
+
+### Agent RAG — 3/3 : Mémoire & Invocation
+
+::left::
+
+```python {1-2|4-9|11-14|16-19|all}
+from langgraph.checkpoint.memory import MemorySaver
+
+# Ajouter la mémoire persistante par session
+memory = MemorySaver()
+agent = create_agent(
+    model,
+    tools=[retrieve],
+    system_prompt=system_prompt,
+    checkpointer=memory,
 )
 
+# thread_id = session isolée par utilisateur
 config = {"configurable": {"thread_id": "session_1"}}
+
 response = agent.invoke(
     {"messages": [{"role": "user", "content": "Quelles réunions concernent Neolink ?"}]},
-    config=config
+    config=config,
 )
 print(response["messages"][-1].content)
 ```
 
+::right::
+
+<v-clicks>
+
+- `MemorySaver` + `checkpointer` — active la mémoire conversationnelle
+- `thread_id` — chaque utilisateur a sa propre session isolée
+- `response["messages"][-1]` — dernier message = réponse finale de l'agent
+- `ToolMessage` dans `messages` → sources consultées accessibles
+
+</v-clicks>
+
 <!--
-Pattern complet: tool RAG + agent + mémoire persistante
-Le LLM décide quand appeler retrieve() selon la question
-Sources accessibles si besoin via response["messages"] pour les ToolMessages
+Sans checkpointer : l'agent répond mais oublie à chaque invoke()
+Avec checkpointer : l'historique complet est injecté automatiquement
 -->
+
+---
+layout: end
+---
+
+### Exercice
+
+<div class="flex flex-col items-center gap-4 pt-8">
+  <a href="https://github.com/maxime-lenne/course-langchain-agents" target="_blank" class="flex items-center gap-3 text-xl no-underline opacity-80 hover:opacity-100 transition-opacity">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+    <code>maxime-lenne/course-langchain-agents</code>
+  </a>
+</div>
 
 ---
 layout: section
 ---
 
-# Demo: Chatbot avec Mémoire
+# En conclusion
 
 ---
-
-# Conversation qui Se Souvient
-
-```python {1-2|4|5-8|10-11|13-15|all}
-from langchain.memory import ConversationBufferMemory
-from langchain.chains import ConversationChain
-
-memory = ConversationBufferMemory()
-conversation = ConversationChain(
-    llm=llm,
-    memory=memory
-)
-
-# Conversation 1
-conversation.predict(input="Je m'appelle Alice")
-# Output: "Enchanté Alice, comment puis-je vous aider?"
-
-# Conversation 2 - se souvient du contexte!
-conversation.predict(input="Quel est mon nom?")
-# Output: "Votre nom est Alice"
-```
-
-<v-clicks>
-
-- La mémoire gère automatiquement l'historique
-- Pas besoin de manipuler manuellement le contexte
-- Différents types de mémoire disponibles (buffer, summary, vector)
-
-</v-clicks>
-
-<!--
-La mémoire est automatiquement gérée par LangChain
-Montrer la simplicité comparée à une implémentation manuelle
--->
-
----
-
-# Architecture LangChain
 
 ```mermaid
-graph TD
-    A[Application] --> B[Chains]
-    B --> C[Models]
-    B --> D[Prompts]
-    B --> E[Memory]
-    B --> F[Data Loaders]
-
-    C --> G[OpenAI]
-    C --> H[Anthropic]
-    C --> I[HuggingFace]
-
-    F --> J[PDFs]
-    F --> K[APIs]
-    F --> L[Databases]
-
-    D --> M[Templates]
-    D --> N[Output Parsers]
-
-    E --> O[Buffer]
-    E --> P[Vector]
-    E --> Q[Summary]
-
-    style A fill:#457b9d
-    style B fill:#1d3557
-    style C fill:#123744
-    style D fill:#123744
-    style E fill:#123744
-    style F fill:#123744
-    
+---
+config:
+  theme: 'base'
+  themeVariables:
+    nodeText: '#e3f2fd'
+---
+mindmap
+  root((LangChain))
+    langchain-core
+      Models
+        init_chat_model
+        AIMessage
+      Prompts
+        ChatPromptTemplate
+      Output Parsers
+        StrOutputParser
+        JsonOutputParser
+        PydanticOutputParser
+      LCEL Runnables
+        RunnablePassthrough
+        RunnableParallel
+        RunnableBranch
+    langchain
+      Agents
+        create_agent
+      Tools
+        @tool
+    Integrations
+      Document Loaders
+        WebBaseLoader
+        PDFLoader
+      Text Splitters
+        RecursiveCharacterTextSplitter
+      Vector Stores
+        Chroma
+      Embeddings
+        MistralAIEmbeddings
+        OpenAIEmbeddings
+    LangGraph
+      Mémoire
+        MemorySaver
+        SqliteSaver
+        PostgresSaver
+      Sessions
+        thread_id
 ```
 
 <!--
@@ -881,8 +1134,12 @@ Les chaînes orchestrent l'ensemble
 -->
 
 ---
+layout: two-cols-header
+---
 
-# Cas d'Usage de LangChain
+### Cas d'Usage de LangChain
+
+::left::
 
 <v-clicks>
 
@@ -893,6 +1150,12 @@ Les chaînes orchestrent l'ensemble
 - Agents avec accès à des outils (calculatrice, API, etc.)
 - Pipelines de traitement de texte multi-étapes
 - Applications nécessitant plusieurs appels LLM
+
+</v-clicks>
+
+::right::
+
+<v-clicks>
 
 ❌ **Quand ne PAS utiliser LangChain:**
 
@@ -908,31 +1171,48 @@ Mais pour les cas complexes, c'est un gain de temps énorme
 -->
 
 ---
+layout: two-cols-header
+---
 
-# Key Takeaways
+### Key Takeaways
 
 <v-clicks>
 
-1. **LangChain = Lego pour LLMs** 🧱
-   - Composants réutilisables
-   - Abstractions bien pensées
-   - Gain de productivité massif
+🧱 **LangChain = Lego pour LLMs** 
+  Composants réutilisable, gain de productivité massif
 
-2. **Chaînage = Puissance** ⛓️
-   - Composer des opérations complexes simplement
-   - Flow de données automatique
-   - Code lisible et maintenable
+⛓️ **Chaînage = Puissance**
+   Composer des opérations complexes simplement, flow de données, code lisible et maintenable
 
-3. **Abstraction = Focus sur la Valeur** 🎯
-   - Concentrez-vous sur votre logique métier
-   - Pas sur le "plumbing code"
-   - Réduction de 80%+ du boilerplate
+🎯 **Abstraction = Focus sur la Valeur** 
+   Concentrez-voAjoute us sur votre logique métier, pas sur le "plumbing code", réduction de 80%+ du boilerplate
 
 </v-clicks>
 
 <!--
 Résumer les 3 messages principaux
 LangChain simplifie radicalement le développement d'apps LLM
+-->
+
+---
+layout: default
+---
+
+### Ressources pour aller plus loin
+
+### Documentation
+- [python.langchain.com](https://python.langchain.com/) : Excellente, avec exemples
+- [LangChain Cookbook](https://github.com/langchain-ai/langchain/tree/master/cookbook) : Recettes pratiques
+- [academy.langchain.com](https://academy.langchain.com/) : Cours de formation
+
+
+### Community
+- Discord actif (50k+ membres)
+- GitHub discussions
+
+<!--
+Call to action: installez et essayez dès aujourd'hui
+Ressources pour approfondir
 -->
 
 ---
@@ -947,7 +1227,7 @@ LangGraph · LangSmith · Deep Agents
 layout: two-cols-header
 ---
 
-# LangGraph & LangSmith
+### LangGraph & LangSmith
 
 ::left::
 
@@ -983,18 +1263,24 @@ LangSmith est optionnel en dev mais indispensable en production
 -->
 
 ---
+layout: two-cols-header
+---
 
-# Deep Agents — La prochaine étape
+### Deep Agents — La prochaine étape
 
-```python {1|3-9|11-15|all}
+::left::
+
+Deep Agents = LangChain + LangGraph + 4 capacités supplémentaires (middleware composable ) :
+
+- **Planification** (write_todos) : décomposer les tâches complexes en étapes
+- **Filesystem** (read/write/edit) : décharger le contexte sur le disque
+- **Sub-agents** (task) : spawner des agents spécialisés pour l'isolation
+- **Mémoire persistante** cross-sessions via LangGraph Memory Store
+
+::right::
+
+```python {3-7|9-14|all}
 from deepagents import create_deep_agent
-
-# Deep Agents = LangChain + LangGraph + 4 capacités supplémentaires :
-# - Planification (write_todos) : décomposer les tâches complexes en étapes
-# - Filesystem (read/write/edit) : décharger le contexte sur le disque
-# - Sub-agents (task) : spawner des agents spécialisés pour l'isolation
-# - Mémoire persistante cross-sessions via LangGraph Memory Store
-# Chacune est un middleware composable (TodoList, Filesystem, SubAgent)
 
 agent = create_deep_agent(
     tools=[my_search_tool],
@@ -1003,14 +1289,16 @@ agent = create_deep_agent(
 )
 
 result = agent.invoke({
-    "messages": [{"role": "user", "content": "Analyse le marché IoT en France"}]
+    "messages": [{
+      "role": "user",
+      "content": "Analyse le marché IoT en France"
+    }]
 })
 ```
 
 <v-clicks>
 
 - Inspiré de **Claude Code** et des systèmes de Deep Research
-- Provider-agnostic : OpenAI, Anthropic, Ollama...
 - CLI inclus : reprise de session, human-in-the-loop, sandboxes distants
 
 </v-clicks>
@@ -1021,69 +1309,23 @@ pip install deepagents — package standalone au-dessus de LangChain + LangGraph
 -->
 
 ---
-layout: two-cols-header
+layout: end
 ---
 
-# Getting Started
+### Exercice
 
-::left::
-
-### Installation
-
-```bash
-pip install langchain openai
-```
-
-### Premier Projet
-
-```python
-from langchain.prompts import PromptTemplate
-from langchain.llms import OpenAI
-from langchain.chains import LLMChain
-
-template = "Explique {concept} en 3 phrases"
-prompt = PromptTemplate(
-    input_variables=["concept"],
-    template=template
-)
-
-llm = OpenAI(temperature=0.7)
-chain = LLMChain(llm=llm, prompt=prompt)
-
-result = chain.run("LangChain")
-print(result)
-```
-
-::right::
-
-### Ressources
-
-- **Documentation**
-  - [python.langchain.com](https://python.langchain.com/)
-  - Excellente, avec exemples
-
-- **Cookbook**
-  - [LangChain Cookbook](https://github.com/langchain-ai/langchain/tree/master/cookbook)
-  - Recettes pratiques
-
-- **Monitoring**
-  - LangSmith pour debugging
-  - Traces et analytics
-
-- **Community**
-  - Discord actif (50k+ membres)
-  - GitHub discussions
-
-<!--
-Call to action: installez et essayez dès aujourd'hui
-Ressources pour approfondir
--->
+<div class="flex flex-col items-center gap-4 pt-8">
+  <a href="https://github.com/maxime-lenne/course-langchain-deep-agents" target="_blank" class="flex items-center gap-3 text-xl no-underline opacity-80 hover:opacity-100 transition-opacity">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+    <code>maxime-lenne/course-langchain-deep-agents</code>
+  </a>
+</div>
 
 ---
 layout: two-cols-header
 ---
 
-# Frameworks Alternatifs — Agents & Orchestration
+### Frameworks Alternatifs — Agents & Orchestration
 
 ::left::
 
@@ -1118,7 +1360,7 @@ Microsoft a fusionné AutoGen + Semantic Kernel → Microsoft Agent Framework (G
 layout: two-cols-header
 ---
 
-# Frameworks Alternatifs — RAG, Données & Approches spécialisées
+### Frameworks Alternatifs — RAG, Données & Approches spécialisées
 
 ::left::
 
@@ -1151,25 +1393,53 @@ smolagents : idéal avec des petits modèles open-source (Llama, Mistral, Qwen)
 -->
 
 ---
-layout: end
+layout: cover
+background: <https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920>
 ---
 
-# Questions?
+<div class="h-full flex flex-col justify-center gap-10 px-4">
+  <div>
+    <h1 class="text-5xl font-black text-[#457b9d] mb-1">Merci !</h1>
+  </div>
 
-<div class="pt-12">
+  <div class="grid grid-cols-2 gap-8 text-sm">
+    <div class="flex flex-col items-center gap-2">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://github.com/maxime-lenne/slidev-decks-simplon&bgcolor=0f172a&color=94a3b8&margin=6" class="w-40 h-40 rounded-lg" alt="QR Slides" />
+      <div class="text-xs opacity-50">Slides &amp; exercices</div>
+    </div>
+    <div class="space-y-3">
+      <div class="text-[#457b9d] font-bold uppercase text-xs tracking-widest mb-2">Slides :</div>
+      <a href="https://github.com/maxime-lenne/slidev-decks-simplon" target="_blank" class="flex items-center gap-2 no-underline opacity-75 hover:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+        slidev-decks-simplon
+      </a>
+      <div class="text-[#457b9d] font-bold uppercase text-xs tracking-widest mb-2">Exercices :</div>
+      <a href="https://github.com/maxime-lenne/course-langchain-introduction" target="_blank" class="flex items-center gap-2 no-underline opacity-75 hover:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+        course-langchain-introduction
+      </a>
+      <a href="https://github.com/maxime-lenne/course-langchain-runnable-chain" target="_blank" class="flex items-center gap-2 no-underline opacity-75 hover:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+        course-langchain-runnable-chain
+      </a>
+      <a href="https://github.com/maxime-lenne/course-langchain-rag" target="_blank" class="flex items-center gap-2 no-underline opacity-75 hover:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+        course-langchain-rag
+      </a>
+      <a href="https://github.com/maxime-lenne/course-langchain-agents" target="_blank" class="flex items-center gap-2 no-underline opacity-75 hover:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+        course-langchain-agents
+      </a>
+      <a href="https://github.com/maxime-lenne/course-langchain-deep-agents" target="_blank" class="flex items-center gap-2 no-underline opacity-75 hover:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+        course-langchain-deep-agents
+      </a>
+    </div>
+  </div>
 
-**Call to Action:**
-
-Créez votre premier prototype LangChain en utilisant les patterns de chaînage présentés!
-
+  <div class="text-xs opacity-30">Slides built with <a href="https://sli.dev" class="no-underline">sli.dev</a> · Thème maxime-lenne</div>
 </div>
 
-<!--
-Resources finales:
-- Documentation: https://python.langchain.com/
-- Cookbook: https://github.com/langchain-ai/langchain/tree/master/cookbook
-- LangSmith: Platform de monitoring
-- Discord: Communauté active
-
-Prêt pour les questions!
--->
+---
+src: ../templates/slides.md#2
+---
