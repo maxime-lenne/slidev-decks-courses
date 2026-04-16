@@ -77,13 +77,13 @@ layout: cover
 
 ```bash
 cd themes/maxime-lenne
-npx slidev example.md
+bunx slidev example.md
 ```
 
 1. **Avec le deck de démo** :
 
 ```bash
-npm run dev:deck theme-demo
+bun run dev:deck theme-demo
 ```
 
 ## 🎯 Layouts disponibles
@@ -202,7 +202,7 @@ Un deck complet a été créé dans `decks/theme-demo/` montrant :
 Pour le tester :
 
 ```bash
-npm run dev:deck theme-demo
+bun run dev:deck theme-demo
 ```
 
 ## 📦 Différences avec le thème Simplon

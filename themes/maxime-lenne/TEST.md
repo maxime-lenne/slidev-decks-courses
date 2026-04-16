@@ -7,7 +7,7 @@
 ```bash
 # Depuis la racine du projet
 cd themes/maxime-lenne
-npx slidev example.md --port 3030
+bunx slidev example.md --port 3030
 ```
 
 Ouvrir <http://localhost:3030>
@@ -16,7 +16,7 @@ Ouvrir <http://localhost:3030>
 
 ```bash
 # Depuis la racine du projet
-npm run dev:deck theme-demo
+bun run dev:deck theme-demo
 ```
 
 ### Option 3 : Créer un nouveau deck de test
@@ -38,7 +38,7 @@ Vérifier que tout fonctionne
 1. Lancer :
 
 ```bash
-npx slidev test.md
+bunx slidev test.md
 ```
 
 ## ✅ Checklist de vérification

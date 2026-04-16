@@ -1,5 +1,5 @@
 ---
-theme: ../themes/simplon
+theme: ../themes/maxime-lenne
 title: Formations SQL
 layout: default
 ---

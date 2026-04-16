@@ -233,11 +233,11 @@ find decks -name "meta.json" -type f | \
 ```yaml
 # .github/workflows/build.yml
 - name: Generate Index Data
-  run: npm run generate-index
+  run: bun run generate-index
 - name: Build All Decks
-  run: npm run build:decks
+  run: bun run build:decks
 - name: Build Index Page
-  run: npm run build:index
+  run: bun run build:index
 ```
 
 **Package.json Scripts**:
@@ -248,7 +248,7 @@ find decks -name "meta.json" -type f | \
     "generate-index": "./scripts/generate-index.sh",
     "build:decks": "slidev build decks/*/slides.md --base /decks/",
     "build:index": "vite build index",
-    "build:all": "npm run generate-index && npm run build:decks && npm run build:index"
+    "build:all": "bun run generate-index && bun run build:decks && bun run build:index"
   }
 }
 ```
@@ -305,8 +305,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - run: npm ci
-      - run: npm run build:all
+      - run: bun install --frozen-lockfile
+      - run: bun run build:all
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

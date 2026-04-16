@@ -2,7 +2,7 @@
 
 **Last Updated**: 2025-11-24
 **Target Audience**: Content creators adding new slide decks
-**Prerequisites**: Node.js 18+, npm/pnpm, basic markdown knowledge
+**Prerequisites**: Node.js 18+, bun, basic markdown knowledge
 
 ## Table of Contents
 
@@ -23,13 +23,13 @@
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd slidev-decks-simplon
+cd slidev-decks-courses
 
 # Install dependencies
-npm install
+bun install
 
 # Verify installation
-npm run validate
+bun run validate
 ```
 
 ### Project Structure Overview
@@ -56,7 +56,7 @@ npm run validate
 
 ```bash
 # Create a new deck with scaffolding
-npm run create-deck sql-joins
+bun run create-deck sql-joins
 
 # This creates:
 # - decks/sql-joins/slides.md
@@ -123,7 +123,7 @@ Edit `decks/my-new-deck/meta.json`:
 
 ```bash
 # Validate metadata against schema
-npm run validate
+bun run validate
 
 # Should output: ✅ All deck metadata files are valid
 ```
@@ -284,7 +284,7 @@ Place images in `decks/my-new-deck/assets/`
 
 ```bash
 # Start dev server for your deck
-npm run dev:deck my-new-deck
+bun run dev:deck my-new-deck
 
 # Or use Slidev directly
 npx slidev decks/my-new-deck/slides.md
@@ -303,10 +303,10 @@ Access at: `http://localhost:3030`
 
 ```bash
 # Generate index data
-npm run generate-index
+bun run generate-index
 
 # Start index dev server
-npm run dev:index
+bun run dev:index
 ```
 
 Access at: `http://localhost:5173`
@@ -392,7 +392,7 @@ css: ./styles.css
 - [ ] Code examples tested and working
 - [ ] Images optimized (<500KB each)
 - [ ] Preview thumbnail created (400x300px, `assets/preview.png`)
-- [ ] Metadata complete and validated (`npm run validate`)
+- [ ] Metadata complete and validated (`bun run validate`)
 - [ ] Presenter notes added for complex topics
 - [ ] Accessibility checked (contrast, alt text)
 
@@ -424,7 +424,7 @@ npx slidev export decks/my-deck/slides.md --format png
 
 ```bash
 # Validate before committing
-npm run validate
+bun run validate
 
 # Stage your changes
 git add decks/my-new-deck/
@@ -467,10 +467,10 @@ nano decks/sql-joins/slides.md
 # Increment major: 1.1.0 → 2.0.0 (restructured, prerequisites changed)
 
 # 3. Test locally
-npm run dev:deck sql-joins
+bun run dev:deck sql-joins
 
 # 4. Validate and commit
-npm run validate
+bun run validate
 git add decks/sql-joins/
 git commit -m "Update SQL Joins deck: Add CROSS JOIN examples"
 git push
@@ -528,10 +528,10 @@ cat decks/my-deck/meta.json | grep status
 # Should be: "status": "published"
 
 # Regenerate index
-npm run generate-index
+bun run generate-index
 
 # Check for validation errors
-npm run validate
+bun run validate
 ```
 
 **Problem: Theme not loading**

@@ -252,7 +252,7 @@ get_commands_for_language() {
             echo "cargo test && cargo clippy"
             ;;
         *"JavaScript"*|*"TypeScript"*)
-            echo "npm test \\&\\& npm run lint"
+            echo "bun test \\&\\& bun run lint"
             ;;
         *)
             echo "# Add commands for $lang"
