@@ -1,49 +1,7 @@
 {
-  "generated": "2026-03-12T01:00:55.570Z",
+  "generated": "2026-04-16T22:39:30.081Z",
   "version": "1.0.0",
   "decks": [
-    {
-      "id": "agentic-commerce",
-      "title": "Commerce Agentique — L'IA au service de la vente",
-      "description": "Comprendre comment les agents IA autonomes transforment le commerce : cas d'usage, architecture et enjeux pour les équipes sales et business.",
-      "status": "published",
-      "objectives": [
-        "Distinguer IA classique et IA agentique",
-        "Identifier les 4 super-pouvoirs d'un agent commercial",
-        "Comprendre l'architecture d'un agent (LLM, mémoire, outils, objectif)",
-        "Reconnaître les opportunités et points de vigilance métier",
-        "Savoir quand garder l'humain dans la boucle"
-      ],
-      "prerequisites": [
-        "Notions de base sur l'IA et les LLMs (ChatGPT, Claude…)",
-        "Contexte commercial / sales (aucune compétence technique requise)"
-      ],
-      "duration": "30 minutes",
-      "theme": "simplon",
-      "thumbnail": "./assets/cover.png",
-      "tags": [
-        "ia",
-        "agentic",
-        "llm",
-        "commerce",
-        "sales",
-        "automation",
-        "crm",
-        "prospection",
-        "langchain",
-        "business"
-      ],
-      "language": "fr",
-      "version": "1.0.0",
-      "authors": [
-        {
-          "name": "Maxime Lenne",
-          "email": "hello@maxime-lenne.fr"
-        }
-      ],
-      "created": "2026-03-12",
-      "updated": "2026-03-12"
-    },
     {
       "id": "api",
       "title": "Understanding APIs, REST & HTTP Requests",
@@ -137,7 +95,7 @@
       "updated": "2026-03-02"
     },
     {
-      "id": "langchain",
+      "id": "genai-ai-engineer-langchain",
       "title": "Introduction à LangChain & langGraph",
       "description": "Introduction à LangChain & langGraph — chaîner des opérations LLM pour créer des applications puissantes et modulaires.",
       "status": "published",
@@ -160,8 +118,7 @@
         "ai",
         "python",
         "langGraph",
-        "nlp",
-        "machine learning"
+        "nlp"
       ],
       "language": "fr",
       "version": "1.0.0",
@@ -402,8 +359,8 @@
     }
   ],
   "stats": {
-    "totalDecks": 10,
-    "totalDuration": 900,
+    "totalDecks": 9,
+    "totalDuration": 870,
     "languages": [
       "fr"
     ],
@@ -413,18 +370,13 @@
     ],
     "tags": [
       "advanced",
-      "agentic",
       "ai",
       "alembic",
       "api",
       "authentication",
-      "automation",
       "backend",
       "bdd",
       "beginner",
-      "business",
-      "commerce",
-      "crm",
       "database",
       "delete",
       "dto",
@@ -432,28 +384,24 @@
       "fastapi",
       "fetch",
       "http",
-      "ia",
       "insert",
       "javascript",
       "joins",
       "langGraph",
       "langchain",
       "llm",
-      "machine learning",
       "merise",
       "mongodb",
       "nlp",
       "nosql",
       "optimization",
       "postgresql",
-      "prospection",
       "pydantic",
       "pytest",
       "python",
       "queries",
       "query optimization",
       "rest",
-      "sales",
       "schema",
       "sql",
       "sqlalchemy",
