@@ -19,7 +19,7 @@ Présentation axée sur SQL et les bases de données.
 **Pour tester:**
 
 ```bash
-npm run dev:deck theme-demo
+bun run dev:deck theme-demo
 ```
 
 ### 2. `test-complete.md` - Test Exhaustif
@@ -120,7 +120,7 @@ npx slidev decks/theme-demo/test-complete.md
 
 ```bash
 # Depuis la racine du projet
-npm run dev:deck theme-demo
+bun run dev:deck theme-demo
 
 # Ou avec npx
 npx slidev decks/theme-demo/slides.md

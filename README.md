@@ -1,18 +1,18 @@
-# Formations SQL - Multi-Deck Slidev Project
+# Multi-Deck Slidev Project
 
-Multi-deck Slidev presentation system for SQL training with Simplon branding. Features a centralized index page, easy deck creation workflow, and custom theming support.
+Multi-deck Slidev presentation system for courses with custom theming support. Features a centralized index page, easy deck creation workflow, and custom theming support.
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- Node.js 18+
-- npm or pnpm
+- Node.js 22+
+- bun
 
 ### Installation
 
 ```bash
-npm install
+bun install
 ```
 
 ### Development
@@ -21,8 +21,8 @@ npm install
 
 ```bash
 # Generate index data and start dev server
-npm run generate-index
-npm run dev:index
+bun run generate-index
+bun run dev:index
 ```
 
 Open <http://localhost:5173> to see all available presentations.
@@ -31,7 +31,7 @@ Open <http://localhost:5173> to see all available presentations.
 
 ```bash
 # View example-sql-basics deck
-npm run dev:deck --deck=example-sql-basics
+bun run dev:deck --deck=example-sql-basics
 ```
 
 Open <http://localhost:3030> to view the Slidev presentation.
@@ -40,7 +40,7 @@ Open <http://localhost:3030> to view the Slidev presentation.
 
 ```bash
 # Build everything (index + all decks)
-npm run build:all
+bun run build:all
 ```
 
 Output will be in `dist/`:
@@ -128,14 +128,14 @@ Content goes here
 1. Generate index and view:
 
 ```bash
-npm run generate-index
-npm run dev:index
+bun run generate-index
+bun run dev:index
 ```
 
 ### Using Creation Script (Future Enhancement)
 
 ```bash
-npm run create-deck my-new-deck
+bun run create-deck my-new-deck
 ```
 
 ## 🎨 Themes
@@ -167,7 +167,7 @@ See `themes/` directory for examples. Follow Slidev theme conventions:
 Validate all deck metadata against JSON schemas:
 
 ```bash
-npm run validate
+bun run validate
 ```
 
 This checks:
@@ -181,14 +181,14 @@ This checks:
 
 | Script | Description |
 |--------|-------------|
-| `npm run dev:index` | Start index page dev server |
-| `npm run dev:deck --deck=NAME` | Start Slidev for specific deck |
-| `npm run generate-index` | Generate index data from metadata |
-| `npm run build:index` | Build index page |
-| `npm run build:decks` | Build all Slidev presentations |
-| `npm run build:all` | Full build pipeline |
-| `npm run validate` | Validate deck metadata |
-| `npm test` | Run tests |
+| `bun run dev:index` | Start index page dev server |
+| `bun run dev:deck --deck=NAME` | Start Slidev for specific deck |
+| `bun run generate-index` | Generate index data from metadata |
+| `bun run build:index` | Build index page |
+| `bun run build:decks` | Build all Slidev presentations |
+| `bun run build:all` | Full build pipeline |
+| `bun run validate` | Validate deck metadata |
+| `bun test` | Run tests |
 
 ## 🚢 Deployment
 
@@ -205,7 +205,7 @@ Push to `main` branch to trigger deployment.
 ### Manual Deployment
 
 ```bash
-npm run build:all
+bun run build:all
 ```
 
 Deploy the `dist/` directory to any static hosting service (Netlify, Vercel, etc.).
@@ -225,9 +225,9 @@ Detailed documentation is available in `specs/001-multi-deck-index/`:
 
 1. Create a feature branch from `main`
 2. Make your changes
-3. Validate metadata: `npm run validate`
-4. Test locally: `npm run dev:index`
-5. Build: `npm run build:all`
+3. Validate metadata: `bun run validate`
+4. Test locally: `bun run dev:index`
+5. Build: `bun run build:all`
 6. Submit a pull request
 
 ## 📄 License
@@ -236,11 +236,10 @@ MIT
 
 ## 👥 Authors
 
-Simplon Training Team
+Maxime Lenne
 
 ## 🔗 Links
 
 - [Slidev Documentation](https://sli.dev/)
 - [Vue 3 Documentation](https://vuejs.org/)
 - [Vite Documentation](https://vitejs.dev/)
-- [Simplon.co](https://simplon.co/)

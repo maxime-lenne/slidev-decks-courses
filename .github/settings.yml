@@ -6,16 +6,16 @@
 # =============================================================================
 repository:
   # Repository name (changing this will rename the repository)
-  name: slidev-decks-simplon
+  name: slidev-decks-courses
 
   # Short description shown on GitHub
-  description: A ready-to-use GitHub repository template with linting, git hooks, and automatic dependency management.
+  description: Multi-deck Slidev presentation project for courses with custom theming support.
 
   # Homepage URL
   homepage: https://maxime-lenne.fr
 
   # Topics (comma-separated)
-  topics: template, github
+  topics: slidev, presentations, courses, education
 
   # Visibility
   private: false

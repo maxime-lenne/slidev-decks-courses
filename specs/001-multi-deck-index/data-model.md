@@ -360,7 +360,7 @@ interface BuildConfiguration {
     "generate-index": "./scripts/generate-index.sh",
     "build:decks": "slidev build decks/*/slides.md --base /decks/ --out dist/decks",
     "build:index": "vite build index --outDir dist",
-    "build:all": "npm run generate-index && npm run build:decks && npm run build:index",
+    "build:all": "bun run generate-index && bun run build:decks && bun run build:index",
     "dev:deck": "slidev decks/$DECK/slides.md",
     "dev:index": "vite index",
     "create-deck": "./scripts/create-deck.sh",
@@ -415,7 +415,7 @@ BuildConfiguration
 ### Creation Flow (New Deck)
 
 ```
-1. User runs: npm run create-deck sql-advanced
+1. User runs: bun run create-deck sql-advanced
    └─> Script creates: decks/sql-advanced/
        ├── slides.md (template)
        └── meta.json (template with id pre-filled)
@@ -423,7 +423,7 @@ BuildConfiguration
 2. User edits slides.md and meta.json
    └─> Adds content, sets status: "draft"
 
-3. User tests locally: npm run dev:deck sql-advanced
+3. User tests locally: bun run dev:deck sql-advanced
    └─> Slidev dev server starts on localhost:3030
 
 4. User updates meta.json status: "published"
@@ -435,21 +435,21 @@ BuildConfiguration
 ### Build Flow
 
 ```
-1. CI/CD: npm run build:all
+1. CI/CD: bun run build:all
    │
-   ├─> npm run generate-index
+   ├─> bun run generate-index
    │   ├─> Scans decks/*/meta.json
    │   ├─> Validates against schema
    │   ├─> Filters status="published"
    │   ├─> Calculates stats
    │   └─> Writes index/public/index-data.json
    │
-   ├─> npm run build:decks
+   ├─> bun run build:decks
    │   ├─> Slidev builds each deck
    │   ├─> Outputs to dist/decks/{deck-id}/
    │   └─> Each has index.html + assets
    │
-   └─> npm run build:index
+   └─> bun run build:index
        ├─> Vite builds index app
        ├─> Includes index-data.json
        └─> Outputs to dist/index.html

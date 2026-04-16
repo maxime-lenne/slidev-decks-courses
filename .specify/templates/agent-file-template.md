@@ -7,6 +7,7 @@ Auto-generated from all feature plans. Last updated: [DATE]
 [EXTRACTED FROM ALL PLAN.MD FILES]
 
 ### Slidev-Specific Technologies
+
 - **Framework**: Slidev (Vue 3-based presentation framework)
 - **Markdown**: Extended markdown with Vue components
 - **Styling**: UnoCSS/Windi CSS for utility-first styling
@@ -19,6 +20,7 @@ Auto-generated from all feature plans. Last updated: [DATE]
 ```
 
 ### Typical Slidev Structure
+
 ```text
 slides/
 ├── slides.md           # Main slide content
@@ -36,18 +38,19 @@ examples/
 [ONLY COMMANDS FOR ACTIVE TECHNOLOGIES]
 
 ### Slidev Commands
+
 ```bash
 # Development server with hot reload
-npm run dev
+bun run dev
 
 # Build for production
-npm run build
+bun run build
 
 # Export to PDF
-npm run export
+bun run export
 
 # Export to SPA (static hosting)
-npm run build -- --base /[repo-name]/
+bun run build -- --base /[repo-name]/
 ```
 
 ## Code Style
@@ -55,6 +58,7 @@ npm run build -- --base /[repo-name]/
 [LANGUAGE-SPECIFIC, ONLY FOR LANGUAGES IN USE]
 
 ### Markdown Content Style
+
 - Use `#` for slide titles (one per slide)
 - Use `---` to separate slides
 - Use `::code-group` for multiple code examples
@@ -62,12 +66,14 @@ npm run build -- --base /[repo-name]/
 - Use Vue components with `<ComponentName />` syntax
 
 ### SQL Example Style
+
 - Include setup scripts (CREATE TABLE, INSERT)
 - Show expected output as comments
 - Keep queries under 20 lines for readability
 - Test all queries before committing
 
 ### Accessibility Guidelines
+
 - Alt text for all images
 - Descriptive link text (not "click here")
 - Sufficient color contrast (use devtools to verify)

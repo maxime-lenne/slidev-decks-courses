@@ -61,7 +61,7 @@ Tasks marked `[P]` can be executed in parallel with other `[P]` tasks in the sam
 - [x] T004 Initialize TypeScript configuration in tsconfig.json with Vue and Vite settings
 - [x] T005 Create .gitignore for node_modules/, dist/, .DS_Store, and *.log files
 
-**Completion Criteria**: `npm install` runs successfully, directory structure matches plan.md
+**Completion Criteria**: `bun install` runs successfully, directory structure matches plan.md
 
 ---
 
@@ -88,7 +88,7 @@ Tasks marked `[P]` can be executed in parallel with other `[P]` tasks in the sam
 
 ```bash
 # These foundational tasks can run in parallel:
-npm install vitest @vue/test-utils ajv &  # T006
+bun install vitest @vue/test-utils ajv &  # T006
 create vite.config.ts &                    # T007
 create validate-metadata.js &              # T008
 # Wait for all to complete
@@ -140,7 +140,7 @@ wait
 
 Test US1 acceptance criteria:
 
-1. Run `npm run generate-index && npm run dev:index`
+1. Run `bun run generate-index && bun run dev:index`
 2. Open <http://localhost:5173> - verify both example decks appear
 3. Click deck card - verify navigation to /decks/{deck-id}/
 4. Resize to 320px width - verify responsive layout
@@ -200,10 +200,10 @@ wait  # Wait for all to complete before T020
 
 Test US2 acceptance criteria:
 
-1. Run `npm run create-deck my-new-deck`
+1. Run `bun run create-deck my-new-deck`
 2. Verify decks/my-new-deck/ created with slides.md, meta.json, assets/
 3. Edit meta.json, set status: "published"
-4. Run `npm run generate-index && npm run dev:index`
+4. Run `bun run generate-index && bun run dev:index`
 5. Verify my-new-deck appears in index
 6. Time the process from start to finish (should be under 10 minutes)
 
@@ -246,7 +246,7 @@ wait
 - [x] T042 [P] [US3] Create cover layout in themes/simplon/layouts/cover.vue with Simplon branding and logo placement
 - [x] T043 [P] [US3] Create default slide layout in themes/simplon/layouts/default.vue with consistent header/footer styling
 - [x] T044 [US3] Configure theme package.json with slidev.defaults for transition, aspectRatio, fonts, and colorSchema: "both"
-- [x] T045 [US3] Update example-sql-basics deck slides.md frontmatter to use theme: simplon and verify rendering with npm run dev:deck example-sql-basics
+- [x] T045 [US3] Update example-sql-basics deck slides.md frontmatter to use theme: simplon and verify rendering with bun run dev:deck example-sql-basics
 
 **Story Test Validation**:
 

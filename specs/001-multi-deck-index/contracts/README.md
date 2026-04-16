@@ -55,7 +55,7 @@ Defines the structure for Slidev theme `package.json` files.
 ### Validation with Ajv
 
 ```bash
-npm install -g ajv-cli
+bunx ajv-cli
 
 # Validate a deck metadata file
 ajv validate -s contracts/deck-metadata.schema.json -d decks/sql-basics/meta.json
@@ -131,7 +131,7 @@ jobs:
           node-version: 18
 
       - name: Install Ajv CLI
-        run: npm install -g ajv-cli ajv-formats
+        run: bunx ajv-cli ajv-formats
 
       - name: Validate all deck metadata
         run: |
