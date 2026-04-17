@@ -59,7 +59,11 @@
       "Bash(gh run:*)",
       "Bash(git fetch:*)",
       "Bash(git checkout:*)",
-      "Bash(bun install:*)"
+      "Bash(bun install:*)",
+      "WebFetch(domain:maxime-lenne.fr)",
+      "mcp__plugin_playwright_playwright__browser_evaluate",
+      "mcp__plugin_chrome-devtools-mcp_chrome-devtools__navigate_page",
+      "mcp__plugin_chrome-devtools-mcp_chrome-devtools__evaluate_script"
     ],
     "deny": [],
     "ask": []
