@@ -12,7 +12,7 @@ repository:
   description: Multi-deck Slidev presentation project for courses with custom theming support.
 
   # Homepage URL
-  homepage: https://maxime-lenne.fr/slidev-decks-courses/
+  homepage: https://decks.maxime-lenne.fr/
 
   # Topics (comma-separated)
   topics: slidev, presentations, courses, education
