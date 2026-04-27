@@ -15,10 +15,10 @@ id: presentation
       <div class="text-[#457b9d] font-medium text-sm">CTO as a Service · Product Engineer</div>
     </div>
   </div>
-  <p class="text-sm leading-relaxed opacity-85">Freelance passionné, engagé et créateur d'impact. Appétence forte pour l'entrepreneuriat, les startups, le produit et la tech.</p>
+  <p class="text-sm leading-relaxed opacity-85">Freelance passionné, engagé et créateur d'impact. Appétence forte pour l'entrepreneuriat, les startups, le produit, le management  et la tech.</p>
   <ul class="text-sm space-y-2 list-none">
+    <li>🧭 C(P)TO pendant 10 ans · management 40+ profils variés (Dev, Devops, UX/UI, PM, Data...)</li>
     <li>🚀 20 ans d'expérience tech (back, front, mobile, cloud, devops, IA, no-code)</li>
-    <li>🧭 C(P)TO pendant 10 ans · management 40+ profils variés</li>
     <li>🏗️ Co-founder &amp; ex-CTO @EcoTa.co · @mobilityz</li>
   </ul>
 </div>
