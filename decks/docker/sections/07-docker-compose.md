@@ -235,8 +235,8 @@ Le --host 0.0.0.0 est un piège classique pour les débutants
 -->
 
 ---
-
-### Cas pratique : `docker-compose.yml` complet
+layout: full-width
+---
 
 ```yaml {1-15|17-28|30-35|all}
 services:

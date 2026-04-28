@@ -1402,7 +1402,7 @@ background: <https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920
 
   <div class="grid grid-cols-2 gap-8 text-sm">
     <div class="flex flex-col items-center gap-2">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://github.com/maxime-lenne/slidev-decks-courses&bgcolor=0f172a&color=94a3b8&margin=6" class="w-40 h-40 rounded-lg" alt="QR Slides" />
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://decks.maxime-lenne.fr/decks/genai-ai-engineer-langchain&bgcolor=0f172a&color=fff&margin=6" class="w-40 h-40 rounded-lg" alt="QR Slides" />
       <div class="text-xs opacity-50">Slides &amp; exercices</div>
     </div>
     <div class="space-y-3">

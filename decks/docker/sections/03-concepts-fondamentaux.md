@@ -48,7 +48,7 @@ Toujours privilégier les images officielles en production
 
 ### Système de couches (Layers)
 
-```mermaid {scale: 0.75}
+```mermaid {scale: 0.70}
 graph TB
     A["Layer 1 — FROM ubuntu"] --> B["Layer 2 — RUN apt-get"]
     B --> C["Layer 3 — COPY req.txt"]
@@ -103,7 +103,7 @@ Les volumes seront abordés plus tard
 
 ### Cycle de vie d'un conteneur
 
-```mermaid
+```mermaid {scale: 0.9}
 stateDiagram-v2
     [*] --> Created: docker create
     Created --> Running: docker start
