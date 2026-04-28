@@ -53,7 +53,7 @@ docker compose (v2, Go) remplace docker-compose (v1, Python, déprécié)
 
 ### Structure `docker-compose.yml`
 
-```yaml {1-4|6-13|15-16|all}
+```yaml {1-5|6-13|15-16|all}
 services:
   web:
     image: nginx
