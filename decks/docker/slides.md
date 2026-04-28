@@ -146,3 +146,7 @@ src: ./sections/08-securite.md
 ---
 src: ./sections/09-conclusion.md
 ---
+
+---
+src: ../templates/slides.md#2
+---

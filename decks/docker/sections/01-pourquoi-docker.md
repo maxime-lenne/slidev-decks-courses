@@ -45,7 +45,7 @@ layout: two-cols-header
 
 ### Machine Virtuelle
 
-```mermaid {scale: 0.7}
+```mermaid {scale: 0.6}
 graph TB
     A[Infrastructure / Hardware] --> B[Système d'exploitation hôte]
     B --> C[Hypervisor]
@@ -66,7 +66,7 @@ graph TB
 
 ### Conteneur Docker
 
-```mermaid {scale: 0.7}
+```mermaid {scale: 0.6}
 graph TB
     A[Infrastructure / Hardware] --> B[Système d'exploitation hôte]
     B --> C[Docker Engine]
