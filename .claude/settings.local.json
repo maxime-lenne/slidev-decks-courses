@@ -63,8 +63,9 @@
       "WebFetch(domain:maxime-lenne.fr)",
       "mcp__plugin_playwright_playwright__browser_evaluate",
       "mcp__plugin_chrome-devtools-mcp_chrome-devtools__navigate_page",
-      "mcp__plugin_chrome-devtools-mcp_chrome-devtools__evaluate_script"
-      "Bash(bun install:*)"
+      "mcp__plugin_chrome-devtools-mcp_chrome-devtools__evaluate_script",
+      "Bash(bun install:*)",
+      "Bash(npx markdownlint *)"
     ],
     "deny": [],
     "ask": []

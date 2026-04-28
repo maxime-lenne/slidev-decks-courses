@@ -2,7 +2,7 @@
   "id": "docker",
   "title": "Docker",
   "description": "Les bases de Docker : installation, concepts fondamentaux, avancées (build, cache) et docker compose",
-  "status": "draft",
+  "status": "published",
   "objectives": [
     "Comprendre pourquoi Docker est incontournable et la différence avec les machines virtuelles",
     "Installer Docker sur Linux et Windows et exécuter ses premiers conteneurs",
