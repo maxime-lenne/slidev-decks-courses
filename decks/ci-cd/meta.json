@@ -1,0 +1,43 @@
+{
+  "id": "ci-cd",
+  "title": "CI / CD",
+  "description": "Introduction à l'Intégration Continue et au Déploiement Continu : principes, pipelines et bonnes pratiques pour rendre les déploiements fiables et maîtrisés. Volontairement agnostique des outils (GitHub Actions, GitLab CI, Jenkins...).",
+  "status": "draft",
+  "objectives": [
+    "Distinguer Intégration Continue, Livraison Continue et Déploiement Continu et choisir le niveau d'automatisation adapté à son contexte",
+    "Identifier les composants clés d'une pipeline (jobs, stages, runners, artefacts, environnements) et leurs responsabilités",
+    "Appliquer les invariants fondamentaux : build once / deploy many, immutabilité, idempotence, fail fast, feedback rapide",
+    "Concevoir un pipeline minimal lint → tests → build → deploy pour un projet existant",
+    "Reconnaître les anti-patterns courants et les principaux risques de sécurité d'une pipeline CI/CD"
+  ],
+  "prerequisites": [
+    "Maîtrise de Git (commits, branches, merges, tags)",
+    "Aisance avec la ligne de commande Linux",
+    "Avoir déjà développé et testé un projet (même à titre scolaire)",
+    "Notions de Docker (images, conteneurs, registres) — recommandé, pas obligatoire"
+  ],
+  "duration": "90-110 minutes (30 min intro + 45-60 min deep dive test/build/CD + 15-20 min conclusion)",
+  "theme": "maxime-lenne",
+  "thumbnail": "./assets/cover.svg",
+  "tags": [
+    "ci-cd",
+    "devops",
+    "automation",
+    "pipelines",
+    "testing",
+    "build",
+    "deployment",
+    "github-actions",
+    "gitlab-ci"
+  ],
+  "language": "fr",
+  "version": "0.2.0",
+  "authors": [
+    {
+      "name": "Maxime Lenne",
+      "email": "hello@maxime-lenne.fr"
+    }
+  ],
+  "created": "2026-04-29",
+  "updated": "2026-04-29"
+}
