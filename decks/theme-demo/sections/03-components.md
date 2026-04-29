@@ -74,9 +74,22 @@ Texte qui s'adapte automatiquement
 
 # Table of Contents (Toc)
 
-Génère automatiquement une table des matières
+Composant `<Toc />` — surcharge du built-in Slidev par le thème (auto-détection)
 
 <Toc maxDepth="1" />
+
+---
+
+# Toc — items manuels
+
+Override avec des entrées explicites
+
+<Toc :items="[
+  { title: 'Layouts', to: 2 },
+  { title: 'Markdown', to: 15 },
+  { title: 'Components', to: 25 },
+  { title: 'Diagrams', to: 50 },
+]" />
 
 ---
 
