@@ -59,44 +59,16 @@ layout: two-cols-header
 layout: default
 ---
 
-<div class="h-full flex items-center gap-16 px-4">
-  <div class="w-2/5">
-    <h1 class="text-[4.5rem] font-black leading-[1.05] text-[#457b9d] uppercase tracking-tight">
-      Table<br>of<br>Contents
-    </h1>
-  </div>
-  <div class="w-3/5">
-<ol class="space-y-4 text-lg list-none">
-      <li class="flex gap-5 items-start">
-        <span class="text-[#457b9d] font-black text-xl min-w-[2rem]">01</span>
-        <Link to="5" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Présentation &amp; Contexte</Link>
-      </li>
-      <li class="flex gap-5 items-start">
-        <span class="text-[#457b9d] font-black text-xl min-w-[2rem]">02</span>
-        <Link to="9" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Les Composants Fondamentaux</Link>
-      </li>
-      <li class="flex gap-5 items-start">
-        <span class="text-[#457b9d] font-black text-xl min-w-[2rem]">03</span>
-        <Link to="14" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Les Chaînes &amp; LCEL</Link>
-      </li>
-      <li class="flex gap-5 items-start"><span class="text-[#457b9d] font-black text-xl min-w-[2rem]">04</span>
-        <Link to="19" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">RAG Pattern</Link>
-      </li>
-      <li class="flex gap-5 items-start"><span class="text-[#457b9d] font-black text-xl min-w-[2rem]">05</span>
-        <Link to="25" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Agents &amp; Tools</Link>
-      </li>
-      <li class="flex gap-5 items-start"><span class="text-[#457b9d] font-black text-xl min-w-[2rem]">06</span>
-        <Link to="31" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Agent RAG — Exemple Complet</Link>
-      </li>
-      <li class="flex gap-5 items-start"><span class="text-[#457b9d] font-black text-xl min-w-[2rem]">07</span>
-        <Link to="36" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Conclusion</Link>
-      </li>
-      <li class="flex gap-5 items-start"><span class="text-[#457b9d] font-black text-xl min-w-[2rem]">08</span>
-        <Link to="41" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Au-delà de LangChain</Link>
-      </li>
-    </ol>
-  </div>
-</div>
+<Toc :items="[
+  { title: 'Présentation & Contexte', to: 5 },
+  { title: 'Les Composants Fondamentaux', to: 9 },
+  { title: 'Les Chaînes & LCEL', to: 14 },
+  { title: 'RAG Pattern', to: 19 },
+  { title: 'Agents & Tools', to: 25 },
+  { title: 'Agent RAG — Exemple Complet', to: 31 },
+  { title: 'Conclusion', to: 36 },
+  { title: 'Au-delà de LangChain', to: 41 },
+]" />
 
 ---
 src: ../templates/slides.md#1
