@@ -187,6 +187,14 @@ code {
   font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
 }
 
+/* Inline code inside gradient-text elements must reset fill color */
+h1 code, h2 code, h3 code, h4 code, h5 code, h6 code,
+strong code {
+  -webkit-text-fill-color: var(--ml-code-accent);
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+}
+
 pre {
   background-color: var(--ml-code-bg) !important;
   border: 1px solid var(--ml-border);

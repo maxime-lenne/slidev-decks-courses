@@ -34,14 +34,17 @@ jobs:
 
       - name: Build
         env:
-          BASE_PATH: /${{ github.event.repository.name }}/
+          BASE_PATH: /
         run: node scripts/build.js
+
+      - name: Copy CNAME to dist
+        run: "[ -f CNAME ] && cp CNAME dist/ || true"
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: './dist'
 

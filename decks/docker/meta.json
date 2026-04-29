@@ -1,0 +1,31 @@
+{
+  "id": "docker",
+  "title": "Docker",
+  "description": "Les bases de Docker : installation, concepts fondamentaux, avancées (build, cache) et docker compose",
+  "status": "published",
+  "objectives": [
+    "Comprendre pourquoi Docker est incontournable et la différence avec les machines virtuelles",
+    "Installer Docker sur Linux et Windows et exécuter ses premiers conteneurs",
+    "Écrire un Dockerfile optimisé avec multi-stage builds et gestion du cache",
+    "Maîtriser les volumes, réseaux et registres Docker",
+    "Orchestrer des applications multi-services avec Docker Compose"
+  ],
+  "prerequisites": [
+    "Bases de la ligne de commande (terminal Linux ou PowerShell)",
+    "Notions de base en développement web (API, base de données)"
+  ],
+  "duration": "2-3 hours (45min installation et concepts fondamentaux, 1h avancées build/cache, 1h docker compose)",
+  "theme": "maxime-lenne",
+  "thumbnail": "./assets/cover.svg",
+  "tags": ["docker", "containers", "devops", "docker-compose", "build"],
+  "language": "fr",
+  "version": "0.2.0",
+  "authors": [
+    {
+      "name": "Maxime Lenne",
+      "email": "hello@maxime-lenne.fr"
+    }
+  ],
+  "created": "2026-04-27",
+  "updated": "2026-04-27"
+}

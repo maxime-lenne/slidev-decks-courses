@@ -18,7 +18,7 @@
     <div v-else-if="indexData" class="dashboard-content">
       <header class="dashboard-header">
         <h1 class="dashboard-title">Formations</h1>
-        <p class="dashboard-subtitle">Catalogue des cours disponibles</p>
+        <p class="dashboard-subtitle">Catalogue des cours</p>
       </header>
 
       <div class="section__stats">
