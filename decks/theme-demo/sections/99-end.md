@@ -13,19 +13,13 @@ layout: end
 </div>
 
 ---
-layout: center
+layout: cover
+background: https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920
 ---
 
-# Merci !
-
-Questions ?
-
-<div class="mt-8">
-  <a href="https://maxime-lenne.fr" target="_blank" class="text-xl">
-    maxime-lenne.fr
-  </a>
-</div>
-
-<div class="abs-br m-6">
-  Thème Maxime Lenne v1.0
-</div>
+<ThankYou
+  deck-slug="theme-demo"
+  :exercises="[
+    { name: 'slidev-decks-courses', label: 'README du thème', url: 'https://github.com/maxime-lenne/slidev-decks-courses/tree/main/themes/maxime-lenne' },
+  ]"
+/>
