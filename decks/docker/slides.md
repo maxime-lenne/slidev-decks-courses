@@ -59,53 +59,7 @@ layout: two-cols-header
 layout: default
 ---
 
-<div class="h-full flex items-center gap-16 px-4">
-  <div class="w-2/5">
-    <h1 class="text-[4.5rem] font-black leading-[1.05] text-[#457b9d] uppercase tracking-tight">
-      Table<br>of<br>Contents
-    </h1>
-  </div>
-  <div class="w-3/5">
-    <ol class="space-y-3 text-lg list-none">
-      <li class="flex gap-5 items-start">
-        <span class="text-[#457b9d] font-black text-xl min-w-[2rem]">01</span>
-        <Link to="5" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Pourquoi Docker ?</Link>
-      </li>
-      <li class="flex gap-5 items-start">
-        <span class="text-[#457b9d] font-black text-xl min-w-[2rem]">02</span>
-        <Link to="9" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Installation</Link>
-      </li>
-      <li class="flex gap-5 items-start">
-        <span class="text-[#457b9d] font-black text-xl min-w-[2rem]">03</span>
-        <Link to="14" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Concepts fondamentaux</Link>
-      </li>
-      <li class="flex gap-5 items-start">
-        <span class="text-[#457b9d] font-black text-xl min-w-[2rem]">04</span>
-        <Link to="23" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Dockerfile &amp; Build</Link>
-      </li>
-      <li class="flex gap-5 items-start">
-        <span class="text-[#457b9d] font-black text-xl min-w-[2rem]">05</span>
-        <Link to="30" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Build avancé &amp; Cache</Link>
-      </li>
-      <li class="flex gap-5 items-start">
-        <span class="text-[#457b9d] font-black text-xl min-w-[2rem]">06</span>
-        <Link to="38" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Registry, Volumes &amp; Réseaux</Link>
-      </li>
-      <li class="flex gap-5 items-start">
-        <span class="text-[#457b9d] font-black text-xl min-w-[2rem]">07</span>
-        <Link to="45" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Docker Compose</Link>
-      </li>
-      <li class="flex gap-5 items-start">
-        <span class="text-[#457b9d] font-black text-xl min-w-[2rem]">08</span>
-        <Link to="55" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Sécurité &amp; Bonnes pratiques</Link>
-      </li>
-      <li class="flex gap-5 items-start">
-        <span class="text-[#457b9d] font-black text-xl min-w-[2rem]">09</span>
-        <Link to="59" class="no-underline opacity-80 hover:opacity-100 hover:text-[#457b9d] transition-colors">Conclusion &amp; What's Next</Link>
-      </li>
-    </ol>
-  </div>
-</div>
+<Toc />
 
 ---
 src: ../templates/slides.md#1
