@@ -1,0 +1,32 @@
+{
+  "id": "ci-cd-github",
+  "title": "CI/CD avec GitHub Actions",
+  "description": "Maitrisez les workflows GitHub Actions",
+  "status": "draft",
+  "objectives": [],
+  "prerequisites": [],
+  "duration": "45-60 minutes",
+  "theme": "maxime-lenne",
+  "thumbnail": "./assets/cover.svg",
+  "tags": [
+    "ci-cd",
+    "github-actions",
+    "devops",
+    "automation",
+    "workflows"
+  ],
+  "language": "fr",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Maxime Lenne",
+      "email": "hello@maxime-lenne.fr"
+    }
+  ],
+  "audience": [
+    "Nouveaux / onboarding",
+    "Mixte technique"
+  ],
+  "created": "2026-04-29",
+  "updated": "2026-04-29"
+}
