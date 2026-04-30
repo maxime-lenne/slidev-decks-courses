@@ -1,7 +1,7 @@
 {
   "id": "ci-cd-github",
   "title": "CI/CD avec GitHub Actions",
-  "description": "Maitrisez les workflows GitHub Actions : de l'anatomie YAML à un pipeline CI complet (tests pytest, matrix, artifacts), avec les bons réflexes sécurité dès le premier workflow.",
+  "description": "Maîtrisez les workflows GitHub Actions : anatomie YAML, pipeline CI complet (pytest, matrix, artifacts) et réflexes sécurité essentiels.",
   "status": "draft",
   "objectives": [
     "Comprendre les concepts CI/CD (Integration, Delivery, Deployment) et le rôle de GitHub Actions dans la chaîne d'automatisation",
@@ -17,7 +17,7 @@
     "Avoir un projet avec des tests à automatiser (Python/Node) — recommandé",
     "Notions de YAML — recommandé, non obligatoire"
   ],
-  "duration": "45-60 minutes (workshop : slides + exercices)",
+  "duration": "60 minutes",
   "theme": "maxime-lenne",
   "thumbnail": "./assets/cover.svg",
   "tags": [
@@ -28,17 +28,13 @@
     "workflows"
   ],
   "language": "fr",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "authors": [
     {
       "name": "Maxime Lenne",
       "email": "hello@maxime-lenne.fr"
     }
   ],
-  "audience": [
-    "Nouveaux / onboarding",
-    "Mixte technique"
-  ],
   "created": "2026-04-29",
-  "updated": "2026-04-29"
+  "updated": "2026-04-30"
 }

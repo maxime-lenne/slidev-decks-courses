@@ -65,7 +65,16 @@
       "mcp__plugin_chrome-devtools-mcp_chrome-devtools__navigate_page",
       "mcp__plugin_chrome-devtools-mcp_chrome-devtools__evaluate_script",
       "Bash(bun install:*)",
-      "Bash(npx markdownlint *)"
+      "Bash(npx markdownlint *)",
+      "Bash(git rebase *)",
+      "Bash(git stash *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Read(//tmp/**)",
+      "Bash(python3 *)",
+      "Bash(pip install *)",
+      "Bash(pip3 install *)",
+      "Bash(git check-ignore *)"
     ],
     "deny": [],
     "ask": []
