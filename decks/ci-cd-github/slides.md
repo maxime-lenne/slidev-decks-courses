@@ -11,5 +11,5 @@ drawings:
 transition: slide-left
 mdc: true
 layout: cover
-background: ""
+background: https://images.unsplash.com/photo-1717386255777-ce60792a2a56?w=1920&q=80
 ---
