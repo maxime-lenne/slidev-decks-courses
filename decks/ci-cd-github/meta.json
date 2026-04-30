@@ -1,11 +1,23 @@
 {
   "id": "ci-cd-github",
   "title": "CI/CD avec GitHub Actions",
-  "description": "Maitrisez les workflows GitHub Actions",
+  "description": "Maitrisez les workflows GitHub Actions : de l'anatomie YAML à un pipeline CI complet (tests pytest, matrix, artifacts), avec les bons réflexes sécurité dès le premier workflow.",
   "status": "draft",
-  "objectives": [],
-  "prerequisites": [],
-  "duration": "45-60 minutes",
+  "objectives": [
+    "Comprendre les concepts CI/CD (Integration, Delivery, Deployment) et le rôle de GitHub Actions dans la chaîne d'automatisation",
+    "Décrypter l'anatomie d'un workflow YAML (name/on/jobs/steps) et la hiérarchie workflow → jobs → steps",
+    "Construire un workflow CI complet pour un projet Python (checkout, setup-python, install, pytest, upload-artifact)",
+    "Mettre en œuvre une stratégie matrix pour tester sur plusieurs versions/OS en parallèle (include/exclude, fail-fast)",
+    "Identifier et éviter les erreurs courantes (checkout oublié, secrets en logs, jobs parallèles, timeout) en appliquant les 5 règles d'or"
+  ],
+  "prerequisites": [
+    "Maîtrise de Git (clone, commit, push, branches, pull requests)",
+    "Compte GitHub (gratuit) actif",
+    "Aisance avec la ligne de commande Linux/macOS",
+    "Avoir un projet avec des tests à automatiser (Python/Node) — recommandé",
+    "Notions de YAML — recommandé, non obligatoire"
+  ],
+  "duration": "45-60 minutes (workshop : slides + exercices)",
   "theme": "maxime-lenne",
   "thumbnail": "./assets/cover.svg",
   "tags": [
@@ -16,7 +28,7 @@
     "workflows"
   ],
   "language": "fr",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "authors": [
     {
       "name": "Maxime Lenne",
