@@ -116,21 +116,36 @@ layout: default
 
 ## Le produit cartésien : 3 × 3 = 9 jobs
 
-```mermaid {scale: 0.8}
-flowchart LR
-    M["matrix:<br/>os: [ubuntu, windows, macos]<br/>python: ['3.9', '3.10', '3.11']"]
-    M --> J1[ubuntu / 3.9]
-    M --> J2[ubuntu / 3.10]
-    M --> J3[ubuntu / 3.11]
-    M --> J4[windows / 3.9]
-    M --> J5[windows / 3.10]
-    M --> J6[windows / 3.11]
-    M --> J7[macos / 3.9]
-    M --> J8[macos / 3.10]
-    M --> J9[macos / 3.11]
+```mermaid {scale: 0.7}
+flowchart TB
+    M["os: [ubuntu, windows, macos]<br/>python: ['3.9', '3.10', '3.11']"]
+    M --> J1[3.9]
+    M --> J2[3.10]
+    M --> J3[3.11]
+    M --> J4[3.9]
+    M --> J5[3.10]
+    M --> J6[3.11]
+    M --> J7[3.9]
+    M --> J8[3.10]
+    M --> J9[3.11]
 
     style M fill:#457b9d,color:#fff
+    style J1 fill:#10b981,color:#fff,stroke:#10b981
+    style J2 fill:#10b981,color:#fff,stroke:#10b981
+    style J3 fill:#10b981,color:#fff,stroke:#10b981
+    style J4 fill:#2563eb,color:#fff,stroke:#2563eb
+    style J5 fill:#2563eb,color:#fff,stroke:#2563eb
+    style J6 fill:#2563eb,color:#fff,stroke:#2563eb
+    style J7 fill:#94a3b8,color:#0f172a,stroke:#94a3b8
+    style J8 fill:#94a3b8,color:#0f172a,stroke:#94a3b8
+    style J9 fill:#94a3b8,color:#0f172a,stroke:#94a3b8
 ```
+
+<div class="flex justify-center gap-6 text-xs mt-2">
+  <div class="flex items-center gap-2"><span class="inline-block w-3 h-3 rounded" style="background:#10b981"></span> ubuntu</div>
+  <div class="flex items-center gap-2"><span class="inline-block w-3 h-3 rounded" style="background:#2563eb"></span> windows</div>
+  <div class="flex items-center gap-2"><span class="inline-block w-3 h-3 rounded" style="background:#94a3b8"></span> macos</div>
+</div>
 
 <div class="grid grid-cols-2 gap-4 mt-4 text-xs">
 <div class="border-l-2 border-[#10b981] pl-3">
@@ -279,7 +294,7 @@ layout: default
 <td>BDD partagée, rate-limiting API, runners limités</td>
 </tr>
 <tr>
-<td><code>matrix: ${{ fromJSON(...) }}</code></td>
+<td v-pre><code>matrix: ${{ fromJSON(...) }}</code></td>
 <td>Matrix générée dynamiquement</td>
 <td>Tester uniquement les modules modifiés</td>
 </tr>
