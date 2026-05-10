@@ -2,7 +2,7 @@
   "id": "ci-cd-github",
   "title": "CI/CD avec GitHub Actions",
   "description": "Maîtrisez les workflows GitHub Actions : anatomie YAML, pipeline CI complet (pytest, matrix, artifacts) et réflexes sécurité essentiels.",
-  "status": "draft",
+  "status": "published",
   "objectives": [
     "Comprendre les concepts CI/CD (Integration, Delivery, Deployment) et le rôle de GitHub Actions dans la chaîne d'automatisation",
     "Décrypter l'anatomie d'un workflow YAML (name/on/jobs/steps) et la hiérarchie workflow → jobs → steps",
