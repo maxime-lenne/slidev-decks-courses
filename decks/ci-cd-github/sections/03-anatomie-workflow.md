@@ -12,7 +12,7 @@ layout: default
 
 ## Workflow → Jobs → Steps : la hiérarchie
 
-```mermaid {scale: 0.75}
+```mermaid {scale: 0.65}
 graph TD
     W[📋 Workflow<br/>.github/workflows/ci.yml] --> J1[🧪 Job: test<br/>VM Linux #1]
     W --> J2[📦 Job: build<br/>VM Linux #2]
