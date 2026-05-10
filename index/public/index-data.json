@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-28T09:04:12.102Z",
+  "generated": "2026-05-10T21:05:39.860Z",
   "version": "1.0.0",
   "decks": [
     {
@@ -93,6 +93,89 @@
       ],
       "created": "2026-03-02",
       "updated": "2026-03-02"
+    },
+    {
+      "id": "ci-cd",
+      "title": "CI / CD",
+      "description": "Introduction à l'Intégration Continue et au Déploiement Continu : principes, pipelines et bonnes pratiques pour rendre les déploiements fiables et maîtrisés. Volontairement agnostique des outils (GitHub Actions, GitLab CI, Jenkins...).",
+      "status": "published",
+      "objectives": [
+        "Distinguer Intégration Continue, Livraison Continue et Déploiement Continu et choisir le niveau d'automatisation adapté à son contexte",
+        "Identifier les composants clés d'une pipeline (jobs, stages, runners, artefacts, environnements) et leurs responsabilités",
+        "Appliquer les invariants fondamentaux : build once / deploy many, immutabilité, idempotence, fail fast, feedback rapide",
+        "Concevoir un pipeline minimal lint → tests → build → deploy pour un projet existant",
+        "Reconnaître les anti-patterns courants et les principaux risques de sécurité d'une pipeline CI/CD"
+      ],
+      "prerequisites": [
+        "Maîtrise de Git (commits, branches, merges, tags)",
+        "Aisance avec la ligne de commande Linux",
+        "Avoir déjà développé et testé un projet (même à titre scolaire)",
+        "Notions de Docker (images, conteneurs, registres) — recommandé, pas obligatoire"
+      ],
+      "duration": "90-110 minutes (30 min intro + 45-60 min deep dive test/build/CD + 15-20 min conclusion)",
+      "theme": "maxime-lenne",
+      "thumbnail": "./assets/cover.svg",
+      "tags": [
+        "ci-cd",
+        "devops",
+        "automation",
+        "pipelines",
+        "testing",
+        "build",
+        "deployment",
+        "github-actions",
+        "gitlab-ci"
+      ],
+      "language": "fr",
+      "version": "0.2.0",
+      "authors": [
+        {
+          "name": "Maxime Lenne",
+          "email": "hello@maxime-lenne.fr"
+        }
+      ],
+      "created": "2026-04-29",
+      "updated": "2026-04-29"
+    },
+    {
+      "id": "ci-cd-github",
+      "title": "CI/CD avec GitHub Actions",
+      "description": "Maîtrisez les workflows GitHub Actions : anatomie YAML, pipeline CI complet (pytest, matrix, artifacts) et réflexes sécurité essentiels.",
+      "status": "published",
+      "objectives": [
+        "Comprendre les concepts CI/CD (Integration, Delivery, Deployment) et le rôle de GitHub Actions dans la chaîne d'automatisation",
+        "Décrypter l'anatomie d'un workflow YAML (name/on/jobs/steps) et la hiérarchie workflow → jobs → steps",
+        "Construire un workflow CI complet pour un projet Python (checkout, setup-python, install, pytest, upload-artifact)",
+        "Mettre en œuvre une stratégie matrix pour tester sur plusieurs versions/OS en parallèle (include/exclude, fail-fast)",
+        "Identifier et éviter les erreurs courantes (checkout oublié, secrets en logs, jobs parallèles, timeout) en appliquant les 5 règles d'or"
+      ],
+      "prerequisites": [
+        "Maîtrise de Git (clone, commit, push, branches, pull requests)",
+        "Compte GitHub (gratuit) actif",
+        "Aisance avec la ligne de commande Linux/macOS",
+        "Avoir un projet avec des tests à automatiser (Python/Node) — recommandé",
+        "Notions de YAML — recommandé, non obligatoire"
+      ],
+      "duration": "60 minutes",
+      "theme": "maxime-lenne",
+      "thumbnail": "./assets/cover.svg",
+      "tags": [
+        "ci-cd",
+        "github-actions",
+        "devops",
+        "automation",
+        "workflows"
+      ],
+      "language": "fr",
+      "version": "0.3.0",
+      "authors": [
+        {
+          "name": "Maxime Lenne",
+          "email": "hello@maxime-lenne.fr"
+        }
+      ],
+      "created": "2026-04-29",
+      "updated": "2026-04-30"
     },
     {
       "id": "docker",
@@ -396,8 +479,8 @@
     }
   ],
   "stats": {
-    "totalDecks": 10,
-    "totalDuration": 1230,
+    "totalDecks": 12,
+    "totalDuration": 1400,
     "languages": [
       "fr"
     ],
@@ -411,13 +494,16 @@
       "alembic",
       "api",
       "authentication",
+      "automation",
       "backend",
       "bdd",
       "beginner",
       "build",
+      "ci-cd",
       "containers",
       "database",
       "delete",
+      "deployment",
       "devops",
       "docker",
       "docker-compose",
@@ -425,6 +511,8 @@
       "exercices",
       "fastapi",
       "fetch",
+      "github-actions",
+      "gitlab-ci",
       "http",
       "insert",
       "javascript",
@@ -437,6 +525,7 @@
       "nlp",
       "nosql",
       "optimization",
+      "pipelines",
       "postgresql",
       "pydantic",
       "pytest",
@@ -452,12 +541,14 @@
       "storage",
       "subqueries",
       "swagger",
+      "testing",
       "tests",
       "uml",
       "update",
       "validation",
       "vector database",
-      "web"
+      "web",
+      "workflows"
     ]
   }
 }
