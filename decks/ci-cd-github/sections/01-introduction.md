@@ -1,3 +1,33 @@
+
+---
+layout: two-cols-header
+---
+
+### Prérequis & Objectifs
+
+::left::
+
+### Prérequis
+
+- **Fondamentaux CI/CD** déjà vus *(deck [CI / CD](#https://decks.maxime-lenne.fr/decks/ci-cd/1))* — CI vs Delivery vs Deployment, anatomie d'une pipeline (jobs, stages, runners, artefacts), invariants (build once / deploy many, fail fast)
+- Maîtrise de **Git** (commits, branches, PR)
+- Compte **GitHub** actif (gratuit suffit)
+- À l'aise avec la **ligne de commande** Linux/macOS
+- Notions de **YAML** — recommandé, non bloquant
+
+**Niveau :** apprenants en onboarding · profils techniques mixtes
+
+::right::
+
+### Objectifs
+
+À l'issue de cette session vous serez capable de :
+
+- Décrypter l'anatomie d'un **workflow YAML** (`name` / `on` / `jobs` / `steps`) et la hiérarchie Workflow → Jobs → Steps
+- Construire un **pipeline CI complet** pour un projet Python (checkout → setup → install → pytest → artifacts)
+- Mettre en œuvre une **stratégie matrix** pour tester sur plusieurs versions/OS en parallèle (`include`, `exclude`, `fail-fast`)
+- Appliquer les **3 réflexes sécurité** et les **5 règles d'or** pour éviter les erreurs courantes
+
 ---
 layout: two-cols-header
 ---
