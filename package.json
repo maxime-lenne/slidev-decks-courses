@@ -62,7 +62,7 @@
     "conventional-changelog-gitmoji-config": "^1.5.2",
     "gitmoji-cli": "^9.7.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
+    "lint-staged": "^17.0.4",
     "markdownlint-cli": "^0.48.0",
     "mermaid": "^11.12.1",
     "playwright-chromium": "^1.58.2",
