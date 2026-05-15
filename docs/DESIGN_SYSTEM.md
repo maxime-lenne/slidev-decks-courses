@@ -1,39 +1,58 @@
 # Design System
 
-UI/UX design system and conventions guide.
+UI/UX design system for Slidev themes in this project.
 
-## 🎨 Design Principles
+## Design Principles
 
-- **Consistency** - Unified look and feel
-- **Accessibility** - WCAG 2.1 AA compliance
-- **Responsive** - Mobile-first approach
-- **Performance** - Optimized assets
+- **Pedagogical clarity** - Content hierarchy guides learners; never sacrifice readability for aesthetics.
+- **Accessibility** - WCAG 2.1 AA compliance; all slides are keyboard-navigable.
+- **Responsive** - Presentations work on mobile viewports (320px+) and large screens.
+- **Performance** - Static builds, optimized images (<500KB per asset), <3s initial load.
+- **Motion-safe** - No animations that trigger motion sensitivity; use `@prefers-reduced-motion`.
 
 ---
 
-## 🎨 Color System
+## Color System
 
-### Primary Colors
+### Simplon Theme (`themes/simplon/`)
 
-```css
-:root {
-  --color-primary: #2563eb;
-  --color-primary-light: #3b82f6;
-  --color-primary-dark: #1d4ed8;
-}
-```
-
-### Secondary Colors
+Brand colors from Simplon.co:
 
 ```css
 :root {
-  --color-secondary: #64748b;
-  --color-secondary-light: #94a3b8;
-  --color-secondary-dark: #475569;
+  --simplon-elephant: #123744;     /* Primary dark — headings, backgrounds */
+  --simplon-coral: #f26f5c;        /* Accent — highlights, CTA */
+  --simplon-red: #ce0033;          /* Error / warning emphasis */
+  --simplon-steel: #457b9d;        /* Secondary — links, secondary headings */
+  --simplon-slate: #475569;        /* Muted text */
+  --simplon-white: #ffffff;
 }
 ```
 
-### Semantic Colors
+All color combinations verified to meet WCAG AA contrast ratios.
+
+### maxime-lenne Theme (`themes/maxime-lenne/`)
+
+```css
+:root {
+  --ml-dark: #1d3557;
+  --ml-blue: #457b9d;
+  --ml-teal: #123744;
+  --ml-slate: #475569;
+}
+```
+
+Used in Mermaid diagrams:
+
+```text
+style A fill:#1d3557
+style B fill:#457b9d
+style C fill:#123744
+style D fill:#475569
+style E fill:#1d3557
+```
+
+### Semantic Colors (shared)
 
 ```css
 :root {
@@ -44,82 +63,45 @@ UI/UX design system and conventions guide.
 }
 ```
 
-### Theme Colors
+---
 
-```css
-:root {
-  --color-background: #ffffff;
-  --color-surface: #f8fafc;
-  --color-text-primary: #0f172a;
-  --color-text-secondary: #64748b;
-  --color-border: #e2e8f0;
-}
+## Typography
 
-/* Dark mode */
-:root[data-theme="dark"] {
-  --color-background: #0f172a;
-  --color-surface: #1e293b;
-  --color-text-primary: #f8fafc;
-  --color-text-secondary: #cbd5e1;
-  --color-border: #334155;
-}
+### Simplon Theme
+
+- **Body font**: DM Sans (Google Fonts)
+- **Code font**: JetBrains Mono or system monospace
+
+### Slidev Content Guidelines
+
+| Element | Minimum Size | Notes |
+|---------|-------------|-------|
+| Body text | 24pt | Never go below this on slides |
+| Headings | 36pt | `h1` on slides |
+| Code blocks | 18pt | Keep readable without zooming |
+
+### Cognitive Load Rules
+
+- Maximum **7 bullet points** per slide
+- Maximum **20 lines of code** per code block
+- One concept per slide when possible
+
+---
+
+## Spacing
+
+Uses Slidev's built-in UnoCSS/Windi CSS utility classes:
+
+```text
+p-4   → 1rem
+p-8   → 2rem
+mt-6  → 1.5rem
+gap-4 → 1rem
 ```
 
 ---
 
-## 📝 Typography
-
-### Font Families
-
-```css
-:root {
-  --font-sans: system-ui, -apple-system, sans-serif;
-  --font-mono: 'SF Mono', Monaco, monospace;
-}
-```
-
-### Font Sizes
-
-```css
-:root {
-  --text-xs: 0.75rem;    /* 12px */
-  --text-sm: 0.875rem;   /* 14px */
-  --text-base: 1rem;     /* 16px */
-  --text-lg: 1.125rem;   /* 18px */
-  --text-xl: 1.25rem;    /* 20px */
-  --text-2xl: 1.5rem;    /* 24px */
-  --text-3xl: 1.875rem;  /* 30px */
-  --text-4xl: 2.25rem;   /* 36px */
-}
-```
-
----
-
-## 📏 Spacing
-
-```css
-:root {
-  --space-xs: 0.25rem;   /* 4px */
-  --space-sm: 0.5rem;    /* 8px */
-  --space-md: 1rem;      /* 16px */
-  --space-lg: 1.5rem;    /* 24px */
-  --space-xl: 3rem;      /* 48px */
-  --space-2xl: 6rem;     /* 96px */
-}
-```
-
----
-
-## 📐 Layout
-
-### Container
-
-```css
-:root {
-  --container-max-width: 1280px;
-  --container-padding: clamp(1rem, 5vw, 3rem);
-}
-```
+## Layout
 
 ### Breakpoints
 
@@ -130,86 +112,51 @@ UI/UX design system and conventions guide.
 --breakpoint-xl: 1280px;
 ```
 
----
+### Slidev Slide Dimensions
 
-## 🧩 Components
-
-### Naming Convention
-
-Use BEM or consistent naming:
-
-```css
-.component { }
-.component__element { }
-.component--modifier { }
-```
-
-### Component List
-
-| Component | Description |
-|-----------|-------------|
-| Button | Interactive button element |
-| Card | Content container |
-| Input | Form input field |
-| Modal | Dialog overlay |
-
-See [COMPONENT_REFERENCE.md](./COMPONENT_REFERENCE.md) for details.
+Default: 1920×1080 (16:9). Responsive scaling handled by Slidev.
 
 ---
 
-## 🎭 Animations
+## Components (Slide-Level)
 
-### Transitions
+See [COMPONENT_REFERENCE.md](./COMPONENT_REFERENCE.md) for full documentation.
 
-```css
-:root {
-  --transition-fast: 150ms ease-in-out;
-  --transition-normal: 250ms ease-in-out;
-  --transition-slow: 350ms ease-in-out;
-}
+| Component | Theme | Description |
+|-----------|-------|-------------|
+| `CodeBlock` | common | Syntax-highlighted code with copy button |
+| `LearningObjective` | common | Highlighted learning goal callout |
+| `ExerciseCard` | common | Exercise prompt with difficulty/duration |
+| `DeckCard` | index | Card showing deck info on the index page |
+
+---
+
+## Animations
+
+Slidev transitions are configured in slide frontmatter:
+
+```yaml
+transition: slide-left   # or fade, none
 ```
 
-### Motion
+Always respect motion preferences:
 
 ```css
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .slidev-layout * { transition: none !important; }
 }
 ```
 
 ---
 
-## ♿ Accessibility
+## Accessibility
 
-### Focus States
-
-All interactive elements must have visible focus states.
-
-### Color Contrast
-
-- Normal text: minimum 4.5:1 ratio
-- Large text: minimum 3:1 ratio
-
-### Skip Links
-
-```html
-<a href="#main-content" class="skip-link">Skip to main content</a>
-```
+- All images must have `alt` text
+- Code examples must be copyable (Slidev `shiki` highlighter)
+- Color contrast minimum 4.5:1 for normal text, 3:1 for large text
+- Keyboard navigation native to Slidev (arrow keys, space bar)
+- Skip-to-content link on index page
 
 ---
 
-## 📁 File Structure
-
-```
-styles/
-├── _variables.css      # Design tokens
-├── _base.css           # Base styles
-├── _components.css     # Component styles
-├── _utilities.css      # Utility classes
-└── main.css            # Entry point
-```
-
----
-
-*Last updated: [Date]*
+*Last updated: 2026-05-16*

@@ -15,86 +15,89 @@ Advanced coding conventions and guidelines.
 
 | Element | Convention | Example |
 |---------|------------|---------|
-| Files | kebab-case | `user-service.ts` |
-| Classes | PascalCase | `UserService` |
-| Functions | camelCase | `getUserById` |
-| Constants | UPPER_SNAKE_CASE | `MAX_RETRY_COUNT` |
-| Variables | camelCase | `userName` |
+| Files | kebab-case | `deck-card.vue` |
+| Classes | PascalCase | `DeckCard` |
+| Functions | camelCase | `loadDeckMeta` |
+| Constants | UPPER_SNAKE_CASE | `MAX_DECKS_PER_PAGE` |
+| Variables | camelCase | `deckTitle` |
 
 ### File Organization
 
 ```typescript
 // 1. Imports (external first, then internal)
-import { useState } from 'react';
-import { UserService } from './services';
+import { ref, computed } from 'vue';
+import { loadDecks } from './utils/deckLoader';
 
 // 2. Types/Interfaces
-interface Props {
-  name: string;
+interface DeckMeta {
+  id: string;
+  title: string;
 }
 
 // 3. Constants
-const DEFAULT_VALUE = 10;
+const DEFAULT_STATUS = 'draft';
 
 // 4. Component/Function
-export function Component({ name }: Props) {
+export function useDeck(id: string) {
   // Implementation
 }
 ```
 
 ---
 
-## CSS/Styling Conventions
+## Markdown Content Style (Slides)
 
-### Methodology
+### Slide Structure
 
-Use BEM (Block Element Modifier) or CSS Modules:
-
-```css
-/* BEM */
-.block { }
-.block__element { }
-.block--modifier { }
-
-/* Example */
-.card { }
-.card__title { }
-.card--featured { }
-```
-
-### CSS Variables
-
-```css
-:root {
-  --color-primary: #2563eb;
-  --spacing-md: 1rem;
-  --font-size-base: 16px;
-}
-```
-
+```markdown
+---
+theme: simplon
+title: Slide Deck Title
 ---
 
-## Testing Conventions
+# Slide Title
 
-### Test File Naming
+Content here
 
-- Unit tests: `*.test.ts` or `*.spec.ts`
-- Integration tests: `*.integration.test.ts`
-- E2E tests: `*.e2e.test.ts`
+---
+layout: two-cols
+---
 
-### Test Structure
+# Left Column Title
 
-```typescript
-describe('ComponentName', () => {
-  describe('methodName', () => {
-    it('should do something when condition', () => {
-      // Arrange
-      // Act
-      // Assert
-    });
-  });
-});
+Left content
+
+::right::
+
+Right content
 ```
+
+### Content Rules
+
+- Use `#` for slide titles (one per slide)
+- Use `---` to separate slides
+- Wrap SQL in triple backticks with `sql` language tag
+- Use Vue components with `<ComponentName />` syntax
+- Maximum 7 bullet points per slide
+- Maximum 20 lines of code per code block
+
+### SQL Example Style
+
+```markdown
+\```sql
+-- Include context comment
+SELECT u.name, COUNT(o.id) AS order_count
+FROM users u
+LEFT JOIN orders o ON u.id = o.user_id
+GROUP BY u.id;
+-- Expected: each user with their order count (0 if none)
+\```
+```
+
+- Include setup scripts (CREATE TABLE, INSERT) for standalone examples
+- Show expected output as comments
+- Keep queries under 20 lines for readability
+- Test all queries before committing
 
 ---
 
@@ -107,12 +110,15 @@ project-root/
 ├── .github/            # GitHub configuration
 │   ├── workflows/      # CI/CD workflows
 │   └── ISSUE_TEMPLATE/ # Issue templates
+├── decks/              # Slide deck content
 ├── docs/               # Documentation
-├── node_modules/       # Dependencies (Bun)
-├── package.json        # Project config
-├── bun.lock            # Lock file
+├── index/              # Index page Vue app
+├── scripts/            # Automation scripts
+├── themes/             # Slidev themes
+├── package.json
+├── bun.lock
 ├── CLAUDE.md           # AI assistant guide
-└── README.md           # Main documentation
+└── README.md
 ```
 
 ### Import Order
@@ -133,6 +139,7 @@ feature/short-description
 fix/issue-number-description
 refactor/component-name
 docs/update-readme
+chore/maintenance-task
 ```
 
 ### Commit Messages (Gitmoji or Conventional)
@@ -150,9 +157,9 @@ bun run commit
 
 Examples:
 
-- `✨ Add user authentication`
-- `🐛 Fix login button not responding`
-- `📝 Update README with installation steps`
+- `✨ Add sql-joins slide deck`
+- `🐛 Fix deck not appearing in index`
+- `📝 Update TECHNICAL_GUIDE with Slidev commands`
 
 Common gitmojis:
 
@@ -168,6 +175,7 @@ Common gitmojis:
 | 🔥 | Remove code/files |
 | 🚀 | Deploy |
 | 💄 | UI/style |
+| ⬆️ | Upgrade dependencies |
 
 Full reference: [gitmoji.dev](https://gitmoji.dev)
 
@@ -177,31 +185,25 @@ Full reference: [gitmoji.dev](https://gitmoji.dev)
 
 Examples:
 
-- `feat: Add user authentication`
-- `fix(auth): Fix login button not responding`
-- `docs: Update README with installation steps`
+- `feat(decks): add sql-joins deck`
+- `fix(index): fix deck not appearing after publish`
+- `docs: update TECHNICAL_GUIDE with Slidev commands`
 
 Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`
 
 ---
 
+## Accessibility Guidelines
+
+- Alt text for all images
+- Descriptive link text (not "click here")
+- Sufficient color contrast (WCAG AA minimum: 4.5:1 normal text, 3:1 large text)
+- Avoid relying solely on color to convey information
+- Keyboard-navigable components (native in Slidev)
+
+---
+
 ## Documentation
-
-### Code Comments
-
-```typescript
-// Single line comment for brief explanations
-
-/**
- * Multi-line comment for complex logic
- * explaining the why, not the what
- */
-
-/** JSDoc for public APIs */
-function publicFunction(param: string): void {
-  // Implementation
-}
-```
 
 ### Markdown Style
 
@@ -212,4 +214,4 @@ function publicFunction(param: string): void {
 
 ---
 
-*Last updated: 2026-02-03*
+*Last updated: 2026-05-16*
