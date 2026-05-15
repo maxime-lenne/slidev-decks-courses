@@ -6,15 +6,173 @@ Detailed guide for technical implementation aspects.
 
 | Category | Technology | Version |
 |----------|------------|---------|
+| Framework | Slidev | latest stable |
+| UI | Vue 3 | ^3.x |
+| Build | Vite | ^5.x |
 | Package Manager | Bun | >= 1.1.45 |
-| Node | Node.js | >= 22.11.0 |
+| Node | Node.js | >= 18.0.0 |
+| Language | TypeScript | ^5.x |
+| Markdown | markdown-it | (via Slidev) |
 | Git Hooks | Husky | ^9.1.7 |
-| Staged Files | lint-staged | ^16.2.7 |
+| Staged Files | lint-staged | ^17.x |
 | Commit Tool | gitmoji-cli | ^9.7.0 |
-| Commit Lint | commitlint | ^20.4.1 |
+| Commit Lint | commitlint | ^21.x |
 | Changelog | conventional-changelog | ^5.0.0 |
 | Release | semantic-release | ^25.0.3 |
 | Markdown Lint | markdownlint-cli | ^0.47.0 |
+| Validation | Ajv (JSON schema) | ^8.x |
+
+---
+
+## Available Scripts
+
+```bash
+# Install dependencies
+bun install
+
+# --- Linting ---
+bun run lint              # Lint all (markdown + yaml)
+bun run lint:md           # Lint markdown only
+bun run lint:md:fix       # Auto-fix markdown issues
+bun run lint:yaml         # Lint YAML files
+
+# --- Development ---
+bun run dev               # Start index dev server (port 5173)
+bun run dev:deck <name>   # Start Slidev dev server for one deck (port 3030)
+
+# --- Build ---
+bun run build             # Build index page only
+bun run build:decks       # Build all slide decks
+bun run build:all         # Build everything (decks + index)
+
+# --- Deck management ---
+bun run create-deck <name>   # Scaffold a new deck directory
+bun run generate-index       # Regenerate index metadata from meta.json files
+bun run validate             # Validate all meta.json files against schema
+
+# --- Git / Release ---
+bun run commit            # Interactive gitmoji commit
+bun run changelog         # Update CHANGELOG.md
+bun run release           # Run semantic release (usually done by CI)
+bun run release:dry       # Preview release without publishing
+```
+
+---
+
+## Deck Development Workflow
+
+### 1. Create a New Deck
+
+```bash
+bun run create-deck sql-joins
+# Creates: decks/sql-joins/{slides.md,meta.json,assets/}
+```
+
+### 2. Configure Metadata
+
+Edit `decks/sql-joins/meta.json`:
+
+```json
+{
+  "id": "sql-joins",
+  "title": "SQL Joins",
+  "description": "Master INNER, LEFT, RIGHT, and FULL JOINs with practical examples.",
+  "status": "draft",
+  "objectives": ["Write INNER JOIN queries", "Understand LEFT vs RIGHT JOINs"],
+  "prerequisites": ["sql-basics"],
+  "duration": "2 hours",
+  "theme": "simplon",
+  "thumbnail": "./assets/preview.png",
+  "tags": ["sql", "intermediate"],
+  "language": "fr",
+  "version": "0.1.0",
+  "authors": [{ "name": "Maxime Lenne", "email": "hello@maxime-lenne.fr" }],
+  "created": "2026-05-16",
+  "updated": "2026-05-16"
+}
+```
+
+### 3. Write Slides
+
+Edit `decks/sql-joins/slides.md`:
+
+```markdown
+---
+theme: simplon
+title: SQL Joins
+highlighter: shiki
+transition: slide-left
+mdc: true
+---
+
+# SQL Joins
+
+...
+
+---
+layout: two-cols
+---
+
+# INNER JOIN
+
+::right::
+
+\```sql
+SELECT u.name, o.total
+FROM users u
+INNER JOIN orders o ON u.id = o.user_id;
+\```
+```
+
+### 4. Test Locally
+
+```bash
+bun run dev:deck sql-joins
+# → http://localhost:3030
+# Press 'p' for presenter mode
+# Press 'o' for overview
+```
+
+### 5. Validate and Publish
+
+```bash
+bun run validate          # Check meta.json
+
+# Update status in meta.json:
+# "status": "published"
+
+bun run commit            # Commit with gitmoji
+git push origin main      # CI/CD deploys automatically
+```
+
+---
+
+## Slides Frontmatter Reference
+
+```yaml
+---
+theme: simplon             # Theme name (simplon | maxime-lenne)
+title: Slide Deck Title
+highlighter: shiki         # Code syntax highlighter
+drawings:
+  persist: false
+transition: slide-left     # Slide transition
+mdc: true                  # Enable MDC syntax
+---
+```
+
+---
+
+## Slidev Key Shortcuts
+
+| Key | Action |
+|-----|--------|
+| `→` / `Space` | Next slide |
+| `←` | Previous slide |
+| `p` | Toggle presenter mode |
+| `o` | Toggle overview mode |
+| `d` | Toggle drawing mode |
+| `f` | Toggle fullscreen |
 
 ---
 
@@ -22,18 +180,10 @@ Detailed guide for technical implementation aspects.
 
 ### Lint Workflow
 
-The project runs linting on every push and PR to `main`:
+Runs on every push and PR to `main`:
 
 ```yaml
 # .github/workflows/lint.yml
-name: Lint
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
 jobs:
   markdownlint:
     runs-on: ubuntu-latest
@@ -51,22 +201,19 @@ jobs:
       - run: yamllint .
 ```
 
-### Additional Workflows (Future)
+### Release Workflow
 
-- **PR Checks** - Tests, type checking
-- **Security** - CodeQL analysis
-- **Deploy** - Automated deployment
+Triggered on push to `main` — creates GitHub releases and updates `CHANGELOG.md`.
 
 ---
 
 ## Git Hooks
 
-### Pre-commit Hook
+### Pre-commit
 
-Husky runs lint-staged automatically on commit:
+Husky runs lint-staged automatically:
 
 ```json
-// package.json
 {
   "lint-staged": {
     "*.md": "markdownlint --fix",
@@ -75,32 +222,34 @@ Husky runs lint-staged automatically on commit:
 }
 ```
 
-### Commit-msg Hook
+### Commit-msg
 
-Commitlint validates commit messages:
+Commitlint validates commit messages. Two accepted formats:
 
-```bash
-# .husky/commit-msg
-bun commitlint --edit "$1"
-```
+- **Gitmoji**: `<emoji> <description>` (e.g., `✨ Add SQL Joins deck`)
+- **Conventional**: `<type>(scope): <description>` (e.g., `feat(decks): add sql-joins`)
 
-Configuration in `commitlint.config.js` accepts two formats:
+---
 
-- **Gitmoji**: `<emoji> <description>` (e.g., `✨ Add feature`)
-- **Conventional**: `<type>(scope): <description>` (e.g., `feat: Add feature`)
+## Version Bumping
 
-Rules:
+| Emoji | Version Bump |
+|-------|-------------|
+| 💥 | Major (breaking change) |
+| ✨ 🎉 | Minor (new feature) |
+| 🐛 🚑️ 🩹 ⚡️ 🔒️ 🚀 ♻️ ⬆️ ⬇️ | Patch (fix/improvement) |
 
-- Message must match one of the formats above
-- Maximum header length of 100 characters
+---
 
-### Setup
+## Deck Versioning
 
-Hooks are configured automatically via the `prepare` script:
+Each deck in `meta.json` uses semantic versioning independently:
 
-```bash
-bun install  # Runs "husky" automatically
-```
+| Change | Version bump |
+|--------|-------------|
+| Content restructure, prerequisite changes | MAJOR |
+| New topics or sections added | MINOR |
+| Corrections, clarifications, updated examples | PATCH |
 
 ---
 
@@ -108,160 +257,41 @@ bun install  # Runs "husky" automatically
 
 ### Renovate
 
-Renovate is configured to:
-
-- Group minor and patch updates
-- Auto-merge patches for devDependencies
-- Run updates on Monday morning (Europe/Paris timezone)
+Configured to group minor/patch updates and auto-merge patches for devDependencies. Runs Monday mornings (Europe/Paris timezone).
 
 ### Dependabot
 
-Dependabot monitors:
-
-- Bun dependencies (via package.json)
-- GitHub Actions versions
+Monitors Bun dependencies and GitHub Actions versions.
 
 ---
 
-## Changelog
+## Troubleshooting
 
-Generate changelogs from commit history using gitmoji and conventional commits:
+**Deck not appearing in index:**
 
 ```bash
-# Update changelog with new commits
-bun run changelog
-
-# Generate full changelog from scratch
-bun run changelog:init
+# Check status in meta.json (must be "published")
+cat decks/my-deck/meta.json | grep status
+bun run generate-index
+bun run validate
 ```
 
-The changelog is generated in `CHANGELOG.md` and groups commits by type (features, fixes, etc.).
+**Theme not loading:**
 
----
-
-## Semantic Release
-
-Automated versioning and releases based on commit messages:
-
-```bash
-# Run release (usually done by CI)
-bun run release
-
-# Dry run to preview release
-bun run release:dry
+```markdown
+# slides.md frontmatter — use exact theme name
+theme: simplon
+# NOT: theme: "simplon-theme"
 ```
 
-### Version Bumping
+**Images not displaying:**
 
-Versions are determined by gitmoji:
-
-| Emoji | Version Bump |
-|-------|--------------|
-| 💥 | Major (breaking change) |
-| ✨ 🎉 | Minor (new feature) |
-| 🐛 🚑️ 🩹 ⚡️ 🔒️ 🚀 ♻️ ⬆️ ⬇️ | Patch (fix/improvement) |
-
-### CI/CD Integration
-
-Releases are automated via GitHub Actions (`.github/workflows/release.yml`):
-
-- Triggered on push to `main`
-- Creates GitHub releases with changelog
-- Updates `CHANGELOG.md` and `package.json`
-
----
-
-## Available Scripts
-
-```bash
-# Install dependencies
-bun install
-
-# Lint all files
-bun run lint
-
-# Lint markdown only
-bun run lint:md
-
-# Auto-fix markdown issues
-bun run lint:md:fix
-
-# Lint YAML files
-bun run lint:yaml
-
-# Create a commit with gitmoji
-bun run commit
-
-# Generate/update changelog
-bun run changelog
-
-# Setup husky hooks (runs automatically on install)
-bun run prepare
+```markdown
+# Use relative paths from slides.md
+![Correct](./assets/image.png)
+# NOT absolute paths
 ```
 
 ---
 
-## Linting Rules
-
-### Markdownlint
-
-Configuration in `.markdownlint.json`:
-
-- Line length limits
-- Heading structure
-- List formatting
-- Code block rules
-
-### Yamllint
-
-Configuration in `.yamllint.yml`:
-
-- Indentation rules
-- Line length
-- Key ordering
-
----
-
-## Development Workflow
-
-### Daily Process
-
-1. **Pull** - `git pull origin main`
-2. **Branch** - `git checkout -b feature/description`
-3. **Develop** - Make changes following conventions
-4. **Lint** - `bun run lint`
-5. **Commit** - `bun run commit` (uses gitmoji)
-6. **Push** - `git push origin feature/description`
-7. **PR** - Create pull request
-
-### Pre-commit Checklist
-
-- [ ] `bun run lint` passes
-- [ ] Documentation updated if needed
-- [ ] Commit uses gitmoji convention
-- [ ] No sensitive data committed
-
----
-
-## Issue Templates
-
-### Bug Report
-
-Uses `.github/ISSUE_TEMPLATE/bug_report.yml`:
-
-- Description
-- Steps to reproduce
-- Expected vs actual behavior
-- Environment details
-
-### Feature Request
-
-Uses `.github/ISSUE_TEMPLATE/feature_request.yml`:
-
-- Problem description
-- Proposed solution
-- Alternatives considered
-
----
-
-*Last updated: 2026-02-03*
+*Last updated: 2026-05-16*
