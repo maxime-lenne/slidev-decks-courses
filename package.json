@@ -48,7 +48,7 @@
     "vue": "^3.5.25"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.4.1",
+    "@commitlint/cli": "^21.0.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/git": "^10.0.1",
@@ -62,7 +62,7 @@
     "conventional-changelog-gitmoji-config": "^1.5.2",
     "gitmoji-cli": "^9.7.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
+    "lint-staged": "^17.0.4",
     "markdownlint-cli": "^0.48.0",
     "mermaid": "^11.12.1",
     "playwright-chromium": "^1.58.2",
