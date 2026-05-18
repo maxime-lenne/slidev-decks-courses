@@ -77,7 +77,8 @@
       "Bash(git check-ignore *)",
       "Skill(wwt-claude-skills:slidev:new)",
       "WebFetch(domain:prometheus.io)",
-      "WebFetch(domain:blog.stephane-robert.info)"
+      "WebFetch(domain:blog.stephane-robert.info)",
+      "Bash(awk *)"
     ],
     "deny": [],
     "ask": []
