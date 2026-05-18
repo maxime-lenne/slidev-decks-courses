@@ -105,7 +105,7 @@ jobs:
 </div>
 
 <!--
-- Source : Stéphane Robert — la slide la plus impactante de la section
+- Source :  la slide la plus impactante de la section
 - 45 min en séquentiel → 5 min en parallèle (chaque job sur sa VM)
 - Moins de code = moins de bugs = plus facile à maintenir
 -->

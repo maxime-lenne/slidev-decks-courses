@@ -1,138 +1,178 @@
 # Component Reference
 
-Complete technical reference for all components in the project.
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Components](#components)
-- [Usage Guidelines](#usage-guidelines)
-- [Configuration](#configuration)
-
----
+Complete technical reference for Vue components used in this project.
 
 ## Overview
 
-This project uses a component-based architecture.
+Components live in two places:
+
+- **`index/components/`** — Vue components for the index page
+- **`themes/common/components/`** and **`themes/simplon/components/`** — Reusable slide-level components
 
 ### Naming Convention
 
-- **Component Name** - PascalCase (e.g., `Button`, `UserCard`)
-- **File Name** - Match component name or kebab-case
-- **Props** - camelCase
+- **Component Name**: PascalCase (e.g., `DeckCard`, `CodeBlock`)
+- **File Name**: match component name (e.g., `DeckCard.vue`)
+- **Props**: camelCase
 
-### File Structure
+---
 
-```
-components/
-├── common/              # Shared components
-│   ├── Button/
-│   │   ├── index.ts
-│   │   ├── Button.tsx
-│   │   ├── Button.test.ts
-│   │   └── Button.styles.ts
-│   └── Card/
-├── features/            # Feature-specific components
-└── layouts/             # Layout components
+## Index Page Components (`index/components/`)
+
+### DeckCard
+
+Displays a single deck's metadata as a clickable card on the index page.
+
+| File | Path |
+|------|------|
+| Component | `index/components/DeckCard.vue` |
+
+#### Props
+
+| Prop | Type | Required | Description |
+|------|------|----------|-------------|
+| `id` | `string` | yes | Deck identifier (matches directory name) |
+| `title` | `string` | yes | Deck display title |
+| `description` | `string` | yes | Short description |
+| `thumbnail` | `string` | no | Path to preview image (`assets/preview.png`) |
+| `tags` | `string[]` | no | Topic tags |
+| `duration` | `string` | no | Estimated duration (e.g., `"2 hours"`) |
+| `status` | `'draft' \| 'published' \| 'archived'` | yes | Publication status |
+
+#### Usage
+
+```vue
+<DeckCard
+  id="sql-basics"
+  title="SQL Basics"
+  description="Learn SQL fundamentals"
+  duration="2 hours"
+  status="published"
+  :tags="['sql', 'beginner']"
+/>
 ```
 
 ---
 
-## Components
+### DeckGrid
 
-### Button
-
-Description of the button component.
+Renders a responsive grid of `DeckCard` components.
 
 | File | Path |
 |------|------|
-| Component | `components/common/Button/Button.tsx` |
-| Styles | `components/common/Button/Button.styles.ts` |
+| Component | `index/components/DeckGrid.vue` |
 
 #### Props
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `variant` | `'primary' \| 'secondary'` | `'primary'` | Button style variant |
-| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Button size |
-| `disabled` | `boolean` | `false` | Disabled state |
-
-#### Usage
-
-```tsx
-<Button variant="primary" size="md">
-  Click me
-</Button>
-```
+| `decks` | `DeckMeta[]` | - | Array of deck metadata objects |
+| `filter` | `string` | `''` | Search/filter string applied to title and tags |
 
 ---
 
-### Card
+## Slide-Level Components (`themes/common/components/`)
 
-Description of the card component.
+These components are available in any Slidev deck via `<ComponentName />` in markdown.
+
+### CodeBlock
+
+Displays a code snippet with syntax highlighting, optional title, and copy button.
 
 | File | Path |
 |------|------|
-| Component | `components/common/Card/Card.tsx` |
-| Styles | `components/common/Card/Card.styles.ts` |
+| Component | `themes/common/components/CodeBlock.vue` |
 
 #### Props
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `title` | `string` | - | Card title |
-| `children` | `ReactNode` | - | Card content |
+| `lang` | `string` | `'text'` | Language for syntax highlighting (e.g., `sql`, `js`) |
+| `title` | `string` | - | Optional title displayed above the block |
+
+#### Usage in Slidev markdown
+
+```markdown
+<CodeBlock lang="sql" title="User Query">
+SELECT * FROM users WHERE active = true;
+</CodeBlock>
+```
+
+---
+
+### LearningObjective
+
+Displays a highlighted callout for learning objectives.
+
+| File | Path |
+|------|------|
+| Component | `themes/common/components/LearningObjective.vue` |
 
 #### Usage
 
-```tsx
-<Card title="Example">
-  Card content here
-</Card>
+```markdown
+<LearningObjective>
+Understand how to write efficient SQL JOIN queries
+</LearningObjective>
 ```
 
 ---
 
-## Usage Guidelines
+### ExerciseCard
 
-### Best Practices
+Displays an exercise prompt with difficulty level and estimated time.
 
-1. **Import from index** - Use barrel exports
-2. **Props validation** - Always define prop types
-3. **Composition** - Prefer composition over inheritance
-4. **Accessibility** - Include ARIA attributes when needed
+| File | Path |
+|------|------|
+| Component | `themes/common/components/ExerciseCard.vue` |
 
-### Testing
+#### Props
 
-```tsx
-describe('Button', () => {
-  it('renders correctly', () => {
-    // Test implementation
-  });
-});
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `difficulty` | `'beginner' \| 'intermediate' \| 'advanced'` | `'beginner'` | Exercise difficulty |
+| `duration` | `string` | - | Estimated time (e.g., `"10 min"`) |
+
+#### Usage
+
+```markdown
+<ExerciseCard difficulty="beginner" duration="10 min">
+Write a query to find all products under €20
+</ExerciseCard>
 ```
 
 ---
 
-## Configuration
+## Deck Metadata Schema
 
-### Theme Configuration
+Each deck must have a `meta.json` file. Required structure:
 
-```typescript
-// Example theme configuration
-const theme = {
-  colors: {
-    primary: '#2563eb',
-    secondary: '#64748b',
-  },
-  spacing: {
-    sm: '0.5rem',
-    md: '1rem',
-    lg: '1.5rem',
-  },
-};
+```json
+{
+  "id": "sql-basics",
+  "title": "SQL Basics",
+  "description": "Learn SQL fundamentals with practical examples.",
+  "status": "published",
+  "objectives": ["Write SELECT queries", "Filter with WHERE"],
+  "prerequisites": ["Basic programming concepts"],
+  "duration": "2 hours",
+  "theme": "simplon",
+  "thumbnail": "./assets/preview.png",
+  "tags": ["sql", "beginner"],
+  "language": "fr",
+  "version": "1.0.0",
+  "authors": [{ "name": "Maxime Lenne", "email": "hello@maxime-lenne.fr" }],
+  "created": "2025-11-24",
+  "updated": "2026-05-16"
+}
 ```
+
+**Key rules:**
+
+- `id` must match the directory name, lowercase with hyphens
+- `status: "draft"` hides the deck from the index; use `"published"` to show it
+- `thumbnail` is relative to the deck directory (400×300px recommended)
 
 ---
 
-*Last updated: [Date]*
+*Last updated: 2026-05-16*

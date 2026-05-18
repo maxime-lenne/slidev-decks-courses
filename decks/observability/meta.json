@@ -1,0 +1,55 @@
+{
+  "id": "observability",
+  "title": "Observability",
+  "description": "Observability d'une application IA (logs, metrics, dashboard, monitoring, traces, APM, telemetry, instrumentation...). Formation modulaire pour onboarding d'équipe.",
+  "status": "draft",
+  "objectives": [
+    "Distinguer observabilité et monitoring, et appliquer les modèles mentaux (RED, USE, Golden Signals) au choix des indicateurs pour une application IA",
+    "Instrumenter un projet dockerisé (API, agent RAG, front, CLI) avec logs structurés JSON, métriques Prometheus et traces OpenTelemetry",
+    "Construire des dashboards Grafana et définir des alertes Alertmanager basées sur des SLO (burn rate multi-window) plutôt que sur des seuils figés",
+    "Mettre en place l'observabilité LLM avec Langfuse (traces, scores, coûts par span) et la détection de drift modèle (KS, PSI, Wasserstein)",
+    "Conduire un incident en suivant un runbook en 4 sections (symptôme, diagnostic, remédiation, escalade) et rédiger un post-mortem blameless"
+  ],
+  "prerequisites": [
+    "Bases de Python (FastAPI, async)",
+    "Bases de Docker et docker-compose",
+    "Notions HTTP (codes status, headers, REST)",
+    "Familiarité avec un appel LLM via API (OpenAI, Anthropic) — souhaitable",
+    "Git pour le versioning du projet brief"
+  ],
+  "duration": "3 jours (~9h)",
+  "theme": "maxime-lenne",
+  "thumbnail": "./assets/cover.svg",
+  "tags": [
+    "observability",
+    "logs",
+    "metrics",
+    "traces",
+    "monitoring",
+    "apm",
+    "telemetry",
+    "instrumentation",
+    "dashboard",
+    "ia",
+    "ai",
+    "ML",
+    "genAI",
+    "llm",
+    "agent",
+    "RAG",
+    "grafana",
+    "prometheus",
+    "OpenTelemetry",
+    "Langfuse"
+  ],
+  "language": "fr",
+  "version": "0.2.2",
+  "authors": [
+    {
+      "name": "Maxime Lenne",
+      "email": "hello@maxime-lenne.fr"
+    }
+  ],
+  "created": "2026-05-11",
+  "updated": "2026-05-11"
+}
