@@ -75,6 +75,10 @@
       "Bash(pip install *)",
       "Bash(pip3 install *)",
       "Bash(git check-ignore *)",
+      "Skill(wwt-claude-skills:slidev:new)",
+      "WebFetch(domain:prometheus.io)",
+      "WebFetch(domain:blog.stephane-robert.info)",
+      "Bash(awk *)",
       "Bash(gh repo *)",
       "Bash(git rm *)"
     ],
