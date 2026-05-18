@@ -16,9 +16,14 @@ Project task tracking.
 - [ ] Refactor design of TOC for langchain deck
 - [ ] Rethink unused components with potential (CodeBlock → file, ExerciseCard see in langchain, LearningObjective...)
 - [ ] Add roti / feedback slide
+- [ ] component qrcode, slide links
 - [ ] Make this a template project
+- [ ] generate index on deploy
+- [ ] url sourcerer
+- [ ] call to action quizz, briefs...
+- [ ] Add calendar slide, cofee break, lunch, demo template
 - [ ] Fix build system
-- [ ] Add more icons and images
+- [ ] Add more icons and images / use template slides / starters / layout available without customizing /
 - [ ] Add a logo for Simplon theme
 - [ ] Slide dimensions
 
