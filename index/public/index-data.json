@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-10T21:05:39.860Z",
+  "generated": "2026-05-20T07:33:33.867Z",
   "version": "1.0.0",
   "decks": [
     {
@@ -178,6 +178,47 @@
       "updated": "2026-04-30"
     },
     {
+      "id": "cloud",
+      "title": "Cloud",
+      "description": "Du local à la prod sur Google Cloud Platform : concepts cloud (XaaS, souveraineté), services GCP (Cloud Run, Cloud SQL + pgvector, Cloud Storage, IAM, Secret Manager, Data, AI/ML) et comparatif avec AWS / Azure / Scaleway / OVH.",
+      "status": "published",
+      "objectives": [
+        "Distinguer les modèles XaaS (IaaS, PaaS, SaaS, CaaS, FaaS) et choisir le bon pour un cas d'usage IA",
+        "Comprendre le shared responsibility model, le cloud souverain et le positionnement de GCP face aux autres hyperscalers",
+        "Naviguer dans la console GCP, utiliser gcloud CLI et structurer un projet (organisation, billing, alertes budget)",
+        "Provisionner et connecter Cloud Run + Artifact Registry, Cloud SQL Postgres + pgvector, et Cloud Storage pour une application IA",
+        "Sécuriser un déploiement GCP : IAM least privilege, Service Accounts dédiées, secrets via Secret Manager",
+        "Identifier les services GCP pertinents pour la Data (BigQuery, Dataflow, Pub/Sub) et l'IA/ML (Vertex AI / Gemini Enterprise Agent Platform)"
+      ],
+      "prerequisites": [
+        "Maîtriser Docker (images, multi-stage, registries)",
+        "Connaître HTTP / REST / TCP et les bases de Linux",
+        "Avoir des notions de SQL Postgres",
+        "Avoir validé le brief observabilité de la semaine précédente"
+      ],
+      "duration": "Formation modulaire (8 modules de 30 à 45 min, ~5 h de cours + atelier)",
+      "theme": "maxime-lenne",
+      "thumbnail": "./assets/cover.svg",
+      "tags": [
+        "cloud",
+        "gcp",
+        "infrastructure",
+        "devops",
+        "docker",
+        "continuous deployment"
+      ],
+      "language": "fr",
+      "version": "0.2.0",
+      "authors": [
+        {
+          "name": "Maxime Lenne",
+          "email": "hello@maxime-lenne.fr"
+        }
+      ],
+      "created": "2026-05-18",
+      "updated": "2026-05-19"
+    },
+    {
       "id": "docker",
       "title": "Docker",
       "description": "Les bases de Docker : installation, concepts fondamentaux, avancées (build, cache) et docker compose",
@@ -250,6 +291,61 @@
       ],
       "created": "2025-11-24",
       "updated": "2026-03-11"
+    },
+    {
+      "id": "observability",
+      "title": "Observability",
+      "description": "Observability d'une application IA (logs, metrics, dashboard, monitoring, traces, APM, telemetry, instrumentation...). Formation modulaire pour onboarding d'équipe.",
+      "status": "published",
+      "objectives": [
+        "Distinguer observabilité et monitoring, et appliquer les modèles mentaux (RED, USE, Golden Signals) au choix des indicateurs pour une application IA",
+        "Instrumenter un projet dockerisé (API, agent RAG, front, CLI) avec logs structurés JSON, métriques Prometheus et traces OpenTelemetry",
+        "Construire des dashboards Grafana et définir des alertes Alertmanager basées sur des SLO (burn rate multi-window) plutôt que sur des seuils figés",
+        "Mettre en place l'observabilité LLM avec Langfuse (traces, scores, coûts par span) et la détection de drift modèle (KS, PSI, Wasserstein)",
+        "Conduire un incident en suivant un runbook en 4 sections (symptôme, diagnostic, remédiation, escalade) et rédiger un post-mortem blameless"
+      ],
+      "prerequisites": [
+        "Bases de Python (FastAPI, async)",
+        "Bases de Docker et docker-compose",
+        "Notions HTTP (codes status, headers, REST)",
+        "Familiarité avec un appel LLM via API (OpenAI, Anthropic) — souhaitable",
+        "Git pour le versioning du projet brief"
+      ],
+      "duration": "3 jours (~9h)",
+      "theme": "maxime-lenne",
+      "thumbnail": "./assets/cover.svg",
+      "tags": [
+        "observability",
+        "logs",
+        "metrics",
+        "traces",
+        "monitoring",
+        "apm",
+        "telemetry",
+        "instrumentation",
+        "dashboard",
+        "ia",
+        "ai",
+        "ML",
+        "genAI",
+        "llm",
+        "agent",
+        "RAG",
+        "grafana",
+        "prometheus",
+        "OpenTelemetry",
+        "Langfuse"
+      ],
+      "language": "fr",
+      "version": "0.2.2",
+      "authors": [
+        {
+          "name": "Maxime Lenne",
+          "email": "hello@maxime-lenne.fr"
+        }
+      ],
+      "created": "2026-05-11",
+      "updated": "2026-05-11"
     },
     {
       "id": "sql-advanced-queries",
@@ -479,7 +575,7 @@
     }
   ],
   "stats": {
-    "totalDecks": 12,
+    "totalDecks": 14,
     "totalDuration": 1400,
     "languages": [
       "fr"
@@ -489,10 +585,16 @@
       "simplon"
     ],
     "tags": [
+      "Langfuse",
+      "ML",
+      "OpenTelemetry",
+      "RAG",
       "advanced",
+      "agent",
       "ai",
       "alembic",
       "api",
+      "apm",
       "authentication",
       "automation",
       "backend",
@@ -500,7 +602,10 @@
       "beginner",
       "build",
       "ci-cd",
+      "cloud",
       "containers",
+      "continuous deployment",
+      "dashboard",
       "database",
       "delete",
       "deployment",
@@ -511,22 +616,33 @@
       "exercices",
       "fastapi",
       "fetch",
+      "gcp",
+      "genAI",
       "github-actions",
       "gitlab-ci",
+      "grafana",
       "http",
+      "ia",
+      "infrastructure",
       "insert",
+      "instrumentation",
       "javascript",
       "joins",
       "langGraph",
       "langchain",
       "llm",
+      "logs",
       "merise",
+      "metrics",
       "mongodb",
+      "monitoring",
       "nlp",
       "nosql",
+      "observability",
       "optimization",
       "pipelines",
       "postgresql",
+      "prometheus",
       "pydantic",
       "pytest",
       "python",
@@ -541,8 +657,10 @@
       "storage",
       "subqueries",
       "swagger",
+      "telemetry",
       "testing",
       "tests",
+      "traces",
       "uml",
       "update",
       "validation",

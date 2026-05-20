@@ -2,7 +2,7 @@
   "id": "cloud",
   "title": "Cloud",
   "description": "Du local à la prod sur Google Cloud Platform : concepts cloud (XaaS, souveraineté), services GCP (Cloud Run, Cloud SQL + pgvector, Cloud Storage, IAM, Secret Manager, Data, AI/ML) et comparatif avec AWS / Azure / Scaleway / OVH.",
-  "status": "draft",
+  "status": "published",
   "objectives": [
     "Distinguer les modèles XaaS (IaaS, PaaS, SaaS, CaaS, FaaS) et choisir le bon pour un cas d'usage IA",
     "Comprendre le shared responsibility model, le cloud souverain et le positionnement de GCP face aux autres hyperscalers",

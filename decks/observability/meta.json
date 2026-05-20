@@ -2,7 +2,7 @@
   "id": "observability",
   "title": "Observability",
   "description": "Observability d'une application IA (logs, metrics, dashboard, monitoring, traces, APM, telemetry, instrumentation...). Formation modulaire pour onboarding d'équipe.",
-  "status": "draft",
+  "status": "published",
   "objectives": [
     "Distinguer observabilité et monitoring, et appliquer les modèles mentaux (RED, USE, Golden Signals) au choix des indicateurs pour une application IA",
     "Instrumenter un projet dockerisé (API, agent RAG, front, CLI) avec logs structurés JSON, métriques Prometheus et traces OpenTelemetry",
