@@ -1,0 +1,34 @@
+{
+  "id": "cloud",
+  "title": "Cloud",
+  "description": "Du local à la prod sur Google Cloud Platform : concepts cloud (XaaS, souveraineté), services GCP (Cloud Run, Cloud SQL + pgvector, Cloud Storage, IAM, Secret Manager, Data, AI/ML) et comparatif avec AWS / Azure / Scaleway / OVH.",
+  "status": "draft",
+  "objectives": [
+    "Distinguer les modèles XaaS (IaaS, PaaS, SaaS, CaaS, FaaS) et choisir le bon pour un cas d'usage IA",
+    "Comprendre le shared responsibility model, le cloud souverain et le positionnement de GCP face aux autres hyperscalers",
+    "Naviguer dans la console GCP, utiliser gcloud CLI et structurer un projet (organisation, billing, alertes budget)",
+    "Provisionner et connecter Cloud Run + Artifact Registry, Cloud SQL Postgres + pgvector, et Cloud Storage pour une application IA",
+    "Sécuriser un déploiement GCP : IAM least privilege, Service Accounts dédiées, secrets via Secret Manager",
+    "Identifier les services GCP pertinents pour la Data (BigQuery, Dataflow, Pub/Sub) et l'IA/ML (Vertex AI / Gemini Enterprise Agent Platform)"
+  ],
+  "prerequisites": [
+    "Maîtriser Docker (images, multi-stage, registries)",
+    "Connaître HTTP / REST / TCP et les bases de Linux",
+    "Avoir des notions de SQL Postgres",
+    "Avoir validé le brief observabilité de la semaine précédente"
+  ],
+  "duration": "Formation modulaire (8 modules de 30 à 45 min, ~5 h de cours + atelier)",
+  "theme": "maxime-lenne",
+  "thumbnail": "./assets/cover.svg",
+  "tags": ["cloud", "gcp", "infrastructure", "devops", "docker", "continuous deployment"],
+  "language": "fr",
+  "version": "0.2.0",
+  "authors": [
+    {
+      "name": "Maxime Lenne",
+      "email": "hello@maxime-lenne.fr"
+    }
+  ],
+  "created": "2026-05-18",
+  "updated": "2026-05-19"
+}
