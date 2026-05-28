@@ -269,6 +269,202 @@ Une SA peut générer une <strong>clé JSON</strong> (<code>gcloud iam service-a
 layout: default
 ---
 
+## Workload Identity Federation
+
+<div class="text-sm opacity-85 mt-2">
+Mécanisme qui permet à une <strong>identité externe</strong> (GitHub, GitLab, AWS, OIDC…) de s'authentifier sur GCP <strong>sans clé JSON</strong>, en échangeant un token OIDC contre un token Google de courte durée.
+</div>
+
+<div class="grid grid-cols-2 gap-4 mt-6 text-xs">
+
+<div class="border-l-4 border-[#e63946] pl-3">
+<div class="font-bold mb-1 text-[#e63946]">Avant : clé JSON</div>
+<ul class="list-none space-y-1 opacity-85">
+<li>Secret long-lived, jamais rotatée</li>
+<li>Fuite = accès permanent à GCP</li>
+<li>Pas de granularité repo/branche</li>
+<li>Audit pauvre</li>
+</ul>
+</div>
+
+<div class="border-l-4 border-[#10b981] pl-3">
+<div class="font-bold mb-1 text-[#10b981]">Avec WIF : OIDC</div>
+<ul class="list-none space-y-1 opacity-85">
+<li>Aucun secret au repos</li>
+<li>Token GCP valide 1 h</li>
+<li>Restrictions par repo, owner, branche</li>
+<li>Cloud Audit Logs détaillés</li>
+</ul>
+</div>
+
+</div>
+
+<div class="text-xs opacity-60 mt-4 text-center">
+🎯 Pattern <strong>imposé par le brief</strong> pour GitHub Actions → GCP (critère C18 N3)
+</div>
+
+<!--
+- WIF = standard moderne pour tout CI/CD vers GCP
+- Fonctionne pour tout provider OIDC : GitHub, GitLab, Terraform Cloud, AWS, Azure
+- Le brief interdit explicitement de committer une clé JSON
+-->
+
+---
+layout: default
+---
+
+## WIF : les concepts
+
+<div class="text-xs mt-4">
+
+| Concept | Rôle |
+|---|---|
+| **Workload Identity Pool** | Conteneur logique d'identités externes |
+| **Workload Identity Provider** | Configuration OIDC (issuer, attribute mapping) |
+| **Attribute mapping** | Mappe les claims OIDC du JWT → attributs Google |
+| **Attribute condition** | Filtre les tokens autorisés (repo, owner, branche) |
+| **Service Account cible** | L'identité GCP impersonnée (avec ses rôles IAM) |
+
+</div>
+
+<div class="grid grid-cols-3 gap-3 mt-5 text-xs">
+<div class="border-l-4 border-[#457b9d] pl-3"><div class="font-bold">Cas d'usage 1</div><div class="opacity-80">GitHub Actions déploie sur Cloud Run (le brief)</div></div>
+<div class="border-l-4 border-[#10b981] pl-3"><div class="font-bold">Cas d'usage 2</div><div class="opacity-80">Terraform Cloud applique des changes</div></div>
+<div class="border-l-4 border-[#f59e0b] pl-3"><div class="font-bold">Cas d'usage 3</div><div class="opacity-80">Workload AWS / Azure qui lit GCS</div></div>
+</div>
+
+<div class="text-xs opacity-85 mt-4 border-l-4 border-[#e63946] pl-3">
+⚠️ <strong>L'<code>attribute-condition</code> est obligatoire</strong> depuis 2023. Sans elle, n'importe quel repo public peut s'authentifier. Toujours filtrer par <code>repository_owner</code> ou <code>repository</code>.
+</div>
+
+<!--
+- Le pool est un namespace logique, gratuit
+- Un provider par source d'identité (1 pour GitHub, 1 pour GitLab si besoin)
+- L'attribute-condition = frontière de sécurité, à ne JAMAIS oublier
+-->
+
+---
+layout: default
+---
+
+## WIF : le flux complet
+
+```mermaid {scale: 0.55}
+sequenceDiagram
+    participant GHA as GitHub Actions
+    participant GH as GitHub OIDC
+    participant WIF as Workload Identity Pool
+    participant IAM as IAM SA Credentials
+    participant API as GCP APIs
+
+    GHA->>GH: Request id-token
+    GH-->>GHA: JWT OIDC signed
+    GHA->>WIF: Exchange JWT for federated token
+    WIF->>WIF: Verify issuer + attribute condition
+    WIF-->>GHA: Federated access token
+    GHA->>IAM: ImpersonateServiceAccount github-actions@
+    IAM-->>GHA: SA access token 1h
+    GHA->>API: Deploy Cloud Run with SA token
+```
+
+<div class="text-xs opacity-60 mt-2 text-center">
+Aucun secret au repos — juste un échange JWT → token court à chaque run
+</div>
+
+<!--
+- Le JWT GitHub est signé par GitHub ; GCP vérifie la signature via la clé publique de l'issuer
+- L'attribute-condition est évaluée à chaque échange — filet de sécurité côté GCP
+- Le SA token (1 h) suffit largement pour un job de déploiement
+-->
+
+---
+layout: default
+---
+
+## Créer un provider WIF + SA `github-actions`
+
+```bash {1-5|7-9|11-15|17-24|26-30|all}
+# Variables
+PROJECT_ID="simplon-rag-prod"
+PROJECT_NUMBER=$(gcloud projects describe $PROJECT_ID --format='value(projectNumber)')
+GH_REPO="maxime-lenne/simplon-rag-sample"
+SA_EMAIL="github-actions@${PROJECT_ID}.iam.gserviceaccount.com"
+
+# 1. Créer la SA CI/CD
+gcloud iam service-accounts create github-actions \
+  --display-name="GitHub Actions deployer"
+
+# 2. Rôles minimaux côté SA
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member="serviceAccount:${SA_EMAIL}" --role="roles/run.admin"
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member="serviceAccount:${SA_EMAIL}" --role="roles/artifactregistry.writer"
+
+# 3. Pool + provider OIDC GitHub (attribute-condition OBLIGATOIRE)
+gcloud iam workload-identity-pools create github-pool --location=global
+gcloud iam workload-identity-pools providers create-oidc github-provider \
+  --location=global --workload-identity-pool=github-pool \
+  --issuer-uri="https://token.actions.githubusercontent.com" \
+  --attribute-mapping="google.subject=assertion.sub,attribute.repository=assertion.repository,attribute.repository_owner=assertion.repository_owner" \
+  --attribute-condition="assertion.repository_owner == 'maxime-lenne'"
+
+# 4. Autoriser le repo à impersonner la SA
+gcloud iam service-accounts add-iam-policy-binding $SA_EMAIL \
+  --role="roles/iam.workloadIdentityUser" \
+  --member="principalSet://iam.googleapis.com/projects/${PROJECT_NUMBER}/locations/global/workloadIdentityPools/github-pool/attribute.repository/${GH_REPO}"
+```
+
+<!--
+- Ordre important : SA → rôles → pool → provider → binding workloadIdentityUser
+- PROJECT_NUMBER (numérique) ≠ PROJECT_ID (texte)
+- Pour restreindre à main : member="principal://.../subject/repo:${GH_REPO}:ref:refs/heads/main"
+-->
+
+---
+layout: default
+---
+
+## Utiliser WIF dans GitHub Actions
+
+```yaml {1-11|13-19|21-23|all}
+name: Deploy
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write   # OBLIGATOIRE pour OIDC
+
+    steps:
+      - uses: actions/checkout@v4
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/123456789/locations/global/workloadIdentityPools/github-pool/providers/github-provider
+          service_account: github-actions@simplon-rag-prod.iam.gserviceaccount.com
+
+      - uses: google-github-actions/setup-gcloud@v2
+      - run: gcloud run deploy rag-api --image=... --region=europe-west1
+```
+
+<div class="text-xs opacity-60 mt-3 border-l-4 border-[#e63946] pl-3">
+🚨 Oublier <code>id-token: write</code> = erreur <code>Permission denied</code> sur l'échange OIDC. Symptôme n°1 du TP.
+</div>
+
+<!--
+- Aucun secret GitHub à part les vars WIF_PROVIDER et WIF_SERVICE_ACCOUNT (publiques, pas besoin de Secret)
+- google-github-actions/auth@v2 fait tout l'échange JWT en interne
+- gcloud et tous les outils GCP héritent du token via ADC (Application Default Credentials)
+-->
+
+---
+layout: default
+---
+
 ## Secret Manager
 
 ```bash {1-2|4-6|8-9|11-12|14-15|all}
@@ -378,6 +574,7 @@ layout: center
 ✅ **Privilégier les rôles `predefined`**, jamais `roles/owner` sur une SA app
 ✅ **1 SA dédiée par service** (Cloud Run, CI, etc.)
 ✅ **Clés JSON = à éviter** → Workload Identity Federation
+✅ **WIF** : pool + provider OIDC + attribute-condition + `iam.workloadIdentityUser` sur la SA cible
 ✅ **Secret Manager** : versionné, accessible via `roles/secretmanager.secretAccessor`
 ✅ **Injection Cloud Run** : `--update-secrets=KEY=secret:version`
 ✅ **Policy Analyzer** pour auditer les permissions effectives
