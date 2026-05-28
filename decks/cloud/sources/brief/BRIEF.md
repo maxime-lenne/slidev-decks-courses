@@ -139,10 +139,6 @@ de la semaine précédente** (elle reste utile, on la portera sur Cloud Logging
 - Consomme l'API via son URL Cloud Run
 - Public (`--allow-unauthenticated`)
 
-> **Frontend = optionnel** dans la version « minimum viable » de ce brief.
-> Pour valider C18 N3, on attend le déploiement de l'API + sa pipeline.
-> Le frontend Cloud Run = bonus.
-
 #### Point de départ
 
 Le repo de la semaine précédente (`simplon-rag-sample` issu de votre fork)
@@ -157,11 +153,10 @@ Vous travaillez **sur une nouvelle branche** `feat/deploy-gcp` à partir de la
 branche `main` validée la semaine précédente. À la fin du brief, la branche
 sera fusionnée et la pipeline déploiera automatiquement.
 
-Une **clé Mistral partagée** avec un budget plafonné à **20 €/binôme** vous
-est remise. **Un projet GCP par binôme** vous a été créé (`simplon-rag-<binome>`)
+**Un projet GCP par binôme** vous a été créé (`simplon-rag-<binome>`)
 avec :
 
-- Un **budget de 30 €** + alertes 50 / 90 / 100 %
+- Le **budget de 300 $** gratuit + alertes 50 / 90 / 100 %
 - Vous (les 2 du binôme) en `roles/owner`
 
 > ⚠️ **RGPD et confidentialité** : les contraintes restent les mêmes qu'en
@@ -176,7 +171,7 @@ avec :
 ### Organisation générale
 
 - Travail en binôme (mêmes binômes que la semaine observabilité)
-- Durée : 1,5 jour (J4 après-midi + J5 entière)
+- Durée : 4 jours
 - Branche dédiée `feat/deploy-gcp` puis Pull Request sur `main`
 - Peer programming : 1 personne derrière le clavier par étape et switch sur l'étape suivante
 - Au moins **1 commit par phase** terminée
@@ -235,6 +230,18 @@ Sur le repo `simplon-rag-sample` :
 
 ### Phase 3 — Déploiement Cloud Run + secrets *(J5 matin, ~1 h 30)*
 
+- Ajouter vos secret dans Secret Manager
+- Sécuriser les intéractions de cloud run avec les autres services GCP
+- Configurer et déployer l'API FastAPI et l'app front sur Cloud Run
+
+**Questions guidantes**
+
+- Quels droits IAM exactement le service account Cloud Run a-t-elle besoin sur le bucket ?
+- Comment vérifier les logs en cas de 500 sur Cloud Run ?
+- Si une variable d'env oubliée fait planter le start-up, comment rollback rapidement ?
+
+**Pas à pas**
+
 - Créer une **service account dédiée** `rag-api@...` avec :
   - `roles/cloudsql.client`
   - `roles/secretmanager.secretAccessor`
@@ -250,14 +257,20 @@ Sur le repo `simplon-rag-sample` :
 - Vérifier que l'endpoint `/health` répond et qu'une conversation traverse la stack
   (Cloud Run → Cloud SQL → Mistral) sans erreur
 
+### Phase 4 — Pipeline GitHub Actions *(J5 après-midi, ~2 h)*
+
+- Configurer **Workload Identity Federation** côté GCP
+- Workflow github action :
+  - Au push d'un commit peut importe la branche : lint / test
+  - Au merge sur main : build / push / (deploy manuel)
+
 **Questions guidantes**
 
-- Quels droits IAM exactement la service account Cloud Run a-t-elle besoin sur le bucket ?
-- Pourquoi créer une SA dédiée plutôt qu'utiliser la SA Compute par défaut ?
-- Comment vérifier les logs en cas de 500 sur Cloud Run ?
-- Si une variable d'env oubliée fait planter le start-up, comment rollback rapidement ?
+- Pourquoi ne pas committer une clé JSON de SA ?
+- Comment éviter qu'un push sur une branche topique ne déclenche un deploy en prod ?
+- Comment exposer le SHA court du commit au job `deploy` pour tagger l'image ?
 
-### Phase 4 — Pipeline GitHub Actions *(J5 après-midi, ~2 h)*
+**Pas à pas**
 
 - Configurer **Workload Identity Federation** côté GCP (cf. cours 08) et créer
   la SA `github-actions@...` avec :
@@ -275,41 +288,129 @@ Sur le repo `simplon-rag-sample` :
 - Faire un **commit factice** sur `main` et vérifier que la pipeline déploie
   une nouvelle révision en < 10 min
 
+### Bonus 1 : déployer l'observabilité en place sur vos projets sur GCP *(optionnel)*
+
+> Reprendre la stack d'observabilité de la semaine précédente
+> (**Prometheus**, **Grafana**, **Alertmanager**, **Loki**, **promtail**, **Langfuse**, logs JSON)
+> et la faire tourner sur GCP, **sans changer les outils**.
+
+**Pourquoi ?**
+
+- Garder les dashboards Grafana, alertes Alertmanager et traces Langfuse déjà écrits la semaine précédente
+- Pas besoin de réapprendre PromQL ou de re-construire les dashboards
+- Migration en douceur : la stack open-source peut tourner en parallèle de la future stack managée (cf. Bonus 2)
+
 **Questions guidantes**
 
-- Pourquoi ne pas committer une clé JSON de SA ?
-- Comment éviter qu'un push sur une branche topique ne déclenche un deploy en prod ?
-- Comment exposer le SHA court du commit au job `deploy` pour tagger l'image ?
+- Quel hébergement GCP choisir pour Prometheus / Grafana ? (Compute Engine, Cloud Run, GKE Autopilot ?)
+- Comment Cloud Run, qui est *stateless*, expose-t-il son endpoint `/metrics` à un Prometheus externe ?
+- Où stocker la donnée long terme (volume persistant, Cloud Storage, Managed Service for Prometheus) ?
+- Comment sécuriser l'accès à Grafana (IAP, Cloud Run `--no-allow-unauthenticated` + IAM) sans casser l'usage formateur ?
 
-### Phase 5 — Mini chaos test *(J5 fin d'après-midi, ~30 min)*
+**Pas à pas**
 
-> **Continuité de C21.**
+- Choisir une cible :
+  - **Compute Engine** — 1 VM `e2-small` qui héberge Prometheus + Grafana + Alertmanager (le plus proche du `docker-compose.yml` actuel)
+  - **ou Cloud Run** — 1 service par composant, volume persistant via bucket GCS / Cloud SQL pour Grafana
+  - **ou GKE Autopilot** — si vous voulez vraiment du Kubernetes managé
+- Déployer **Prometheus** avec un `scrape_config` qui pointe vers l'URL Cloud Run `rag-api` (endpoint `/metrics`)
+- Déployer **Grafana** et ré-importer les dashboards JSON de la semaine précédente
+- Déployer **Alertmanager** et reconnecter les routes Slack / mail
+- Garder **Langfuse** en SaaS (déjà configuré) ou l'auto-héberger sur Cloud Run + Cloud SQL
+- Vérifier qu'une conversation contre l'URL Cloud Run apparaît bien dans Grafana **et** dans Langfuse
+- Placer Grafana derrière **IAP** ou un Cloud Run privé + IAM (`roles/run.invoker` sur les comptes formateur / binôme)
 
-Trois mini-incidents injectés par le formateur, à diagnostiquer en moins de 10 min chacun :
+> 💡 Idéal si l'équipe veut conserver les outils maîtrisés pendant la phase
+> de bascule vers les services managés GCP décrite au Bonus 2.
 
-1. Le formateur **désactive le rôle `cloudsql.client`** sur la SA `rag-api`.
-   Que se passe-t-il ? Comment le voir ? Comment réparer ?
-2. Le formateur **supprime la version `latest` du secret `mistral-api-key`**.
-   Comment le détecter ? Quel pattern aurait évité ça ?
-3. Le formateur fait un commit qui casse les tests, vous montre la PR.
-   Que doit-il se passer côté pipeline ? Pourquoi est-ce vital ?
+---
 
-### Phase 6 — Bonus (optionnel)
+### Bonus 2 : migrer l'observabilité sur les services proposés par GCP *(optionnel)*
 
-Si vous avez le temps :
+> Remplacer la stack open-source de la semaine précédente par les services
+> **managés GCP** : **Cloud Logging**, **Cloud Monitoring**,
+> **Managed Service for Prometheus**, **Cloud Trace**, **Error Reporting**.
 
-- Déployer aussi le **frontend Streamlit** sur un second service Cloud Run
-- Ajouter un job `terraform-plan` qui exporte l'état GCP sous forme de fichier
-  Terraform (`terraformer`)
-- Mettre en place une **alerte Cloud Monitoring** sur le taux d'erreur 5xx du Cloud Run
-- Configurer un domaine custom (`rag-formation.simplon.dev`) avec Cloud Run domain mapping
+**Pourquoi ?**
+
+- Plus aucune VM ni conteneur d'observabilité à maintenir
+- Cloud Run écrit déjà ses logs `stdout` dans Cloud Logging **sans configuration**
+- Une seule console GCP pour logs / métriques / alertes / traces / erreurs
+- Facturation à l'usage, scale-to-zero la nuit et le week-end (cohérent avec le brief)
+
+**Questions guidantes**
+
+- Comment préserver le **format JSON structuré** des logs (déjà en place) pour qu'il soit exploitable dans Cloud Logging ?
+- Quelles métriques Prometheus custom migrer vers **Managed Service for Prometheus** plutôt que de les ré-écrire en métriques Cloud Monitoring natives ?
+- Comment recréer un dashboard Grafana en dashboard Cloud Monitoring (équivalent latence p95, RPS, taux d'erreur, tokens consommés) ?
+- Que devient **Langfuse** ? On le garde en SaaS (recommandé) ou on bascule la partie distributed tracing sur **Cloud Trace** ?
+- Comment respecter la contrainte **RGPD** du brief (pas de PII ni de contenu brut) côté Cloud Logging ?
+
+**Pas à pas**
+
+- Vérifier que les **logs JSON** de l'API remontent bien dans **Cloud Logging**
+  (Cloud Run le fait nativement quand `stdout` est du JSON structuré)
+- Activer **Google Cloud Managed Service for Prometheus** et configurer le scrape
+  du `/metrics` de Cloud Run (sidecar collector / OpenTelemetry exporter)
+- Créer 2-3 **log-based metrics** dans Cloud Logging
+  (ex. taux d'erreur `severity=ERROR`, nombre de conversations / heure)
+- Construire un **dashboard Cloud Monitoring** équivalent à celui de Grafana
+  (latence p95, RPS, taux d'erreur 5xx, tokens consommés)
+- Configurer une **alerte Cloud Monitoring** sur le taux d'erreur 5xx du Cloud Run
+  (remplace l'alerte Alertmanager) avec notification email / Slack
+- Activer **Error Reporting** (gratuit, capture automatique des exceptions Python)
+- Décider de **Langfuse** : conservé en SaaS (recommandé) ou migré sur **Cloud Trace** côté tracing
+- Documenter la bascule dans `docs/observability-gcp.md` (avant / après, lien dashboards)
+
+> ⚠️ Vérifier la **rétention** de Cloud Logging (30 j par défaut) et n'activer
+> l'export vers BigQuery / GCS que si nécessaire — coût + contrainte RGPD du brief.
+
+---
+
+### Bonus 3 : migration du LLM vers Vertex AI Agent Platform *(optionnel)*
+
+> Pour aller plus loin : remplacer l'appel direct à l'API **Mistral SaaS**
+> par un modèle hébergé sur **Vertex AI / Agent Platform** (Google Cloud).
+
+**Pourquoi ?**
+
+- Tout reste dans GCP (un seul fournisseur, une seule facture, un seul SSO)
+- Authentification via **IAM / Service Account** — plus de clé API à gérer dans Secret Manager
+- Latence réduite (modèle dans la même région que le Cloud Run)
+- Quotas, budgets et observabilité gérés côté GCP
+
+**Questions guidantes**
+
+- Quel modèle choisir dans **Model Garden** (Gemini, Claude, Llama, Mistral managé) et pourquoi ?
+- Comment l'IAM remplace-t-elle la clé API Mistral ? Que devient le secret `mistral-api-key` ?
+- Quel rôle minimal donner à la SA `rag-api@...` pour appeler Vertex AI ?
+- Quel est l'écart de **latence p95** et de **coût / 1 000 tokens** par rapport à Mistral SaaS ?
+
+**Pas à pas**
+
+- Activer l'API `aiplatform.googleapis.com` sur le projet
+- Choisir un modèle dans **Vertex AI Model Garden** (ex. `gemini-1.5-flash`
+  ou un Mistral managé via Model Garden)
+- Ajouter `roles/aiplatform.user` à la SA `rag-api@...`
+- Adapter le code de l'API : remplacer le client Mistral SaaS par
+  `google-cloud-aiplatform` (ou l'intégration LangChain / LangGraph Vertex AI)
+- Retirer le secret `mistral-api-key` de la configuration Cloud Run
+  (et de Secret Manager s'il n'est plus utilisé)
+- Redéployer via la pipeline et valider qu'une conversation traverse la stack
+  (Cloud Run → Cloud SQL → **Vertex AI**)
+- Ajouter dans `docs/deploy.md` un court comparatif **latence p95** et
+  **coût / 1 000 tokens** avant/après
+
+> 💡 **Bonus dans le bonus** : tester **Vertex AI Agent Engine** pour héberger
+> directement le graphe LangGraph côté GCP et exposer l'agent via un endpoint
+> managé, à la place du Cloud Run `rag-api`.
 
 ### Soutenance *(J5 fin de journée, 10 min/binôme)*
 
 - **7 min de démo** :
   - Montrer un push sur `main` qui déclenche la pipeline et déploie en prod
-  - Faire une conversation live contre l'URL Cloud Run
-  - Montrer un rollback de révision (`gcloud run services update-traffic`)
+  - Faire une démo de conversation du chat live sur l'URL Cloud Run
+  - Tour du propriétaire (ensemble des services du projet) de la console GCP
 - **3 min de questions** du formateur
 
 Travail attendu en autonomie **Niveau 3** sur C18 (CI/CD), **Niveau 2** sur
@@ -333,17 +434,17 @@ Le formateur passe sur chaque binôme à intervalles réguliers. Il observe :
 ### Volet 2 — Soutenance et livrables *(60 %)*
 
 - Démonstration live de 7 min (cf. plus haut)
-- Questions techniques (3 min) du jury
+- Questions (3 min) du formateur
 - Évaluation de la complétude du repo (cf. checklist livrables)
-- Évaluation de la qualité de la pipeline (durée, cache, jobs séparés)
+- Évaluation de la qualité de la pipeline github actions
 
 ### Conditions de passage
 
 - Le repo GitHub a **une PR `feat/deploy-gcp` mergée** sur `main`
 - La pipeline GitHub Actions est **verte** au minimum sur le dernier commit de `main`
 - L'URL Cloud Run **répond `200 OK`** sur `/health`
-- Une **conversation complète** peut être faite live contre l'URL
-- **Au minimum 2 secrets** sont gérés via Secret Manager (pas en env var en clair)
+- Une **conversation complète** peut être faite live sur l'URL
+- **Secrets** sont gérés via Secret Manager (pas en env var en clair)
 - **Aucune clé JSON** de service account n'est committée dans le repo
 
 Une compétence est validée si tous les critères de performance correspondants
@@ -355,49 +456,20 @@ sont remplis (cf. section suivante).
 
 ### Livrable principal — Repo GitHub PUBLIC
 
-Structure du repo, complétée par rapport à la semaine précédente :
-
-```text
-simplon-rag-sample/
-├── README.md                         (MAJ : section Déploiement GCP)
-├── docker-compose.yml                (toujours fonctionnel pour le local)
-├── .github/
-│   └── workflows/
-│       └── ci-cd.yml                 (NOUVEAU — pipeline complète)
-├── .dockerignore                     (NOUVEAU ou MAJ)
-├── api/
-│   ├── Dockerfile                    (MAJ — multi-stage, non-root)
-│   ├── pyproject.toml                (ajout : google-cloud-storage)
-│   ├── main.py                       (lecture corpus depuis GCS)
-│   └── ...                           (reste de la semaine précédente)
-├── frontend/                         (inchangé, bonus si déployé)
-├── docs/
-│   ├── deploy.md                     (NOUVEAU — pas-à-pas du déploiement)
-│   ├── gcp-architecture.md           (NOUVEAU — schéma + justifications)
-│   └── runbook-pipeline.md           (NOUVEAU — que faire si la pipeline casse)
-├── infra/                            (BONUS, si vous tentez Terraform)
-│   └── terraform/
-│       └── main.tf
-└── (le reste de la semaine 1)
-```
+Structure du repo, complétée par rapport à la semaine précédente
 
 ### Contenu obligatoire du README (section "Déploiement GCP")
 
-- Architecture GCP cible avec **schéma Mermaid**
 - Liste des services GCP utilisés + une phrase de rôle pour chaque
 - Liste des rôles IAM attribués à chaque SA (avec justification "pourquoi celui-là et pas un plus large")
-- Procédure de **bootstrap** d'un nouveau projet GCP en partant de zéro
-  (ordre des commandes `gcloud services enable`, création SA, etc.)
 - Procédure de **rollback** d'une révision Cloud Run
-- Procédure de **rotation** du secret `mistral-api-key`
-- Auteur·rice·s
+- URL Cloud Run **publique et fonctionnelle**
 
 ### Hors repo (à présenter en soutenance)
 
-- URL Cloud Run **publique et fonctionnelle**
-- Démo d'un déploiement complet via Pull Request → merge → push → release Cloud Run
-- Démo d'un rollback de révision en moins de 30 s
-- Réponses aux questions techniques du jury
+- Montrer un push sur `main` qui déclenche la pipeline et déploie en prod
+- Faire une démo de conversation du chat live sur l'URL Cloud Run
+- Tour du propriétaire (ensemble des services du projet) de la console GCP
 
 ---
 
