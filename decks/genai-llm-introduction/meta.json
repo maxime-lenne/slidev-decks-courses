@@ -2,7 +2,7 @@
   "id": "genai-llm-introduction",
   "title": "Fondamentaux de l'IA Générative",
   "description": "Socle commun Bootcamp IA — 1 journée intensive. LLM, tokens, prompt engineering, RAG, agents, MCP.",
-  "status": "draft",
+  "status": "published",
   "objectives": [
     "Comprendre les mécanismes de l'IA générative (LLM, Transformer, inférence, tokens)",
     "Écrire des prompts structurés et efficaces",
