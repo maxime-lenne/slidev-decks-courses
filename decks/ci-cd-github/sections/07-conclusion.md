@@ -97,7 +97,7 @@ chaque commit valide ce qui ne l'était que dans la tête du dev. »
 
 ---
 layout: cover
-background: https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1920
+background: <https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1920>
 ---
 
 <ThankYou

@@ -84,7 +84,8 @@ layout: two-cols-header
 layout: default
 ---
 
-<Toc :items="[
+<script setup>
+const tocItems = [
   { title: 'Métriques · les fondamentaux', to: 5 },
   { title: 'Les 4 types & la cardinalité', to: 9 },
   { title: 'Prometheus — architecture', to: 16 },
@@ -93,7 +94,10 @@ layout: default
   { title: 'Exporters', to: 37 },
   { title: 'PromQL essentiel', to: 42 },
   { title: 'Conclusion', to: 47 },
-]" />
+]
+</script>
+
+<TocCustom :items="tocItems" />
 
 ---
 layout: section

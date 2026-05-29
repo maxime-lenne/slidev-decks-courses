@@ -81,7 +81,10 @@
       "Bash(awk *)",
       "Bash(gh repo *)",
       "Bash(git rm *)",
-      "Read(//Users/maxime-lenne/Documents_Non_iCloud/workspace_python/simplon-rag-sample/**)"
+      "Read(//Users/maxime-lenne/Documents_Non_iCloud/workspace_python/simplon-rag-sample/**)",
+      "Bash(npx markdownlint-cli *)",
+      "WebFetch(domain:gofastmcp.com)",
+      "Bash(grep -c '^---$' sections/11-demo.md)"
     ],
     "deny": [],
     "ask": []

@@ -74,22 +74,26 @@ Texte qui s'adapte automatiquement
 
 # Table of Contents (Toc)
 
-Composant `<Toc />` — surcharge du built-in Slidev par le thème (auto-détection)
+Composant `<Toc />` built-in Slidev — auto-détection à partir des titres
 
 <Toc maxDepth="1" />
 
 ---
 
-# Toc — items manuels
+# TocCustom — items manuels (thème)
 
-Override avec des entrées explicites
+`<TocCustom>` du thème `maxime-lenne` — entrées explicites avec layout custom
 
-<Toc :items="[
+<script setup>
+const tocItems = [
   { title: 'Layouts', to: 2 },
   { title: 'Markdown', to: 15 },
   { title: 'Components', to: 25 },
   { title: 'Diagrams', to: 50 },
-]" />
+]
+</script>
+
+<TocCustom :items="tocItems" />
 
 ---
 

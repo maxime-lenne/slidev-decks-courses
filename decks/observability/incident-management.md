@@ -73,8 +73,9 @@ layout: two-cols-header
 layout: default
 ---
 
-<Toc :items="[
-  { title: 'Cycle de vie d\'un incident', to: 5 },
+<script setup>
+const tocItems = [
+  { title: "Cycle de vie d'un incident", to: 5 },
   { title: 'SLI · SLO · SLA · Error budget', to: 9 },
   { title: 'Détection & triage', to: 17 },
   { title: 'Coordination de la réponse', to: 22 },
@@ -82,7 +83,10 @@ layout: default
   { title: 'Post-mortem blameless', to: 31 },
   { title: 'Métriques de résilience & DORA', to: 37 },
   { title: 'Conclusion', to: 44 },
-]" />
+]
+</script>
+
+<TocCustom :items="tocItems" />
 
 ---
 src: ../templates/slides.md#1
@@ -941,7 +945,7 @@ layout: default
 
 ---
 layout: cover
-background: https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920
+background: <https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920>
 ---
 
 <ThankYou

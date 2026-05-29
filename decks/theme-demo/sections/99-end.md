@@ -14,7 +14,7 @@ layout: end
 
 ---
 layout: cover
-background: https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920
+background: <https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920>
 ---
 
 <ThankYou

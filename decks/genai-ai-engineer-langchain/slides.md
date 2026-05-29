@@ -59,7 +59,8 @@ layout: two-cols-header
 layout: default
 ---
 
-<Toc :items="[
+<script setup>
+const tocItems = [
   { title: 'Présentation & Contexte', to: 5 },
   { title: 'Les Composants Fondamentaux', to: 9 },
   { title: 'Les Chaînes & LCEL', to: 14 },
@@ -68,7 +69,10 @@ layout: default
   { title: 'Agent RAG — Exemple Complet', to: 31 },
   { title: 'Conclusion', to: 36 },
   { title: 'Au-delà de LangChain', to: 41 },
-]" />
+]
+</script>
+
+<TocCustom :items="tocItems" />
 
 ---
 src: ../templates/slides.md#1
@@ -1364,7 +1368,7 @@ smolagents : idéal avec des petits modèles open-source (Llama, Mistral, Qwen)
 
 ---
 layout: cover
-background: https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920
+background: <https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920>
 ---
 
 <ThankYou
