@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-20T07:33:33.867Z",
+  "generated": "2026-05-29T00:58:14.694Z",
   "version": "1.0.0",
   "decks": [
     {
@@ -293,6 +293,83 @@
       "updated": "2026-03-11"
     },
     {
+      "id": "genai-ai-engineer-mcp-deep-dive",
+      "title": "MCP Deep Dive (Architecture, Core concepts, Spécifications, Conception et FastMCP framework)",
+      "description": "Architecture et spécifications MCP + implémentation avec FastMCP",
+      "status": "published",
+      "objectives": [
+        "Décrire l'architecture host / client / server de MCP et le rôle des deux couches (data + transport)",
+        "Lire un échange JSON-RPC MCP (initialize, capabilities, tools/call) et identifier les primitives utilisées",
+        "Distinguer les primitives server (tools, resources, prompts) des primitives client (sampling, elicitation, roots, logging)",
+        "Construire un premier serveur MCP en Python avec FastMCP et l'inspecter avec MCP Inspector",
+        "Reconnaître qu'un serveur MCP suit les mêmes règles qu'un projet logiciel (tests, CI/CD, versioning, registry, observabilité)"
+      ],
+      "prerequisites": [
+        "Bases LLM et tool calling (function calling)",
+        "Python intermédiaire (décorateurs, type hints, async)",
+        "Notions de JSON-RPC ou de protocole client/serveur"
+      ],
+      "duration": "45-60 min",
+      "theme": "maxime-lenne",
+      "thumbnail": "./assets/cover.svg",
+      "tags": [
+        "mcp",
+        "ai",
+        "genai",
+        "architecture",
+        "protocol",
+        "fastmcp",
+        "python"
+      ],
+      "language": "fr",
+      "version": "0.2.0",
+      "authors": [
+        {
+          "name": "Maxime Lenne",
+          "email": "hello@maxime-lenne.fr"
+        }
+      ],
+      "created": "2026-05-28",
+      "updated": "2026-05-28"
+    },
+    {
+      "id": "genai-llm-introduction",
+      "title": "Fondamentaux de l'IA Générative",
+      "description": "Socle commun Bootcamp IA — 1 journée intensive. LLM, tokens, prompt engineering, RAG, agents, MCP.",
+      "status": "published",
+      "objectives": [
+        "Comprendre les mécanismes de l'IA générative (LLM, Transformer, inférence, tokens)",
+        "Écrire des prompts structurés et efficaces",
+        "Connaître les concepts clefs : RAG, agents, MCP",
+        "Choisir sa trajectoire parmi les 3 formations IA"
+      ],
+      "prerequisites": [
+        "Aucun prérequis technique"
+      ],
+      "duration": "8 hours",
+      "theme": "simplon",
+      "thumbnail": "./assets/preview.svg",
+      "tags": [
+        "ai",
+        "llm",
+        "prompt-engineering",
+        "rag",
+        "agents",
+        "mcp",
+        "beginner"
+      ],
+      "language": "fr",
+      "version": "0.1.0",
+      "authors": [
+        {
+          "name": "Simplon Training Team",
+          "email": "training@simplon.co"
+        }
+      ],
+      "created": "2026-04-06",
+      "updated": "2026-04-07"
+    },
+    {
       "id": "observability",
       "title": "Observability",
       "description": "Observability d'une application IA (logs, metrics, dashboard, monitoring, traces, APM, telemetry, instrumentation...). Formation modulaire pour onboarding d'équipe.",
@@ -575,8 +652,8 @@
     }
   ],
   "stats": {
-    "totalDecks": 14,
-    "totalDuration": 1400,
+    "totalDecks": 16,
+    "totalDuration": 1880,
     "languages": [
       "fr"
     ],
@@ -591,10 +668,12 @@
       "RAG",
       "advanced",
       "agent",
+      "agents",
       "ai",
       "alembic",
       "api",
       "apm",
+      "architecture",
       "authentication",
       "automation",
       "backend",
@@ -615,9 +694,11 @@
       "dto",
       "exercices",
       "fastapi",
+      "fastmcp",
       "fetch",
       "gcp",
       "genAI",
+      "genai",
       "github-actions",
       "gitlab-ci",
       "grafana",
@@ -632,6 +713,7 @@
       "langchain",
       "llm",
       "logs",
+      "mcp",
       "merise",
       "metrics",
       "mongodb",
@@ -643,11 +725,14 @@
       "pipelines",
       "postgresql",
       "prometheus",
+      "prompt-engineering",
+      "protocol",
       "pydantic",
       "pytest",
       "python",
       "queries",
       "query optimization",
+      "rag",
       "rest",
       "schema",
       "sql",
