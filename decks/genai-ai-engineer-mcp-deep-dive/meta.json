@@ -1,0 +1,32 @@
+{
+  "id": "genai-ai-engineer-mcp-deep-dive",
+  "title": "MCP Deep Dive (Architecture, Core concepts, Spécifications, Conception et FastMCP framework)",
+  "description": "Architecture et spécifications MCP + implémentation avec FastMCP",
+  "status": "published",
+  "objectives": [
+    "Décrire l'architecture host / client / server de MCP et le rôle des deux couches (data + transport)",
+    "Lire un échange JSON-RPC MCP (initialize, capabilities, tools/call) et identifier les primitives utilisées",
+    "Distinguer les primitives server (tools, resources, prompts) des primitives client (sampling, elicitation, roots, logging)",
+    "Construire un premier serveur MCP en Python avec FastMCP et l'inspecter avec MCP Inspector",
+    "Reconnaître qu'un serveur MCP suit les mêmes règles qu'un projet logiciel (tests, CI/CD, versioning, registry, observabilité)"
+  ],
+  "prerequisites": [
+    "Bases LLM et tool calling (function calling)",
+    "Python intermédiaire (décorateurs, type hints, async)",
+    "Notions de JSON-RPC ou de protocole client/serveur"
+  ],
+  "duration": "45-60 min",
+  "theme": "maxime-lenne",
+  "thumbnail": "./assets/cover.svg",
+  "tags": ["mcp", "ai", "genai", "architecture", "protocol", "fastmcp", "python"],
+  "language": "fr",
+  "version": "0.2.0",
+  "authors": [
+    {
+      "name": "Maxime Lenne",
+      "email": "hello@maxime-lenne.fr"
+    }
+  ],
+  "created": "2026-05-28",
+  "updated": "2026-05-28"
+}
