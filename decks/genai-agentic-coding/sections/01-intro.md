@@ -87,8 +87,8 @@ layout: default
 
 #### Boucle ReAct + tools
 
-```mermaid {scale: 0.7}
-graph LR
+```mermaid {scale: 0.6}
+graph TB
     P[Prompt utilisateur] --> T[Pensée<br/>Reasoning]
     T --> A[Action<br/>Tool call]
     A --> O[Observation<br/>Tool result]
@@ -136,11 +136,11 @@ layout: two-cols-header
 
 À l'issue de cette session vous saurez :
 
-- **Diagnostiquer** les 4 types d'échec de contexte et structurer un `CLAUDE.md` hiérarchique
-- **Choisir** entre Skills, Commands et Subagents pour votre équipe
-- **Configurer** des Hooks pour transformer l'agent en *teammate*
-- **Connecter** vos agents via MCP et orchestrer des workflows multi-agents
-- **Adopter** un workflow spec-driven et auditer votre *verification infrastructure*
+- **Structurer** le *contexte*
+- **Choisir** entre *Skills, Commands et Hooks et Subagents*
+- **Connecter** vos agents a des tools via MCP
+- **Orchestrer** des workflows multi-agents
+- **Adopter** la *verification loop*
 
 ::right::
 

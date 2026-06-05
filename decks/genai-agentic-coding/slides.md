@@ -55,15 +55,16 @@ layout: default
 <script setup>
 const tocItems = [
   { title: 'Setup & positionnement', to: 3 },
-  { title: 'Le contexte est le nouveau code', to: 8 },
-  { title: 'Spec-Driven Development', to: 23 },
-  { title: 'La stack de l\'AI Builder', to: 31 },
-  { title: 'Skills · Commands · Subagents', to: 41 },
-  { title: 'Hooks : fermer la boucle', to: 51 },
-  { title: 'MCP & Multi-agents', to: 57 },
-  { title: 'Les 8 piliers de la vérification', to: 64 },
-  { title: 'Vos 2 chantiers', to: 71 },
-  { title: 'Take-aways & ressources', to: 77 },
+  { title: 'La stack de l\'AI Builder', to: 8 },
+  { title: 'Le contexte est le nouveau code', to: 18 },
+  { title: 'Spec-Driven Development', to: 33 },
+  { title: 'Skills & Commands', to: 41 },
+  { title: 'Hooks : fermer la boucle', to: 49 },
+  { title: 'MCP', to: 55 },
+  { title: 'Les 8 piliers de la vérification', to: 60 },
+  { title: 'Multi-Agents', to: 66 },
+  { title: 'Vos 2 chantiers', to: 75 },
+  { title: 'Take-aways & ressources', to: 81 },
 ]
 </script>
 
@@ -78,15 +79,15 @@ src: ../templates/slides.md#1
 ---
 
 ---
-src: ./sections/02-contexte.md
+src: ./sections/02-stack.md
+---
+
+---
+src: ./sections/03-contexte.md
 ---
 
 ---
 src: ./sections/07-spec-driven.md
----
-
----
-src: ./sections/03-stack.md
 ---
 
 ---
@@ -106,9 +107,13 @@ src: ./sections/08-verification.md
 ---
 
 ---
-src: ./sections/09-cta.md
+src: ./sections/09-multi-agents.md
 ---
 
 ---
-src: ./sections/10-wrap-up.md
+src: ./sections/10-cta.md
+---
+
+---
+src: ./sections/11-wrap-up.md
 ---

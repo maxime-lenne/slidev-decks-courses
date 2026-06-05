@@ -2,9 +2,9 @@
 layout: section
 ---
 
-# MCP & Multi-agents
+# MCP
 
-<div class="text-lg opacity-70 mt-4">15 min · connecter au monde réel · orchestrer en parallèle</div>
+<div class="text-lg opacity-70 mt-4">10 min · connecter l'agent au monde réel</div>
 
 ---
 layout: default
@@ -152,78 +152,6 @@ layout: default
 - Context7 = à installer en priorité, donne accès aux docs à jour de toutes les libs
 - Pour un projet : commiter .mcp.json dans le repo + documenter dans CLAUDE.md le rôle de chacun
 - Trop de MCPs = polluted context (revoir section 2)
--->
-
----
-layout: default
----
-
-### Multi-agents en pratique
-
-<br>
-
-<div class="flex justify-center">
-
-```mermaid {scale: 0.7}
-graph TB
-    Main[Agent principal<br/>Sonnet · contexte projet]
-    Main -->|Task| Sub1[Subagent code-writer<br/>Worktree A · Sonnet]
-    Main -->|Task| Sub2[Subagent test-writer<br/>Worktree B · Sonnet]
-    Main -->|Task| Sub3[Subagent reviewer<br/>Worktree C · Opus]
-    Sub1 -.->|MCP| MCP1[Context7]
-    Sub2 -.->|MCP| MCP2[Vitest]
-    Sub3 -.->|MCP| MCP3[GitHub]
-    Sub1 --> Result[Résultat consolidé<br/>+ PR ready]
-    Sub2 --> Result
-    Sub3 --> Result
-```
-
-</div>
-
-<div class="text-sm opacity-70 mt-2 text-center">
-
-<strong>Subagents</strong> + <strong>worktrees</strong> + <strong>MCP</strong> = équipe d'agents autonome sur une même codebase.
-
-</div>
-
-<!--
-- Combinaison puissante : pas juste 1 agent, mais 3-5 spécialisés en parallèle
-- Chaque subagent a son worktree = pas de conflit Git
-- Le main consolide les outputs et te livre une PR cohérente
-- Pour démarrer simple : 1 subagent reviewer en post-edit, ça suffit déjà à changer ta vie
--->
-
----
-layout: default
----
-
-### Pattern : review multi-agent
-
-<br>
-
-<div class="text-sm leading-tight mt-2">
-
-| Étape | Agent | Rôle |
-|-------|-------|------|
-| 1 | **Main** (Sonnet) | Reçoit la demande, planifie, distribue |
-| 2 | **Subagent code** (Sonnet) | Implémente la feature dans son worktree |
-| 3 | **Subagent tests** (Sonnet) | Écrit les tests dans un autre worktree |
-| 4 | **Subagent reviewer** (Opus) | Review les diffs, propose améliorations |
-| 5 | **Subagent security** (Sonnet) | Vérifie OWASP, secrets, injections |
-| 6 | **Main** | Consolide + ouvre une PR avec checklist |
-
-</div>
-
-<div class="border-l-4 border-[#10b981] pl-4 mt-4 text-sm">
-
-**Anthropic Managed Agents** + **Cursor Cloud Agents** = ce pattern industrialisé dans le cloud.
-
-</div>
-
-<!--
-- Le pattern review multi-agent = état de l'art 2026 pour la qualité
-- Mais coût : 4-5 agents Sonnet/Opus en parallèle = facture qui grimpe
-- À réserver aux PRs importantes (sécurité, refacto critique, feature flagship)
 -->
 
 ---

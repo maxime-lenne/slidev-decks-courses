@@ -126,7 +126,6 @@ layout: default
 #### Newsletters & blogs
 
 - [Shubham Sharma](https://shubhamsharma.dev) — guides agentic 2026
-- [Hoko Blog](https://hoko.team) — comparatifs frameworks
 - [latent.space](https://latent.space) — podcast
 
 </div>
@@ -152,7 +151,7 @@ layout: default
 <!--
 - Le marché évolue très vite : il faut une veille hebdo, pas mensuelle
 - Recommandation : créer un canal Slack interne #agentic-coding pour partager les découvertes
-- Pour les sceptiques : leur faire suivre Shubham Sharma + Hoko Blog 1 mois, ils changent d'avis
+- Pour les sceptiques : leur faire suivre Shubham Sharma 1 mois, ils changent d'avis
 -->
 
 ---
