@@ -1,0 +1,32 @@
+{
+  "id": "genai-agentic-coding",
+  "title": "GenAI - Agentic Coding",
+  "description": "Coder avec des agents IA : context engineering, MCP, skills, hooks, spec-driven development, sub-agents, et workflows multi-agents (reviews, etc.).",
+  "status": "published",np
+  "objectives": [
+    "Diagnostiquer les 4 types d'échec de contexte (Missing, Polluted, Stale, Conflicting) et structurer un CLAUDE.md hiérarchique + ADRs pour ses projets",
+    "Choisir entre Skills, Slash Commands et Subagents selon le besoin, et configurer 2-3 subagents spécialisés pour son équipe",
+    "Mettre en place des Hooks Claude Code (notifications, validations, blocages) pour transformer l'agent en vrai teammate",
+    "Connecter ses agents au monde réel via MCP et orchestrer des workflows multi-agents avec worktrees + sandbox",
+    "Adopter un workflow spec-driven (PRD, Spec Kit, OpenSpec, BMAD…) et auditer son verification infrastructure avec les 8 piliers"
+  ],
+  "prerequisites": [
+    "Pratique courante d'un coding agent (Claude Code, Cursor ou Copilot) sur au moins un projet",
+    "Bases de la ligne de commande, Git et d'un projet versionné",
+    "Notions de LLM et de tool calling (function calling) — la présentation s'inscrit dans le parcours AI Builder, après l'intro LLM"
+  ],
+  "duration": "2-3h",
+  "theme": "maxime-lenne",
+  "thumbnail": "./assets/cover.svg",
+  "tags": ["genai", "agentic-coding", "claude-code", "cursor", "context-engineering", "mcp", "skills", "subagents", "hooks", "spec-driven"],
+  "language": "fr",
+  "version": "0.5.0",
+  "authors": [
+    {
+      "name": "Maxime Lenne",
+      "email": "hello@maxime-lenne.fr"
+    }
+  ],
+  "created": "2026-06-04",
+  "updated": "2026-06-05"
+}
