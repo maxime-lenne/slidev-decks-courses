@@ -2,9 +2,9 @@
 layout: section
 ---
 
-# Vos 2 chantiers
+# Next Steps
 
-<div class="text-lg opacity-70 mt-4">10 min · par où commencer demain matin</div>
+<div class="text-lg opacity-70 mt-4">par où commencer</div>
 
 ---
 layout: default
@@ -25,8 +25,10 @@ layout: default
 Construire le contexte de **tous vos projets**.
 
 - `CLAUDE.md` hiérarchique (racine + sous-dossiers)
-- Skills propres au besoin **entreprise / projet / persona / workflow**
-- ADRs pour les décisions clés
+- Memory files `docs/*.md`
+- Choix de Skills propres au besoin **entreprise / projet / persona / workflow**
+- Choix MCPs propres au besoin **entreprise / projet / persona / workflow**
+- ADRs pour les décisions clés et PRDs pour les features
 
 </div>
 
@@ -38,17 +40,11 @@ Construire le contexte de **tous vos projets**.
 
 Organiser & automatiser la boucle de **vérification**.
 
-- Audit **8 piliers** + scoring du projet
-- Tooling : tests, lint, types, build, observability
+- Audit **8 piliers**
+- Mettre en place le tooling permettant la vérification : tests, lint, types, build, observability
 - Éviter les dérapages : hooks + subagent reviewer
 
 </div>
-
-</div>
-
-<div class="text-center mt-8 text-base text-[#e63946] font-bold max-w-3xl mx-auto">
-
-L'un sans l'autre = échec. Contexte sans vérification = agent qui fait des bêtises plus vite.
 
 </div>
 
@@ -72,10 +68,11 @@ layout: default
 
 #### Actions concrètes
 
-1. **Auditer** vos projets : combien ont un `CLAUDE.md` ? Hiérarchique ?
-2. **Identifier** 3-5 patterns récurrents → en faire des **skills**
-3. **Commiter** dans `.claude/skills/` et `.claude/agents/`
-4. **Documenter** les décisions structurantes en **ADRs**
+1. **Créer** les `CLAUDE.md` dans vos projets (Hiérarchique si besoin)
+2. **Identifier** 3-5 patterns récurrents → choisir / créer des **skills**
+3. **Identifier et sélectionner** les MCP indispensable (max 3 enable par projet) et CLI
+4. **Commiter** dans `.claude/skills/` et `.claude/commands/`
+5. **Documenter** vos projets (memory files dans `docs/`) et les décisions structurantes en **ADRs**
 
 </div>
 
@@ -118,8 +115,8 @@ layout: default
 
 #### Actions concrètes
 
-1. **Télécharger** + remplir la checklist 8 piliers
-2. **Identifier** les 2 piliers les plus faibles
+1. **Evaluer** les 8 piliers de la vérifications
+2. **Identifier** les piliers les plus faibles
 3. **Mettre en place** le tooling correspondant :
    - Tests faibles → pre-commit hook + subagent test-writer
    - Build flaky → CI deterministe + dependency lock
@@ -147,122 +144,4 @@ layout: default
 - Le scoring est plus important que la perfection : savoir où on en est >> tout faire parfaitement
 - Pour les 2 piliers prioritaires : 1 atelier équipe + 1 sprint dédié = ça avance vraiment
 - Mesurer 6 mois plus tard pour voir l'évolution
--->
-
----
-layout: default
----
-
-### Roadmap 30 / 60 / 90 jours
-
-<br>
-
-<div class="grid grid-cols-3 gap-4 mt-4 text-sm">
-
-<div class="border-l-4 border-[#457b9d] pl-4">
-
-#### 📅 30 jours
-
-- `CLAUDE.md` **hiérarchique** committé partout
-- **3 skills** équipe partagées
-- **Score 8 piliers** du projet principal
-
-<div class="text-xs opacity-70 mt-3">Quick wins : visibles dès la première semaine.</div>
-
-</div>
-
-<div class="border-l-4 border-[#10b981] pl-4">
-
-#### 📅 60 jours
-
-- **2-3 subagents** équipe en `.claude/agents/`
-- **Hooks** pour la boucle de validation
-- **1 MCP métier** intégré (Sentry, Linear, Supabase…)
-
-<div class="text-xs opacity-70 mt-3">Automatisation : l'agent devient autonome sur les bases.</div>
-
-</div>
-
-<div class="border-l-4 border-[#e63946] pl-4">
-
-#### 📅 90 jours
-
-- Pattern **multi-agent** sur une feature complète
-- **Framework spec-driven** adopté (BMAD, OpenSpec...)
-- **+10 points** sur la grille 8 piliers
-
-<div class="text-xs opacity-70 mt-3">Maturité : votre équipe est devenue agentique.</div>
-
-</div>
-
-</div>
-
-<div class="text-center text-sm mt-8 opacity-70 max-w-3xl mx-auto">
-
-Pas de big-bang — itération hebdomadaire avec mesure d'impact.
-
-</div>
-
-<!--
-- Calibration prudente : viser 30j tangibles plutôt qu'une transformation immédiate
-- Mesurer = essentiel : nombre de PRs auto-revieweées, % de tâches déléguées, score 8 piliers
-- À 90j, si la culture a pris, vous êtes prêts pour les workflows multi-agents avancés
--->
-
----
-layout: default
----
-
-### À ne pas faire
-
-<br>
-
-<div class="grid grid-cols-2 gap-6 mt-4 text-sm">
-
-<div>
-
-#### ❌ Big bang
-
-« On lance 5 subagents + 10 MCPs + spec-driven + multi-agent partout dès demain. »
-
-→ Échec, démotivation, retour au CLI nu.
-
-</div>
-
-<div>
-
-#### ❌ Outil-religion
-
-« On choisit Cursor / Claude Code, et on défend la chapelle. »
-
-→ Vous passez à côté de 50% du potentiel.
-
-</div>
-
-<div>
-
-#### ❌ Skip la vérification
-
-« Tant que ça compile, on merge. »
-
-→ Tech debt agentique = 10x plus vite.
-
-</div>
-
-<div>
-
-#### ❌ Tout faire seul
-
-« Je vais structurer le contexte à ma sauce. »
-
-→ Vos skills/CLAUDE.md doivent être **partagés** via Git.
-
-</div>
-
-</div>
-
-<!--
-- Les 4 anti-patterns observés en mission chez des clients
-- L'erreur la plus coûteuse : skip la vérification → on enrichit la tech debt avec de l'IA en plus
-- Pour pousser : 1 atelier d'équipe pour aligner sur les conventions partagées
 -->

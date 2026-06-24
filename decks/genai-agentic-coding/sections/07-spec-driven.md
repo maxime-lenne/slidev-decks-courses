@@ -1,10 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Spec-Driven Development
+# PRD & Spec-Driven Development
 
-<div class="text-lg opacity-70 mt-4">15 min · Spec > Code · les 6 frameworks AIDD</div>
+<div class="text-lg opacity-70 mt-4">15 min · Spec > Code · les frameworks AIDD</div>
 
 ---
 layout: two-cols-header
@@ -106,6 +106,8 @@ layout: two-cols-header
 
 ### Review specs > Review code
 
+**Catch problems early** — une erreur dans les specs coûte **10x moins** qu'une erreur dans le code.
+
 ::left::
 
 #### Review de code
@@ -123,8 +125,6 @@ layout: two-cols-header
 - Erreurs : détectées **tôt**
 
 <div class="text-center mt-8 text-base text-[#10b981] font-bold">
-
-**Catch problems early** — une erreur dans les specs coûte **10x moins** qu'une erreur dans le code.
 
 </div>
 
@@ -160,29 +160,290 @@ Aussi : **-40 à 60%** bugs en production · **+30%** vélocité après adoption
 layout: default
 ---
 
-### Spec-Driven Development : les 6 frameworks AIDD
+### PRD — Product Requirements Document
+
+<div class="text-sm opacity-70 mt-2">Adapté à l'agentic coding — la spec devient un artefact du repo</div>
+
+<div class="text-sm leading-tight mt-4">
+
+| Aspect | PRD traditionnel | PRD agentic |
+|--------|-------------------|-------------|
+| **Format** | Prose détaillée | Structure markdown |
+| **Audience** | Pour humains | Pour humains **ET** agents |
+| **Cycle de vie** | Statique, figé | Évolutif avec le code |
+| **Localisation** | Hors repo (Notion, Confluence) | Versionné dans le repo |
+
+</div>
+
+<div class="border-l-4 border-[#457b9d] pl-4 mt-6 text-sm">
+
+**Structure > Prose** — l'agent parse mieux les sections markdown structurées et y revient à chaque PR.
+
+</div>
+
+<!--
+- Le PRD agentic n'est pas un PRD product manager — c'est un contrat machine-lisible pour l'agent
+- Vit dans `docs/prds/` ou `specs/` du repo, à côté du code
+- Mise à jour à chaque évolution de feature : le PRD reflète l'état actuel, pas l'intention initiale
+- Lien direct avec les ADRs : les décisions techniques issues du PRD deviennent des ADRs
+- Source : Module 8 — PRD : Spécifier pour mieux générer
+-->
+
+---
+layout: default
+---
+
+### Template PRD complet
+
+<div class="grid grid-cols-2 gap-4 mt-3 text-sm">
+
+<div>
+
+```markdown
+# Feature : [Nom explicite]
+
+## Contexte
+Pourquoi cette feature ?
+Quel problème résout-elle ?
+
+## User Stories
+- En tant que [user],
+  je veux [action]
+  pour [bénéfice]
+
+## Spécifications fonctionnelles
+- Comportement attendu (cas nominal)
+- Cas limites et erreurs
+```
+
+</div>
+
+<div>
+
+```markdown
+## Contraintes techniques
+- Stack, dépendances,
+  patterns à respecter
+
+## Critères d'acceptation
+- [ ] Checklist de validation
+- [ ] Tests à écrire
+- [ ] Métriques de succès
+
+## Hors-périmètre
+- Ce qu'on ne fait PAS
+```
+
+</div>
+
+</div>
+
+<div class="border-l-4 border-[#10b981] pl-4 mt-3 text-sm">
+
+**Le « pourquoi » avant le « quoi »** — l'agent comprend l'intention et arrête d'improviser sur les cas limites.
+
+</div>
+
+<!--
+- Template volontairement court : un PRD doit tenir sur 1-2 pages, sinon personne ne le lit ni ne le maintient
+- "Hors-périmètre" est aussi important que le périmètre — l'agent n'invente plus de features non demandées
+- Workflow : Spec Kit / Task Master parsent ce template pour générer automatiquement les tasks
+- Convention de stockage : `docs/prds/PRD-XXX-feature.md`, proche des ADRs
+- Pour l'écrire, utiliser un questionnement socratique avec l'agent avant de figer le doc
+-->
+
+---
+layout: section
+---
+
+# Spec-Driven Development : Les Frameworks
+
+<div class="text-lg opacity-70 mt-4">les frameworks AIDD</div>
+
+---
+layout: two-cols-header
+---
+
+### Superpowers — marketplace Anthropic
+
+<div class="text-sm opacity-70 mt-1">Plugin Claude Code · Marketplace Anthropic · Skills process, qualité, review, agents, git</div>
+
+::left::
+
+#### Présentation
+
+Transforme chaque tâche de développement en un **workflow structuré et reproductible**, invocable via une commande `/` depuis le terminal ou l'IDE.
+
+#### Workflow typique
+
+```text
+/brainstorming "nouvelle feature"
+     ↓
+/writing-plans
+     ↓
+/subagent-driven-development
+     ↓
+/verification-before-completion
+```
+
+<div class="border-l-4 border-[#8b5cf6] pl-4 mt-4 text-sm">
+
+**Superpowers** couvre le cycle dev complet (process, qualité, git)
+
+</div>
+
+::right::
+
+#### 14 skills inclus
+
+<div class="text-sm mt-2 space-y-1">
+
+- **Idéation** — `brainstorming`
+- **Planification** — `writing-plans`, `executing-plans`
+- **Qualité** — `systematic-debugging`, `test-driven-development`, `verification-before-completion`
+- **Review** — `requesting-code-review`, `receiving-code-review`
+- **Agents** — `subagent-driven-development`, `dispatching-parallel-agents`
+- **Git** — `finishing-a-development-branch`, `using-git-worktrees`
+- **Méta** — `using-superpowers`, `writing-skills`
+
+</div>
+
+<!--
+- Superpowers ≠ SpecKit : deux plugins distincts de la marketplace Anthropic
+- Skills préfixés superpowers: (ex: superpowers:brainstorming) — pas speckit.*
+- Chaque skill = un processus éprouvé qui remplace un prompt improvisé
+- Peut coexister avec SpecKit dans le même projet Claude Code
+-->
+
+---
+layout: two-cols-header
+---
+
+### SpecKit — AI agnostic
+
+<div class="text-sm opacity-70 mt-1">Open source toolkit · Specify CLI + Agent intégration · 9 skills · De l'idée à l'issue GitHub</div>
+
+::left::
+
+#### Présentation
+
+Toolkit open source accessible en CLI en dehors de l'agent, avec intégration dans l'agent de code
+
+#### Workflow typique
+
+```text
+/speckit.specify "feature login OAuth"
+     ↓
+/speckit.clarify
+     ↓
+/speckit.constitution
+     ↓
+/speckit.plan
+     ↓
+/speckit.implement
+     ↓
+/speckit.checklist
+     ↓
+/speckit.taskstoissues
+```
+
+::right::
+
+#### 9 skills inclus
+
+<div class="text-sm mt-2 space-y-1">
+
+- `/speckit.specify` — génère le PRD interactif
+- `/speckit.clarify` — questions avant d'agir
+- `/speckit.constitution` — règles du projet (CLAUDE.md)
+- `/speckit.analyze` — analyse le codebase existant
+- `/speckit.plan` — décompose la spec en tâches
+- `/speckit.tasks` — liste et priorise les tâches
+- `/speckit.implement` — implémente selon la spec
+- `/speckit.checklist` — valide les critères d'acceptance
+- `/speckit.taskstoissues` — crée les issues GitHub
+
+</div>
+
+<!--
+- SpecKit = plugin indépendant, préfixe speckit. (pas superpowers:)
+- speckit.constitution = crée/met à jour le CLAUDE.md avec les règles du projet
+- speckit.taskstoissues : crée automatiquement des issues GitHub depuis les tâches de la spec
+- Peut être utilisé seul ou en complément de Superpowers sur le même projet
+- Peut être utilisé partiellement : juste specify+plan pour un ticket ponctuel
+-->
+
+---
+layout: two-cols-header
+---
+
+### BMAD Method — multi-agents agile
+
+<div class="text-sm opacity-70 mt-1">21 rôles spécialisés · Audit trails · Traçabilité complète · Open-source</div>
+
+::left::
+
+#### Présentation
+
+Framework multi-agents agile conçu pour les équipes enterprise. Chaque phase du cycle de vie est prise en charge par un **agent spécialisé** avec un rôle défini, des livrables attendus et une traçabilité complète des décisions.
+
+#### Agents & rôles clés
+
+<div class="text-sm mt-2 space-y-1">
+
+- **Analyst** — collecte besoins, rédige le brief
+- **Product Manager** — PRD, user stories, priorités
+- **Architect** — architecture, ADRs, choix techniques
+- **Dev (Frontend / Backend)** — implémentation par story
+- **QA** — plan de test, validation, edge cases
+- **DevOps** — CI/CD, infra, déploiement
+- **Scrum Master** — coordination des agents, blockers
+
+</div>
+
+::right::
+
+#### Workflow typique
+
+```text
+Brief → Analyst
+     ↓
+PRD → Product Manager
+     ↓
+Architecture → Architect
+     ↓
+Stories → Dev agents (//parallel)
+     ↓
+Tests → QA agent
+     ↓
+Deploy → DevOps agent
+```
+
+<div class="border-l-4 border-[#1d3557] pl-4 mt-3 text-sm">
+
+**Audit-ready** — chaque décision est tracée, chaque livrable est versionné. Idéal pour les contextes réglementés.
+
+</div>
+
+<!--
+- BMAD = "Breakthrough Method for Agile Development" (avec AI)
+- 21 rôles = granularité fine, chaque agent a un prompt système dédié
+- Audit trails = chaque agent log ses décisions → traçabilité complète pour compliance
+- Plus lourd à mettre en place que SpecKit ou OpenSpec, mais incomparable en enterprise
+- Adapté aux équipes qui doivent justifier chaque choix technique (finance, santé, défense)
+-->
+
+---
+layout: default
+---
+
+### Spec-Driven Development : les autres frameworks AIDD
 
 <br>
 
-<div class="grid grid-cols-6 gap-2 mt-4 text-xs">
+<div class="grid grid-cols-4 gap-2 mt-4 text-xs">
 
 <div class="border-l-4 border-[#1d3557] pl-2">
-
-#### BMAD Method
-
-Multi-agents agile (21 rôles). **Enterprise**, audit trails complets.
-
-</div>
-
-<div class="border-l-4 border-[#457b9d] pl-2">
-
-#### Spec Kit
-
-Constitution-based, léger. Du vibe coding à l'agentic.
-
-</div>
-
-<div class="border-l-4 border-[#10b981] pl-2">
 
 #### OpenSpec
 
@@ -190,7 +451,7 @@ Proposal-based, incrémental. **Brownfield**, features existantes.
 
 </div>
 
-<div class="border-l-4 border-[#f59e0b] pl-2">
+<div class="border-l-4 border-[#457b9d] pl-2">
 
 #### Kiro (AWS)
 
@@ -198,7 +459,7 @@ IDE natif, specs intégrées. **AWS**, environnement unifié.
 
 </div>
 
-<div class="border-l-4 border-[#e63946] pl-2">
+<div class="border-l-4 border-[#10b981] pl-2">
 
 #### GSD
 
@@ -206,19 +467,13 @@ Sub-agents, isolation contexte. **Solo dev**, vélocité max.
 
 </div>
 
-<div class="border-l-4 border-[#8b5cf6] pl-2">
+<div class="border-l-4 border-[#f59e0b] pl-2">
 
 #### Task Master
 
 PRD-centric, dépendances auto. **Cursor**, décomposition de tâches.
 
 </div>
-
-</div>
-
-<div class="border-l-4 border-[#457b9d] pl-4 mt-8 text-sm">
-
-**Point commun** : la spec est la source de vérité, le code n'est que son implémentation.
 
 </div>
 

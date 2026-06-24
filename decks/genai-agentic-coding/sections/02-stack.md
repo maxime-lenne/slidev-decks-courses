@@ -1,8 +1,8 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# La stack de l'AI Builder
+# La stack
 
 <div class="text-lg opacity-70 mt-4">25 min · Cursor vs Claude Code · modes · sandbox · Cloud Agents</div>
 

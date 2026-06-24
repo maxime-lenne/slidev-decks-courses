@@ -38,17 +38,11 @@ Les **8 piliers** (Karpathy : *Software 2.0 automates what you can verify*). San
 
 <div class="text-3xl mb-2">🤝</div>
 
-#### Agent = teammate, pas oracle
+#### Spec Driven Development
 
-**Hooks** + **subagents** + **MCP** + **worktrees/sandbox** = stack 2026. C'est toi qui décides quand interagir.
-
-</div>
+Avec l'IA, la spécification est une étape **indispensable** ! PRD, Plan, framework avancé (BMAD, OpenSpec...)
 
 </div>
-
-<div class="text-center mt-8 text-[#457b9d] text-lg font-bold">
-
-Lancez les 2 chantiers cette semaine.
 
 </div>
 
@@ -70,8 +64,7 @@ layout: default
 
 #### À télécharger
 
-- 📋 **[8 Pillars Checklist](https://github.com/upsun/8-pillars)** (Upsun, Apache V2)
-- 📱 **LinkedIn Carousel** *Le pouvoir des hooks* — Maxime Lenne
+- 📋 **[8 Pillars Checklist](https://gist.github.com/maxime-lenne/dfce6ebe9f039c8b8bc1ea62b5f52be0)** (Upsun, Apache V2)
 - 📦 Frameworks spec-driven : [OpenSpec](https://github.com/openspec/openspec) · [Spec Kit](https://github.com/spec-kit/spec-kit) · [BMAD](https://github.com/bmad-method)
 
 #### Lectures fondatrices
@@ -92,9 +85,9 @@ layout: default
 
 #### Decks compagnons
 
-- 📦 `genai-llm-introduction` — bases LLM
-- 📦 `genai-ai-engineer-mcp-deep-dive` — protocole MCP en profondeur
-- 📦 `genai-ai-engineer-langchain` — création d'agents
+- 📦 [GenAI et LLM - introduction](https://decks.maxime-lenne.fr/decks/genai-llm-introduction)
+- 📦 [protocole MCP en profondeur](https://decks.maxime-lenne.fr/decks/genai-ai-engineer-mcp-deep-dive)
+- 📦 [LangChain LangGraph - introduction](https://decks.maxime-lenne.fr/decks/genai-ai-engineer-langchain)
 
 </div>
 
@@ -156,35 +149,10 @@ layout: default
 
 ---
 layout: cover
-background: https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1920
+background: <https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920>
 ---
 
-<div class="absolute inset-0 bg-gradient-to-br from-[#0f172a]/92 via-[#0f172a]/80 to-[#1d3557]/85" />
-
-<div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-8">
-
-<h1 class="text-7xl font-black mb-6">
-Merci !
-</h1>
-
-<div class="text-[#457b9d] text-2xl font-bold uppercase mb-6">Questions ?</div>
-
-<div class="text-xl max-w-3xl text-[#457b9d] font-bold">
-On a parcouru : context engineering · stack · skills · hooks ·<br/>
-MCP · spec-driven · 8 piliers · 2 chantiers
-</div>
-
-<div class="text-sm opacity-60 mt-12 max-w-2xl">
-Vos questions — et surtout : <strong>par où vous allez commencer demain</strong> ?
-</div>
-
-</div>
-
-<!--
-- Slide Q&A — laisser 5+ min minimum
-- Question piège utile à poser à la salle : "quel chantier en premier dans VOTRE équipe ?"
-- Si silence : démarrer par une question qui ouvre, ex : "qui ici a déjà un CLAUDE.md hiérarchique ?"
--->
+<ThankYou deck-slug="genai-agentic-coding" />
 
 ---
 src: ../../templates/slides.md#2
