@@ -87,7 +87,10 @@
       "Bash(grep -c '^---$' sections/11-demo.md)",
       "Skill(wwt-claude-skills:slidev:create)",
       "Bash(grep -c \"^---$\" /Users/maxime-lenne/Documents_Non_iCloud/workspace_js_ts/slidev-decks-simplon/decks/genai-agentic-coding/sections/10-wrap-up.md)",
-      "Bash(grep -c \"^---$\" /Users/maxime-lenne/Documents_Non_iCloud/workspace_js_ts/slidev-decks-simplon/decks/genai-agentic-coding/sections/02-contexte.md)"
+      "Bash(grep -c \"^---$\" /Users/maxime-lenne/Documents_Non_iCloud/workspace_js_ts/slidev-decks-simplon/decks/genai-agentic-coding/sections/02-contexte.md)",
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(tar -xf raw.tar)",
+      "Skill(wwt-claude-skills:slidev:add-slide)"
     ],
     "deny": [],
     "ask": []

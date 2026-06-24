@@ -27,6 +27,14 @@ Project task tracking.
 - [ ] Add a logo for Simplon theme
 - [ ] Slide dimensions
 
+### Deck Agentic coding
+
+- ajout slide mcp à côté du dev (figma, Pencil..)
+- ajout tooling : git, ide, tty, compteur de token (codexbar), stack ai builder,...
+- workflow
+- tri take away
+- demo multi agents
+
 ## Completed
 
 - [x] Remove `.specify/` and `specs/` — knowledge migrated to `docs/`
@@ -45,5 +53,11 @@ Project task tracking.
 - [x] CONTRIBUTING.md
 
 ---
+
+- PRD, ensuite Spec drivent après context, ensuite skills
+- passer section stack ai builer avant module context
+- schéma react
+- clean objectif
+- supprimer référence hoko
 
 *Last updated: 2026-05-16*
