@@ -61,14 +61,6 @@ src: ./sections/03-module-2-logging.md
 ---
 
 ---
-src: ./sections/04-module-8-ml-drift.md
----
-
----
-src: ./sections/05-module-9-llm-langfuse.md
----
-
----
 src: ./sections/06-brief-j2.md
 ---
 
@@ -98,6 +90,14 @@ src: ./sections/12-module-synthetics.md
 
 ---
 src: ./sections/13-module-7-incident.md
+---
+
+---
+src: ./sections/04-module-8-ml-drift.md
+---
+
+---
+src: ./sections/05-module-9-llm-langfuse.md
 ---
 
 ---

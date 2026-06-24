@@ -67,8 +67,6 @@ class: text-left
   </div>
 </div>
 
-<div class="text-xs opacity-30">Slides built with <a href="https://sli.dev" class="no-underline">sli.dev</a> · Thème maxime-lenne</div>
-
 <!--
 Call to action final — laisser le QR code visible pendant les questions
 -->
