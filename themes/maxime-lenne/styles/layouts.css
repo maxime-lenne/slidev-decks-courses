@@ -155,6 +155,42 @@
   z-index: 1;
 }
 
+/* Section-Liquid Layout - Animated liquid chrome WebGL background */
+.slidev-layout.section-liquid {
+  @apply h-full grid place-items-center text-center;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  padding: 3rem;
+}
+
+.slidev-layout.section-liquid .section-liquid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.slidev-layout.section-liquid .section-liquid-content {
+  position: relative;
+  z-index: 1;
+}
+
+.slidev-layout.section-liquid h1,
+.slidev-layout.section-liquid h2 {
+  @apply text-7xl font-700 leading-tight;
+  color: white;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+  -webkit-text-fill-color: white;
+  background: none;
+}
+
+.slidev-layout.section-liquid h1 + p,
+.slidev-layout.section-liquid h2 + p {
+  @apply text-xl opacity-90;
+  color: white;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
 /* Default Layout - Standard content layout */
 .slidev-layout.default {
   @apply px-12 py-10;
