@@ -125,6 +125,55 @@ layout: section
 layout: default
 ---
 
+### Rappel : GenAI, LLM & Prompt Engineering
+
+<br>
+
+<div class="grid grid-cols-2 gap-8 mt-4 text-sm">
+
+<div>
+
+#### Vocabulaire de base
+
+**GenAI** — IA générative : produit du contenu (texte, code, image) par complétion statistique, entraînée sur des milliards de tokens.
+
+**LLM** (*Large Language Model*) — prédit le token suivant. Claude, GPT-4, Gemini, Llama…
+
+**Prompt** — l'instruction envoyée au modèle. La qualité du prompt détermine la qualité de la réponse.
+
+</div>
+
+<div>
+
+#### Template de base d'un prompt
+
+<div class="font-mono text-xs bg-[#1d3557]/10 rounded p-3 mt-1 space-y-1 leading-relaxed">
+
+<div>🎭 <strong>Rôle</strong> &nbsp;&nbsp;&nbsp;&nbsp;→ "Tu es un expert en..."</div>
+<div>📋 <strong>Contexte</strong> → "Dans ce projet..."</div>
+<div>🎯 <strong>Tâche</strong> &nbsp;&nbsp;&nbsp;→ "Génère / Analyse / Corrige..."</div>
+<div>📐 <strong>Format</strong> &nbsp;&nbsp;→ "En bullet points, max 5"</div>
+<div>💡 <strong>Exemple</strong> &nbsp;→ "Par exemple : ..."</div>
+
+</div>
+
+<div class="text-xs opacity-70 mt-3"><strong>Prompt Engineering</strong> = structurer ces éléments pour maximiser la pertinence de la réponse.</div>
+
+</div>
+
+</div>
+
+<!--
+- GenAI ≠ AGI — rester factuel sur ce que c'est vraiment
+- LLM = completion engine : il prédit le prochain token, l'intelligence émerge à l'échelle
+- Les 5 éléments du template sont universels (Claude, GPT, Gemini...)
+- Pour les détails : deck genai-llm-introduction
+-->
+
+---
+layout: default
+---
+
 ### Rappel : qu'est-ce qu'un agent ?
 
 <br>
@@ -176,7 +225,7 @@ graph TB
 layout: default
 ---
 
-### Le problème : l'agent dans sa bulle
+### Rappel : c'est quoi MCP ?
 
 <br>
 
@@ -184,7 +233,7 @@ layout: default
 
 <div class="border-l-4 border-[#e63946] pl-4">
 
-#### Sans MCP
+#### Sans MCP — l'agent dans sa bulle
 
 L'agent ne peut pas :
 
@@ -194,21 +243,22 @@ L'agent ne peut pas :
 - 📊 Consulter Sentry / Grafana
 - 🎨 Lire un fichier Figma
 
-<div class="text-xs opacity-70 mt-3">Chaque intégration = code custom à maintenir.</div>
+<div class="text-xs opacity-70 mt-3">Chaque intégration = code custom à maintenir. Problème N × M.</div>
 
 </div>
 
 <div class="border-l-4 border-[#10b981] pl-4">
 
-#### Avec MCP
+#### MCP — Model Context Protocol
 
-**Standard ouvert** d'Anthropic — adopté largement en 2026.
+**Protocole ouvert** (Anthropic, 2024) — interface standardisée entre un LLM et ses outils externes.
 
-- Connecteurs **standardisés** (tools, resources, prompts)
+- **1 interface** commune pour tous les services
 - Architecture **host / client / server**
-- **N + M** intégrations au lieu de **N × M**
+- Primitives : **tools**, **resources**, **prompts**
+- N + M connecteurs au lieu de N × M
 
-<div class="text-xs opacity-70 mt-3">L'agent peut interagir avec tout service qui expose un MCP.</div>
+<div class="text-xs opacity-70 mt-3">= "USB-C pour les LLM" — un plug, tous les services.</div>
 
 </div>
 
@@ -218,6 +268,29 @@ L'agent ne peut pas :
 - L'analogie qu'on entend partout : "USB-C pour les LLM"
 - Plus juste : MCP est un protocole stateful comme SMTP, IMAP, LSP — pas une API REST
 - Pour le détail, renvoi explicite au deck genai-ai-engineer-mcp-deep-dive
+-->
+
+---
+layout: center
+---
+
+### Besoin de revoir les bases ?
+
+<div class="text-center mt-6">
+
+<div class="text-base opacity-70 mb-6">GenAI · LLM · Tokenization · Embeddings · RAG · Tool calling</div>
+
+<div class="text-[#457b9d] text-lg font-mono border border-[#457b9d]/40 px-8 py-4 rounded-lg inline-block">
+  <a href="https://decks.maxime-lenne.fr/decks/genai-llm-introduction">decks.maxime-lenne.fr/decks/genai-llm-introduction</a>
+</div>
+
+<div class="text-sm opacity-60 mt-6">Deck pré-requis · ~45 min</div>
+
+</div>
+
+<!--
+- Partager ce lien dans le chat Teams/Slack en début de session
+- Ce deck couvre tout ce que cette formation suppose acquis
 -->
 
 ---

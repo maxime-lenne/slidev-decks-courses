@@ -7,54 +7,12 @@ layout: section-liquid
 <div class="text-lg opacity-70 mt-4">15 min · Spec > Code · les frameworks AIDD</div>
 
 ---
-layout: two-cols-header
----
-
-### Le problème du prompting direct
-
-::left::
-
-#### Ce qu'on voudrait faire
-
-```text
-Fais-moi une feature de login
-```
-
-#### Ce que l'agent comprend
-
-- Login avec quoi ? Email ? OAuth ?
-- Quel design ? Quelle validation ?
-- Où stocker la session ?
-- Quelles erreurs gérer ?
-
-::right::
-
-#### Résultat
-
-- Code **bancal**
-- Manque de **cas limites**
-- Design **aléatoire**
-- **Refactoring** immédiat nécessaire
-
-<div class="border-l-4 border-[#e63946] pl-4 mt-3 text-sm">
-
-**Manque de contexte = agent qui improvise.**
-La spec, c'est précisément l'antidote.
-
-</div>
-
-<!--
-- Pour faire rire la salle : montrer le diff produit par un prompt vague, c'est toujours instructif
-- Le réflexe naturel du dev : "il fallait juste mieux prompter" — mais non, il fallait spécifier
--->
-
----
 layout: quote
 ---
 
-« Les spécifications, la description de ce que l'on attend de notre logiciel, c'est ça qui compte. »
+# Les spécifications, la description de ce que l'on attend de notre logiciel, c'est ça qui compte.
 
-<div class="text-base opacity-70 mt-4">— Dexter Horthy, Human Layer</div>
+> Dexter Horthy, Human Layer
 
 ---
 layout: default
@@ -140,14 +98,33 @@ layout: fact
 
 # -50%
 
-<div class="text-2xl mt-4">temps de refactoring</div>
+<div class="text-2xl mt-4">de temps de refactoring</div>
 
-<div class="text-sm opacity-70 mt-8 max-w-2xl mx-auto">
+<div class="text-sm opacity-70 mt-2 max-w-2xl mx-auto">
 
 Données mesurées (LogRocket 2025, GitLab 2025) sur les équipes ayant adopté un workflow spec-driven avec l'agentic AI.
 
-Aussi : **-40 à 60%** bugs en production · **+30%** vélocité après adoption · **78%** des équipes enterprise utilisent des outils AI.
+</div>
 
+<div class="grid-3 mt-16">
+  <div>
+    <div>
+      <h2> -40 à 60%</h2>
+      bugs en production
+    </div>
+  </div>
+  <div>
+    <div>
+    <h2>+30%</h2>
+      vélocité après adoption
+    </div>
+  </div>
+  <div>
+    <div>
+    <h2>78%</h2>
+      des équipes enterprise utilisent des outils AI
+    </div>
+  </div>
 </div>
 
 <!--
@@ -264,43 +241,71 @@ layout: section
 layout: two-cols-header
 ---
 
-### Superpowers — marketplace Anthropic
+### SDD : Intro, formes et philosophies
 
-<div class="text-sm opacity-70 mt-1">Plugin Claude Code · Marketplace Anthropic · Skills process, qualité, review, agents, git</div>
+<div class="text-sm opacity-70 mt-2">Toolkits, plugins marketplace, méthodologies — des formes multiples pour un même objectif</div>
+
+<div class="border-l-4 border-[#457b9d] pl-4 mt-6 text-sm">
+
+**Point commun** : la spec est la source de vérité, le code n'est que son implémentation.
+
+</div>
+
+::left::
+
+#### Formes variées
+
+- **Plugin marketplace** — intégré à l'agent de code (Superpowers, SpecKit)
+- **Toolkit CLI** — utilisable indépendamment de l'agent (SpecKit)
+- **Méthodologie multi-agents** — framework de rôles (BMAD)
+- **IDE natif** — expérience unifiée hors terminal (Kiro AWS)
+
+::right::
+
+#### Philosophies différentes
+
+- **Constitution-based** — règles du projet figées avant le code
+- **Proposal-based** — specs incrémentales par feature
+- **PRD-centric** — tout part d'un document structuré
+- **Agent-role-based** — chaque rôle = un agent dédié
+
+<!--
+- Ce slide répond à "pourquoi autant de frameworks ?" — parce que les contextes sont très différents
+- Marché jeune (2024-2025), pas encore de "winner take all"
+- La diversité des formes reflète la diversité des équipes et des outils
+- Pas de mauvais choix : le meilleur framework est celui que l'équipe utilise vraiment
+-->
+
+---
+layout: two-cols-header
+---
+
+### Superpowers — marketplace Anthropic (1/2)
+
+<div class="text-sm opacity-70 mt-1">Plugin Claude Code · Marketplace Anthropic · 14 skills · cycle dev complet</div>
 
 ::left::
 
 #### Présentation
 
-Transforme chaque tâche de développement en un **workflow structuré et reproductible**, invocable via une commande `/` depuis le terminal ou l'IDE.
+Plugin officiel de la marketplace Anthropic. Transforme chaque tâche en un **workflow éprouvé et reproductible**, invocable via `/` depuis le terminal ou l'IDE.
 
-#### Workflow typique
+Couvre le cycle dev complet (idéation → git), pas uniquement la phase spec.
 
-```text
-/brainstorming "nouvelle feature"
-     ↓
-/writing-plans
-     ↓
-/subagent-driven-development
-     ↓
-/verification-before-completion
-```
-
-<div class="border-l-4 border-[#8b5cf6] pl-4 mt-4 text-sm">
-
-**Superpowers** couvre le cycle dev complet (process, qualité, git)
-
-</div>
-
-::right::
-
-#### 14 skills inclus
+#### 14 skills
 
 <div class="text-sm mt-2 space-y-1">
 
 - **Idéation** — `brainstorming`
 - **Planification** — `writing-plans`, `executing-plans`
 - **Qualité** — `systematic-debugging`, `test-driven-development`, `verification-before-completion`
+
+</div>
+
+::right::
+
+<div class="text-sm mt-8 space-y-1">
+
 - **Review** — `requesting-code-review`, `receiving-code-review`
 - **Agents** — `subagent-driven-development`, `dispatching-parallel-agents`
 - **Git** — `finishing-a-development-branch`, `using-git-worktrees`
@@ -316,10 +321,57 @@ Transforme chaque tâche de développement en un **workflow structuré et reprod
 -->
 
 ---
+layout: default
+---
+
+### Superpowers — workflow typique (2/2)
+
+<div class="text-sm opacity-70 mt-1">→ Marketplace Claude Code : <a href="https://claude.ai/code">claude.ai/code</a></div>
+
+<div class="grid grid-cols-2 gap-8 mt-6 text-sm">
+
+<div>
+
+```text
+/brainstorming "nouvelle feature"
+     ↓
+/writing-plans
+     ↓
+/subagent-driven-development
+     ↓
+/requesting-code-review
+     ↓
+/verification-before-completion
+     ↓
+/finishing-a-development-branch
+```
+
+</div>
+
+<div>
+
+#### Quand l'utiliser
+
+- Structurer **n'importe quelle tâche** de développement
+- Remplacer un prompt vague par un **processus éprouvé**
+- Encadrer un **junior** ou onboarder une nouvelle équipe
+- Compléter **SpecKit** sur le reste du cycle (code → review → git)
+
+</div>
+
+</div>
+
+<!--
+- Workflow non-exhaustif : les skills peuvent être invoqués individuellement
+- Le cycle complet combine Superpowers (process) + SpecKit (spec) sur un même projet
+- using-superpowers est le skill de méta-guidance pour savoir quel skill invoquer quand
+-->
+
+---
 layout: two-cols-header
 ---
 
-### SpecKit — AI agnostic
+### SpecKit — AI agnostic (1/2)
 
 <div class="text-sm opacity-70 mt-1">Open source toolkit · Specify CLI + Agent intégration · 9 skills · De l'idée à l'issue GitHub</div>
 
@@ -327,25 +379,9 @@ layout: two-cols-header
 
 #### Présentation
 
-Toolkit open source accessible en CLI en dehors de l'agent, avec intégration dans l'agent de code
+Toolkit open source accessible en CLI en dehors de l'agent, avec intégration dans l'agent de code. Dédié au **spec-driven development**, il encadre l'agent de la clarification des besoins jusqu'à la création des issues GitHub, en passant par la génération du PRD et la décomposition en tâches.
 
-#### Workflow typique
-
-```text
-/speckit.specify "feature login OAuth"
-     ↓
-/speckit.clarify
-     ↓
-/speckit.constitution
-     ↓
-/speckit.plan
-     ↓
-/speckit.implement
-     ↓
-/speckit.checklist
-     ↓
-/speckit.taskstoissues
-```
+Compatible avec tous les agents de code (Claude, Cursor, Copilot…).
 
 ::right::
 
@@ -367,17 +403,64 @@ Toolkit open source accessible en CLI en dehors de l'agent, avec intégration da
 
 <!--
 - SpecKit = plugin indépendant, préfixe speckit. (pas superpowers:)
+- Fonctionne avec Claude Code, Cursor, Copilot, Gemini CLI... AI-agnostic
 - speckit.constitution = crée/met à jour le CLAUDE.md avec les règles du projet
+-->
+
+---
+layout: default
+---
+
+### SpecKit — workflow typique (2/2)
+
+<div class="text-sm opacity-70 mt-1">→ CLI et plugin : <a href="https://github.github.com/spec-kit/index.html">Spec Kit</a></div>
+
+<div class="grid grid-cols-2 gap-8 mt-6 text-sm">
+
+<div>
+
+```text
+/speckit.specify "feature login OAuth"
+     ↓
+/speckit.clarify
+     ↓
+/speckit.constitution
+     ↓
+/speckit.plan
+     ↓
+/speckit.implement
+     ↓
+/speckit.checklist
+     ↓
+/speckit.taskstoissues
+```
+
+</div>
+
+<div>
+
+#### Quand l'utiliser
+
+- **Greenfield** — partir d'une idée et arriver à un PRD + tâches
+- **Brownfield** — analyser le codebase avant d'ajouter une feature
+- **Ticket ponctuel** — juste `specify` + `plan` pour un scope réduit
+- **Handoff** — `taskstoissues` pour alimenter le backlog GitHub
+
+</div>
+
+</div>
+
+<!--
 - speckit.taskstoissues : crée automatiquement des issues GitHub depuis les tâches de la spec
-- Peut être utilisé seul ou en complément de Superpowers sur le même projet
 - Peut être utilisé partiellement : juste specify+plan pour un ticket ponctuel
+- Peut être combiné avec Superpowers pour un cycle complet (spec → code → review → git)
 -->
 
 ---
 layout: two-cols-header
 ---
 
-### BMAD Method — multi-agents agile
+### BMAD Method — multi-agents agile (1/2)
 
 <div class="text-sm opacity-70 mt-1">21 rôles spécialisés · Audit trails · Traçabilité complète · Open-source</div>
 
@@ -385,9 +468,13 @@ layout: two-cols-header
 
 #### Présentation
 
-Framework multi-agents agile conçu pour les équipes enterprise. Chaque phase du cycle de vie est prise en charge par un **agent spécialisé** avec un rôle défini, des livrables attendus et une traçabilité complète des décisions.
+Framework multi-agents agile conçu pour les équipes enterprise. Chaque phase du cycle de vie est prise en charge par un **agent spécialisé** avec un rôle défini, des livrables attendus et une traçabilité complète.
 
-#### Agents & rôles clés
+*BMAD = Breakthrough Method for Agile Development*
+
+::right::
+
+#### Agents & rôles clés (parmi 21)
 
 <div class="text-sm mt-2 space-y-1">
 
@@ -401,9 +488,23 @@ Framework multi-agents agile conçu pour les équipes enterprise. Chaque phase d
 
 </div>
 
-::right::
+<!--
+- 21 rôles = granularité fine, chaque agent a un prompt système dédié
+- Audit trails = chaque agent log ses décisions → traçabilité complète pour compliance
+- Adapté aux équipes qui doivent justifier chaque choix technique (finance, santé, défense)
+-->
 
-#### Workflow typique
+---
+layout: default
+---
+
+### BMAD Method — workflow typique (2/2)
+
+<div class="text-sm opacity-70 mt-1">→ GitHub : <a href="https://github.com/bmadcode/BMAD-METHOD">github.com/bmadcode/BMAD-METHOD</a></div>
+
+<div class="grid grid-cols-2 gap-8 mt-6 text-sm">
+
+<div>
 
 ```text
 Brief → Analyst
@@ -412,25 +513,38 @@ PRD → Product Manager
      ↓
 Architecture → Architect
      ↓
-Stories → Dev agents (//parallel)
+Stories → Dev agents (// parallel)
      ↓
 Tests → QA agent
      ↓
 Deploy → DevOps agent
 ```
 
-<div class="border-l-4 border-[#1d3557] pl-4 mt-3 text-sm">
+</div>
 
-**Audit-ready** — chaque décision est tracée, chaque livrable est versionné. Idéal pour les contextes réglementés.
+<div>
+
+#### Quand l'utiliser
+
+- Équipes **enterprise** avec exigences de traçabilité
+- Contextes **réglementés** (finance, santé, défense)
+- Projets nécessitant des **audit trails** complets
+- Organisations qui veulent des **ADRs** automatisés
+
+<div class="border-l-4 border-[#1d3557] pl-4 mt-4">
+
+**Audit-ready** — chaque décision est tracée, chaque livrable est versionné.
+
+</div>
+
+</div>
 
 </div>
 
 <!--
-- BMAD = "Breakthrough Method for Agile Development" (avec AI)
-- 21 rôles = granularité fine, chaque agent a un prompt système dédié
-- Audit trails = chaque agent log ses décisions → traçabilité complète pour compliance
 - Plus lourd à mettre en place que SpecKit ou OpenSpec, mais incomparable en enterprise
-- Adapté aux équipes qui doivent justifier chaque choix technique (finance, santé, défense)
+- BMAD method open-source sur GitHub, documentation et templates inclus
+- Chaque agent = un fichier markdown de prompt système → versionnable dans le repo
 -->
 
 ---
@@ -501,6 +615,7 @@ layout: default
 | **Enterprise** | BMAD | Traçabilité, audit-ready |
 | **Écosystème AWS** | Kiro | Intégration native, support enterprise |
 | **Projet existant** | OpenSpec | Conçu pour évolutions sur codebase |
+| **Utilisateurs Claude Code** | Superpowers + SpecKit | Workflows process et spec natifs, zero config |
 
 </div>
 

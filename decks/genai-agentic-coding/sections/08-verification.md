@@ -10,10 +10,9 @@ layout: section
 layout: quote
 ---
 
-« Software 1.0 easily automates what you can **specify**.<br/>
-Software 2.0 easily automates what you can **verify**. »
+# Software 1.0 easily automates what you can **specify**. Software 2.0 easily automates what you can **verify**.
 
-<div class="text-base opacity-70 mt-4">— Andrej Karpathy</div>
+> Andrej Karpathy, founding member of OpenAI and later the Director of AI at Tesla
 
 <!--
 - Quote fondateur : tout le deck converge ici

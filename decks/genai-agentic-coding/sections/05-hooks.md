@@ -185,7 +185,7 @@ layout: default
     "matcher": "permission_prompt",
     "hooks": [{
       "type": "command",
-      "command": "osascript -e 'display notification \"Human, I need your permission\" with title \"Claude Code\"'",
+      "command": "osascript -e 'display notification \"Human, I need your permission\" with title \"Claude \"'",
       "async": true
     }]
   }]

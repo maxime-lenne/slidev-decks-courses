@@ -2,7 +2,7 @@
 layout: section
 ---
 
-# Skills & Commands
+# Skills, Commands & SubAgents
 
 <div class="text-lg opacity-70 mt-4">20 min · l'écosystème d'extension côté repo</div>
 
@@ -62,7 +62,7 @@ layout: default
 
 <div class="text-center text-sm mt-8 opacity-70">
 
-Trois outils complémentaires — cette section couvre <strong>Skills & Commands</strong>. <span class="text-[#e63946] font-bold">Subagents → section Multi-Agents</span>.
+Trois outils complémentaires.
 
 </div>
 
@@ -277,6 +277,73 @@ Sous-dossier → namespace `nom:sous-cmd`. Permet d'organiser une bibliothèque 
 - Pattern d'équipe : un namespace par grand domaine (debug, deploy, db, security)
 - Permet d'avoir 20+ commandes sans pollution de l'autocomplete
 - À combiner avec un README dans .claude/commands/ pour l'onboarding
+-->
+
+---
+layout: default
+---
+
+### Subagents — système multi-agent
+
+<br>
+
+Les Subagents sont des **agents spécialisés** qui tournent dans un **contexte isolé**.
+Claude délègue via le **Task tool** et reçoit un résumé en retour.
+
+#### 3 agents intégrés (Claude Code)
+
+<div class="text-sm leading-tight mt-4">
+
+| Agent | Modèle | Accès | Usage |
+|-------|--------|-------|-------|
+| **Explore** | Haiku | Lecture seule | Recherche rapide dans le code |
+| **Plan** | Sonnet | Lecture seule | Collecte de contexte pour planification |
+| **General-purpose** | Sonnet | Complet | Tâches multi-étapes complexes |
+
+</div>
+
+<!--
+- L'isolation du contexte est la valeur clé : le subagent ne pollue pas ton contexte principal
+- Explore = excellent pour les codebases inconnues, ne consomme presque rien
+- General-purpose = à utiliser quand tu as besoin de déléguer une vraie tâche
+-->
+
+---
+layout: default
+---
+
+### Créer un subagent personnalisé
+
+<br>
+
+**Fichier** : `.claude/agents/code-reviewer.md`
+
+```markdown
+---
+name: code-reviewer
+description: Expert code review specialist. Use PROACTIVELY after code changes.
+tools: Read, Grep, Glob, Bash
+model: sonnet
+---
+
+You are a senior code reviewer. When invoked:
+1. Run `git diff` to identify modified files
+2. Focus on security issues, code quality, and performance
+3. Provide a prioritized action list
+
+Never suggest changes unrelated to the diff.
+```
+
+<div class="text-sm opacity-70 mt-4">
+
+**Pattern** : définir 2-3 agents par projet, commités dans `.claude/agents/` → l'équipe en bénéficie.
+
+</div>
+
+<!--
+- Le mot "PROACTIVELY" dans la description fait que Claude l'invoque sans qu'on lui demande
+- tools: limiter aux outils nécessaires = plus rapide, moins risqué
+- model: Sonnet par défaut, Haiku si la tâche est simple (lint, format)
 -->
 
 ---

@@ -7,6 +7,48 @@ layout: section-liquid
 <div class="text-lg opacity-70 mt-4">20 min · 4 échecs · CLAUDE.md hiérarchique · ADRs</div>
 
 ---
+layout: two-cols-header
+---
+
+### Le problème du prompting direct
+
+::left::
+
+#### Ce qu'on voudrait faire
+
+```text
+Fais-moi une feature de login
+```
+
+#### Ce que l'agent comprend
+
+- Login avec quoi ? Email ? OAuth ?
+- Quel design ? Quelle validation ?
+- Où stocker la session ?
+- Quelles erreurs gérer ?
+
+::right::
+
+#### Résultat
+
+- Code **bancal**
+- Manque de **cas limites**
+- Design **aléatoire**
+- **Refactoring** immédiat nécessaire
+
+<div class="border-l-4 border-[#e63946] pl-4 mt-3 text-sm">
+
+**Manque de contexte = agent qui improvise.**
+La spec, c'est précisément l'antidote.
+
+</div>
+
+<!--
+- Pour faire rire la salle : montrer le diff produit par un prompt vague, c'est toujours instructif
+- Le réflexe naturel du dev : "il fallait juste mieux prompter" — mais non, il fallait spécifier
+-->
+
+---
 layout: default
 ---
 
