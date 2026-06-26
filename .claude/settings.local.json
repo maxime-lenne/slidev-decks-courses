@@ -90,7 +90,8 @@
       "Bash(grep -c \"^---$\" /Users/maxime-lenne/Documents_Non_iCloud/workspace_js_ts/slidev-decks-simplon/decks/genai-agentic-coding/sections/02-contexte.md)",
       "WebFetch(domain:api.anthropic.com)",
       "Bash(tar -xf raw.tar)",
-      "Skill(wwt-claude-skills:slidev:add-slide)"
+      "Skill(wwt-claude-skills:slidev:add-slide)",
+      "Bash(perl -i -pe 's{^  /\\\\\\\\p\\\\{Extended_Pictographic\\\\}.*\\\\*/gu$}{  new RegExp\\(\\\\x27\\\\\\\\\\\\\\\\p{Extended_Pictographic}\\(\\\\\\\\\\\\\\\\p{Emoji_Modifier}|\\\\\\\\\\\\\\\\uFE0F\\)?\\(\\\\\\\\\\\\\\\\u200D\\\\\\\\\\\\\\\\p{Extended_Pictographic}\\(\\\\\\\\\\\\\\\\p{Emoji_Modifier}|\\\\\\\\\\\\\\\\uFE0F\\)?\\)*\\\\x27, \\\\x27gu\\\\x27\\)}' themes/maxime-lenne/setup/wrap-heading-emoji.ts)"
     ],
     "deny": [],
     "ask": []

@@ -195,6 +195,15 @@ strong code {
   -webkit-background-clip: border-box;
 }
 
+/* Emoji in headings must keep their native colors, not the heading gradient.
+   Wrapped automatically by setup/wrap-heading-emoji.ts */
+.ml-emoji {
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: initial;
+}
+
 pre {
   background-color: var(--ml-code-bg) !important;
   border: 1px solid var(--ml-border);
