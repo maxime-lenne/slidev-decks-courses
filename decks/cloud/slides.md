@@ -92,3 +92,7 @@ src: ./sections/10-atelier-brief.md
 ---
 src: ./sections/11-cloture.md
 ---
+
+---
+src: ../templates/slides.md#2
+---

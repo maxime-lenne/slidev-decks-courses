@@ -111,3 +111,7 @@ src: ./sections/10-ecosysteme.md
 ---
 src: ./sections/12-wrap-up.md
 ---
+
+---
+src: ../templates/slides.md#2
+---

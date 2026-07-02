@@ -71,3 +71,7 @@ src: ./sections/05-securite-anti-patterns.md
 ---
 src: ./sections/06-conclusion.md
 ---
+
+---
+src: ../templates/slides.md#2
+---

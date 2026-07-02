@@ -107,3 +107,7 @@ src: ./sections/14-game-day.md
 ---
 src: ./sections/15-wrap-up.md
 ---
+
+---
+src: ../templates/slides.md#2
+---

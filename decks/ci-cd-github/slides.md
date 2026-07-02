@@ -73,3 +73,7 @@ src: ./sections/06-securite.md
 ---
 src: ./sections/07-conclusion.md
 ---
+
+---
+src: ../templates/slides.md#2
+---
