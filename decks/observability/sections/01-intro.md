@@ -137,3 +137,11 @@ layout: statement
 - Tout est vert côté infra, mais le système IA est dégradé
 - Transition : c'est exactement ce que l'observability résout
 -->
+
+---
+layout: quote
+---
+
+# Quand on peut mesurer ce dont on parle et l'exprimer en chiffres, on en sait quelque chose ; mais quand on ne peut pas le mesurer, quand on ne peut pas l'exprimer en chiffres, notre connaissance est d'une nature maigre et insatisfaisante.
+
+> Lord Kelvin, physicien, in *Electrical Units of Measurement* (1883)

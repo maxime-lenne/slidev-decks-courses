@@ -7,6 +7,14 @@ layout: section-liquid
 <div class="text-lg opacity-70 mt-4">4 min · Raisonner, Agir, Itérer · Pattern ReAct · create_agent · Memory</div>
 
 ---
+layout: quote
+---
+
+# Agents are systems where LLMs dynamically direct their own processes and tool usage, maintaining control over how they accomplish tasks.
+
+> Erik Schluntz & Barry Zhang, Building Effective Agents, Anthropic
+
+---
 layout: two-cols-header
 ---
 

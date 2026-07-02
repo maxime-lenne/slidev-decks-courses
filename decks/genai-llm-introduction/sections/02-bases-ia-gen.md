@@ -11,6 +11,14 @@ layout: section-liquid
 *1h30 — 9h00 → 10h30*
 
 ---
+layout: quote
+---
+
+# Les machines peuvent-elles penser ?
+
+> Alan Turing, mathématicien, article fondateur de l'IA « Computing Machinery and Intelligence » (1950)
+
+---
 layout: statement
 ---
 

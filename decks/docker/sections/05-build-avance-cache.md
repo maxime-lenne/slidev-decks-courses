@@ -14,6 +14,14 @@ Le cache et le multi-stage build sont des compétences clés
 -->
 
 ---
+layout: quote
+---
+
+# There are only two hard things in Computer Science: cache invalidation and naming things.
+
+> Phil Karlton, engineer, Netscape
+
+---
 
 ### Comment fonctionne le cache Docker
 

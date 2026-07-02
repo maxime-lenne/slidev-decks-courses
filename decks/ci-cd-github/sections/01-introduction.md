@@ -123,3 +123,11 @@ layout: default
 - Public mixte : adapter le débit aux nouveaux pendant la partie 1
 - Le CTA est explicite dès maintenant
 -->
+
+---
+layout: quote
+---
+
+# Continuous Integration doesn't get rid of bugs, but it does make them dramatically easier to find and remove.
+
+> Martin Fowler, Chief Scientist, ThoughtWorks

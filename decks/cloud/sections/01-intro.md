@@ -128,3 +128,11 @@ layout: default
 - Le brief valide tout ça en soutenance (7 min démo + 3 min Q&A)
 - Annoncer la rétrospective de vendredi 16h30 dès maintenant
 -->
+
+---
+layout: quote
+---
+
+# A distributed system is one in which the failure of a computer you didn't even know existed can render your own computer unusable.
+
+> Leslie Lamport, Turing Award laureate & pioneer of distributed systems theory

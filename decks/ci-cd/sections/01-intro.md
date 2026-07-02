@@ -644,3 +644,11 @@ Si l'un de ces 3 piliers manque, vous avez un script à distance — pas une pip
 - Sans traçabilité, debugger devient de l'archéologie
 - Sans observabilité, une pipeline qui ralentit bloque l'équipe — silencieusement
 -->
+
+---
+layout: quote
+---
+
+# Continuous Integration doesn't get rid of bugs, but it does make them dramatically easier to find and remove.
+
+> Martin Fowler

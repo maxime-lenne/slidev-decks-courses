@@ -7,6 +7,14 @@ layout: section-liquid
 <div class="text-lg opacity-70 mt-4">JSON-RPC 2.0 · Lifecycle · Capabilities · Version 2025-11-25</div>
 
 ---
+layout: quote
+---
+
+# Be conservative in what you send, be liberal in what you accept.
+
+> Jon Postel, RFC 793 (TCP), 1981 — l'un des pères fondateurs des protocoles Internet
+
+---
 layout: default
 ---
 
