@@ -236,7 +236,7 @@ Cliquez pour voir changer le contenu
 
 Éléments déplaçables
 
-<v-drag text-4xl>
+<v-drag text-4xl pos="-190,0,0,0">
   <div class="gradient-border inline-block">
     <div class="gradient-border-content">
       Déplacez-moi ! 👆

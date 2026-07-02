@@ -32,8 +32,10 @@ Project task tracking.
 - ajout slide mcp à côté du dev (figma, Pencil..)
 - ajout tooling : git, ide, tty, compteur de token (codexbar), stack ai builder,...
 - workflow
-- tri take away
 - demo multi agents
+- photo
+- lien vers slide rappel
+- skills : ajouter une slide : ou trouver des skills (skills.sh par vercel), pour les créer / valider / optimiser / personaliser utiliser une skills de création de skills (inception), créer des plugins pour partager avec votre équipes
 
 ## Completed
 
