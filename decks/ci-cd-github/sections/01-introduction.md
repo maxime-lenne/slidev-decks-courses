@@ -125,6 +125,23 @@ layout: default
 -->
 
 ---
+layout: toc
+items:
+- title: CI/CD démystifié
+  to: 8
+- title: Anatomie d'un workflow
+  to: 13
+- title: Premier workflow CI Python
+  to: 20
+- title: Stratégie matrix
+  to: 26
+- title: Sécurité — survol
+  to: 34
+- title: Récap & action
+  to: 38
+---
+
+---
 layout: quote
 ---
 

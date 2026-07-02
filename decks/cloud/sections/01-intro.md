@@ -130,6 +130,31 @@ layout: default
 -->
 
 ---
+layout: toc
+items:
+- title: Module 1 — Concepts cloud
+  to: 7
+- title: Module 2 — GCP overview + Réseau
+  to: 22
+- title: Module 3 — Cloud Run + Artifact Registry
+  to: 36
+- title: Module 4 — Cloud SQL + pgvector
+  to: 49
+- title: Module 5 — Cloud Storage (GCS)
+  to: 60
+- title: Module 6 — IAM + Secrets
+  to: 69
+- title: Module 7 — Services Data GCP
+  to: 86
+- title: Module 8 — Services AI/ML GCP
+  to: 96
+- title: Atelier
+  to: 106
+- title: Clôture
+  to: 112
+---
+
+---
 layout: quote
 ---
 

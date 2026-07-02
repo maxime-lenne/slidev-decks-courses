@@ -646,6 +646,21 @@ Si l'un de ces 3 piliers manque, vous avez un script à distance — pas une pip
 -->
 
 ---
+layout: toc
+items:
+- title: Tester en CI
+  to: 22
+- title: Builder en CI
+  to: 31
+- title: Livrer & Déployer
+  to: 41
+- title: Sécurité & Anti-patterns
+  to: 51
+- title: À retenir
+  to: 54
+---
+
+---
 layout: quote
 ---
 

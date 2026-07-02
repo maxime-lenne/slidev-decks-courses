@@ -56,10 +56,27 @@ layout: two-cols-header
 - Orchestrer des applications multi-services avec **Docker Compose**
 
 ---
-layout: default
+layout: toc
+items:
+- title: Pourquoi Docker ?
+  to: 5
+- title: Installation
+  to: 8
+- title: Concepts fondamentaux
+  to: 11
+- title: Dockerfile & Build
+  to: 16
+- title: Build avancé & Cache
+  to: 20
+- title: Registry, Volumes & Réseaux
+  to: 26
+- title: Docker Compose
+  to: 31
+- title: Sécurité & Bonnes pratiques
+  to: 37
+- title: Conclusion & What's Next
+  to: 40
 ---
-
-<Toc />
 
 ---
 src: ../templates/slides.md#1

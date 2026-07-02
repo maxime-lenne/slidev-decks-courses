@@ -237,6 +237,42 @@
   background-clip: text;
 }
 
+/* TOC Layout - Table of contents, base Link component + curated items */
+.slidev-layout.toc {
+  @apply h-full flex items-center gap-16 px-4;
+}
+
+.slidev-layout.toc .toc-title h1 {
+  @apply text-[4.5rem] font-black leading-[1.05] uppercase tracking-tight w-2/5 m-0;
+  color: #457b9d;
+}
+
+.slidev-layout.toc .toc-list {
+  @apply w-3/5 space-y-3 text-lg;
+  list-style: none;
+}
+
+.slidev-layout.toc .toc-item {
+  @apply flex gap-5 items-start;
+}
+
+.slidev-layout.toc .toc-index {
+  @apply text-xl font-black;
+  color: #457b9d;
+  min-width: 2rem;
+}
+
+.slidev-layout.toc .toc-item a {
+  @apply opacity-80;
+  border: none;
+  transition: color 0.15s, opacity 0.15s;
+}
+
+.slidev-layout.toc .toc-item a:hover {
+  @apply opacity-100;
+  color: #457b9d;
+}
+
 /* Fact/Statement Layout - Big impact numbers or statements */
 .slidev-layout.fact,
 .slidev-layout.statement {

@@ -49,24 +49,27 @@ Maxime Lenne · 2026
 -->
 
 ---
-layout: default
+layout: toc
+items:
+- title: MCP - Model Control Protocol
+  to: 5
+- title: Architecture
+  to: 9
+- title: Spécifications du protocole
+  to: 15
+- title: Server
+  to: 25
+- title: Client
+  to: 31
+- title: Extensions du protocole
+  to: 37
+- title: FastMCP
+  to: 41
+- title: Écosystème
+  to: 49
+- title: Take-aways
+  to: 54
 ---
-
-<script setup>
-const tocItems = [
-  { title: 'Présentation & Contexte', to: 5 },
-  { title: 'Architectures', to: 9 },
-  { title: 'Protocole et Spécifications', to: 15 },
-  { title: 'Server', to: 24 },
-  { title: 'Client', to: 30 },
-  { title: 'Extension du protocole', to: 36 },
-  { title: 'Build with FastMCP', to: 40 },
-  { title: 'Ecosystem', to: 48 },
-  { title: 'Conclusion', to: 53 },
-]
-</script>
-
-<TocCustom :items="tocItems" />
 
 ---
 src: ./sections/01-intro.md

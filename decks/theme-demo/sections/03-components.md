@@ -79,22 +79,16 @@ Composant `<Toc />` built-in Slidev — auto-détection à partir des titres
 <Toc maxDepth="1" />
 
 ---
-
-# TocCustom — items manuels (thème)
-
-`<TocCustom>` du thème `maxime-lenne` — entrées explicites avec layout custom
-
-<script setup>
-const tocItems = [
-  { title: 'Layouts', to: 2 },
-  { title: 'Markdown', to: 15 },
-  { title: 'Components', to: 25 },
-  { title: 'Diagrams', to: 50 },
-]
-</script>
-
-<TocCustom :items="tocItems" />
-
+layout: toc
+items:
+- title: Layouts
+  to: 2
+- title: Markdown
+  to: 15
+- title: Components
+  to: 25
+- title: Diagrams
+  to: 50
 ---
 
 # LightOrDark Component

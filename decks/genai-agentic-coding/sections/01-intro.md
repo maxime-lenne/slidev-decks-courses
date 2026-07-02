@@ -94,26 +94,31 @@ src: ../../templates/slides.md#1
 ---
 
 ---
-layout: default
+layout: toc
+items:
+- title: Setup & positionnement
+  to: 2
+- title: La stack
+  to: 13
+- title: Le contexte
+  to: 23
+- title: PRD & Spec-Driven Development
+  to: 38
+- title: Skills, Commands & SubAgents
+  to: 55
+- title: 'Hooks : fermer la boucle'
+  to: 65
+- title: Tools, MCP & CLI
+  to: 71
+- title: Les 8 piliers de la vérification
+  to: 76
+- title: Multi-Agents
+  to: 82
+- title: Next Steps
+  to: 89
+- title: Take-aways & ressources
+  to: 93
 ---
-
-<script setup>
-const tocItems = [
-  { title: 'Setup & positionnement', to: 2 },
-  { title: 'La stack', to: 10 },
-  { title: 'Le contexte', to: 20 },
-  { title: 'PRD & Spec-Driven Development', to: 35 },
-  { title: 'Skills & Commands', to: 45 },
-  { title: 'Hooks : fermer la boucle', to: 55 },
-  { title: 'MCP', to: 61 },
-  { title: 'Les 8 piliers de la vérification', to: 66 },
-  { title: 'Multi-Agents', to: 72 },
-  { title: 'Next Steps', to: 82 },
-  { title: 'Take-aways & ressources', to: 86 },
-]
-</script>
-
-<TocCustom :items="tocItems" />
 
 ---
 layout: section
