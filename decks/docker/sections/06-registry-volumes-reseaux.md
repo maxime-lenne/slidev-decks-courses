@@ -1,10 +1,12 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # Registry, Volumes & Réseaux
 
 Stocker, persister, communiquer
+
+<div class="text-lg opacity-70 mt-4">20 min · registry · volumes · bind mounts · réseaux & DNS</div>
 
 <!--
 Trois concepts complémentaires pour un usage réel de Docker

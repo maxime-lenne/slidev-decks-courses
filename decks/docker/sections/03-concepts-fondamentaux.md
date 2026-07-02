@@ -1,10 +1,12 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # Concepts fondamentaux
 
 Images, Conteneurs, Cycle de vie
+
+<div class="text-lg opacity-70 mt-4">25 min · images · layers · conteneurs · cycle de vie · commandes essentielles</div>
 
 <!--
 Ces concepts sont la base de tout ce qui suit

@@ -1,8 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # Module 5
+
+<div class="text-lg opacity-70 mt-4">30 min · bilan · quiz d'orientation · les 3 formations · prochaine étape</div>
 
 ## Orientations & Formations
 

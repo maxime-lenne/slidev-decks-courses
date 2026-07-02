@@ -1,10 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # À retenir
 
-Checklist · Maturité · Outils · Action
+<div class="text-lg opacity-70 mt-4">20 min · Checklist · Maturité · Outils · Action</div>
 
 <!--
 - Dernière ligne droite : récap actionnable

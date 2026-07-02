@@ -1,8 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # Module 3
+
+<div class="text-lg opacity-70 mt-4">1h30 · anatomie d'un prompt · patterns de prompting · stratégies Anthropic · économie des tokens</div>
 
 ## Prompt Engineering
 

@@ -1,10 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # Builder en CI
 
-Build once · Immutabilité · SemVer · Registres
+<div class="text-lg opacity-70 mt-4">15 min · Build once · Immutabilité · SemVer · Registres</div>
 
 <!--
 - Le job build = transformer du code source en artefact déployable

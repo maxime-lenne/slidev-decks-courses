@@ -1,5 +1,5 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # MCP : Model Control Protocol

@@ -1,8 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # Module 2
+
+<div class="text-lg opacity-70 mt-4">1h30 · inférence · tokens · fenêtre de contexte · température · choix du modèle</div>
 
 ## LLM : Inférence, Tokens, Modèles & Multimodal
 

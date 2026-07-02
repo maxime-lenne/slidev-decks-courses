@@ -1,8 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # 5 · Sécurité — survol
+
+<div class="text-lg opacity-70 mt-4">6 min · 3 réflexes sécurité · 5 règles d'or · erreurs classiques</div>
 
 Les 3 réflexes essentiels + les 5 règles d'or
 

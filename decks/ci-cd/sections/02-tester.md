@@ -1,10 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # Tester en CI
 
-La pyramide des tests · Déterminisme · Lint · Couverture
+<div class="text-lg opacity-70 mt-4">15 min · La pyramide des tests · Déterminisme · Lint · Couverture</div>
 
 <!--
 - C'est le PILIER de la CI — sans tests fiables, le reste s'écroule

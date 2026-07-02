@@ -1,10 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # Sécurité & Anti-patterns
 
-4 piliers · Top 5 des pièges à éviter
+<div class="text-lg opacity-70 mt-4">10 min · 4 piliers · Top 5 des pièges à éviter</div>
 
 <!--
 - Sécurité = survol uniquement, on n'a pas le temps pour un cours DevSecOps

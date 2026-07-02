@@ -1,8 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # Module 4
+
+<div class="text-lg opacity-70 mt-4">1h · RAG · embeddings · agents IA · architecture multi-agents · MCP</div>
 
 ## Concepts clefs : RAG, Agents & MCP
 

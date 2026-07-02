@@ -1,10 +1,12 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # Docker Compose
 
 Orchestrer des applications multi-services
+
+<div class="text-lg opacity-70 mt-4">30 min · docker-compose.yml · commandes Compose · .env · cas pratique FastAPI</div>
 
 <!--
 Docker Compose simplifie la gestion de plusieurs conteneurs

@@ -1,8 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # Module 1
+
+<div class="text-lg opacity-70 mt-4">1h30 · histoire de l'IA · IA vs ML vs DL vs Gen AI · Transformer · entraînement des LLM</div>
 
 ## Bases de l'IA Générative
 

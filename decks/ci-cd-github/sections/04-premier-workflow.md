@@ -1,8 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # 3 · Premier workflow CI Python
+
+<div class="text-lg opacity-70 mt-4">8 min · checkout → setup-python → pytest → artifacts · exercice guidé</div>
 
 checkout → setup → install → pytest → artifacts
 

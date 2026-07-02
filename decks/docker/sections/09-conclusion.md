@@ -1,8 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # Conclusion & What's Next
+
+<div class="text-lg opacity-70 mt-4">20 min · récapitulatif · cheat sheet · what's next · ressources</div>
 
 <!--
 Récapitulatif de tout ce qu'on a vu

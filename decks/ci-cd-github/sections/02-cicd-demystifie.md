@@ -1,8 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # 1 · CI/CD démystifié
+
+<div class="text-lg opacity-70 mt-4">5 min · CI vs CD · GitHub Actions · coûts · le pipeline</div>
 
 Concepts essentiels et positionnement de GitHub Actions
 

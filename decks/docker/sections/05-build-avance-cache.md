@@ -1,10 +1,12 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # Build avancé & Cache
 
 Optimiser vos images pour la production
+
+<div class="text-lg opacity-70 mt-4">25 min · cache · multi-stage builds · ARG vs ENV · .dockerignore</div>
 
 <!--
 Cette section est la plus technique

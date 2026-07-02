@@ -1,8 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # 6 · Récap & action
+
+<div class="text-lg opacity-70 mt-4">4 min · synthèse · prochaines étapes</div>
 
 Ce qu'on a vu, ce que vous allez faire
 

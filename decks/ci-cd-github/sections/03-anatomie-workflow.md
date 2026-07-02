@@ -1,8 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # 2 · Anatomie d'un workflow
+
+<div class="text-lg opacity-70 mt-4">10 min · Workflow → Jobs → Steps · déclencheurs · jobs & needs · pièges YAML</div>
 
 YAML, hiérarchie, déclencheurs, runners
 

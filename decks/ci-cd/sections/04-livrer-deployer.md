@@ -1,10 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # Livrer & Déployer
 
-Promotion · Configuration runtime · Stratégies · Rollback
+<div class="text-lg opacity-70 mt-4">15 min · Promotion · Configuration runtime · Stratégies · Rollback</div>
 
 <!--
 - Job de delivery / deployment

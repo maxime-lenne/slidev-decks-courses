@@ -1,8 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
 # 4 · Stratégie matrix
+
+<div class="text-lg opacity-70 mt-4">12 min · produit cartésien · include/exclude · fail-fast · exercice</div>
 
 Tester sur plusieurs configurations sans dupliquer le code
 
