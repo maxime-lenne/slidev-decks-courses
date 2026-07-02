@@ -258,32 +258,8 @@ id: presentation
 </div>
 
 ---
-layout: end
-background: https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1920
-class: text-left
+layout: cover
+background: <https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920>
 ---
 
-<div class="absolute inset-0 bg-gradient-to-r from-[#0f172a]/95 via-[#0f172a]/80 to-transparent" />
-
-<div class="relative z-10 h-full flex items-end pb-16 pl-4 gap-16">
-  <div class="flex-1">
-    <div class="text-[#457b9d] text-sm font-bold uppercase tracking-widest mb-4">Merci</div>
-    <h1 class="text-6xl font-black leading-tight mb-8">
-      Let's <br><span class="text-[#457b9d]">build <br>together</span>
-    </h1>
-    <div class="text-sm opacity-60 mb-4">
-      <a href="mailto:hello@maxime-lenne.fr" class="flex items-center gap-2 no-underline opacity-75 hover:opacity-100">✉️ hello@maxime-lenne.fr</a>
-      <a href="https://maxime-lenne.fr" target="_blank" class="flex items-center gap-2 no-underline opacity-80 hover:opacity-100">🌐 maxime-lenne.fr</a>
-    </div>
-    <div class="flex flex-col items-center gap-2">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://www.linkedin.com/in/maximelenne/&bgcolor=0f172a&color=FFF&margin=6" class="w-40 h-40 rounded-lg" alt="LinkedIn QR" />
-      <div class="text-xs opacity-50">LinkedIn</div>
-    </div>
-  </div>
-</div>
-
-<div class="text-xs opacity-30">Slides built with <a href="https://sli.dev" class="no-underline">sli.dev</a> · Thème maxime-lenne</div>
-
-<!--
-Call to action final — laisser le QR code visible pendant les questions
--->
+<ThankYou deck-slug="ci-cd" />

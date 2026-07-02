@@ -171,33 +171,10 @@ Le plus important : passer à la pratique immédiatement.
 
 ---
 layout: cover
+background: <https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920>
 ---
 
-# Merci
-
-**Questions ? Retours ? Échanges ?**
-
-<div class="mt-8 grid grid-cols-2 gap-4 text-sm text-center max-w-xl mx-auto">
-
-<div class="p-3 rounded-lg bg-slate-800/50 border border-slate-700">
-
-**Socle commun**<br>
-Ce module ✅
-
-</div>
-
-<div class="p-3 rounded-lg bg-slate-800/50 border border-slate-700">
-
-**Formation**<br>
-Métiers · Builders · Engineers
-
-</div>
-
-</div>
-
-<div class="mt-10 text-slate-500 text-xs">
-  Bootcamp IA · Fondamentaux Gen AI · 2026
-</div>
+<ThankYou deck-slug="genai-llm-introduction" />
 
 <!--
 Q&A final — 45 minutes.

@@ -77,11 +77,7 @@ layout: cover
 background: <https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920>
 ---
 
-<ThankYou
-deck-slug="gen-ai-ai-engineer-mcp-deep-dive"
-title="Merci pour votre attention !
-:exercises=""
-/>
+<ThankYou deck-slug="genai-ai-engineer-mcp-deep-dive" />
 
 ---
 src: ../../templates/slides.md#2
