@@ -94,31 +94,17 @@ src: ../../templates/slides.md#1
 ---
 
 ---
-layout: toc
-items:
-- title: Setup & positionnement
-  to: 2
-- title: La stack
-  to: 13
-- title: Le contexte
-  to: 23
-- title: PRD & Spec-Driven Development
-  to: 38
-- title: Skills, Commands & SubAgents
-  to: 55
-- title: 'Hooks : fermer la boucle'
-  to: 65
-- title: Tools, MCP & CLI
-  to: 71
-- title: Les 8 piliers de la vérification
-  to: 76
-- title: Multi-Agents
-  to: 82
-- title: Next Steps
-  to: 89
-- title: Take-aways & ressources
-  to: 93
+hideInToc: true
+layout: default
 ---
+
+<div class="toc-page">
+
+# Table of Contents
+
+<Toc :max-depth="1" />
+
+</div>
 
 ---
 layout: section
@@ -305,6 +291,7 @@ layout: section
 # Demo
 
 ---
+hideInToc: true
 layout: statement
 ---
 

@@ -563,6 +563,7 @@ layout: default
 -->
 
 ---
+hideInToc: true
 layout: center
 ---
 

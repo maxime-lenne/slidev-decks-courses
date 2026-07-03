@@ -7,6 +7,7 @@ layout: section-liquid
 <div class="text-lg opacity-70 mt-4">15 min · Spec > Code · les frameworks AIDD</div>
 
 ---
+hideInToc: true
 layout: quote
 ---
 
@@ -93,6 +94,7 @@ layout: two-cols-header
 -->
 
 ---
+hideInToc: true
 layout: fact
 ---
 

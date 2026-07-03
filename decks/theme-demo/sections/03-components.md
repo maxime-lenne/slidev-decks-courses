@@ -79,17 +79,16 @@ Composant `<Toc />` built-in Slidev — auto-détection à partir des titres
 <Toc maxDepth="1" />
 
 ---
-layout: toc
-items:
-- title: Layouts
-  to: 2
-- title: Markdown
-  to: 15
-- title: Components
-  to: 25
-- title: Diagrams
-  to: 50
+layout: default
 ---
+
+<div class="toc-page">
+
+# Table of Contents
+
+<Toc :max-depth="1" />
+
+</div>
 
 # LightOrDark Component
 

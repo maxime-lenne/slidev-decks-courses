@@ -11,6 +11,7 @@ layout: section-liquid
 *1h30 — 9h00 → 10h30*
 
 ---
+hideInToc: true
 layout: quote
 ---
 
@@ -19,6 +20,7 @@ layout: quote
 > Alan Turing, mathématicien, article fondateur de l'IA « Computing Machinery and Intelligence » (1950)
 
 ---
+hideInToc: true
 layout: statement
 ---
 
@@ -32,6 +34,7 @@ Laisser la phrase résonner avant de passer à la suite.
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -56,6 +59,7 @@ On est aujourd'hui dans une période d'accélération sans précédent.
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -95,6 +99,7 @@ La Gen AI (2020+) = DL + Transformers + entraînement sur des quantités massive
 -->
 
 ---
+hideInToc: true
 layout: two-cols-header
 ---
 
@@ -137,6 +142,7 @@ Les LLM sont les plus polyvalents — c'est ce qu'on va étudier aujourd'hui.
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -192,6 +198,7 @@ Le scale est la clé : GPT-3 = 175B paramètres, GPT-4 ~ 1T paramètres (estimat
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -247,6 +254,7 @@ ChatGPT a rendu ça populaire en nov. 2022.
 -->
 
 ---
+hideInToc: true
 layout: two-cols-header
 ---
 
@@ -297,6 +305,7 @@ Pour des tâches créatives (brainstorming, rédaction) : temperature entre 0.7 
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -325,6 +334,7 @@ Date de coupure : Claude 4 a une date de coupure en août 2025.
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -354,6 +364,7 @@ DeepSeek = révolution prix en janvier 2025.
 -->
 
 ---
+hideInToc: true
 layout: default
 class: text-center
 ---

@@ -364,6 +364,7 @@ gcloud sql backups restore <ID> \
 -->
 
 ---
+hideInToc: true
 layout: center
 ---
 

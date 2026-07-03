@@ -52,6 +52,7 @@ done in 0.12s for user_42
 </div>
 
 ---
+hideInToc: true
 layout: center
 ---
 
@@ -182,6 +183,7 @@ graph LR
 <div class="text-center text-sm mt-6 opacity-70">La <strong>qualité du log</strong> se décide à l'<strong>étape 1</strong>.</div>
 
 ---
+hideInToc: true
 layout: fact
 ---
 
@@ -447,6 +449,7 @@ Sur le squelette d'API fourni, ajouter :
 <div class="text-sm mt-8 opacity-60">À conserver dans votre projet brief — base pour M3 (Prometheus).</div>
 
 ---
+hideInToc: true
 layout: center
 ---
 

@@ -28,25 +28,17 @@ layout: two-cols-header
 - Appréhender LangGraph &amp; LangSmith en production
 
 ---
-layout: toc
-items:
-- title: Contexte et présentation
-  to: 5
-- title: Les Composants Fondamentaux
-  to: 9
-- title: Les Chaînes (Chains)
-  to: 14
-- title: RAG
-  to: 17
-- title: Agents & Tools
-  to: 21
-- title: 'Exemple Complet: Agent RAG'
-  to: 27
-- title: En conclusion
-  to: 32
-- title: Au-delà de LangChain
-  to: 36
+hideInToc: true
+layout: default
 ---
+
+<div class="toc-page">
+
+# Table of Contents
+
+<Toc :max-depth="1" />
+
+</div>
 
 ---
 src: ../../templates/slides.md#1

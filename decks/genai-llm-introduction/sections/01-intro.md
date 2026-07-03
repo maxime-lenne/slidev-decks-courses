@@ -1,4 +1,5 @@
 ---
+hideInToc: true
 layout: default
 class: text-center
 ---
@@ -60,16 +61,14 @@ Déjeuner de 12h15 à 14h.
 -->
 
 ---
-layout: toc
-items:
-- title: 'Module 1 — Bases de l''IA Générative'
-  to: 5
-- title: 'Module 2 — LLM : Inférence, Tokens, Modèles & Multimodal'
-  to: 17
-- title: Module 3 — Prompt Engineering
-  to: 28
-- title: 'Module 4 — Concepts clefs : RAG, Agents & MCP'
-  to: 37
-- title: Module 5 — Orientations & Formations
-  to: 49
+hideInToc: true
+layout: default
 ---
+
+<div class="toc-page">
+
+# Table of Contents
+
+<Toc :max-depth="1" />
+
+</div>

@@ -481,6 +481,7 @@ graph TD
 -->
 
 ---
+hideInToc: true
 layout: center
 ---
 

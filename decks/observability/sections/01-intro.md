@@ -120,6 +120,7 @@ layout: default
 -->
 
 ---
+hideInToc: true
 layout: statement
 ---
 
@@ -139,35 +140,20 @@ layout: statement
 -->
 
 ---
-layout: toc
-items:
-- title: 'Module 1 — Pourquoi l''observability ?'
-  to: 8
-- title: Module 2 — Logging structuré
-  to: 22
-- title: Module 3 — Métriques & Prometheus
-  to: 48
-- title: Module 4 — Grafana & dashboards
-  to: 67
-- title: Module bonus — OpenTelemetry
-  to: 80
-- title: Module 5 — Alerting
-  to: 95
-- title: Module 6 — APM & tracing distribué
-  to: 113
-- title: Module bonus — Synthetics
-  to: 123
-- title: Module 7 — Incident management
-  to: 133
-- title: Module 8 — ML & monitoring modèle
-  to: 144
-- title: Module 9 — LLM & tracing d'agents
-  to: 156
-- title: Wrap-up
-  to: 182
+hideInToc: true
+layout: default
 ---
 
+<div class="toc-page">
+
+# Table of Contents
+
+<Toc :max-depth="1" />
+
+</div>
+
 ---
+hideInToc: true
 layout: quote
 ---
 

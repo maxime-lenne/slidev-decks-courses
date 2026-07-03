@@ -7,6 +7,7 @@ layout: section-liquid
 <div class="text-lg opacity-70 mt-4">JSON-RPC 2.0 · Lifecycle · Capabilities · Version 2025-11-25</div>
 
 ---
+hideInToc: true
 layout: quote
 ---
 

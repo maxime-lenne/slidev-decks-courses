@@ -14,6 +14,7 @@ Le cache et le multi-stage build sont des compétences clés
 -->
 
 ---
+hideInToc: true
 layout: quote
 ---
 

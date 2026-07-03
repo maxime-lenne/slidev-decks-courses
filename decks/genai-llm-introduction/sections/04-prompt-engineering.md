@@ -11,6 +11,7 @@ layout: section-liquid
 *1h30 — 14h00 → 15h30*
 
 ---
+hideInToc: true
 layout: statement
 ---
 
@@ -27,6 +28,7 @@ La plupart du temps, le problème vient du prompt, pas du modèle.
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -94,6 +96,7 @@ La contrainte de format est souvent oubliée. Elle est pourtant cruciale pour l'
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -167,6 +170,7 @@ Chain of thought = technique découverte par Google en 2022, maintenant intégr�
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -242,6 +246,7 @@ En combinant ces 4 stratégies, on peut construire des workflows complexes.
 -->
 
 ---
+hideInToc: true
 layout: two-cols-header
 ---
 
@@ -293,6 +298,7 @@ C'est l'outil de base pour construire des applications IA.
 -->
 
 ---
+hideInToc: true
 layout: default
 class: text-center
 ---
@@ -330,6 +336,7 @@ Comparer en groupe : quelles contraintes de format ont été ajoutées ?
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -380,6 +387,7 @@ Le prompt caching (technique avancée) peut réduire les coûts de 70% sur un co
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 

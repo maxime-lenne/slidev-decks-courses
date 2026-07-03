@@ -132,6 +132,7 @@ Le serveur envoie ses logs **vers le client** (debug, monitoring).
 -->
 
 ---
+hideInToc: true
 layout: statement
 ---
 

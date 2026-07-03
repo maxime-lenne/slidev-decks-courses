@@ -11,6 +11,7 @@ layout: section-liquid
 *30 min — 16h45 → 17h15*
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -42,6 +43,7 @@ Ce socle commun leur donne un avantage sur 90% des gens qui utilisent l'IA sans 
 -->
 
 ---
+hideInToc: true
 layout: default
 class: text-center
 ---
@@ -94,6 +96,7 @@ Sinon, demander aux participants de lever la main ou d'écrire leur trajectoire 
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -119,6 +122,7 @@ Les formations sont conçues pour être complémentaires et progressives.
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 

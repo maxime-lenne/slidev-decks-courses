@@ -54,6 +54,7 @@ flowchart LR
 -->
 
 ---
+hideInToc: true
 layout: center
 ---
 

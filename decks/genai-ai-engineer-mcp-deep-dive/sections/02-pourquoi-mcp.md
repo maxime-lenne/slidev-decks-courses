@@ -74,6 +74,7 @@ graph LR
 -->
 
 ---
+hideInToc: true
 layout: statement
 ---
 

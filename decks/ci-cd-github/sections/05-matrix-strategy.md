@@ -323,6 +323,7 @@ strategy:
 -->
 
 ---
+hideInToc: true
 layout: center
 ---
 

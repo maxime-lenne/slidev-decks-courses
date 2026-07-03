@@ -24,6 +24,7 @@ Résume bien la limitation fondamentale des LLM et pourquoi ces 3 concepts exist
 -->
 
 ---
+hideInToc: true
 layout: two-cols-header
 ---
 
@@ -74,6 +75,7 @@ RAG = la technique la plus utilisée en production pour les chatbots d'entrepris
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -118,6 +120,7 @@ RAG = la technique derrière la plupart des "chatbots sur vos documents" que vou
 -->
 
 ---
+hideInToc: true
 layout: two-cols-header
 ---
 
@@ -148,6 +151,7 @@ LangChain · LlamaIndex · pgvector · Supabase Vector · Pinecone
 </div>
 
 ---
+hideInToc: true
 layout: two-cols-header
 ---
 
@@ -198,6 +202,7 @@ Claude Code = un agent : il lit votre code, lance des commandes, et recommence j
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -260,6 +265,7 @@ C'est ce que font concrètement Claude Code, Cursor, etc.
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -325,6 +331,7 @@ Les architectures multi-agents sont approfondies dans la formation AI Engineers.
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -379,6 +386,7 @@ MCP est rapidement devenu un standard industriel — signe que l'écosystème co
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -436,6 +444,7 @@ Poser une question sur un repo GitHub en direct — montrer que l'agent lit les 
 -->
 
 ---
+hideInToc: true
 layout: default
 class: text-center
 ---

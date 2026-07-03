@@ -146,6 +146,7 @@ Les <strong>principes</strong> vus aujourd'hui sont <strong>universels</strong>.
 -->
 
 ---
+hideInToc: true
 layout: statement
 ---
 
@@ -193,6 +194,7 @@ Pas la syntaxe parfaite. Pas l'outil parfait.<br/>
 -->
 
 ---
+hideInToc: true
 layout: center
 class: text-center
 ---

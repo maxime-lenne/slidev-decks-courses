@@ -7,6 +7,7 @@ layout: section-liquid
 <div class="text-lg opacity-70 mt-4">Le framework Python de référence</div>
 
 ---
+hideInToc: true
 layout: fact
 ---
 

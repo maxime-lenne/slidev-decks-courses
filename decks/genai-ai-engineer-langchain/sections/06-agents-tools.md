@@ -7,6 +7,7 @@ layout: section-liquid
 <div class="text-lg opacity-70 mt-4">4 min · Raisonner, Agir, Itérer · Pattern ReAct · create_agent · Memory</div>
 
 ---
+hideInToc: true
 layout: quote
 ---
 

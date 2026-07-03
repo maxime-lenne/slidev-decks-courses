@@ -49,27 +49,16 @@ Maxime Lenne · 2026
 -->
 
 ---
-layout: toc
-items:
-- title: MCP - Model Control Protocol
-  to: 5
-- title: Architecture
-  to: 9
-- title: Spécifications du protocole
-  to: 15
-- title: Server
-  to: 25
-- title: Client
-  to: 31
-- title: Extensions du protocole
-  to: 37
-- title: FastMCP
-  to: 41
-- title: Écosystème
-  to: 49
-- title: Take-aways
-  to: 54
+layout: default
 ---
+
+<div class="toc-page">
+
+# Table of Contents
+
+<Toc :max-depth="1" />
+
+</div>
 
 ---
 src: ./sections/01-intro.md

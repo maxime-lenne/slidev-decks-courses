@@ -12,6 +12,7 @@ layout: section-liquid
 -->
 
 ---
+hideInToc: true
 layout: statement
 ---
 

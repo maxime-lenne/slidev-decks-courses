@@ -191,6 +191,7 @@ Error: Process completed with exit code 1.
 -->
 
 ---
+hideInToc: true
 layout: center
 ---
 

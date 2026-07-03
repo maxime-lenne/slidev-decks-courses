@@ -39,6 +39,7 @@ layout: default
 -->
 
 ---
+hideInToc: true
 layout: fact
 ---
 
@@ -96,6 +97,7 @@ layout: two-cols-header
 -->
 
 ---
+hideInToc: true
 layout: center
 ---
 
@@ -104,6 +106,7 @@ layout: center
 <div class="text-sm opacity-50 mt-8">—</div>
 
 ---
+hideInToc: true
 layout: two-cols
 ---
 
@@ -355,6 +358,7 @@ Par groupe de 3-4 : pour notre API de classification de spams<br/>
 -->
 
 ---
+hideInToc: true
 layout: center
 ---
 

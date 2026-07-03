@@ -8,6 +8,7 @@ layout: section-liquid
 <div class="text-sm opacity-60 mt-4">30 min · Panorama IA managée · Jeudi / Vendredi</div>
 
 ---
+hideInToc: true
 layout: fact
 ---
 
@@ -349,6 +350,7 @@ graph LR
 -->
 
 ---
+hideInToc: true
 layout: center
 ---
 

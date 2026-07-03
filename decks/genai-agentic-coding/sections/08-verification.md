@@ -7,6 +7,7 @@ layout: section
 <div class="text-lg opacity-70 mt-4">15 min · L'autonomie dépend de ce qu'on peut vérifier</div>
 
 ---
+hideInToc: true
 layout: quote
 ---
 

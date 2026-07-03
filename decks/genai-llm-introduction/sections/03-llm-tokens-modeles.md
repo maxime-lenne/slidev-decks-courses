@@ -11,6 +11,7 @@ layout: section-liquid
 *1h30 — 10h45 → 12h15*
 
 ---
+hideInToc: true
 layout: statement
 ---
 
@@ -27,6 +28,7 @@ En réalité, c'est une série de prédictions probabilistes.
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -91,6 +93,7 @@ Taper du code et montrer que les tokens sont différents du langage naturel.
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -147,6 +150,7 @@ Le français, l'arabe, le chinois tokenisent moins bien que l'anglais → coûts
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -208,6 +212,7 @@ Un fichier PDF de 300 pages ≈ 150 000 tokens — rentrerait dans une fenêtre 
 -->
 
 ---
+hideInToc: true
 layout: two-cols-header
 ---
 
@@ -256,6 +261,7 @@ Les APIs permettent de la configurer précisément.
 -->
 
 ---
+hideInToc: true
 layout: two-cols-header
 ---
 
@@ -314,6 +320,7 @@ Apple Intelligence sur iPhone = SLM en local.
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -383,6 +390,7 @@ Les modèles Reasoning coûtent plus cher car ils génèrent des tokens de "réf
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -453,6 +461,7 @@ DeepSeek = révolution de janvier 2025 — performances frontier à prix open so
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -508,6 +517,7 @@ Haiku / Flash pour les tâches simples. Sonnet pour le quotidien. Opus pour les 
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
