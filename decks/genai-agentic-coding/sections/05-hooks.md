@@ -2,7 +2,7 @@
 layout: section
 ---
 
-# Hooks : fermer la boucle
+## Hooks : fermer la boucle
 
 <div class="text-lg opacity-70 mt-4">12 min · agent = vrai teammate</div>
 

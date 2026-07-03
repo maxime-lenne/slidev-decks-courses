@@ -18,9 +18,7 @@ layout: cover-liquid
 
 <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-8">
 
-<h1 class="text-7xl font-black mb-6">
-Agentic Coding
-</h1>
+# <span class="font-black">Agentic Coding</span>
 
 <div class="text-xl max-w-3xl font-white font-bold">
 Context engineering · Skills · Plugins · Hooks · Spec-Driven Development<br/>

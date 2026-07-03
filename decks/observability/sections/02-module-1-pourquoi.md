@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Module 1
+## Module 1
 ## Pourquoi l'observability ?
 
 <div class="text-sm opacity-60 mt-4">45 min · Fondamentaux · J1 matin</div>
@@ -11,7 +11,7 @@ layout: section-liquid
 layout: default
 ---
 
-## Trois mots à poser
+### Trois mots à poser
 
 <div class="grid grid-cols-3 gap-4 mt-6 text-sm">
 
@@ -39,11 +39,10 @@ layout: default
 -->
 
 ---
-hideInToc: true
 layout: fact
 ---
 
-# 1960
+### 1960
 
 <div class="text-xl opacity-70 mt-4">Le terme <strong>observability</strong> a été formalisé par<br/><strong>Rudolf Kalman</strong> en théorie du contrôle.</div>
 
@@ -97,20 +96,18 @@ layout: two-cols-header
 -->
 
 ---
-hideInToc: true
 layout: center
 ---
 
-# « Le monitoring vous dit qu'il y a un problème.<br/>L'observability vous permet de comprendre <span class="text-[#457b9d]">pourquoi</span> — même si vous ne l'aviez pas prévu. »
+### « Le monitoring vous dit qu'il y a un problème.<br/>L'observability vous permet de comprendre <span class="text-[#457b9d]">pourquoi</span> — même si vous ne l'aviez pas prévu. »
 
 <div class="text-sm opacity-50 mt-8">—</div>
 
 ---
-hideInToc: true
 layout: two-cols
 ---
 
-# 🌡️ Thermomètre
+### 🌡️ Thermomètre
 
 <div class="text-sm opacity-85 mt-4">
 
@@ -124,7 +121,7 @@ layout: two-cols
 
 ::right::
 
-# 🔬 Scanner / IRM
+### 🔬 Scanner / IRM
 
 <div class="text-sm opacity-85 mt-4">
 
@@ -146,7 +143,7 @@ layout: two-cols
 layout: default
 ---
 
-## Scénario vendredi 18h
+### Scénario vendredi 18h
 
 <div class="grid grid-cols-2 gap-6 mt-6 text-sm">
 
@@ -186,7 +183,7 @@ layout: default
 layout: default
 ---
 
-## Les 3 piliers
+### Les 3 piliers
 
 ```mermaid {scale: 0.95}
 graph LR
@@ -214,7 +211,7 @@ graph LR
 layout: default
 ---
 
-## Modèles mentaux — quoi mesurer ?
+### Modèles mentaux — quoi mesurer ?
 
 <div class="text-sm leading-tight">
 
@@ -242,7 +239,7 @@ layout: default
 layout: default
 ---
 
-## Quel modèle mental utiliser ?
+### Quel modèle mental utiliser ?
 
 ```mermaid {scale: 0.85}
 graph TD
@@ -268,7 +265,7 @@ graph TD
 layout: default
 ---
 
-## Spécificité IA — au-delà de l'infra
+### Spécificité IA — au-delà de l'infra
 
 <div class="grid grid-cols-3 gap-4 mt-6 text-sm">
 
@@ -316,7 +313,7 @@ layout: default
 layout: default
 ---
 
-## Niveaux de maturité observability
+### Niveaux de maturité observability
 
 <div class="text-sm leading-tight mt-4">
 
@@ -340,7 +337,7 @@ layout: default
 layout: center
 ---
 
-## 🎯 Activité · 15 min
+### 🎯 Activité · 15 min
 
 <div class="text-xl mt-6 max-w-3xl mx-auto">
 Par groupe de 3-4 : pour notre API de classification de spams<br/>
@@ -358,10 +355,9 @@ Par groupe de 3-4 : pour notre API de classification de spams<br/>
 -->
 
 ---
-hideInToc: true
 layout: center
 ---
 
-# ☕ Pause · 10 min
+### ☕ Pause · 10 min
 
 <div class="text-sm opacity-60 mt-6">Prochain module : <strong>Logging structuré</strong> (1h30)</div>

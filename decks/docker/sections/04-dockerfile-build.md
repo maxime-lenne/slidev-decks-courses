@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Dockerfile & Build
+## Dockerfile & Build
 
 De l'image de base à votre propre image
 

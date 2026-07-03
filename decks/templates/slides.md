@@ -53,9 +53,9 @@ class: text-left
 <div class="relative z-10 h-full flex items-end pb-16 pl-4 gap-16">
   <div class="flex-1">
     <div class="text-[#457b9d] text-sm font-bold uppercase tracking-widest mb-4"></div>
-    <h1 class="text-6xl font-black leading-tight mb-8">
+    <h3 class="text-6xl font-black leading-tight mb-8">
       Let's <br><span class="text-[#457b9d]">build <br>together</span>
-    </h1>
+    </h3>
     <div class="text-sm opacity-60 mb-4">
       <a href="mailto:hello@maxime-lenne.fr" class="flex items-center gap-2 no-underline opacity-75 hover:opacity-100">✉️ hello@maxime-lenne.fr</a>
       <a href="https://maxime-lenne.fr" target="_blank" class="flex items-center gap-2 no-underline opacity-80 hover:opacity-100">🌐 maxime-lenne.fr</a>

@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Server
+## Server
 
 <div class="text-lg opacity-70 mt-4">Primitives : Tools · Resources · Prompts · Notifications</div>
 
@@ -10,7 +10,7 @@ layout: section-liquid
 layout: default
 ---
 
-## Qui contrôle quoi ?
+### Qui contrôle quoi ?
 
 <div class="text-sm leading-tight mt-4">
 
@@ -39,7 +39,7 @@ layout: default
 layout: default
 ---
 
-## Tools — actions invocables
+### Tools — actions invocables
 
 ```json {1-15|2,4|5-14}
 {
@@ -64,7 +64,7 @@ layout: default
 layout: default
 ---
 
-## Resources — données par URI
+### Resources — données par URI
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
@@ -112,7 +112,7 @@ travel://flights/{origin}/{dest}
 layout: default
 ---
 
-## Prompts — workflows réutilisables
+### Prompts — workflows réutilisables
 
 ```json {1-12|3,4|5-11}
 {
@@ -134,7 +134,7 @@ layout: default
 layout: default
 ---
 
-## Notifications — synchronisation temps réel
+### Notifications — synchronisation temps réel
 
 <v-clicks>
 

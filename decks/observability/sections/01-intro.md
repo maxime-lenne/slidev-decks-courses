@@ -1,4 +1,5 @@
 ---
+hideInToc: true
 layout: two-cols-header
 ---
 
@@ -29,6 +30,7 @@ layout: two-cols-header
 - Conduire un **incident** + rédiger un **post-mortem blameless**
 
 ---
+hideInToc: true
 layout: two-cols-header
 ---
 
@@ -66,10 +68,11 @@ layout: two-cols-header
 </div>
 
 ---
+hideInToc: true
 layout: default
 ---
 
-## Au programme · 3 jours
+### Au programme · 3 jours
 
 <div class="grid grid-cols-3 gap-4 mt-6 text-sm">
 
@@ -124,7 +127,7 @@ hideInToc: true
 layout: statement
 ---
 
-# Vendredi, 14h30.
+### Vendredi, 14h30.
 
 <div class="text-2xl mt-6 opacity-80">Ton modèle est en prod depuis 3 mois.</div>
 <div class="text-2xl mt-2 opacity-80">Le service répond <code class="text-[#10b981]">200 OK</code> à toutes les requêtes.</div>
@@ -146,9 +149,9 @@ layout: default
 
 <div class="toc-page">
 
-# Table of Contents
+### Table of Contents
 
-<Toc :max-depth="1" />
+<Toc :max-depth="2" />
 
 </div>
 
@@ -157,6 +160,6 @@ hideInToc: true
 layout: quote
 ---
 
-# Quand on peut mesurer ce dont on parle et l'exprimer en chiffres, on en sait quelque chose ; mais quand on ne peut pas le mesurer, quand on ne peut pas l'exprimer en chiffres, notre connaissance est d'une nature maigre et insatisfaisante.
+### Quand on peut mesurer ce dont on parle et l'exprimer en chiffres, on en sait quelque chose ; mais quand on ne peut pas le mesurer, quand on ne peut pas l'exprimer en chiffres, notre connaissance est d'une nature maigre et insatisfaisante.
 
 > Lord Kelvin, physicien, in *Electrical Units of Measurement* (1883)

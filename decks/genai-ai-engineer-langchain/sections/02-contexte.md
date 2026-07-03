@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Contexte et présentation
+## Contexte et présentation
 
 <div class="text-lg opacity-70 mt-4">4 min · Chronologie · Écosystème LangChain · Sans vs Avec LangChain · Le Problème</div>
 

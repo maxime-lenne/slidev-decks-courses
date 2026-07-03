@@ -2,16 +2,15 @@
 layout: section-liquid
 ---
 
-# Spécifications du protocole
+## Spécifications du protocole
 
 <div class="text-lg opacity-70 mt-4">JSON-RPC 2.0 · Lifecycle · Capabilities · Version 2025-11-25</div>
 
 ---
-hideInToc: true
 layout: quote
 ---
 
-# Be conservative in what you send, be liberal in what you accept.
+### Be conservative in what you send, be liberal in what you accept.
 
 > Jon Postel, RFC 793 (TCP), 1981 — l'un des pères fondateurs des protocoles Internet
 
@@ -19,7 +18,7 @@ layout: quote
 layout: default
 ---
 
-## JSON-RPC 2.0 — la grammaire
+### JSON-RPC 2.0 — la grammaire
 
 <br>
 
@@ -81,7 +80,7 @@ Même `id` que la request.
 layout: default
 ---
 
-## Lifecycle & Capabilities — définitions
+### Lifecycle & Capabilities — définitions
 
 <div class="grid grid-cols-2 gap-6 mt-4 text-sm">
 
@@ -142,7 +141,7 @@ Lifecycle = <em>quand</em> on parle · Capabilities = <em>de quoi</em> on a le d
 layout: default
 ---
 
-## Lifecycle — la séquence d'ouverture
+### Lifecycle — la séquence d'ouverture
 
 <div class="flex justify-center">
 
@@ -173,7 +172,7 @@ sequenceDiagram
 layout: default
 ---
 
-## Exemple — `initialize`
+### Exemple — `initialize`
 
 ```json {1-15|6|7-11|12-15}
 {
@@ -201,7 +200,7 @@ layout: default
 layout: default
 ---
 
-## Capabilities negotiation — pourquoi c'est crucial
+### Capabilities negotiation — pourquoi c'est crucial
 
 <v-clicks>
 
@@ -223,7 +222,7 @@ Toujours `if (server.capabilities.tools) { ... }` avant un `tools/list`.
 layout: default
 ---
 
-## Séquence classique — en régime opérationnel
+### Séquence classique — en régime opérationnel
 
 <div class="flex justify-center">
 
@@ -258,7 +257,7 @@ sequenceDiagram
 layout: default
 ---
 
-## Séquence classique — en régime opérationnel
+### Séquence classique — en régime opérationnel
 
 <div class="flex justify-center">
 

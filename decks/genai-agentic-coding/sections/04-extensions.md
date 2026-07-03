@@ -2,7 +2,7 @@
 layout: section
 ---
 
-# Skills, Commands & SubAgents
+## Skills, Commands & SubAgents
 
 <div class="text-lg opacity-70 mt-4">20 min · l'écosystème d'extension côté repo</div>
 

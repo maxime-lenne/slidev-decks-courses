@@ -2,7 +2,7 @@
 layout: section
 ---
 
-# Multi-Agents
+## Multi-Agents
 
 <div class="text-lg opacity-70 mt-4">20 min · subagents · Task tool · Managed Agents · workflows dynamiques</div>
 

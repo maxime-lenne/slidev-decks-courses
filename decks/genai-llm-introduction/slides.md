@@ -45,10 +45,6 @@ Pas besoin d'être développeur pour suivre ce contenu.
 -->
 
 ---
-src: ../templates/slides.md#1
----
-
----
 src: ./sections/01-intro.md
 ---
 

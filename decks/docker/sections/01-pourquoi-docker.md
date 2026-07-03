@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Pourquoi Docker ?
+## Pourquoi Docker ?
 
 <div class="text-lg opacity-70 mt-4">10 min · "ça marche sur ma machine" · VM vs conteneurs · cas d'usage par métier</div>
 

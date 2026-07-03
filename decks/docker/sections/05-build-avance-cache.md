@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Build avancé & Cache
+## Build avancé & Cache
 
 Optimiser vos images pour la production
 
@@ -14,11 +14,10 @@ Le cache et le multi-stage build sont des compétences clés
 -->
 
 ---
-hideInToc: true
 layout: quote
 ---
 
-# There are only two hard things in Computer Science: cache invalidation and naming things.
+### There are only two hard things in Computer Science: cache invalidation and naming things.
 
 > Phil Karlton, engineer, Netscape
 

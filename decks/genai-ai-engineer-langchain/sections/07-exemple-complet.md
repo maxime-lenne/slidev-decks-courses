@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Exemple Complet: Agent RAG
+## Exemple Complet: Agent RAG
 
 <div class="text-lg opacity-70 mt-4">3 min · Tool · Prompt · Mémoire · Invocation</div>
 

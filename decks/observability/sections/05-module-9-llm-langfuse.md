@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Module 9
+## Module 9
 ## Observability LLM & tracing d'agents
 
 <div class="text-sm opacity-60 mt-4">1h15 · J1 après-midi · Langfuse, traces, coûts, scores</div>
@@ -11,7 +11,7 @@ layout: section-liquid
 layout: default
 ---
 
-## Pourquoi un LLM est encore plus difficile
+### Pourquoi un LLM est encore plus difficile
 
 <div class="text-sm opacity-85 mt-6 space-y-2">
 
@@ -30,7 +30,7 @@ layout: default
 layout: default
 ---
 
-## 3 axes du monitoring LLM
+### 3 axes du monitoring LLM
 
 <div class="grid grid-cols-2 gap-4 mt-6 text-sm">
 
@@ -55,7 +55,7 @@ layout: default
 layout: default
 ---
 
-## Vocabulaire à poser
+### Vocabulaire à poser
 
 <div class="text-sm leading-tight">
 
@@ -73,7 +73,7 @@ layout: default
 layout: default
 ---
 
-## Coût LLM — ce qu'il faut tracker
+### Coût LLM — ce qu'il faut tracker
 
 <div class="text-sm opacity-85 mt-4">
 
@@ -99,7 +99,7 @@ OpenAI/Anthropic facturent **au token**. Pour un modèle donné :
 layout: default
 ---
 
-## Tarifs indicatifs ($/M tokens)
+### Tarifs indicatifs ($/M tokens)
 
 <div class="text-sm leading-tight mt-4">
 
@@ -119,7 +119,7 @@ layout: default
 layout: default
 ---
 
-## Décomposition latence RAG
+### Décomposition latence RAG
 
 <div class="text-sm leading-tight mt-4">
 
@@ -144,7 +144,7 @@ Sans tracing par span, vous ne saurez <strong>pas</strong> dire où sont les 2 s
 layout: default
 ---
 
-## Évaluation continue
+### Évaluation continue
 
 <div class="text-sm opacity-85 mt-6">
 
@@ -161,7 +161,7 @@ layout: default
 layout: default
 ---
 
-## Tour des outils
+### Tour des outils
 
 <div class="text-sm leading-tight">
 
@@ -181,7 +181,7 @@ layout: default
 layout: default
 ---
 
-## Critères de décision rapide
+### Critères de décision rapide
 
 <div class="text-sm opacity-85 mt-4 space-y-2">
 
@@ -197,7 +197,7 @@ layout: default
 layout: default
 ---
 
-## Démo · docker-compose Langfuse (1/4)
+### Démo · docker-compose Langfuse (1/4)
 
 ```yaml {all|1-9|10-14|all}
 langfuse-server:
@@ -223,7 +223,7 @@ langfuse-db:
 layout: default
 ---
 
-## Démo · instrumenter endpoint RAG (2/4)
+### Démo · instrumenter endpoint RAG (2/4)
 
 ```python {all|1-2|5-9|all}
 from langfuse import Langfuse
@@ -245,7 +245,7 @@ def explain(req: ExplainRequest):
 layout: default
 ---
 
-## Démo · spans retrieval + generation (3/4)
+### Démo · spans retrieval + generation (3/4)
 
 ```python {all|1-4|6-12|all}
 retrieval = trace.span(name="retrieval")
@@ -266,7 +266,7 @@ return {"explanation": response.choices[0].message.content}
 layout: default
 ---
 
-## Démo · scoring & export coût (4/4)
+### Démo · scoring & export coût (4/4)
 
 ```python
 # Feedback utilisateur
@@ -293,7 +293,7 @@ llm_daily_cost_gauge.set(total_cost)
 layout: default
 ---
 
-## Langfuse UI — ce qu'on voit
+### Langfuse UI — ce qu'on voit
 
 <div class="text-sm opacity-85 mt-4 space-y-2">
 
@@ -312,7 +312,7 @@ layout: default
 layout: default
 ---
 
-## Recap · checklist LLM observability
+### Recap · checklist LLM observability
 
 <div class="text-sm opacity-85 mt-6 space-y-2">
 
@@ -330,7 +330,7 @@ layout: default
 layout: center
 ---
 
-## 🛠️ Atelier fin J1 · 30 min
+### 🛠️ Atelier fin J1 · 30 min
 
 <div class="text-xl mt-6 max-w-3xl mx-auto">
 Par groupe de 4 :

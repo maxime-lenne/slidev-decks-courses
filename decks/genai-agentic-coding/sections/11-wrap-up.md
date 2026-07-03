@@ -2,7 +2,7 @@
 layout: section
 ---
 
-# Take-aways
+## Take-aways
 
 <div class="text-lg opacity-70 mt-4">3 choses à retenir + Ressources</div>
 
@@ -10,7 +10,7 @@ layout: section
 layout: default
 ---
 
-## Les 3 choses à retenir
+<h3 class="text-3xl mb-4">Les 3 choses à retenir</h3>
 
 <div class="grid grid-cols-3 gap-4 mt-6 text-sm">
 

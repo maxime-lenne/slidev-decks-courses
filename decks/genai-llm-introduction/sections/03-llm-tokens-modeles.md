@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Module 2
+## Module 2
 
 <div class="text-lg opacity-70 mt-4">1h30 · inférence · tokens · fenêtre de contexte · température · choix du modèle</div>
 
@@ -11,11 +11,10 @@ layout: section-liquid
 *1h30 — 10h45 → 12h15*
 
 ---
-hideInToc: true
 layout: statement
 ---
 
-# "Un LLM ne 'pense' pas."
+### "Un LLM ne 'pense' pas."
 
 Il prédit le prochain token, encore et encore, des milliers de fois par seconde.
 
@@ -28,11 +27,10 @@ En réalité, c'est une série de prédictions probabilistes.
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# L'inférence — Comment un LLM génère du texte
+### L'inférence — Comment un LLM génère du texte
 
 <div class="grid grid-cols-2 gap-8 mt-4">
 
@@ -93,11 +91,10 @@ Taper du code et montrer que les tokens sont différents du langage naturel.
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Les tokens — L'unité de base des LLM
+### Les tokens — L'unité de base des LLM
 
 <div class="grid grid-cols-2 gap-8 mt-4">
 
@@ -150,11 +147,10 @@ Le français, l'arabe, le chinois tokenisent moins bien que l'anglais → coûts
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# La fenêtre de contexte
+### La fenêtre de contexte
 
 <div class="grid grid-cols-2 gap-8 mt-4">
 
@@ -212,11 +208,10 @@ Un fichier PDF de 300 pages ≈ 150 000 tokens — rentrerait dans une fenêtre 
 -->
 
 ---
-hideInToc: true
 layout: two-cols-header
 ---
 
-# La température — Strict vs Créatif
+### La température — Strict vs Créatif
 
 ::left::
 
@@ -261,11 +256,10 @@ Les APIs permettent de la configurer précisément.
 -->
 
 ---
-hideInToc: true
 layout: two-cols-header
 ---
 
-# LLM vs SLM — Grande taille vs Petite taille
+### LLM vs SLM — Grande taille vs Petite taille
 
 ::left::
 
@@ -320,11 +314,10 @@ Apple Intelligence sur iPhone = SLM en local.
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Types de modèles selon l'usage
+### Types de modèles selon l'usage
 
 <div class="grid grid-cols-2 gap-4 mt-4 text-sm">
 
@@ -390,11 +383,10 @@ Les modèles Reasoning coûtent plus cher car ils génèrent des tokens de "réf
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Panorama des modèles 2025
+### Panorama des modèles 2025
 
 <div class="grid grid-cols-3 gap-3 mt-4 text-sm">
 
@@ -461,11 +453,10 @@ DeepSeek = révolution de janvier 2025 — performances frontier à prix open so
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Les 4 tiers — Choisir selon le cas d'usage
+### Les 4 tiers — Choisir selon le cas d'usage
 
 <div class="space-y-3 mt-4">
 
@@ -517,11 +508,10 @@ Haiku / Flash pour les tâches simples. Sonnet pour le quotidien. Opus pour les 
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Panorama des usages de l'IA
+### Panorama des usages de l'IA
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 

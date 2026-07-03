@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Au-delà de LangChain
+## Au-delà de LangChain
 
 <div class="text-lg opacity-70 mt-4">5 min · LangGraph · LangSmith · Deep Agents · Frameworks alternatifs</div>
 

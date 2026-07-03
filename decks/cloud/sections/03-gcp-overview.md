@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Module 2
+## Module 2
 ## GCP overview + Réseau
 
 <div class="text-sm opacity-60 mt-4">45 min · Naviguer GCP · Mardi après-midi</div>
@@ -11,7 +11,7 @@ layout: section-liquid
 layout: default
 ---
 
-## GCP en 30 secondes
+### GCP en 30 secondes
 
 <div class="grid grid-cols-2 gap-6 mt-4 text-xs">
 
@@ -50,7 +50,7 @@ layout: default
 layout: two-cols-header
 ---
 
-## Hiérarchie des ressources
+### Hiérarchie des ressources
 
 ::left::
 
@@ -131,7 +131,7 @@ layout: two-cols-header
 layout: default
 ---
 
-## Régions et zones
+### Régions et zones
 
 <div class="grid grid-cols-2 gap-6 mt-4 text-xs">
 
@@ -182,7 +182,7 @@ europe-west1 (région)
 layout: default
 ---
 
-## Services qu'on utilise cette semaine
+### Services qu'on utilise cette semaine
 
 <div class="text-xs mt-4">
 
@@ -213,7 +213,7 @@ layout: default
 layout: default
 ---
 
-## La console GCP
+### La console GCP
 
 <div class="text-xs mt-2 opacity-85">
 
@@ -263,7 +263,7 @@ Menu (☰)
 layout: default
 ---
 
-## gcloud CLI — les essentiels
+### gcloud CLI — les essentiels
 
 ```bash {1-3|5-9|11-15|all}
 # Installation
@@ -298,7 +298,7 @@ gcloud storage ls gs://my-bucket
 layout: default
 ---
 
-## Cloud Shell — la VM dans le navigateur
+### Cloud Shell — la VM dans le navigateur
 
 <div class="text-sm opacity-85 mt-4">
 
@@ -345,7 +345,7 @@ Une **VM Debian gratuite** intégrée à la console GCP.
 layout: default
 ---
 
-## VPC — Réseau privé virtuel
+### VPC — Réseau privé virtuel
 
 ```mermaid {scale: 0.55}
 graph TD
@@ -380,7 +380,7 @@ graph TD
 layout: default
 ---
 
-## Cloud Load Balancing + DNS + NAT
+### Cloud Load Balancing + DNS + NAT
 
 <div class="grid grid-cols-3 gap-3 mt-4 text-xs">
 
@@ -429,7 +429,7 @@ layout: default
 layout: default
 ---
 
-## Sécuriser dès le jour 1
+### Sécuriser dès le jour 1
 
 ```bash {1-2|4-10|all}
 # 1. Activer la 2FA sur son compte Google
@@ -465,7 +465,7 @@ gcloud billing budgets create \
 layout: default
 ---
 
-## Atelier découverte (mardi PM, 1h45)
+### Atelier découverte (mardi PM, 1h45)
 
 <div class="text-xs opacity-85 mt-4">
 
@@ -503,11 +503,10 @@ layout: default
 -->
 
 ---
-hideInToc: true
 layout: center
 ---
 
-# Recap Module 2
+### Recap Module 2
 
 <div class="text-sm opacity-85 mt-6 max-w-2xl mx-auto text-left">
 

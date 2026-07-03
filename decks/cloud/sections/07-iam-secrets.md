@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Module 6
+## Module 6
 ## IAM + Service Accounts + Secret Manager
 
 <div class="text-sm opacity-60 mt-4">35 min · Sécurité · Jeudi matin</div>
@@ -11,7 +11,7 @@ layout: section-liquid
 layout: default
 ---
 
-## Le triangle IAM de GCP
+### Le triangle IAM de GCP
 
 <div class="text-base mt-6 text-center">
 Toute décision IAM repose sur 3 éléments :
@@ -42,7 +42,7 @@ graph LR
 layout: default
 ---
 
-## Types de Principals
+### Types de Principals
 
 <div class="text-xs mt-4">
 
@@ -70,7 +70,7 @@ layout: default
 layout: default
 ---
 
-## Familles de rôles
+### Familles de rôles
 
 <div class="text-xs mt-4">
 
@@ -102,7 +102,7 @@ Organisation
 layout: default
 ---
 
-## Voir et modifier l'IAM
+### Voir et modifier l'IAM
 
 ```bash {1-2|4-7|9-12|14-17|all}
 # Lister les bindings d'un projet
@@ -137,7 +137,7 @@ gcloud storage buckets add-iam-policy-binding gs://my-bucket \
 layout: default
 ---
 
-## Service Accounts (SA)
+### Service Accounts (SA)
 
 <div class="text-sm opacity-85 mt-2">
 Un compte <strong>non-humain</strong>. Pas de mot de passe — juste des permissions IAM et un email :
@@ -179,7 +179,7 @@ Un compte <strong>non-humain</strong>. Pas de mot de passe — juste des permiss
 layout: default
 ---
 
-## Créer une SA dédiée (brief)
+### Créer une SA dédiée (brief)
 
 ```bash {1-3|5-6|8-12|14-18|20-24|26-30|all}
 # 1. Créer la SA
@@ -224,7 +224,7 @@ gcloud run services update rag-api \
 layout: default
 ---
 
-## Clés JSON : à éviter
+### Clés JSON : à éviter
 
 <div class="text-base mt-4 opacity-90">
 Une SA peut générer une <strong>clé JSON</strong> (<code>gcloud iam service-accounts keys create</code>).
@@ -269,7 +269,7 @@ Une SA peut générer une <strong>clé JSON</strong> (<code>gcloud iam service-a
 layout: default
 ---
 
-## Workload Identity Federation
+### Workload Identity Federation
 
 <div class="text-sm opacity-85 mt-2">
 Mécanisme qui permet à une <strong>identité externe</strong> (GitHub, GitLab, AWS, OIDC…) de s'authentifier sur GCP <strong>sans clé JSON</strong>, en échangeant un token OIDC contre un token Google de courte durée.
@@ -313,7 +313,7 @@ Mécanisme qui permet à une <strong>identité externe</strong> (GitHub, GitLab,
 layout: default
 ---
 
-## WIF : les concepts
+### WIF : les concepts
 
 <div class="text-xs mt-4">
 
@@ -347,7 +347,7 @@ layout: default
 layout: default
 ---
 
-## WIF : le flux complet
+### WIF : le flux complet
 
 ```mermaid {scale: 0.55}
 sequenceDiagram
@@ -381,7 +381,7 @@ Aucun secret au repos — juste un échange JWT → token court à chaque run
 layout: default
 ---
 
-## Créer un provider WIF + SA `github-actions`
+### Créer un provider WIF + SA `github-actions`
 
 ```bash {1-5|7-9|11-15|17-24|26-30|all}
 # Variables
@@ -424,7 +424,7 @@ gcloud iam service-accounts add-iam-policy-binding $SA_EMAIL \
 layout: default
 ---
 
-## Utiliser WIF dans GitHub Actions
+### Utiliser WIF dans GitHub Actions
 
 ```yaml {1-11|13-19|21-23|all}
 name: Deploy
@@ -465,7 +465,7 @@ jobs:
 layout: default
 ---
 
-## Secret Manager
+### Secret Manager
 
 ```bash {1-2|4-6|8-9|11-12|14-15|all}
 # 0. Activer l'API (une fois)
@@ -501,7 +501,7 @@ gcloud secrets versions access latest --secret=mistral-api-key
 layout: default
 ---
 
-## Injecter un secret dans Cloud Run
+### Injecter un secret dans Cloud Run
 
 ```bash {1-3|all}
 # Donner accès à la SA Cloud Run
@@ -536,7 +536,7 @@ key = os.environ["MISTRAL_API_KEY"]
 layout: default
 ---
 
-## Récap rôles brief
+### Récap rôles brief
 
 <div class="text-xs mt-4">
 
@@ -563,11 +563,10 @@ layout: default
 -->
 
 ---
-hideInToc: true
 layout: center
 ---
 
-# Recap Module 6
+### Recap Module 6
 
 <div class="text-sm opacity-85 mt-6 max-w-2xl mx-auto text-left">
 

@@ -1,4 +1,5 @@
 ---
+hideInToc: true
 layout: two-cols-header
 ---
 

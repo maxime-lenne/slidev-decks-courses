@@ -1,4 +1,5 @@
 ---
+hideInToc: true
 layout: two-cols-header
 ---
 
@@ -34,9 +35,9 @@ layout: default
 
 <div class="toc-page">
 
-# Table of Contents
+### Table of Contents
 
-<Toc :max-depth="1" />
+<Toc :max-depth="2" />
 
 </div>
 

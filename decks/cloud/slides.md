@@ -21,9 +21,7 @@ background: https://images.unsplash.com/photo-1580106815433-a5b1d1d53d85?w=1920
 
 <div class="text-[#457b9d] text-sm font-bold uppercase tracking-widest mb-4">Formation · 8 modules · ~5 h</div>
 
-<h1 class="text-7xl font-black mb-6">
-Cl<span class="opacity-50">o</span>ud<br/><span class="text-[#457b9d]">Du local à la prod sur GCP</span>
-</h1>
+# <span class="font-black">Cl<span class="opacity-50">o</span>ud<br/><span class="text-[#457b9d]">Du local à la prod sur GCP</span></span>
 
 <div class="text-2xl opacity-90 max-w-3xl">
 Concepts · Cloud Run · Cloud SQL · Storage · IAM<br/>

@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Les Composants Fondamentaux
+## Les Composants Fondamentaux
 
 <div class="text-lg opacity-70 mt-4">4 min · Models · Prompts · Output Parsers</div>
 

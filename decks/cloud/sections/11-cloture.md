@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Clôture
+## Clôture
 
 <div class="text-sm opacity-60 mt-4">Merci · Questions · Ressources</div>
 
@@ -10,7 +10,7 @@ layout: section-liquid
 layout: default
 ---
 
-## Ressources pour aller plus loin
+### Ressources pour aller plus loin
 
 <div class="grid grid-cols-2 gap-4 mt-4 text-xs">
 

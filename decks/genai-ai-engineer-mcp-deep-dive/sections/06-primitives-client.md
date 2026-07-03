@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Client
+## Client
 
 <div class="text-lg opacity-70 mt-4">Primitives : Sampling · Elicitation · Roots · Logging</div>
 
@@ -10,7 +10,7 @@ layout: section-liquid
 layout: default
 ---
 
-## Le client expose aussi des features
+### Le client expose aussi des features
 
 <div class="text-sm leading-tight mt-4">
 
@@ -33,7 +33,7 @@ C'est <em>l'inverse</em> du flux habituel — le serveur initie, le client répo
 layout: default
 ---
 
-## Sampling — déléguer le LLM au client
+### Sampling — déléguer le LLM au client
 
 ```mermaid {scale: 0.7}
 sequenceDiagram
@@ -57,7 +57,7 @@ sequenceDiagram
 layout: default
 ---
 
-## Elicitation — demander une info à l'humain
+### Elicitation — demander une info à l'humain
 
 ```json {1-15|3,4|5-13}
 {
@@ -132,11 +132,10 @@ Le serveur envoie ses logs **vers le client** (debug, monitoring).
 -->
 
 ---
-hideInToc: true
 layout: statement
 ---
 
-# Human-in-the-loop
+### Human-in-the-loop
 
 <div class="text-2xl mt-6 opacity-80">Sampling et elicitation imposent un <span class="text-[#e63946] font-bold">checkpoint UI</span> côté client.</div>
 

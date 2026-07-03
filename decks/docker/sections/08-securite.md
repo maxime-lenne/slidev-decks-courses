@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Sécurité & Bonnes pratiques
+## Sécurité & Bonnes pratiques
 
 Sécuriser vos conteneurs dès le développement
 

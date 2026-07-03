@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Tools, MCP & CLI
+## Tools, MCP & CLI
 
 <div class="text-lg opacity-70 mt-4">10 min · connecter l'agent au monde réel</div>
 

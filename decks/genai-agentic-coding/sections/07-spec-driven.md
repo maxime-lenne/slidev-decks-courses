@@ -2,16 +2,15 @@
 layout: section-liquid
 ---
 
-# PRD & Spec-Driven Development
+## PRD & Spec-Driven Development
 
 <div class="text-lg opacity-70 mt-4">15 min · Spec > Code · les frameworks AIDD</div>
 
 ---
-hideInToc: true
 layout: quote
 ---
 
-# Les spécifications, la description de ce que l'on attend de notre logiciel, c'est ça qui compte.
+### Les spécifications, la description de ce que l'on attend de notre logiciel, c'est ça qui compte.
 
 > Dexter Horthy, Human Layer
 
@@ -94,11 +93,10 @@ layout: two-cols-header
 -->
 
 ---
-hideInToc: true
 layout: fact
 ---
 
-# -50%
+### -50%
 
 <div class="text-2xl mt-4">de temps de refactoring</div>
 
@@ -235,7 +233,7 @@ Quel problème résout-elle ?
 layout: section
 ---
 
-# Spec-Driven Development : Les Frameworks
+## Spec-Driven Development : Les Frameworks
 
 <div class="text-lg opacity-70 mt-4">les frameworks AIDD</div>
 

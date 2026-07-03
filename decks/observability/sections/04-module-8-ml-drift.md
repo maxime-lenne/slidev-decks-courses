@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Module 8
+## Module 8
 ## Observability ML & monitoring modèle
 
 <div class="text-sm opacity-60 mt-4">1h · J1 après-midi · Drift, PSI, KS, Wasserstein</div>
@@ -11,7 +11,7 @@ layout: section-liquid
 layout: default
 ---
 
-## Un pipeline ML peut tomber… silencieusement
+### Un pipeline ML peut tomber… silencieusement
 
 <div class="text-sm opacity-85 mt-6">
 
@@ -44,7 +44,7 @@ Un pipeline ML peut **aussi** tomber pour des raisons **silencieuses** :
 layout: default
 ---
 
-## 3 types de drift
+### 3 types de drift
 
 <div class="text-sm leading-tight">
 
@@ -73,7 +73,7 @@ il ne nécessite <strong>pas</strong> les labels réels.
 layout: default
 ---
 
-## Méthodes de détection — statistiques
+### Méthodes de détection — statistiques
 
 <div class="text-sm opacity-85 mt-4">
 
@@ -97,7 +97,7 @@ layout: default
 layout: default
 ---
 
-## Fenêtres glissantes
+### Fenêtres glissantes
 
 ```mermaid {scale: 0.95}
 gantt
@@ -127,7 +127,7 @@ gantt
 layout: default
 ---
 
-## Outils ML monitoring
+### Outils ML monitoring
 
 <div class="text-sm leading-tight">
 
@@ -152,7 +152,7 @@ Simple, intégré à la stack existante, pas de nouvel outil.
 layout: default
 ---
 
-## Démo · KS test → Prometheus (1/3)
+### Démo · KS test → Prometheus (1/3)
 
 ```python {all|1-3|5-9|all}
 from prometheus_client import Gauge
@@ -172,7 +172,7 @@ drift_gauge = Gauge(
 layout: default
 ---
 
-## Démo · Job périodique (2/3)
+### Démo · Job périodique (2/3)
 
 ```python {all|1-7|9-11|all}
 def compute_drift(
@@ -192,7 +192,7 @@ def compute_drift(
 layout: default
 ---
 
-## Règle Prometheus · alerte drift (3/3)
+### Règle Prometheus · alerte drift (3/3)
 
 ```yaml {all|2|3-4|5-7|all}
 - alert: PredictionDriftHigh
@@ -211,7 +211,7 @@ layout: default
 layout: statement
 ---
 
-## L'<span class="text-[#457b9d]">angle mort</span> le plus dangereux :
+### L'<span class="text-[#457b9d]">angle mort</span> le plus dangereux :
 
 <div class="text-2xl mt-6 opacity-85">le drift par <strong>sous-groupe</strong> (fairness).</div>
 
@@ -227,7 +227,7 @@ layout: statement
 layout: default
 ---
 
-## Pour aller plus loin
+### Pour aller plus loin
 
 <div class="text-sm opacity-85 mt-6">
 
@@ -245,7 +245,7 @@ layout: default
 layout: center
 ---
 
-## 🛠️ Exercice · pour votre brief
+### 🛠️ Exercice · pour votre brief
 
 <div class="text-xl mt-6 max-w-3xl mx-auto">
 

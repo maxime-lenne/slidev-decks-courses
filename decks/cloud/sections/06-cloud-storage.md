@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Module 5
+## Module 5
 ## Cloud Storage (GCS)
 
 <div class="text-sm opacity-60 mt-4">25 min · Stockage objet · Mercredi après-midi</div>
@@ -11,7 +11,7 @@ layout: section-liquid
 layout: default
 ---
 
-## Stockage objet, c'est quoi ?
+### Stockage objet, c'est quoi ?
 
 <div class="text-xs mt-4">
 
@@ -60,7 +60,7 @@ layout: default
 layout: default
 ---
 
-## Buckets + classes de stockage
+### Buckets + classes de stockage
 
 <div class="text-xs mt-2 opacity-85">
 Le nom d'un bucket est <strong>unique mondialement</strong>. Préfixer pour éviter les collisions.
@@ -97,7 +97,7 @@ gcloud storage buckets create gs://simplon-rag-corpus-prod \
 layout: default
 ---
 
-## Lifecycle policies
+### Lifecycle policies
 
 <div class="text-xs opacity-85 mt-2">
 On peut déplacer automatiquement les objets : Standard → Nearline → Coldline → Delete.
@@ -136,7 +136,7 @@ gcloud storage buckets update gs://simplon-rag-corpus-prod \
 layout: default
 ---
 
-## Uniform vs Fine-grained access
+### Uniform vs Fine-grained access
 
 <div class="grid grid-cols-2 gap-4 mt-4 text-xs">
 
@@ -180,7 +180,7 @@ layout: default
 layout: default
 ---
 
-## Lecture / écriture depuis Python
+### Lecture / écriture depuis Python
 
 ```python {1-2|4-5|7-10|12-15|all}
 from google.cloud import storage
@@ -222,7 +222,7 @@ gcloud storage buckets add-iam-policy-binding gs://simplon-rag-corpus-prod \
 layout: default
 ---
 
-## Signed URLs — partage temporaire
+### Signed URLs — partage temporaire
 
 <div class="text-xs opacity-85 mt-2">
 Donner un accès <strong>temporaire</strong> à un objet privé <strong>sans</strong> IAM, par signature HMAC.
@@ -264,7 +264,7 @@ sequenceDiagram
 layout: default
 ---
 
-## Pièges classiques
+### Pièges classiques
 
 <div class="text-xs mt-4">
 
@@ -288,11 +288,10 @@ layout: default
 -->
 
 ---
-hideInToc: true
 layout: center
 ---
 
-# Recap Module 5
+### Recap Module 5
 
 <div class="text-sm opacity-85 mt-6 max-w-2xl mx-auto text-left">
 

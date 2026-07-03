@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Module bonus
+## Module bonus
 ## Synthetics · RUM · Uptime Kuma
 
 <div class="text-sm opacity-60 mt-4">30 min · J3 matin · Monitoring depuis l'extérieur</div>
@@ -11,7 +11,7 @@ layout: section-liquid
 layout: default
 ---
 
-## Synthetics — définition
+### Synthetics — définition
 
 <div class="text-xl opacity-85 mt-8 text-center max-w-3xl mx-auto">
 
@@ -70,7 +70,7 @@ layout: two-cols-header
 layout: statement
 ---
 
-## « Sans monitoring,<br/>vous découvrez la panne en <span class="text-[#e63946]">même temps</span><br/>que vos utilisateurs. <span class="text-[#e63946]">Voire après eux.</span> »
+### « Sans monitoring,<br/>vous découvrez la panne en <span class="text-[#e63946]">même temps</span><br/>que vos utilisateurs. <span class="text-[#e63946]">Voire après eux.</span> »
 
 <div class="text-sm opacity-50 mt-8">— </div>
 
@@ -78,7 +78,7 @@ layout: statement
 layout: default
 ---
 
-## Matrice cas d'usage
+### Matrice cas d'usage
 
 <div class="text-sm leading-tight mt-4">
 
@@ -96,7 +96,7 @@ layout: default
 layout: default
 ---
 
-## Uptime Kuma
+### Uptime Kuma
 
 <div class="text-xl opacity-85 mt-6 text-center italic">
 
@@ -124,7 +124,7 @@ Toutes les 20 secondes, il frappe à la porte de chacun de vos services pour vé
 layout: default
 ---
 
-## Vs alternatives SaaS
+### Vs alternatives SaaS
 
 <div class="text-sm leading-tight mt-4">
 
@@ -148,7 +148,7 @@ layout: default
 layout: default
 ---
 
-## Déploiement Docker
+### Déploiement Docker
 
 ```yaml
 services:
@@ -175,7 +175,7 @@ services:
 layout: default
 ---
 
-## Intervalles recommandés
+### Intervalles recommandés
 
 <div class="text-sm leading-tight mt-6">
 
@@ -197,7 +197,7 @@ Plus court ≠ mieux. Trop court = bruit + coût réseau.
 layout: center
 ---
 
-## Pour votre brief (optionnel J3)
+### Pour votre brief (optionnel J3)
 
 <div class="text-sm mt-6 max-w-2xl mx-auto space-y-2 opacity-85 text-left">
 

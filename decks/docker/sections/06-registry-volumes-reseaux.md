@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Registry, Volumes & Réseaux
+## Registry, Volumes & Réseaux
 
 Stocker, persister, communiquer
 
@@ -208,7 +208,7 @@ layout: center
 class: text-center
 ---
 
-# Pause / Questions
+### Pause / Questions
 
 Avant de passer à Docker Compose
 

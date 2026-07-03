@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Wrap-up
+## Wrap-up
 ## Ce qu'on a vu · ce qui vous attend
 
 <div class="text-sm opacity-60 mt-4">30 min · récap · ressources · livrables</div>
@@ -11,7 +11,7 @@ layout: section-liquid
 layout: default
 ---
 
-## Stack observability « idéale »
+### Stack observability « idéale »
 
 ```mermaid {scale: 0.85}
 graph TB
@@ -38,7 +38,7 @@ graph TB
 layout: default
 ---
 
-## Que choisir ? · récap par cas d'usage
+### Que choisir ? · récap par cas d'usage
 
 <div class="text-sm leading-tight">
 
@@ -60,7 +60,7 @@ layout: default
 layout: default
 ---
 
-## Niveaux de maturité · votre prochain palier
+### Niveaux de maturité · votre prochain palier
 
 <div class="text-sm leading-tight mt-4">
 
@@ -83,7 +83,7 @@ Cible de cette formation : passer du niveau 1-2 au niveau **3**.
 layout: default
 ---
 
-## Ressources
+### Ressources
 
 <div class="text-sm opacity-85 mt-4 space-y-1">
 
@@ -111,7 +111,7 @@ layout: default
 layout: default
 ---
 
-## Livrables attendus
+### Livrables attendus
 
 <div class="text-sm leading-tight mt-4">
 

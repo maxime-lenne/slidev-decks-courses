@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# RAG
+## RAG
 
 <div class="text-lg opacity-70 mt-4">4 min · Retrieval-Augmented Generation · Ingestion · Retrieval · Vector Store</div>
 

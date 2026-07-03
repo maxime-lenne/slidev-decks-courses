@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# 2 · Anatomie d'un workflow
+## 2 · Anatomie d'un workflow
 
 <div class="text-lg opacity-70 mt-4">10 min · Workflow → Jobs → Steps · déclencheurs · jobs & needs · pièges YAML</div>
 
@@ -12,7 +12,7 @@ YAML, hiérarchie, déclencheurs, runners
 layout: default
 ---
 
-## Workflow → Jobs → Steps : la hiérarchie
+### Workflow → Jobs → Steps : la hiérarchie
 
 ```mermaid {scale: 0.65}
 graph TD
@@ -49,7 +49,7 @@ graph TD
 layout: default
 ---
 
-## Les 3 grandes parties d'un workflow
+### Les 3 grandes parties d'un workflow
 
 ```yaml {1|3-7|9-14|all}{lines:true}
 name: Python CI                      # 1. NAME — affiché dans l'UI
@@ -82,7 +82,7 @@ jobs:                                # 3. JOBS — quoi faire ?
 layout: default
 ---
 
-## `on:` — quand le workflow s'exécute
+### `on:` — quand le workflow s'exécute
 
 <div class="text-sm opacity-85 mt-4">Les déclencheurs les plus courants :</div>
 
@@ -119,7 +119,7 @@ on:
 layout: default
 ---
 
-## Jobs : parallèles ou séquencés via `needs:`
+### Jobs : parallèles ou séquencés via `needs:`
 
 <div class="grid grid-cols-2 gap-4 mt-4 text-xs">
 
@@ -176,7 +176,7 @@ Runner = la VM qui exécute le job. Préférer <code>ubuntu-24.04</code> (×1) �
 layout: default
 ---
 
-## Steps : `uses` (action) vs `run` (commande)
+### Steps : `uses` (action) vs `run` (commande)
 
 <div class="grid grid-cols-2 gap-4 mt-4 text-xs">
 
@@ -232,7 +232,7 @@ steps:
 layout: default
 ---
 
-## Pièges YAML à connaître
+### Pièges YAML à connaître
 
 <div class="grid grid-cols-2 gap-4 mt-4 text-xs">
 

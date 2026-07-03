@@ -1,4 +1,5 @@
 ---
+hideInToc: true
 layout: two-cols-header
 ---
 
@@ -37,6 +38,7 @@ layout: two-cols-header
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
@@ -100,9 +102,9 @@ layout: default
 
 <div class="toc-page">
 
-# Table of Contents
+### Table of Contents
 
-<Toc :max-depth="1" />
+<Toc :max-depth="2" />
 
 </div>
 
@@ -110,7 +112,7 @@ layout: default
 layout: section
 ---
 
-# Rappels
+## Rappels
 
 ---
 layout: default
@@ -288,14 +290,13 @@ layout: center
 layout: section
 ---
 
-# Demo
+## Demo
 
 ---
-hideInToc: true
 layout: statement
 ---
 
-# Que vient-il de se passer ?
+### Que vient-il de se passer ?
 
 <div class="text-3xl mt-6 opacity-90">Une <span class="text-[#457b9d] font-bold">cascade agentique</span> en 60 secondes.</div>
 

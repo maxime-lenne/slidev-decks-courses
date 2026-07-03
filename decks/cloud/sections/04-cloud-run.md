@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Module 3
+## Module 3
 ## Cloud Run + Artifact Registry
 
 <div class="text-sm opacity-60 mt-4">45 min · CaaS · Mercredi matin</div>
@@ -11,7 +11,7 @@ layout: section-liquid
 layout: default
 ---
 
-## Cloud Run — qu'est-ce que c'est ?
+### Cloud Run — qu'est-ce que c'est ?
 
 <div class="text-base mt-4 opacity-90">
 Service managé qui exécute des <strong>conteneurs HTTP</strong>, scalés automatiquement de 0 à N instances en fonction du trafic.
@@ -50,7 +50,7 @@ Service managé qui exécute des <strong>conteneurs HTTP</strong>, scalés autom
 layout: default
 ---
 
-## Modèle d'exécution
+### Modèle d'exécution
 
 ```mermaid {scale: 0.55}
 graph TD
@@ -122,7 +122,7 @@ layout: two-cols-header
 layout: default
 ---
 
-## Contraintes à connaître
+### Contraintes à connaître
 
 <div class="text-xs mt-4">
 
@@ -152,7 +152,7 @@ layout: default
 layout: default
 ---
 
-## Artifact Registry
+### Artifact Registry
 
 <div class="text-sm opacity-85 mt-2">
 Le registre Docker managé de GCP. <strong>Remplace</strong> Container Registry (<code>gcr.io</code> deprecated).
@@ -189,7 +189,7 @@ docker push \
 layout: default
 ---
 
-## Déployer un service Cloud Run
+### Déployer un service Cloud Run
 
 ```bash {1|2|3-4|5-7|8-9|all}
 gcloud run deploy rag-api \
@@ -223,7 +223,7 @@ Retour : URL publique <code>https://rag-api-xxxxxxxxxx-ew.a.run.app</code>
 layout: default
 ---
 
-## Variables d'env vs secrets
+### Variables d'env vs secrets
 
 <div class="grid grid-cols-2 gap-4 mt-4 text-xs">
 
@@ -270,7 +270,7 @@ MISTRAL_API_KEY=mistral-api-key:latest
 layout: default
 ---
 
-## Concurrence + autoscaling
+### Concurrence + autoscaling
 
 <div class="text-xs mt-4">
 
@@ -301,7 +301,7 @@ Exemple FastAPI 200 ms, <code>concurrency=80</code>, <code>max=5</code> → ~ <s
 layout: default
 ---
 
-## Cold start — comment limiter
+### Cold start — comment limiter
 
 <div class="text-xs mt-4 opacity-85">
 
@@ -354,7 +354,7 @@ def get_model():
 layout: default
 ---
 
-## Révisions + traffic splitting
+### Révisions + traffic splitting
 
 <div class="text-xs opacity-85 mt-2">
 
@@ -395,7 +395,7 @@ gcloud run services update-traffic rag-api \
 layout: default
 ---
 
-## Pièges classiques
+### Pièges classiques
 
 <div class="text-xs mt-4">
 
@@ -418,11 +418,10 @@ layout: default
 -->
 
 ---
-hideInToc: true
 layout: center
 ---
 
-# Recap Module 3
+### Recap Module 3
 
 <div class="text-sm opacity-85 mt-6 max-w-2xl mx-auto text-left">
 

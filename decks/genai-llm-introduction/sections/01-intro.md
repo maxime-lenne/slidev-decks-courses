@@ -4,7 +4,7 @@ layout: default
 class: text-center
 ---
 
-# Programme de la journée
+### Programme de la journée
 
 <div class="grid grid-cols-3 gap-6 mt-8 text-left text-sm">
 
@@ -61,14 +61,18 @@ Déjeuner de 12h15 à 14h.
 -->
 
 ---
+src: ../../templates/slides.md#1
+---
+
+---
 hideInToc: true
 layout: default
 ---
 
 <div class="toc-page">
 
-# Table of Contents
+### Table of Contents
 
-<Toc :max-depth="1" />
+<Toc :max-depth="2" />
 
 </div>

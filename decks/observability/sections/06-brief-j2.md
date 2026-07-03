@@ -9,9 +9,9 @@ background: https://images.unsplash.com/photo-1678845536613-5cf0ec5245cd?w=1920
 
 <div class="text-[#457b9d] text-sm font-bold uppercase tracking-widest mb-4">Jour 2 · Brief continu</div>
 
-<h1 class="text-6xl font-black mb-6">
+<h3 class="text-6xl font-black mb-6">
 Instrumentez<br/><span class="text-[#457b9d]">votre projet</span>
-</h1>
+</h3>
 
 <div class="text-xl opacity-90 max-w-3xl">
 API · Agent RAG · Front · CLI<br/>
@@ -24,7 +24,7 @@ API · Agent RAG · Front · CLI<br/>
 layout: default
 ---
 
-## Architecture du projet fourni
+### Architecture du projet fourni
 
 ```mermaid {scale: 0.9}
 graph TB
@@ -45,7 +45,7 @@ graph TB
 layout: default
 ---
 
-## Ce qui est déjà fourni
+### Ce qui est déjà fourni
 
 <div class="text-sm opacity-85 mt-6 space-y-2">
 
@@ -73,7 +73,7 @@ docker compose up -d
 layout: default
 ---
 
-## Ce que vous devez ajouter
+### Ce que vous devez ajouter
 
 <div class="grid grid-cols-3 gap-4 mt-4 text-sm">
 
@@ -114,7 +114,7 @@ layout: default
 layout: default
 ---
 
-## Critères d'évaluation
+### Critères d'évaluation
 
 <div class="text-sm leading-tight mt-4">
 
@@ -136,7 +136,7 @@ layout: default
 layout: center
 ---
 
-## ✅ Setup vérifié ?
+### ✅ Setup vérifié ?
 
 <div class="text-sm mt-6 opacity-85 space-y-2 max-w-2xl mx-auto text-left">
 

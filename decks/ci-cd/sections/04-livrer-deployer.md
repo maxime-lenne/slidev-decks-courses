@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Livrer & Déployer
+## Livrer & Déployer
 
 <div class="text-lg opacity-70 mt-4">15 min · Promotion · Configuration runtime · Stratégies · Rollback</div>
 
@@ -15,7 +15,7 @@ layout: section-liquid
 layout: default
 ---
 
-## Séparation build / deploy
+### Séparation build / deploy
 
 <div class="text-xs leading-tight mt-4">
 
@@ -52,7 +52,7 @@ graph LR
 layout: default
 ---
 
-## Configuration au runtime
+### Configuration au runtime
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
@@ -118,7 +118,7 @@ replicas: 3</pre>
 layout: section
 ---
 
-# 4 stratégies de déploiement
+## 4 stratégies de déploiement
 
 <div class="text-base opacity-70 mt-4">Recreate · Blue/Green · Canary · Rolling</div>
 
@@ -131,7 +131,7 @@ layout: section
 layout: default
 ---
 
-## Stratégie 1 · Recreate
+### Stratégie 1 · Recreate
 
 <div class="text-sm mt-4">
 
@@ -184,7 +184,7 @@ Acceptable en dev, staging, ou apps non critiques avec maintenance planifiée.
 layout: default
 ---
 
-## Stratégie 2 · Blue / Green
+### Stratégie 2 · Blue / Green
 
 <div class="text-sm mt-4">
 
@@ -230,7 +230,7 @@ graph TB
 layout: default
 ---
 
-## Stratégie 3 · Canary
+### Stratégie 3 · Canary
 
 <div class="text-sm mt-4">
 
@@ -274,7 +274,7 @@ graph TB
 layout: default
 ---
 
-## Stratégie 4 · Rolling updates
+### Stratégie 4 · Rolling updates
 
 <div class="text-sm mt-4">
 
@@ -324,7 +324,7 @@ graph LR
 layout: default
 ---
 
-## Stratégies · récapitulatif
+### Stratégies · récapitulatif
 
 <div class="text-xs leading-tight mt-4">
 
@@ -350,7 +350,7 @@ Pour la majorité des projets : <strong>commencer par Recreate</strong> (avec ma
 layout: default
 ---
 
-## Smoke tests & rollback automatisé
+### Smoke tests & rollback automatisé
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 

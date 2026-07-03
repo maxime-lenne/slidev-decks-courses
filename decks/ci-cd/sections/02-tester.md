@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Tester en CI
+## Tester en CI
 
 <div class="text-lg opacity-70 mt-4">15 min · La pyramide des tests · Déterminisme · Lint · Couverture</div>
 
@@ -15,7 +15,7 @@ layout: section-liquid
 layout: default
 ---
 
-## Pourquoi tester EN CI ?
+### Pourquoi tester EN CI ?
 
 <div class="grid grid-cols-2 gap-8 mt-6">
 
@@ -66,7 +66,7 @@ Le même bug en prod peut coûter des jours.
 layout: default
 ---
 
-## La pyramide des tests
+### La pyramide des tests
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
@@ -118,7 +118,7 @@ Beaucoup de tests E2E lents → suite fragile, lente, qui décourage.
 layout: two-cols-header
 ---
 
-## Tests unitaires & intégration
+### Tests unitaires & intégration
 
 ::left::
 
@@ -166,7 +166,7 @@ def test_creation_commande(db_test):
 layout: default
 ---
 
-## Tests E2E · le sommet
+### Tests E2E · le sommet
 
 <div class="text-sm">
 
@@ -220,7 +220,7 @@ Quelques E2E ciblés > des dizaines d'E2E mal isolés.
 layout: default
 ---
 
-## Lint & analyse statique · "Shift Left"
+### Lint & analyse statique · "Shift Left"
 
 <div class="text-sm mt-4">
 
@@ -275,7 +275,7 @@ Bug live, incident, rollback.<br/>
 layout: default
 ---
 
-## Tests déterministes · épingler les dépendances
+### Tests déterministes · épingler les dépendances
 
 <div class="text-xs mt-2 opacity-75">Sans déterminisme, votre pipeline donne des résultats aléatoires.</div>
 
@@ -339,7 +339,7 @@ Le build est reproductible.
 layout: default
 ---
 
-## Tests flaky · le cancer silencieux
+### Tests flaky · le cancer silencieux
 
 <div class="text-sm mt-2">
 
@@ -391,7 +391,7 @@ Run 5: ✓ succès                  ← rien n'a changé pourtant...
 layout: default
 ---
 
-## Couverture de code · indicateur, pas objectif
+### Couverture de code · indicateur, pas objectif
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 

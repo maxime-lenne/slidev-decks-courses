@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# 6 · Récap & action
+## 6 · Récap & action
 
 <div class="text-lg opacity-70 mt-4">4 min · synthèse · prochaines étapes</div>
 
@@ -12,7 +12,7 @@ Ce qu'on a vu, ce que vous allez faire
 layout: default
 ---
 
-## Synthèse en un schéma
+### Synthèse en un schéma
 
 ```mermaid {scale: 0.7}
 flowchart LR
@@ -54,11 +54,10 @@ flowchart LR
 -->
 
 ---
-hideInToc: true
 layout: center
 ---
 
-# 🎯 Avant la prochaine séance
+### 🎯 Avant la prochaine séance
 
 <div class="text-2xl mt-6 opacity-90 max-w-3xl mx-auto leading-relaxed">
 

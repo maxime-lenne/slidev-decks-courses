@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Concepts fondamentaux
+## Concepts fondamentaux
 
 Images, Conteneurs, Cycle de vie
 
@@ -210,7 +210,7 @@ layout: center
 class: text-center
 ---
 
-# Pause / Questions
+### Pause / Questions
 
 Avant de passer au Dockerfile & Build
 

@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Module 5
+## Module 5
 
 <div class="text-lg opacity-70 mt-4">30 min · bilan · quiz d'orientation · les 3 formations · prochaine étape</div>
 
@@ -11,11 +11,10 @@ layout: section-liquid
 *30 min — 16h45 → 17h15*
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Ce que vous savez maintenant
+### Ce que vous savez maintenant
 
 <v-clicks>
 
@@ -43,12 +42,11 @@ Ce socle commun leur donne un avantage sur 90% des gens qui utilisent l'IA sans 
 -->
 
 ---
-hideInToc: true
 layout: default
 class: text-center
 ---
 
-# Quiz d'orientation — Votre profil
+### Quiz d'orientation — Votre profil
 
 <div class="grid grid-cols-2 gap-4 mt-6 text-left text-sm max-w-2xl mx-auto">
 
@@ -96,11 +94,10 @@ Sinon, demander aux participants de lever la main ou d'écrire leur trajectoire 
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Les 3 formations
+### Les 3 formations
 
 | | Formation Métiers | Formation AI Builders | Formation AI Engineers |
 |---|---|---|---|
@@ -122,11 +119,10 @@ Les formations sont conçues pour être complémentaires et progressives.
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Votre prochaine étape
+### Votre prochaine étape
 
 <div class="grid grid-cols-3 gap-4 mt-6 text-sm text-center">
 

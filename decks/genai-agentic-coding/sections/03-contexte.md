@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Le contexte
+## Le contexte
 
 <div class="text-lg opacity-70 mt-4">20 min · 4 échecs · CLAUDE.md hiérarchique · ADRs</div>
 

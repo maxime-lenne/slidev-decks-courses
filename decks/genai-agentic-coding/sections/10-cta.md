@@ -2,7 +2,7 @@
 layout: section
 ---
 
-# Next Steps
+## Next Steps
 
 <div class="text-lg opacity-70 mt-4">par où commencer</div>
 

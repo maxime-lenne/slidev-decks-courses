@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# En conclusion
+## En conclusion
 
 <div class="text-lg opacity-70 mt-4">3 min · Récap · Cas d'usage · Key Takeaways · Ressources</div>
 

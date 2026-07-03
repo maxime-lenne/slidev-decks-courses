@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Module 4
+## Module 4
 
 <div class="text-lg opacity-70 mt-4">1h · RAG · embeddings · agents IA · architecture multi-agents · MCP</div>
 
@@ -14,7 +14,7 @@ layout: section-liquid
 layout: statement
 ---
 
-## "Un LLM seul, c'est un expert brillant enfermé dans une pièce sans fenêtre."
+### "Un LLM seul, c'est un expert brillant enfermé dans une pièce sans fenêtre."
 
 RAG, Agents et MCP, c'est ce qui lui ouvre les portes.
 
@@ -24,11 +24,10 @@ Résume bien la limitation fondamentale des LLM et pourquoi ces 3 concepts exist
 -->
 
 ---
-hideInToc: true
 layout: two-cols-header
 ---
 
-# Pourquoi les LLM ont besoin de RAG
+### Pourquoi les LLM ont besoin de RAG
 
 ::left::
 
@@ -75,11 +74,10 @@ RAG = la technique la plus utilisée en production pour les chatbots d'entrepris
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# RAG — Embeddings et similarité vectorielle
+### RAG — Embeddings et similarité vectorielle
 
 <div class="grid grid-cols-2 gap-8 mt-4">
 
@@ -120,11 +118,10 @@ RAG = la technique derrière la plupart des "chatbots sur vos documents" que vou
 -->
 
 ---
-hideInToc: true
 layout: two-cols-header
 ---
 
-# RAG — Usage
+### RAG — Usage
 
 ::left::
 
@@ -151,11 +148,10 @@ LangChain · LlamaIndex · pgvector · Supabase Vector · Pinecone
 </div>
 
 ---
-hideInToc: true
 layout: two-cols-header
 ---
 
-# Agent IA vs Chatbot
+### Agent IA vs Chatbot
 
 ::left::
 
@@ -202,11 +198,10 @@ Claude Code = un agent : il lit votre code, lance des commandes, et recommence j
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Composants d'un agent IA
+### Composants d'un agent IA
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
@@ -265,11 +260,10 @@ C'est ce que font concrètement Claude Code, Cursor, etc.
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Patterns d'architecture multi-agents
+### Patterns d'architecture multi-agents
 
 <div class="grid grid-cols-2 gap-4 mt-4 text-sm">
 
@@ -331,11 +325,10 @@ Les architectures multi-agents sont approfondies dans la formation AI Engineers.
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# MCP — "L'USB-C de l'IA"
+### MCP — "L'USB-C de l'IA"
 
 <div class="grid grid-cols-2 gap-8 mt-4">
 
@@ -386,11 +379,10 @@ MCP est rapidement devenu un standard industriel — signe que l'écosystème co
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Architecture MCP
+### Architecture MCP
 
 ```mermaid
 graph LR
@@ -444,12 +436,11 @@ Poser une question sur un repo GitHub en direct — montrer que l'agent lit les 
 -->
 
 ---
-hideInToc: true
 layout: default
 class: text-center
 ---
 
-# Démo — MCP en action
+### Démo — MCP en action
 
 <div class="mt-6 p-6 rounded-xl border-2 border-orange-500/40 bg-orange-500/5 max-w-2xl mx-auto text-left">
 

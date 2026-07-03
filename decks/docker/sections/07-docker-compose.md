@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Docker Compose
+## Docker Compose
 
 Orchestrer des applications multi-services
 

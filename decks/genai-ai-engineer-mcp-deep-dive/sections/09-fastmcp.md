@@ -2,16 +2,15 @@
 layout: section-liquid
 ---
 
-# FastMCP
+## FastMCP
 
 <div class="text-lg opacity-70 mt-4">Le framework Python de référence</div>
 
 ---
-hideInToc: true
 layout: fact
 ---
 
-# ~70%
+### ~70%
 des serveurs MCP en circulation
 
 <p class="text-gray-500">~1M téléchargements par jour · FastMCP, Python · <a href="https://gofastmcp.com">gofastmcp.com</a></p>
@@ -25,7 +24,7 @@ des serveurs MCP en circulation
 layout: default
 ---
 
-## Pourquoi FastMCP
+### Pourquoi FastMCP
 
 <v-clicks>
 
@@ -76,7 +75,7 @@ Un même framework couvre la **production**, la **consommation** et l'**affichag
 layout: default
 ---
 
-## `@mcp.tool` — un tool en 6 lignes
+### `@mcp.tool` — un tool en 6 lignes
 
 ```python {1-10|1-3|5-9}
 from fastmcp import FastMCP
@@ -103,7 +102,7 @@ mcp.run()
 layout: default
 ---
 
-## `@mcp.resource` & `@mcp.prompt`
+### `@mcp.resource` & `@mcp.prompt`
 
 ```python {1-15|3-6|8-15}
 from fastmcp import FastMCP
@@ -129,7 +128,7 @@ Steps:
 layout: default
 ---
 
-## Client FastMCP — consommer un serveur
+### Client FastMCP — consommer un serveur
 
 ```python {1-10|3-4|6-10}
 from fastmcp import Client
@@ -150,7 +149,7 @@ async with client:
 layout: default
 ---
 
-## Intégrations
+### Intégrations
 
 <div class="grid grid-cols-2 gap-6 mt-6 text-sm">
 

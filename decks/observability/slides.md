@@ -21,9 +21,7 @@ background: https://images.unsplash.com/photo-1762163516269-3c143e04175c?w=1920
 
 <div class="text-[#457b9d] text-sm font-bold uppercase tracking-widest mb-4">Formation · 3 jours</div>
 
-<h1 class="text-7xl font-black mb-6">
-Observ<span class="opacity-50">a</span>bility<br/><span class="text-[#457b9d]">d'une application IA</span>
-</h1>
+# <span class="font-black">Observ<span class="opacity-50">a</span>bility<br/><span class="text-[#457b9d]">d'une application IA</span></span>
 
 <div class="text-2xl opacity-90 max-w-3xl">
 Logs · Métriques · Traces · Dashboards · Alerting · APM<br/>

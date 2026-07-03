@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Les Chaînes (Chains)
+## Les Chaînes (Chains)
 
 <div class="text-lg opacity-70 mt-4">3 min · Le coeur de LangChain · LCEL · opérateur | · Runnable</div>
 

@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Module 1
+## Module 1
 
 <div class="text-lg opacity-70 mt-4">1h30 · histoire de l'IA · IA vs ML vs DL vs Gen AI · Transformer · entraînement des LLM</div>
 
@@ -11,20 +11,18 @@ layout: section-liquid
 *1h30 — 9h00 → 10h30*
 
 ---
-hideInToc: true
 layout: quote
 ---
 
-# Les machines peuvent-elles penser ?
+### Les machines peuvent-elles penser ?
 
 > Alan Turing, mathématicien, article fondateur de l'IA « Computing Machinery and Intelligence » (1950)
 
 ---
-hideInToc: true
 layout: statement
 ---
 
-# "En 2017, une équipe de Google publie un article de 8 pages."
+### "En 2017, une équipe de Google publie un article de 8 pages."
 
 Aujourd'hui, cet article est la fondation de toute l'IA générative.
 
@@ -34,11 +32,10 @@ Laisser la phrase résonner avant de passer à la suite.
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# L'IA : une histoire de 70 ans
+### L'IA : une histoire de 70 ans
 
 ```mermaid
 graph LR
@@ -59,11 +56,10 @@ On est aujourd'hui dans une période d'accélération sans précédent.
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# IA, ML, DL, Gen AI : les 3 niveaux
+### IA, ML, DL, Gen AI : les 3 niveaux
 
 <div class="flex items-center justify-center mt-6">
 <div class="relative">
@@ -99,11 +95,10 @@ La Gen AI (2020+) = DL + Transformers + entraînement sur des quantités massive
 -->
 
 ---
-hideInToc: true
 layout: two-cols-header
 ---
 
-# Les 3 familles de l'IA Générative
+### Les 3 familles de l'IA Générative
 
 ::left::
 
@@ -142,11 +137,10 @@ Les LLM sont les plus polyvalents — c'est ce qu'on va étudier aujourd'hui.
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Architecture Transformer — "Attention is All You Need"
+### Architecture Transformer — "Attention is All You Need"
 
 <div class="grid grid-cols-2 gap-8 mt-4">
 
@@ -198,11 +192,10 @@ Le scale est la clé : GPT-3 = 175B paramètres, GPT-4 ~ 1T paramètres (estimat
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Entraînement des LLM : 3 phases
+### Entraînement des LLM : 3 phases
 
 <div class="grid grid-cols-3 gap-4 mt-6">
 
@@ -254,11 +247,10 @@ ChatGPT a rendu ça populaire en nov. 2022.
 -->
 
 ---
-hideInToc: true
 layout: two-cols-header
 ---
 
-# Déterministe vs Non-déterministe
+### Déterministe vs Non-déterministe
 
 ::left::
 
@@ -305,11 +297,10 @@ Pour des tâches créatives (brainstorming, rédaction) : temperature entre 0.7 
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Limites des LLM — Ce qu'il faut savoir
+### Limites des LLM — Ce qu'il faut savoir
 
 <v-clicks>
 
@@ -334,11 +325,10 @@ Date de coupure : Claude 4 a une date de coupure en août 2025.
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Modèles frontier 2025
+### Modèles frontier 2025
 
 | Modèle | Créateur | Points forts |
 |--------|----------|-------------|
@@ -364,12 +354,11 @@ DeepSeek = révolution prix en janvier 2025.
 -->
 
 ---
-hideInToc: true
 layout: default
 class: text-center
 ---
 
-# Exercice — 10 min
+### Exercice — 10 min
 
 <div class="mt-8 p-6 rounded-xl border-2 border-orange-500/40 bg-orange-500/5 max-w-2xl mx-auto text-left">
 

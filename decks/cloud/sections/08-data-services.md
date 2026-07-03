@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Module 7
+## Module 7
 ## Services Data GCP
 
 <div class="text-sm opacity-60 mt-4">30 min · Panorama Data Engineering · Jeudi / Vendredi</div>
@@ -11,7 +11,7 @@ layout: section-liquid
 layout: default
 ---
 
-## Panorama Data sur GCP
+### Panorama Data sur GCP
 
 ```mermaid {scale: 0.55}
 graph LR
@@ -44,7 +44,7 @@ graph LR
 layout: default
 ---
 
-## BigQuery — le data warehouse
+### BigQuery — le data warehouse
 
 <div class="text-sm opacity-85 mt-2">
 <strong>Serverless</strong>, <strong>columnar</strong>, <strong>ANSI SQL</strong>. Le cœur de toute stack data sur GCP.
@@ -97,7 +97,7 @@ SELECT * FROM ML.PREDICT(
 layout: default
 ---
 
-## Cloud Pub/Sub — messaging global
+### Cloud Pub/Sub — messaging global
 
 <div class="text-sm opacity-85 mt-2">
 Service de <strong>messaging global managé</strong>. Ingestion temps réel pour logs, clickstream, IoT, events applicatifs.
@@ -138,7 +138,7 @@ graph LR
 layout: default
 ---
 
-## Dataflow — Apache Beam managé
+### Dataflow — Apache Beam managé
 
 <div class="text-sm opacity-85 mt-2">
 <strong>Serverless</strong> pour le traitement de données. <strong>Batch ET streaming</strong> unifiés via Apache Beam.
@@ -183,7 +183,7 @@ layout: default
 layout: default
 ---
 
-## Dataproc + Cloud Composer
+### Dataproc + Cloud Composer
 
 <div class="grid grid-cols-2 gap-4 mt-4 text-xs">
 
@@ -232,7 +232,7 @@ task = BigQueryInsertJobOperator(
 layout: default
 ---
 
-## Looker / Looker Studio — Viz
+### Looker / Looker Studio — Viz
 
 <div class="grid grid-cols-2 gap-4 mt-4 text-xs">
 
@@ -274,7 +274,7 @@ layout: default
 layout: default
 ---
 
-## Architecture type — pipeline temps réel
+### Architecture type — pipeline temps réel
 
 ```mermaid {scale: 0.5}
 graph TD
@@ -309,7 +309,7 @@ graph TD
 layout: default
 ---
 
-## Quand choisir quoi ?
+### Quand choisir quoi ?
 
 <div class="text-xs mt-4">
 
@@ -335,11 +335,10 @@ layout: default
 -->
 
 ---
-hideInToc: true
 layout: center
 ---
 
-# Recap Module 7
+### Recap Module 7
 
 <div class="text-sm opacity-85 mt-6 max-w-2xl mx-auto text-left">
 

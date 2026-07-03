@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# À retenir
+## À retenir
 
 <div class="text-lg opacity-70 mt-4">20 min · Checklist · Maturité · Outils · Action</div>
 
@@ -15,7 +15,7 @@ layout: section-liquid
 layout: default
 ---
 
-## Checklist des bonnes pratiques
+### Checklist des bonnes pratiques
 
 <div class="grid grid-cols-2 gap-6 mt-4 text-sm">
 
@@ -59,7 +59,7 @@ Les anti-patterns s'installent <strong>progressivement</strong>.
 layout: default
 ---
 
-## Modèle de maturité
+### Modèle de maturité
 
 <div class="grid grid-cols-2 gap-4 mt-4">
 
@@ -119,7 +119,7 @@ Commencez simple. Complexifiez quand un vrai besoin apparaît.
 layout: default
 ---
 
-## Outils du marché · mention agnostique
+### Outils du marché · mention agnostique
 
 <div class="text-xs leading-tight mt-4">
 
@@ -146,11 +146,10 @@ Les <strong>principes</strong> vus aujourd'hui sont <strong>universels</strong>.
 -->
 
 ---
-hideInToc: true
 layout: statement
 ---
 
-# Cette semaine.
+### Cette semaine.
 
 <div class="text-2xl mt-6 opacity-80">Sur votre repo en cours.</div>
 
@@ -194,12 +193,11 @@ Pas la syntaxe parfaite. Pas l'outil parfait.<br/>
 -->
 
 ---
-hideInToc: true
 layout: center
 class: text-center
 ---
 
-# Questions ?
+### Questions ?
 
 <div class="text-base opacity-70 mt-6">Discussion · Vos pipelines · Cas concrets</div>
 

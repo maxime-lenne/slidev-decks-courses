@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Module 3
+## Module 3
 
 <div class="text-lg opacity-70 mt-4">1h30 · anatomie d'un prompt · patterns de prompting · stratégies Anthropic · économie des tokens</div>
 
@@ -11,11 +11,10 @@ layout: section-liquid
 *1h30 — 14h00 → 15h30*
 
 ---
-hideInToc: true
 layout: statement
 ---
 
-# "Un prompt, c'est un cahier des charges."
+### "Un prompt, c'est un cahier des charges."
 
 Garbage in, garbage out — la précision fait tout.
 
@@ -28,11 +27,10 @@ La plupart du temps, le problème vient du prompt, pas du modèle.
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Anatomie d'un bon prompt
+### Anatomie d'un bon prompt
 
 <div class="grid grid-cols-2 gap-8 mt-4">
 
@@ -96,11 +94,10 @@ La contrainte de format est souvent oubliée. Elle est pourtant cruciale pour l'
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Les patterns de prompting essentiels
+### Les patterns de prompting essentiels
 
 <div class="grid grid-cols-3 gap-4 mt-4 text-sm">
 
@@ -170,11 +167,10 @@ Chain of thought = technique découverte par Google en 2022, maintenant intégr�
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Les 4 stratégies Anthropic
+### Les 4 stratégies Anthropic
 
 <div class="grid grid-cols-2 gap-4 mt-4">
 
@@ -246,11 +242,10 @@ En combinant ces 4 stratégies, on peut construire des workflows complexes.
 -->
 
 ---
-hideInToc: true
 layout: two-cols-header
 ---
 
-# System prompt vs User prompt
+### System prompt vs User prompt
 
 ::left::
 
@@ -298,12 +293,11 @@ C'est l'outil de base pour construire des applications IA.
 -->
 
 ---
-hideInToc: true
 layout: default
 class: text-center
 ---
 
-# Exercice pratique — 15 min
+### Exercice pratique — 15 min
 
 <div class="mt-6 p-6 rounded-xl border-2 border-orange-500/40 bg-orange-500/5 max-w-2xl mx-auto text-left">
 
@@ -336,11 +330,10 @@ Comparer en groupe : quelles contraintes de format ont été ajoutées ?
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Économie des tokens — L'essentiel
+### Économie des tokens — L'essentiel
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
@@ -387,11 +380,10 @@ Le prompt caching (technique avancée) peut réduire les coûts de 70% sur un co
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
-# Choisir le bon modèle selon la tâche
+### Choisir le bon modèle selon la tâche
 
 <div class="space-y-3 mt-4 text-sm">
 

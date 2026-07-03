@@ -2,7 +2,7 @@
 layout: section-liquid
 ---
 
-# Module 2
+## Module 2
 ## Logging structuré
 
 <div class="text-sm opacity-60 mt-4">1h30 · J1 matin · Démo guidée</div>
@@ -52,11 +52,10 @@ done in 0.12s for user_42
 </div>
 
 ---
-hideInToc: true
 layout: center
 ---
 
-# « Un log est un<br/>événement <span class="text-[#457b9d]">discret</span> et <span class="text-[#457b9d]">horodaté</span>. »
+### « Un log est un<br/>événement <span class="text-[#457b9d]">discret</span> et <span class="text-[#457b9d]">horodaté</span>. »
 
 <div class="text-sm opacity-50 mt-8">À opposer à la métrique qui <strong>agrège</strong>.</div>
 
@@ -69,7 +68,7 @@ layout: center
 layout: default
 ---
 
-## 5 niveaux à respecter
+### 5 niveaux à respecter
 
 <div class="text-sm leading-tight mt-4">
 
@@ -95,7 +94,7 @@ layout: default
 layout: statement
 ---
 
-## « Le choix du niveau de log<br/>est un <span class="text-[#457b9d]">acte d'engagement</span><br/>envers l'équipe d'astreinte. »
+### « Le choix du niveau de log<br/>est un <span class="text-[#457b9d]">acte d'engagement</span><br/>envers l'équipe d'astreinte. »
 
 <div class="text-sm opacity-50 mt-8">—</div>
 
@@ -103,7 +102,7 @@ layout: statement
 layout: default
 ---
 
-## 6 champs essentiels d'un log
+### 6 champs essentiels d'un log
 
 <div class="text-sm leading-tight">
 
@@ -124,7 +123,7 @@ layout: default
 layout: default
 ---
 
-## Champs spécifiques ML
+### Champs spécifiques ML
 
 <div class="text-sm leading-tight">
 
@@ -149,7 +148,7 @@ layout: default
 layout: default
 ---
 
-## RGPD dans les logs
+### RGPD dans les logs
 
 <div class="text-sm opacity-85 mt-6">
 
@@ -169,7 +168,7 @@ layout: default
 layout: default
 ---
 
-## Pipeline en 4 étapes
+### Pipeline en 4 étapes
 
 ```mermaid {scale: 0.95}
 graph LR
@@ -183,11 +182,10 @@ graph LR
 <div class="text-center text-sm mt-6 opacity-70">La <strong>qualité du log</strong> se décide à l'<strong>étape 1</strong>.</div>
 
 ---
-hideInToc: true
 layout: fact
 ---
 
-# Volume × Rétention × Requêtage
+### Volume × Rétention × Requêtage
 
 <div class="text-xl opacity-80 mt-6">= <strong class="text-[#e63946]">Coût</strong></div>
 
@@ -203,7 +201,7 @@ layout: fact
 layout: statement
 ---
 
-## « La qualité du log<br/>se décide à l'<span class="text-[#457b9d]">émission</span>,<br/>pas au requêtage. »
+### « La qualité du log<br/>se décide à l'<span class="text-[#457b9d]">émission</span>,<br/>pas au requêtage. »
 
 <div class="text-sm opacity-50 mt-8">— </div>
 
@@ -211,7 +209,7 @@ layout: statement
 layout: default
 ---
 
-## Centralisation — 3 options
+### Centralisation — 3 options
 
 <div class="text-sm leading-tight">
 
@@ -235,7 +233,7 @@ layout: default
 layout: default
 ---
 
-## Démo · FastAPI + python-json-logger (1/3)
+### Démo · FastAPI + python-json-logger (1/3)
 
 ```python {all|3-4|6-13|all}
 import logging
@@ -260,7 +258,7 @@ logger.setLevel(logging.INFO)
 layout: default
 ---
 
-## Démo · Middleware request_id (2/3)
+### Démo · Middleware request_id (2/3)
 
 ```python {all|1-3|5-12|all}
 import uuid, contextvars
@@ -284,7 +282,7 @@ async def request_id_middleware(request, call_next):
 layout: default
 ---
 
-## Démo · Log start / end (3/3)
+### Démo · Log start / end (3/3)
 
 ```python {all|2-4|6-11|all}
 @app.middleware("http")
@@ -312,7 +310,7 @@ async def log_request(request, call_next):
 layout: default
 ---
 
-## Gérer les exceptions · enrichir & transmettre
+### Gérer les exceptions · enrichir & transmettre
 
 ```python {all|1-2|4-12|13|all}
 try:
@@ -359,7 +357,7 @@ except ValueError as exc:                  # catch spécifique, jamais `except:`
 layout: default
 ---
 
-## Créer ses propres exceptions · pour l'APM
+### Créer ses propres exceptions · pour l'APM
 
 ```python {all|1-3|5-9|11-17|all}
 class MailGuardError(Exception):
@@ -399,7 +397,7 @@ async def handle_app_error(req, exc: MailGuardError):
 layout: default
 ---
 
-## Règle d'or & anti-patterns
+### Règle d'or & anti-patterns
 
 <div class="grid grid-cols-2 gap-6 mt-4 text-sm">
 
@@ -431,7 +429,7 @@ layout: default
 layout: center
 ---
 
-## 🛠️ Exercice · 15 min
+### 🛠️ Exercice · 15 min
 
 <div class="text-xl mt-6 max-w-3xl mx-auto">
 Sur le squelette d'API fourni, ajouter :
@@ -449,10 +447,9 @@ Sur le squelette d'API fourni, ajouter :
 <div class="text-sm mt-8 opacity-60">À conserver dans votre projet brief — base pour M3 (Prometheus).</div>
 
 ---
-hideInToc: true
 layout: center
 ---
 
-# 🍽️ Pause déjeuner
+### 🍽️ Pause déjeuner
 
 <div class="text-sm opacity-60 mt-6">Reprise · <strong>Module 8 — Drift modèle ML</strong></div>
