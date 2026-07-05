@@ -48,9 +48,9 @@ layout: default
 
 <div class="border-l-4 border-[#1d3557] pl-3 opacity-60">
 
-#### 👥 Métiers
+#### 👥 AI Users
 
-GenAI, chat, RAG no-code, agents prêts à l'emploi.
+GenAI, chat, RAG no-code, vibe coding, agents prêts à l'emploi.
 
 <div class="text-xs opacity-70 mt-2">**Cible** : usagers — n'écrivent pas de code.</div>
 
