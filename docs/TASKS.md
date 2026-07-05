@@ -13,7 +13,7 @@ Project task tracking.
 - [ ] <https://decks.maxime-lenne.fr/1> — diffuser et call to action (Bootcamp !)
 - [ ] Add deck categories
 - [ ] Refactor existing components (link list in presentation, prerequisites and objectives)
-- [ ] Refactor design of TOC for langchain deck
+- [x] Refactor design of TOC for langchain deck
 - [ ] Rethink unused components with potential (CodeBlock → file, ExerciseCard see in langchain, LearningObjective...)
 - [ ] Add roti / feedback slide
 - [ ] component qrcode, slide links
@@ -25,7 +25,7 @@ Project task tracking.
 - [ ] Fix build system
 - [ ] Add more icons and images / use template slides / starters / layout available without customizing /
 - [ ] Add a logo for Simplon theme
-- [ ] Slide dimensions
+- [x] Slide dimensions
 
 Refactor de tous les deck :
 - refaco des TOC pour qu'il soit tous comme le deck : agentic coding -> revenir au composant de base qui surcharge plutot qu'un custom
@@ -34,18 +34,18 @@ Refactor de tous les deck :
 - slide de fin comme : agentic coding
 - citation comme le deck : agentic coding
 
-- refaco des TOC pour qu'il soit tous comme le deck : agentic coding -> revenir au composant de base qui surcharge plutot qu'un custom
-- citation comme le deck : agentic coding -> revenir à la syntax de base réadapté le style pour garder exactement le style actuel
+- [x] refaco des TOC pour qu'il soit tous comme le deck : agentic coding -> revenir au composant de base qui surcharge plutot qu'un custom
+- [x] citation comme le deck : agentic coding -> revenir à la syntax de base réadapté le style pour garder exactement le style actuel
 
-- Refacto les titres dans tous les decks :
-  - il ne doit n'y avoir qu'un seul h1 la slide de coder
-  - Les titres h2 ne sont que les titres de sections (peut être supprimer les hideInToc: true qui ne sert plus forcement, et bloquer le niveau des TOC à h2)
-  - les h3 peuvent être utilisé pour les sous sections ou les titres d'une slides
-  - h4 et h5 peuvent être utilisés un peu partout (sous titres...)
-  - Attention le design actuel du themes maxime-lenne ne doit pas changer.
-  -
+- [x] Refacto les titres dans tous les decks :
+  - [x] il ne doit n'y avoir qu'un seul h1 la slide de coder
+  - [x] Les titres h2 ne sont que les titres de sections (peut être supprimer les hideInToc: true qui ne sert plus forcement, et bloquer le niveau des TOC à h2)
+  - [x] les h3 peuvent être utilisé pour les sous sections ou les titres d'une slides
+  - [x] h4 et h5 peuvent être utilisés un peu partout (sous titres...)
+  - [x] Attention le design actuel du themes maxime-lenne ne doit pas changer.
+
 - Refacto dans tous les decks, les dernières slides systématiquement :
-  - 3 take aways,
+  - 3 take aways -> faire composant ou layout
   - avec ressources pour aller plus loin
   - next steps,
   - slide composant remerciement
@@ -76,7 +76,7 @@ en faire une composant dans layout end en gardant exactement sont design et cont
 - composant liste d'étapes
 
 - mermaid
-- slides exercices dans decks langchain -> créer composants
+- slides exercices dans decks langchain -> créer composants / layout
 
 ### Deck Agentic coding
 
@@ -85,7 +85,7 @@ en faire une composant dans layout end en gardant exactement sont design et cont
 - workflow
 - demo multi agents
 - photo
-- lien vers slide rappel
+- [x] lien vers slide rappel
 - skills : ajouter une slide : ou trouver des skills (skills.sh par vercel), pour les créer / valider / optimiser / personaliser utiliser une skills de création de skills (inception), créer des plugins pour partager avec votre équipes
 
 ## Completed
