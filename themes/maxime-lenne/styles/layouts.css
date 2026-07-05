@@ -332,7 +332,7 @@
 
 .slidev-layout.fact h3,
 .slidev-layout.statement h3 {
-  @apply text-8xl font-900 leading-none;
+  @apply text-7xl font-900 leading-none;
 }
 
 .slidev-layout.fact h4,
