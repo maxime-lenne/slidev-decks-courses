@@ -1,5 +1,4 @@
 ---
-hideInToc: true
 layout: two-cols-header
 ---
 
@@ -38,7 +37,6 @@ layout: two-cols-header
 -->
 
 ---
-hideInToc: true
 layout: default
 ---
 
@@ -96,23 +94,22 @@ src: ../../templates/slides.md#1
 ---
 
 ---
-hideInToc: true
-layout: default
+layout: toc
 ---
-
-<div class="toc-page">
-
-### Table of Contents
 
 <Toc :max-depth="2" />
 
-</div>
+---
+layout: section-liquid
+---
+
+## Contexte et introduction
 
 ---
 layout: section
 ---
 
-## Rappels
+### Rappels
 
 ---
 layout: default
@@ -290,7 +287,7 @@ layout: center
 layout: section
 ---
 
-## Demo
+### Demo
 
 ---
 layout: statement

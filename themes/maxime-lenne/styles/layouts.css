@@ -37,15 +37,15 @@
  * title for every other layout — same visual weight as h1 used to have, kept
  * identical here so no deck needs restyling, only its heading level bumped.
  */
-.slidev-layout.default > h3,
-.slidev-layout.two-cols-header > div:first-child > h3,
-.slidev-layout.two-cols > h3,
-.slidev-layout.image-left > h3,
-.slidev-layout.image-right > h3,
-.slidev-layout.center > h3,
-.slidev-layout.full > h3,
-.slidev-layout.end > h3,
-.slidev-layout.quote > h3 {
+.slidev-layout.default h3,
+.slidev-layout.two-cols-header div:first-child h3,
+.slidev-layout.two-cols h3,
+.slidev-layout.image-left h3,
+.slidev-layout.image-right h3,
+.slidev-layout.center h3,
+.slidev-layout.full h3,
+.slidev-layout.end h3,
+.slidev-layout.quote h3 {
   @apply text-5xl mb-6 -ml-[0.05em];
   line-height: 1.2;
 }
@@ -150,7 +150,8 @@
 }
 
 .slidev-layout.section h1,
-.slidev-layout.section h2 {
+.slidev-layout.section h2,
+.slidev-layout.section h3 {
   @apply text-7xl font-700 leading-tight;
   color: white;
   text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
@@ -159,7 +160,8 @@
 }
 
 .slidev-layout.section h1 + p,
-.slidev-layout.section h2 + p {
+.slidev-layout.section h2 + p,
+.slidev-layout.section h3 + p {
   @apply text-xl opacity-90;
   color: white;
 }
@@ -190,7 +192,8 @@
 }
 
 .slidev-layout.section-liquid h1,
-.slidev-layout.section-liquid h2 {
+.slidev-layout.section-liquid h2,
+.slidev-layout.section-liquid h3 {
   @apply text-7xl font-700 leading-tight;
   color: white;
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
@@ -199,7 +202,8 @@
 }
 
 .slidev-layout.section-liquid h1 + p,
-.slidev-layout.section-liquid h2 + p {
+.slidev-layout.section-liquid h2 + p,
+.slidev-layout.section-liquid h3 + p{
   @apply text-xl opacity-90;
   color: white;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
@@ -243,63 +247,79 @@
 }
 
 .slidev-layout.quote blockquote::before {
-  content: '"';
   @apply text-8xl absolute -left-4 -top-8 opacity-20;
   background: var(--ml-gradient-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
+.slidev-layout.quote h3 {
+  @apply text-4xl mb-12 leading-[1.5];
+}
+.slidev-layout.quote h3::before {
+  content: '"';
+  @apply text-8xl relative -left-4 -top-2 opacity-20 italic;
+  background: var(--ml-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.slidev-layout.quote h3::after {
+  content: '"';
+  @apply text-8xl relative -right-4 top-2 opacity-20 italic;
+  background: var(--ml-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 /*
  * TOC page - wraps Slidev's native <Toc /> component, styled via its own classes.
  * The tree root (level-1) is the deck's own cover title, kept unhidden so its
  * real children (the h2 sections, level-2) survive Slidev's hideInToc filtering
  * (hiding a node also discards its children) — its own entry is just not shown.
  */
-.toc-page {
+.slidev-layout.toc {
   @apply h-full flex items-center gap-16 px-4;
 }
 
-.toc-page > h3 {
-  @apply text-[4.5rem] font-black leading-[1.05] uppercase tracking-tight w-2/5 m-0;
+.slidev-layout.toc .toc-title h3 {
+  @apply text-[4.5rem] font-black leading-[1.05] uppercase tracking-tight m-0;
   color: #457b9d;
 }
 
-.toc-page .slidev-toc-list-level-1 {
-  @apply w-3/5;
+.slidev-layout.toc .slidev-toc-list-level-1 {
   list-style: none;
 }
 
-.toc-page .slidev-toc-list-level-1 > .slidev-toc-item > a {
+.slidev-layout.toc .slidev-toc-list-level-1 > .slidev-toc-item > a {
   display: none;
 }
 
-.toc-page .slidev-toc-list-level-2 {
+.slidev-layout.toc .slidev-toc-list-level-2 {
   @apply space-y-3 text-lg;
   list-style: none;
   counter-reset: toc-counter;
 }
 
-.toc-page .slidev-toc-list-level-2 > .slidev-toc-item {
+.slidev-layout.toc .slidev-toc-list-level-2 .slidev-toc-item {
   @apply flex gap-5 items-start;
   counter-increment: toc-counter;
 }
 
-.toc-page .slidev-toc-list-level-2 > .slidev-toc-item::before {
+.slidev-layout.toc .slidev-toc-list-level-2 .slidev-toc-item::before {
   content: counter(toc-counter, decimal-leading-zero);
   @apply text-xl font-black;
   color: #457b9d;
   min-width: 2rem;
 }
 
-.toc-page .slidev-toc-list-level-2 > .slidev-toc-item a {
+.slidev-layout.toc .slidev-toc-list-level-2 .slidev-toc-item a {
   @apply opacity-80;
   border: none;
   transition: color 0.15s, opacity 0.15s;
 }
 
-.toc-page .slidev-toc-list-level-2 > .slidev-toc-item a:hover {
+.slidev-layout.toc .slidev-toc-list-level-2 .slidev-toc-item a:hover {
   @apply opacity-100;
   color: #457b9d;
 }
@@ -310,13 +330,20 @@
   @apply h-full grid place-items-center text-center;
 }
 
-.slidev-layout.fact > h3,
-.slidev-layout.statement > h3 {
-  @apply text-9xl font-900 leading-none;
+.slidev-layout.fact h3,
+.slidev-layout.statement h3 {
+  @apply text-8xl font-900 leading-none;
 }
 
-.slidev-layout.fact > h3 + p,
-.slidev-layout.statement > h3 + p {
+.slidev-layout.fact h4,
+.slidev-layout.statement h4 {
+  @apply text-4xl font-900 leading-none;
+}
+
+.slidev-layout.fact h3 + p,
+.slidev-layout.statement h3 + p,
+.slidev-layout.fact h4 + p,
+.slidev-layout.statement h4 + p{
   @apply text-3xl font-500 mt-8;
 }
 

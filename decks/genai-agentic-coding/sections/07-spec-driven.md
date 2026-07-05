@@ -109,19 +109,19 @@ Données mesurées (LogRocket 2025, GitLab 2025) sur les équipes ayant adopté 
 <div class="grid-3 mt-16">
   <div>
     <div>
-      <h2> -40 à 60%</h2>
+      <h4> -40 à 60%</h4>
       bugs en production
     </div>
   </div>
   <div>
     <div>
-    <h2>+30%</h2>
+    <h4>+30%</h4>
       vélocité après adoption
     </div>
   </div>
   <div>
     <div>
-    <h2>78%</h2>
+    <h4>78%</h4>
       des équipes enterprise utilisent des outils AI
     </div>
   </div>
@@ -233,7 +233,7 @@ Quel problème résout-elle ?
 layout: section
 ---
 
-## Spec-Driven Development : Les Frameworks
+### Spec-Driven Development : Les Frameworks
 
 <div class="text-lg opacity-70 mt-4">les frameworks AIDD</div>
 

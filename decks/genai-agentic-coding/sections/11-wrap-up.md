@@ -1,16 +1,16 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-## Take-aways
+## Conclusion
 
-<div class="text-lg opacity-70 mt-4">3 choses à retenir + Ressources</div>
+<div class="text-lg opacity-70 mt-4">3 key Take-aways - Ressources - Next Steps</div>
 
 ---
 layout: default
 ---
 
-<h3 class="text-3xl mb-4">Les 3 choses à retenir</h3>
+<h3 class="text-3xl mb-4">3 key Take-aways</h3>
 
 <div class="grid grid-cols-3 gap-4 mt-6 text-sm">
 
@@ -148,18 +148,10 @@ layout: default
 -->
 
 ---
-layout: section
----
-
-## Next Steps
-
-<div class="text-lg opacity-70 mt-4">par où commencer</div>
-
----
 layout: default
 ---
 
-### Les 2 chantiers à lancer cette semaine
+### Les 2 Next Steps
 
 <br>
 

@@ -16,18 +16,18 @@ layout: default
 
 <div class="flex justify-center">
 
-```mermaid {scale: 0.65}
+```mermaid {scale: 0.9}
 graph TB
-    subgraph Host["MCP Host (Agent IA — Claude Code)"]
+    subgraph Host["MCP Host - Agent IA"]
         Client1["MCP Client 1"]
         Client2["MCP Client 2"]
         Client3["MCP Client 3"]
     end
-    subgraph Local["🖥️ Local (stdio — même machine)"]
+    subgraph Local["🖥️ Local"]
         ServerA["Filesystem"]
         ServerB["Figma"]
     end
-    subgraph Remote["☁️ Distant (HTTP/SSE — réseau)"]
+    subgraph Remote["☁️ Distant"]
         ServerC["GitHub"]
     end
     Client1 ---|"subprocess"| ServerA
@@ -39,7 +39,7 @@ graph TB
 
 <div class="text-sm opacity-70 mt-2 text-center">
 
-**Local** = process enfant sur ta machine (stdio) · **Distant** = service réseau (HTTP/SSE) · même protocole MCP des deux côtés
+**🖥️ Local** = process enfant sur ta machine (stdio — même machine) · **☁️ Distant** = service réseau (HTTP/SSE) · même protocole MCP des deux côtés
 
 </div>
 

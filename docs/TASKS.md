@@ -20,12 +20,63 @@ Project task tracking.
 - [ ] Make this a template project
 - [ ] generate index on deploy
 - [ ] url sourcerer
-- [ ] call to action quizz, briefs...
-- [ ] Add calendar slide, cofee break, lunch, demo template
+- [ ] templates call to action quizz, briefs...
+- [ ] Add calendar slide template : with cofee break, lunch, demo
 - [ ] Fix build system
 - [ ] Add more icons and images / use template slides / starters / layout available without customizing /
 - [ ] Add a logo for Simplon theme
 - [ ] Slide dimensions
+
+Refactor de tous les deck :
+- refaco des TOC pour qu'il soit tous comme le deck : agentic coding -> revenir au composant de base qui surcharge plutot qu'un custom
+- decouper tous les decks en sections comme le deck : agentic coding
+- slide remerciement comme le deck : ci-cd-github
+- slide de fin comme : agentic coding
+- citation comme le deck : agentic coding
+
+- refaco des TOC pour qu'il soit tous comme le deck : agentic coding -> revenir au composant de base qui surcharge plutot qu'un custom
+- citation comme le deck : agentic coding -> revenir à la syntax de base réadapté le style pour garder exactement le style actuel
+
+- Refacto les titres dans tous les decks :
+  - il ne doit n'y avoir qu'un seul h1 la slide de coder
+  - Les titres h2 ne sont que les titres de sections (peut être supprimer les hideInToc: true qui ne sert plus forcement, et bloquer le niveau des TOC à h2)
+  - les h3 peuvent être utilisé pour les sous sections ou les titres d'une slides
+  - h4 et h5 peuvent être utilisés un peu partout (sous titres...)
+  - Attention le design actuel du themes maxime-lenne ne doit pas changer.
+  -
+- Refacto dans tous les decks, les dernières slides systématiquement :
+  - 3 take aways,
+  - avec ressources pour aller plus loin
+  - next steps,
+  - slide composant remerciement
+
+```
+---
+layout: cover
+background: <https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920>
+---
+
+<ThankYou deck-slug="genai-ai-engineer-mcp-deep-dive" />
+```
+
+- Slide final basé sur le template :
+
+```
+---
+src: ../../templates/slides.md#2
+---
+```
+
+en faire une composant dans layout end en gardant exactement sont design et contenu actuel.
+
+- premières section systématiquement : prérequuis et objectifs, TOC, Présentation
+
+- image sections ou layout image, filtre en fonction theme dark / light
+- sections et sous sections
+- composant liste d'étapes
+
+- mermaid
+- slides exercices dans decks langchain -> créer composants
 
 ### Deck Agentic coding
 
