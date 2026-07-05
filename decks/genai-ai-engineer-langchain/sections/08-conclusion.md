@@ -99,23 +99,44 @@ Mais pour les cas complexes, c'est un gain de temps énorme
 -->
 
 ---
-layout: two-cols-header
+layout: default
 ---
 
-### Key Takeaways
+<h3 class="text-3xl mb-4">Key Takeaways</h3>
 
-<v-clicks>
+<div class="grid grid-cols-3 gap-4 mt-6 text-sm">
 
-🧱 **LangChain = Lego pour LLMs**
-  Composants réutilisable, gain de productivité massif
+<div class="border-l-4 border-[#457b9d] pl-4">
 
-⛓️ **Chaînage = Puissance**
-   Composer des opérations complexes simplement, flow de données, code lisible et maintenable
+<div class="text-3xl mb-2">🧱</div>
 
-🎯 **Abstraction = Focus sur la Valeur**
-   Concentrez-voAjoute us sur votre logique métier, pas sur le "plumbing code", réduction de 80%+ du boilerplate
+#### LangChain = Lego pour LLMs
 
-</v-clicks>
+Composants réutilisables et interopérables : gain de productivité massif sur les apps LLM.
+
+</div>
+
+<div class="border-l-4 border-[#10b981] pl-4">
+
+<div class="text-3xl mb-2">⛓️</div>
+
+#### Chaînage = Puissance
+
+Composer des opérations complexes simplement : flow de données explicite, code lisible et maintenable.
+
+</div>
+
+<div class="border-l-4 border-[#e63946] pl-4">
+
+<div class="text-3xl mb-2">🎯</div>
+
+#### Abstraction = Focus sur la valeur
+
+Concentrez-vous sur votre logique métier, pas sur le "plumbing code" : réduction de 80%+ du boilerplate.
+
+</div>
+
+</div>
 
 <!--
 Résumer les 3 messages principaux

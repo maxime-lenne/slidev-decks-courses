@@ -73,6 +73,52 @@ layout: default
 - GitHub discussions
 
 ---
+layout: default
+---
+
+### Prochaines étapes — par où commencer
+
+<div class="grid grid-cols-2 gap-6 mt-4 text-sm">
+
+<div class="border-l-4 border-[#457b9d] pl-4 bg-[#457b9d]/10 py-3 pr-4 rounded">
+
+<div class="text-3xl mb-2">🛠️</div>
+
+#### Cette semaine — construire
+
+- **FastMCP** : scaffolder un vrai serveur (tools + resources réels), pas juste un exemple jouet
+- Tester en local avec **MCP Inspector** (stdio)
+- API REST déjà documentée en interne ? Essayer un générateur **OpenAPI → MCP** avant de coder from scratch
+
+</div>
+
+<div class="border-l-4 border-[#10b981] pl-4 bg-[#10b981]/10 py-3 pr-4 rounded">
+
+<div class="text-3xl mb-2">🔌</div>
+
+#### Ensuite — intégrer & industrialiser
+
+- Brancher le serveur comme **skill** dans un agent (Claude Code, Cursor) ou via `langchain-mcp-adapters` dans un workflow LangGraph
+- Passer la **Tools & DX Checklist** : tests, CI/CD, versioning, registry, auth OAuth 2.1, observability
+- Publier / documenter pour que l'équipe le découvre (registry interne, Discord ou GitHub discussions)
+
+</div>
+
+</div>
+
+<div class="text-center mt-6 text-[#457b9d] font-bold">
+
+Le protocole est prêt. Le prochain FastMCP à écrire, c'est le vôtre.
+
+</div>
+
+<!--
+- CTA concret : ne pas repartir avec juste de la théorie, repartir avec un chantier daté
+- "Cette semaine" = scope volontairement petit pour garantir un vrai démarrage
+- "Ensuite" = rappel que MCP en prod = même discipline SWE que tout service (cf. Tools & DX Checklist)
+-->
+
+---
 layout: cover
 background: <https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920>
 ---

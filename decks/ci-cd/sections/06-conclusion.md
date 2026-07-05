@@ -4,7 +4,7 @@ layout: section-liquid
 
 ## À retenir
 
-<div class="text-lg opacity-70 mt-4">20 min · Checklist · Maturité · Outils · Action</div>
+<div class="text-lg opacity-70 mt-4">20 min · Checklist · Maturité · Outils · Take-aways · Ressources</div>
 
 <!--
 - Dernière ligne droite : récap actionnable
@@ -146,6 +146,109 @@ Les <strong>principes</strong> vus aujourd'hui sont <strong>universels</strong>.
 -->
 
 ---
+layout: default
+---
+
+<h3 class="text-3xl mb-4">Les 3 choses à retenir</h3>
+
+<div class="grid grid-cols-3 gap-4 mt-6 text-sm">
+
+<div class="border-l-4 border-[#457b9d] pl-4">
+
+<div class="text-3xl mb-2">⚡</div>
+
+#### Fail fast, feedback rapide
+
+Tests unitaires d'abord, lint en premier (pyramide des tests). Un échec doit remonter en **quelques minutes**, pas en fin de pipeline.
+
+</div>
+
+<div class="border-l-4 border-[#2a9d8f] pl-4">
+
+<div class="text-3xl mb-2">📦</div>
+
+#### Build once, deploy many
+
+Un seul artefact, taggé par **SHA immutable**, promu de staging en production — jamais reconstruit entre les deux.
+
+</div>
+
+<div class="border-l-4 border-[#e63946] pl-4">
+
+<div class="text-3xl mb-2">🔐</div>
+
+#### Confiance zéro par défaut
+
+Moindre privilège, dépendances épinglées par hash, runners éphémères, **OIDC** plutôt que secrets statiques.
+
+</div>
+
+</div>
+
+<!--
+- 3 cartes = 3 messages clés à mémoriser
+- Si on retient une seule chose : "build once, deploy many" — c'est LE principe testé dans le module Builder
+- Si on retient une seule action : auditer les 4 piliers de sécurité de sa pipeline actuelle
+-->
+
+---
+layout: default
+---
+
+### Ressources — Pour aller plus loin
+
+<div class="grid grid-cols-2 gap-8 mt-4 text-sm">
+
+<div>
+
+#### Lectures fondatrices
+
+- 🧠 [Continuous Integration](https://martinfowler.com/articles/continuousIntegration.html) — Martin Fowler
+- 📗 [The Twelve-Factor App](https://12factor.net)
+- 🏗️ [Release Engineering](https://sre.google/sre-book/release-engineering/) — Google SRE Book
+
+#### Specs & sécurité supply-chain
+
+- 🔏 [SLSA](https://slsa.dev) — niveaux de sécurité supply-chain
+- 🖊️ [Sigstore / cosign](https://www.sigstore.dev) — signature d'artefacts
+- 📝 [Conventional Commits](https://www.conventionalcommits.org)
+
+</div>
+
+<div>
+
+#### Documentation officielle
+
+- [GitHub Actions](https://docs.github.com/actions)
+- [GitLab CI/CD](https://docs.gitlab.com/ee/ci/)
+- [Jenkins](https://www.jenkins.io/doc/)
+- [Dagger](https://docs.dagger.io)
+- [Argo CD](https://argo-cd.readthedocs.io)
+
+#### Decks compagnons
+
+- 📦 [CI/CD avec GitHub Actions](https://decks.maxime-lenne.fr/decks/ci-cd-github)
+- 📦 [Docker](https://decks.maxime-lenne.fr/decks/docker)
+
+</div>
+
+</div>
+
+<!--
+- Les decks compagnons sont l'étape pratique naturelle : GitHub Actions pour la mise en oeuvre concrète
+- SLSA / Sigstore = pour aller au-delà des 4 piliers de sécurité vus aujourd'hui
+- Garder ce lien affiché pendant les questions
+-->
+
+---
+layout: section
+---
+
+## Prochaines étapes
+
+<div class="text-lg opacity-70 mt-4">Passer à l'action, dès cette semaine</div>
+
+---
 layout: statement
 ---
 
@@ -212,50 +315,6 @@ et rendez vos déploiements <strong>fiables</strong> et <strong>maîtrisés</str
 - Si pas de questions, lancer : "Vous avez une CI sur votre projet en cours ?"
 - Anticiper les Q&A préparées dans plan.md
 -->
-
----
-layout: two-cols-header
-id: presentation
----
-
-### Présentation
-
-::left::
-
-<div class="flex flex-col gap-5 pt-2">
-  <div class="flex items-center gap-4">
-    <img src="https://github.com/maxime-lenne.png" class="w-20 h-20 rounded-full border-2 border-[#457b9d]" alt="Maxime Lenne" />
-    <div>
-      <div class="text-2xl font-bold">Maxime Lenne</div>
-      <div class="text-[#457b9d] font-medium text-sm">CTO as a Service · Product Engineer</div>
-    </div>
-  </div>
-  <p class="text-sm leading-relaxed opacity-85">Freelance passionné, engagé et créateur d'impact. Appétence forte pour l'entrepreneuriat, les startups, le produit, le management et la tech.</p>
-  <ul class="text-sm space-y-2 list-none">
-    <li>🧭 C(P)TO pendant 10 ans · management 40+ profils variés (Dev, Devops, UX/UI, PM, Data...)</li>
-    <li>🚀 20 ans d'expérience tech (back, front, mobile, cloud, devops, IA, no-code)</li>
-    <li>🏗️ Co-founder &amp; ex-CTO @EcoTa.co · @mobilityz</li>
-  </ul>
-</div>
-
-::right::
-
-<div class="flex flex-col gap-3 text-sm pt-4">
-  <a href="https://maxime-lenne.fr" target="_blank" class="flex items-center gap-2 no-underline opacity-80 hover:opacity-100">🌐 maxime-lenne.fr</a>
-  <a href="https://github.com/maxime-lenne" target="_blank" class="flex items-center gap-2 no-underline opacity-80 hover:opacity-100">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33c.85 0 1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
-    github.com/maxime-lenne
-  </a>
-  <a href="https://www.linkedin.com/in/maximelenne/" target="_blank" class="flex items-center gap-2 no-underline opacity-80 hover:opacity-100">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"/></svg>
-    linkedin.com/in/maximelenne
-  </a>
-  <a href="mailto:hello@maxime-lenne.fr" class="flex items-center gap-2 no-underline opacity-80 hover:opacity-100">✉️ hello@maxime-lenne.fr</a>
-  <div class="flex flex-col items-center gap-2 mt-3 pt-3">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://www.linkedin.com/in/maximelenne/&bgcolor=0f172a&color=94a3b8&margin=6" class="w-40 h-40 rounded-lg" alt="LinkedIn QR" />
-    <div class="text-xs opacity-50">LinkedIn</div>
-  </div>
-</div>
 
 ---
 layout: cover

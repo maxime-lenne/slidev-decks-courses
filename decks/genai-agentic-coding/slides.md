@@ -76,9 +76,5 @@ src: ./sections/09-multi-agents.md
 ---
 
 ---
-src: ./sections/10-cta.md
----
-
----
 src: ./sections/11-wrap-up.md
 ---

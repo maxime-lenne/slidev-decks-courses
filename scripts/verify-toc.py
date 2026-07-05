@@ -38,7 +38,7 @@ def iter_slide_frontmatters(path, seen=None):
         i += 1  # skip closing ---
         body_lines = []
         infence = False
-        while i < n and lines[i].strip() != '---':
+        while i < n and not (lines[i].strip() == '---' and not infence):
             l = lines[i]
             if l.strip().startswith('```'):
                 infence = not infence

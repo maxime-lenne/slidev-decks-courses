@@ -176,6 +176,41 @@ smolagents : idéal avec des petits modèles open-source (Llama, Mistral, Qwen)
 -->
 
 ---
+layout: center
+---
+
+### Next Steps
+
+<div class="grid grid-cols-2 gap-8 mt-6 text-sm">
+
+<div>
+
+#### Cette semaine
+
+- 🛠️ Construire un vrai **projet RAG ou agent** (pas un toy example) : vos propres documents, vos propres outils
+- 🔗 Refaire l'exercice `course-langchain-deep-agents` en l'adaptant à un cas d'usage réel
+- 📐 Choisir 2-3 composants LCEL du deck (`Runnable*`, `create_agent`) et les réutiliser dans un chantier existant
+
+</div>
+
+<div>
+
+#### Pour aller plus loin
+
+- 🕸️ Passer à **LangGraph** dès que vous avez besoin de mémoire, de cycles ou de multi-agents
+- 🔎 Brancher **LangSmith** pour tracer et débugger vos premières chaînes en production
+- 📦 Explorer les decks compagnons : *GenAI et LLM - introduction*, *Protocole MCP en profondeur*
+
+</div>
+
+</div>
+
+<!--
+Next steps concrets, pas juste "allez lire la doc"
+Le vrai apprentissage vient de la construction d'un projet réel, pas d'un nouveau tutoriel
+-->
+
+---
 layout: cover
 background: <https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920>
 ---

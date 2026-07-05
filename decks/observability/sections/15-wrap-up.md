@@ -11,6 +11,52 @@ layout: section-liquid
 layout: default
 ---
 
+<h3 class="text-3xl mb-4">3 choses à retenir</h3>
+
+<div class="grid grid-cols-3 gap-4 mt-6 text-sm">
+
+<div class="border-l-4 border-[#457b9d] pl-4">
+
+<div class="text-3xl mb-2">📊</div>
+
+#### Logs, métriques, traces : 3 rôles complémentaires
+
+Les métriques vous **alertent** qu'il y a un problème, les logs vous **expliquent** lequel, les traces montrent **où** dans la chaîne d'appels.
+
+</div>
+
+<div class="border-l-4 border-[#e63946] pl-4">
+
+<div class="text-3xl mb-2">🚨</div>
+
+#### Alertez sur les symptômes, pas les causes
+
+SLO + error budget + burn rate valent mieux qu'un seuil `CPU > 90 %`. Objectif : pas plus de 2-3 pages critiques par semaine.
+
+</div>
+
+<div class="border-l-4 border-[#10b981] pl-4">
+
+<div class="text-3xl mb-2">🤖</div>
+
+#### L'IA ajoute deux couches d'observability
+
+Drift modèle (souvent silencieux) et tracing LLM (coût, latence, qualité via Langfuse) s'ajoutent à la stack classique.
+
+</div>
+
+</div>
+
+<!--
+- 3 cartes = 3 messages clés à mémoriser
+- Si on retient une seule chose : les 3 signaux (logs/métriques/traces) répondent à 3 questions différentes
+- Si on retient une seule action : passer les alertes CPU/RAM en alertes symptom-first (SLO)
+-->
+
+---
+layout: default
+---
+
 ### Stack observability « idéale »
 
 ```mermaid {scale: 0.85}
@@ -60,29 +106,6 @@ layout: default
 layout: default
 ---
 
-### Niveaux de maturité · votre prochain palier
-
-<div class="text-sm leading-tight mt-4">
-
-| Niveau | Vous y êtes ? | Prochaine étape |
-|--------|---------------|------------------|
-| **1 · Réactif** | Logs en fichier + métriques infra | → Structurer les logs (M2) |
-| **2 · Structuré** | RED/USE + alerting | → Ajouter SLO + tracing (M5, M6, OTel) |
-| **3 · Proactif** ⭐ | SLO + traces + corrélation | → Gouvernance, multi-tenant (M-OTel avancé) |
-| **4 · Gouverné** | OTel + budgets cardinalité + RACI | → Optimisation continue |
-
-</div>
-
-<div class="text-center text-sm mt-6 opacity-70 text-[#457b9d] font-bold">
-
-Cible de cette formation : passer du niveau 1-2 au niveau **3**.
-
-</div>
-
----
-layout: default
----
-
 ### Ressources
 
 <div class="text-sm opacity-85 mt-4 space-y-1">
@@ -104,6 +127,29 @@ layout: default
 - Langfuse · https://langfuse.com/docs
 - LangSmith · https://docs.smith.langchain.com/
 - OpenAI pricing · https://openai.com/api/pricing/
+
+</div>
+
+---
+layout: default
+---
+
+### Niveaux de maturité · votre prochain palier
+
+<div class="text-sm leading-tight mt-4">
+
+| Niveau | Vous y êtes ? | Prochaine étape |
+|--------|---------------|------------------|
+| **1 · Réactif** | Logs en fichier + métriques infra | → Structurer les logs (M2) |
+| **2 · Structuré** | RED/USE + alerting | → Ajouter SLO + tracing (M5, M6, OTel) |
+| **3 · Proactif** ⭐ | SLO + traces + corrélation | → Gouvernance, multi-tenant (M-OTel avancé) |
+| **4 · Gouverné** | OTel + budgets cardinalité + RACI | → Optimisation continue |
+
+</div>
+
+<div class="text-center text-sm mt-6 opacity-70 text-[#457b9d] font-bold">
+
+Cible de cette formation : passer du niveau 1-2 au niveau **3**.
 
 </div>
 
