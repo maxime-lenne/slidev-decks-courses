@@ -1,0 +1,32 @@
+{
+  "id": "genai-ai-users",
+  "title": "GenAI - AI Users",
+  "description": "Utiliser l'IA générative au quotidien pour les métiers : ChatGPT & OpenAI, Microsoft Copilot (M365), prompting, RAG no-code, agents no-code (Copilot Studio, GPTs), vibe coding, et gouvernance (RGPD, confidentialité).",
+  "status": "draft",
+  "objectives": [
+    "Situer les outils GenAI grand public (ChatGPT, Microsoft Copilot, écosystème OpenAI) et choisir le bon outil pour le bon besoin métier",
+    "Rédiger des prompts efficaces (rôle, contexte, format, exemples, itération) pour des cas marketing, communication et commerce",
+    "Utiliser Copilot dans M365 (Word, Excel, Outlook, Teams, PowerPoint) et ChatGPT au quotidien pour gagner du temps",
+    "Interroger ses propres documents en no-code (fichiers joints, GPTs personnalisés, grounding Copilot) et créer un agent no-code avec Copilot Studio (tools, connecteurs, MCP)",
+    "Adopter les réflexes de gouvernance : confidentialité des données, RGPD, hallucinations, shadow AI et usage responsable"
+  ],
+  "prerequisites": [
+    "Aucune compétence en développement requise",
+    "Utilisation courante d'un poste bureautique (M365 ou Google Workspace) et d'un navigateur web",
+    "Un compte ChatGPT et/ou un accès Microsoft Copilot est un plus pour suivre en pratique"
+  ],
+  "duration": "3-4h",
+  "theme": "maxime-lenne",
+  "thumbnail": "./assets/cover.svg",
+  "tags": ["genai", "ai-users", "chatgpt", "copilot", "microsoft-365", "openai", "prompt-engineering", "rag-no-code", "copilot-studio", "gouvernance"],
+  "language": "fr",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Maxime Lenne",
+      "email": "hello@maxime-lenne.fr"
+    }
+  ],
+  "created": "2026-07-06",
+  "updated": "2026-07-06"
+}

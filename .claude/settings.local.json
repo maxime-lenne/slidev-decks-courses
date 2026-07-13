@@ -93,7 +93,9 @@
       "Skill(wwt-claude-skills:slidev:add-slide)",
       "Bash(perl -i -pe 's{^  /\\\\\\\\p\\\\{Extended_Pictographic\\\\}.*\\\\*/gu$}{  new RegExp\\(\\\\x27\\\\\\\\\\\\\\\\p{Extended_Pictographic}\\(\\\\\\\\\\\\\\\\p{Emoji_Modifier}|\\\\\\\\\\\\\\\\uFE0F\\)?\\(\\\\\\\\\\\\\\\\u200D\\\\\\\\\\\\\\\\p{Extended_Pictographic}\\(\\\\\\\\\\\\\\\\p{Emoji_Modifier}|\\\\\\\\\\\\\\\\uFE0F\\)?\\)*\\\\x27, \\\\x27gu\\\\x27\\)}' themes/maxime-lenne/setup/wrap-heading-emoji.ts)",
       "Bash(grep -c \"^---$\" decks/observability/incident-management.md)",
-      "Bash(grep -n \"^layout: section$\\\\|^# \" decks/genai-ai-engineer-langchain/slides.md)"
+      "Bash(grep -n \"^layout: section$\\\\|^# \" decks/genai-ai-engineer-langchain/slides.md)",
+      "Bash(cd *)",
+      "Bash(npx markdownlint-cli2 *)"
     ],
     "deny": [],
     "ask": []
