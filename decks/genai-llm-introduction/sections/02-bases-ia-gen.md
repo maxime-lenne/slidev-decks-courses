@@ -1,5 +1,7 @@
 ---
 layout: section-liquid
+title: Bases de l'IA Générative
+level: 2
 ---
 
 ## Module 1
@@ -17,19 +19,6 @@ layout: quote
 ### Les machines peuvent-elles penser ?
 
 > Alan Turing, mathématicien, article fondateur de l'IA « Computing Machinery and Intelligence » (1950)
-
----
-layout: statement
----
-
-### "En 2017, une équipe de Google publie un article de 8 pages."
-
-Aujourd'hui, cet article est la fondation de toute l'IA générative.
-
-<!--
-Hook d'ouverture — l'article s'appelle "Attention is All You Need".
-Laisser la phrase résonner avant de passer à la suite.
--->
 
 ---
 layout: default
@@ -62,23 +51,15 @@ layout: default
 ### IA, ML, DL, Gen AI : les 3 niveaux
 
 <div class="flex items-center justify-center mt-6">
-<div class="relative">
-
-<div class="rounded-full border-4 border-slate-600 bg-slate-800/30 flex items-center justify-center" style="width:520px;height:320px;">
-  <div class="text-slate-500 text-sm absolute top-4">IA — Intelligence Artificielle (1940+)</div>
-
-  <div class="rounded-full border-4 border-slate-500 bg-slate-700/40 flex items-center justify-center" style="width:380px;height:230px;">
-    <div class="text-slate-400 text-sm absolute" style="margin-top:-80px">ML — Machine Learning (1970+)</div>
-
-    <div class="rounded-full border-4 border-orange-500/50 bg-orange-500/10 flex items-center justify-center" style="width:240px;height:145px;">
-      <div class="text-orange-400 text-xs absolute" style="margin-top:-38px">DL — Deep Learning (2010+)</div>
-      <div class="text-center">
-        <div class="font-bold text-orange-400 text-sm">Gen AI</div>
-        <div class="text-orange-300/70 text-xs">2020+</div>
-      </div>
-    </div>
-
-  </div>
+<div class="relative rounded-full border-4 border-slate-600 bg-slate-800/30 flex items-center justify-center" style="width:520px;height:320px;">
+<div class="text-slate-500 text-sm absolute left-1/2 -translate-x-1/2 top-4 whitespace-nowrap">IA — Intelligence Artificielle (1940+)</div>
+<div class="relative rounded-full border-4 border-slate-500 bg-slate-700/40 flex items-center justify-center" style="width:380px;height:230px;">
+<div class="text-slate-400 text-sm absolute left-1/2 -translate-x-1/2 top-3 whitespace-nowrap">ML — Machine Learning (1970+)</div>
+<div class="relative rounded-full border-4 border-orange-500/50 bg-orange-500/10 flex flex-col items-center justify-center" style="width:240px;height:145px;">
+<div class="text-orange-400 text-xs absolute left-1/2 -translate-x-1/2 top-2 whitespace-nowrap">DL — Deep Learning (2010+)</div>
+<div class="font-bold text-orange-400 text-sm">Gen AI</div>
+<div class="text-orange-300/70 text-xs">2020+</div>
+</div>
 </div>
 </div>
 </div>
@@ -102,13 +83,13 @@ layout: two-cols-header
 
 ::left::
 
-### GAN — Images réalistes
+#### GAN — Images réalistes
 
 Deux réseaux en compétition : un génère, l'autre juge.
 
 *Exemples :* deepfakes, StyleGAN, This Person Does Not Exist
 
-### Modèles de diffusion
+#### Modèles de diffusion
 
 Partent du bruit et le "dé-bruitent" progressivement.
 
@@ -116,7 +97,7 @@ Partent du bruit et le "dé-bruitent" progressivement.
 
 ::right::
 
-### LLM — Large Language Models
+#### LLM — Large Language Models
 
 Prédisent le prochain token à partir du contexte.
 
@@ -134,6 +115,19 @@ Chacune a ses forces et ses cas d'usage.
 Les GAN sont surtout utilisés pour les images photoréalistes.
 Les modèles de diffusion dominent la génération d'images de haute qualité.
 Les LLM sont les plus polyvalents — c'est ce qu'on va étudier aujourd'hui.
+-->
+
+---
+layout: statement
+---
+
+### "En 2017, une équipe de Google publie un article de 8 pages."
+
+Aujourd'hui, cet article est la fondation de toute l'IA générative.
+
+<!--
+Hook d'ouverture — l'article s'appelle "Attention is All You Need".
+Laisser la phrase résonner avant de passer à la suite.
 -->
 
 ---
@@ -201,7 +195,7 @@ layout: default
 
 <div class="p-4 rounded-lg border border-slate-700 bg-slate-800/50">
 
-### Phase 1
+#### Phase 1
 **Pré-entraînement**
 
 *Non supervisé*
@@ -214,7 +208,7 @@ Apprend sur des téraoctets de texte en prédisant le mot suivant.
 
 <div class="p-4 rounded-lg border border-orange-500/30 bg-orange-500/5">
 
-### Phase 2
+#### Phase 2
 **Fine-tuning**
 
 *Supervisé*
@@ -227,7 +221,7 @@ Spécialisation sur des tâches précises avec des exemples annotés par des hum
 
 <div class="p-4 rounded-lg border border-slate-700 bg-slate-800/50">
 
-### Phase 3
+#### Phase 3
 **RLHF**
 
 *Alignement*
@@ -254,7 +248,7 @@ layout: two-cols-header
 
 ::left::
 
-### Code classique
+#### Code classique
 
 ```python
 def addition(a, b):
@@ -270,7 +264,7 @@ Prévisible, reproductible, déterministe
 
 ::right::
 
-### LLM (température > 0)
+#### LLM (température > 0)
 
 ```
 Prompt : "Donne-moi un prénom"
@@ -351,38 +345,4 @@ Anthropic = safety-first, Anthropic a créé Claude Code qu'on utilise dans les 
 OpenAI = la plus grande adoption publique.
 Mistral = souveraineté européenne, important pour les entreprises avec des données sensibles.
 DeepSeek = révolution prix en janvier 2025.
--->
-
----
-layout: default
-class: text-center
----
-
-### Exercice — 10 min
-
-<div class="mt-8 p-6 rounded-xl border-2 border-orange-500/40 bg-orange-500/5 max-w-2xl mx-auto text-left">
-
-**Testez le même prompt sur 3 modèles différents**
-
-Prompt suggéré :
-> *"Explique-moi ce qu'est un réseau de neurones en 3 phrases, comme si j'avais 15 ans."*
-
-Outils :
-
-- **Claude** → claude.ai
-- **ChatGPT** → chat.openai.com
-- **Gemini** → gemini.google.com
-
-**Observez** : ton, longueur, exemples choisis, style d'écriture
-
-</div>
-
-<div class="mt-6 text-slate-400 text-sm">
-  Partagez vos observations en groupe · Échange 5 min
-</div>
-
-<!--
-Cet exercice montre concrètement les différences entre modèles.
-Chaque modèle a une "personnalité" différente — ton, structure, exemples.
-C'est aussi une bonne façon de se créer un compte sur les principales plateformes.
 -->

@@ -1,5 +1,7 @@
 ---
 layout: section-liquid
+title: "Concepts clefs : RAG, Agents & MCP"
+level: 2
 ---
 
 ## Module 4

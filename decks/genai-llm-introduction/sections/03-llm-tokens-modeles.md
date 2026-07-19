@@ -1,5 +1,7 @@
 ---
 layout: section-liquid
+title: "LLM : Inférence, Tokens, Modèles & Multimodal"
+level: 2
 ---
 
 ## Module 2
@@ -32,7 +34,7 @@ layout: default
 
 ### L'inférence — Comment un LLM génère du texte
 
-<div class="grid grid-cols-2 gap-8 mt-4">
+<div class="grid grid-cols-2 gap-6 mt-3">
 
 <div>
 
@@ -60,23 +62,15 @@ Token 2 : "."          (prob: 87%)
 
 <div>
 
-<div class="p-4 rounded-lg bg-slate-800 border border-slate-700 text-sm mt-2">
+<div class="p-3 rounded-lg bg-slate-800 border border-slate-700 text-sm">
 
 **Autoregressive generation**
 
-Chaque token dépend de tous les tokens précédents.
-
-C'est pourquoi :
+Chaque token dépend de tous les tokens précédents. C'est pourquoi :
 
 - Le modèle ne peut pas "revenir en arrière"
 - La vitesse de génération = tokens/seconde
 - Les réponses longues coûtent plus cher
-
-</div>
-
-<div class="p-4 rounded-lg bg-orange-500/10 border border-orange-500/30 text-sm mt-3">
-
-**Démo live** : tokenizer.c (OpenAI) ou platform.openai.com/tokenizer
 
 </div>
 
@@ -96,17 +90,19 @@ layout: default
 
 ### Les tokens — L'unité de base des LLM
 
-<div class="grid grid-cols-2 gap-8 mt-4">
+<div class="grid grid-cols-2 gap-8 mt-3">
 
 <div>
 
 **Qu'est-ce qu'un token ?**
 
-- Unité de texte (sous-mot, mot, ou morceau de mot)
-- 1 token ≈ **4 caractères** en moyenne (anglais)
-- 1 token ≈ **3 caractères** en français (langues latines tokenisent moins bien)
+- Unité de texte (sous-mot, mot, ou fragment)
+- 1 token ≈ **4 caractères** (anglais), **3** en français
+- Les langues latines tokenisent moins bien
 
 **Exemples**
+
+<div class="text-sm [&_td]:py-1 [&_th]:py-1">
 
 | Texte | Tokens |
 |-------|--------|
@@ -114,6 +110,8 @@ layout: default
 | "extraordinaire" | 3-4 |
 | "Claude" | 1 |
 | "tokenisation" | 3 |
+
+</div>
 
 </div>
 
@@ -133,7 +131,8 @@ layout: default
 <div class="mt-4 p-3 rounded-lg bg-orange-500/10 border border-orange-500/30 text-sm">
 
 Un token n'est pas un mot — *"bonjour"* = 1 token, *"extraordinairement"* peut en valoir 4.
-
+<br />
+**Démo live** : [tokenizer par OpenAi](https://platform.openai.com/tokenizer)
 </div>
 
 </div>
@@ -164,11 +163,15 @@ Tout ce que le modèle "voit" à un instant donné : le système prompt + l'hist
 
 **Tailles actuelles**
 
+<div class="text-sm [&_td]:py-1 [&_th]:py-1">
+
 | Modèle | Fenêtre |
 |--------|---------|
 | GPT-4o | 128K tokens |
 | Claude Sonnet 4.6 | 1M tokens |
 | Gemini 3.1 Pro | 1M tokens |
+
+</div>
 
 </div>
 
@@ -184,15 +187,15 @@ Tout ce que le modèle "voit" à un instant donné : le système prompt + l'hist
 
 </v-clicks>
 
-<div class="mt-6 p-3 rounded-lg bg-slate-800 border border-slate-700 text-sm">
+<div class="mt-4 p-3 rounded-lg bg-slate-800 border border-slate-700 text-sm [&_pre]:!text-xs [&_pre]:!leading-snug">
 
 ```
-[ System prompt ] + [ Messages ] + [ Votre message ]
-      ↑                  ↑               ↑
-   Toujours           Historique     Ce que vous
-   présent           de la conv.     tapez maintenant
-   ──────────────────────────────────────────────
-                = Fenêtre de contexte
+[System prompt] + [Messages] + [Message]
+      ↑              ↑             ↑
+   Toujours      Historique    Votre saisie
+   présent       de la conv.   du moment
+   ────────────────────────────────────
+          = Fenêtre de contexte
 ```
 
 </div>
@@ -215,7 +218,7 @@ layout: two-cols-header
 
 ::left::
 
-### `temperature = 0`
+#### `temperature = 0`
 
 Déterministe et reproductible
 
@@ -233,7 +236,7 @@ Prompt : "La capitale de la France ?"
 
 ::right::
 
-### `temperature = 0.7 → 1`
+#### `temperature = 0.7 → 1`
 
 Varié et créatif
 
@@ -263,47 +266,49 @@ layout: two-cols-header
 
 ::left::
 
-### LLM — Large Language Models
+#### LLM — Large Language Models
 
-**Taille :** 70B → 1T+ paramètres
+<div class="text-sm">
 
+**Taille :** 70B → 1T+ paramètres<br>
 **Exemples :** Claude Opus, GPT-5, Gemini Pro
 
-**Forces :**
+**Forces**
 
-- Raisonnement complexe
-- Multilinguisme
+- Raisonnement complexe · Multilinguisme
 - Tâches ouvertes variées
 
-**Contraintes :**
+**Contraintes**
 
-- Cloud uniquement
-- Coût élevé ($$$)
+- Cloud uniquement · Coût élevé ($$$)
 - Latence plus haute
+
+</div>
 
 ::right::
 
-### SLM — Small Language Models
+#### SLM — Small Language Models
 
-**Taille :** 1B → 30B paramètres
+<div class="text-sm">
 
+**Taille :** 1B → 30B paramètres<br>
 **Exemples :** Phi-3, Gemma 2B, Llama 3.2 3B
 
-**Forces :**
+**Forces**
 
 - Tournent en local (téléphone, laptop)
-- Coût nul ou très faible
-- Réponse rapide
-- Données restent chez vous
+- Coût nul · Réponse rapide · Données chez vous
 
-**Contraintes :**
+**Contraintes**
 
 - Moins capable sur tâches complexes
 - Spécialisation nécessaire
 
-<div class="mt-2 text-sm text-orange-400">
+</div>
 
-**Tendance 2025** : les SLM se rapprochent des LLM sur des tâches ciblées — distillation de connaissance.
+<div class="highlight-box text-sm !my-2 !py-2">
+
+**Tendance 2025** : les SLM rattrapent les LLM sur des tâches ciblées (distillation).
 
 </div>
 
@@ -319,61 +324,53 @@ layout: default
 
 ### Types de modèles selon l'usage
 
-<div class="grid grid-cols-2 gap-4 mt-4 text-sm">
+<div class="grid grid-cols-2 gap-4 mt-4 text-sm [&_h4]:mb-1 [&_p]:my-1 [&_p]:leading-snug">
 
 <div class="p-3 rounded-lg border border-slate-700 bg-slate-800/50">
 
-### Chat
+#### Chat
 
-Conversationnel, tour par tour
+Conversationnel — garde le fil du dialogue naturel
 
 *Claude.ai, ChatGPT, Gemini*
-
-Optimisé pour le dialogue naturel, garde le fil de la conversation
 
 </div>
 
 <div class="p-3 rounded-lg border border-slate-700 bg-slate-800/50">
 
-### Instruct
+#### Instruct
 
-Suit des instructions précises
+Instructions précises → sorties structurées (JSON, XML, MD)
 
 *Claude API, GPT-4 Turbo*
-
-Format structuré, résultats formatés (JSON, XML, Markdown)
 
 </div>
 
 <div class="p-3 rounded-lg border border-orange-500/30 bg-orange-500/5">
 
-### Reasoning
+#### Reasoning
 
-"Pense avant de répondre"
+Raisonne avant de répondre — maths, code, problèmes complexes
 
-*Claude Extended Thinking, o1, o3*
-
-Raisonnement en chaîne interne — meilleur sur problèmes complexes, maths, code
+*Extended Thinking, o1, o3*
 
 </div>
 
 <div class="p-3 rounded-lg border border-slate-700 bg-slate-800/50">
 
-### Multimodal
+#### Multimodal
 
-Texte + Image + Audio + Vidéo
+Texte + Image + Audio + Vidéo — analyse & génération
 
 *GPT-4o, Gemini, Claude 3+*
 
-Analyse d'images, transcription, génération multi-format
-
 </div>
 
 </div>
 
-<div class="mt-3 p-3 rounded-lg bg-slate-800 border border-slate-700 text-xs text-slate-400">
+<div class="highlight-box text-sm !my-3">
 
-**Embedding** (bonus) : représentation vectorielle du sens d'un texte — utilisé pour la recherche sémantique et le RAG (module 4)
+**Embedding** *(bonus)* : représentation vectorielle du sens — recherche sémantique & RAG (module 4).
 
 </div>
 

@@ -95,7 +95,16 @@
       "Bash(grep -c \"^---$\" decks/observability/incident-management.md)",
       "Bash(grep -n \"^layout: section$\\\\|^# \" decks/genai-ai-engineer-langchain/slides.md)",
       "Bash(cd *)",
-      "Bash(npx markdownlint-cli2 *)"
+      "Bash(npx markdownlint-cli2 *)",
+      "Bash(lsof -iTCP -sTCP:LISTEN -P -n)",
+      "mcp__plugin_chrome-devtools-mcp_chrome-devtools__new_page",
+      "mcp__plugin_chrome-devtools-mcp_chrome-devtools__take_screenshot",
+      "Bash(bunx markdownlint-cli2 *)",
+      "Bash(grep -n \"^---$\\\\|src:\\\\|layout:\\\\|<Toc\\\\|toc-page\\\\|### \\\\|hideInToc\" decks/genai-ai-users/slides.md)",
+      "Bash(grep -n \"^---$\\\\|layout:\\\\|<Toc\\\\|toc-page\\\\|hideInToc\" decks/genai-ai-users/sections/01-intro.md)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(pkill -f \"slidev decks/genai-ai-users\")",
+      "Bash(bunx markdownlint *)"
     ],
     "deny": [],
     "ask": []

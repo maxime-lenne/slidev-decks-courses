@@ -1,5 +1,7 @@
 ---
 layout: section-liquid
+title: Orientations & Formations
+level: 2
 ---
 
 ## Module 5

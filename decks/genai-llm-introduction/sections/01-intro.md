@@ -1,63 +1,41 @@
 ---
 hideInToc: true
-layout: default
-class: text-center
+layout: two-cols-header
 ---
 
-### Programme de la journée
+### Objectifs & Prérequis
 
-<div class="grid grid-cols-3 gap-6 mt-8 text-left text-sm">
+::left::
 
-<div class="p-4 rounded-lg border border-slate-700 bg-slate-800/50">
+#### Objectifs
 
-**9h00 — Module 1**
-Bases IA Gen
-*1h30*
+À l'issue de cette journée vous saurez :
 
-</div>
+- **Comprendre** les mécanismes des LLM *(Transformer, inférence, tokens)*
+- **Écrire** des prompts structurés et efficaces
+- **Distinguer** les concepts clefs : *RAG, agents, MCP*
+- **Choisir** le bon modèle selon le besoin
+- **Situer** votre trajectoire parmi les 3 formations IA
 
-<div class="p-4 rounded-lg border border-slate-700 bg-slate-800/50">
+::right::
 
-**10h45 — Module 2**
-LLM : Inférence, tokens & modèles
-*1h30*
+#### Prérequis
 
-</div>
+- **Aucun** prérequis technique — ouvert à tous les profils
+- Utilisation courante d'un **navigateur** et d'un poste bureautique
+- Un compte **Claude**, **ChatGPT** ou **Gemini** = un plus pour les exercices
 
-<div class="p-4 rounded-lg border border-orange-500/30 bg-orange-500/5">
+<div class="text-sm opacity-70 mt-3">
 
-**14h00 — Module 3**
-Prompt Engineering
-*1h30*
-
-</div>
-
-</div>
-
-<div class="grid grid-cols-2 gap-6 mt-4 text-left text-sm">
-
-<div class="p-4 rounded-lg border border-slate-700 bg-slate-800/50">
-
-**15h45 — Module 4**
-RAG, Agents & MCP
-*1h*
-
-</div>
-
-<div class="p-4 rounded-lg border border-slate-700 bg-slate-800/50">
-
-**16h45 — Module 5**
-Orientations & formations
-*30min*
-
-</div>
+**Cible** : tous profils, tous niveaux — socle commun du Bootcamp IA.
 
 </div>
 
 <!--
-Voici le plan de la journée. 5 modules, 8h au total.
-Pauses à 10h30 et 15h30.
-Déjeuner de 12h15 à 14h.
+- Objectifs alignés sur les 5 modules de la journée.
+- Public hétérogène : pas besoin d'être développeur pour suivre.
+- Slide pivot : on sait où on va et pour qui.
+- Le déroulé horaire est visible sur chaque slide de section (Module 1 → 5).
 -->
 
 ---
@@ -66,13 +44,7 @@ src: ../../templates/slides.md#1
 
 ---
 hideInToc: true
-layout: default
+layout: toc
 ---
 
-<div class="toc-page">
-
-### Table of Contents
-
 <Toc :max-depth="2" />
-
-</div>
