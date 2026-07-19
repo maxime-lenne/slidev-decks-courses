@@ -161,55 +161,12 @@ layout: default
 -->
 
 ---
-layout: default
+src: ../../templates/slides.md#3
 ---
 
-### Rappel : qu'est-ce qu'un agent ?
-
-<br>
-
-<div class="grid grid-cols-2 gap-8 mt-4 text-sm">
-
-<div>
-
-#### Boucle ReAct + tools
-
-```mermaid {scale: 0.6}
-graph TB
-    P[Prompt utilisateur] --> T[Pensée<br/>Reasoning]
-    T --> A[Action<br/>Tool call]
-    A --> O[Observation<br/>Tool result]
-    O --> T
-    T --> R[Réponse<br/>finale]
-```
-
-<div class="text-xs opacity-70 mt-2">L'agent <strong>raisonne</strong>, <strong>agit</strong> (lit/écrit/exécute), <strong>observe</strong>, recommence — jusqu'à finir la tâche.</div>
-
-</div>
-
-<div>
-
-#### Les *tools* d'un coding agent
-
-- 📖 **Read** — lire un fichier
-- ✏️ **Edit / Write** — modifier
-- 🔍 **Grep / Glob** — chercher
-- 🖥️ **Bash** — exécuter une commande
-- 🌐 **WebFetch** — lire une URL
-- 🔌 **MCP** — appeler un service externe
-- 🤖 **Task** — déléguer à un subagent
-
-<div class="text-xs opacity-70 mt-3">Plus on a de bons tools, plus on peut déléguer.</div>
-
-</div>
-
-</div>
-
-<!--
-- Tout coding agent moderne suit ce pattern : Claude Code, Cursor Agent, Copilot Workspace, Devin, Aider
-- Le tool calling (function calling) est le mécanisme bas-niveau — déjà couvert dans le deck genai-llm-introduction
-- Renvoi : pour les bases LLM/tool calling, voir le deck `genai-llm-introduction`
--->
+---
+src: ../../templates/slides.md#4
+---
 
 ---
 layout: default

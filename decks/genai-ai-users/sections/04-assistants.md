@@ -10,6 +10,51 @@ layout: section-liquid
 layout: default
 ---
 
+### La règle d'or : ni magie, ni oracle
+
+<br>
+
+<div class="grid grid-cols-2 gap-8 mt-4 text-sm">
+
+<div class="border-l-4 border-[#e63946] pl-4">
+
+#### Ce que l'IA n'est PAS
+
+- ❌ Un moteur de recherche (elle **invente** parfois)
+- ❌ Une source de vérité vérifiée
+- ❌ À jour en temps réel (sauf outils connectés)
+- ❌ Confidentielle par défaut *(voir gouvernance)*
+
+<div class="text-xs opacity-70 mt-3">Elle produit du **plausible**, pas forcément du **vrai**.</div>
+
+</div>
+
+<div class="border-l-4 border-[#10b981] pl-4">
+
+#### Ce que l'IA EST
+
+- ✅ Un assistant de rédaction & synthèse
+- ✅ Un partenaire de brainstorming
+- ✅ Un accélérateur sur les tâches répétitives
+- ✅ Un traducteur / reformulateur instantané
+
+<div class="text-xs opacity-70 mt-3">**Vous validez toujours** ce qui sort — surtout chiffres, noms, sources.</div>
+
+</div>
+
+</div>
+
+<!--
+- Poser cette diapo tôt : elle désamorce les deux extrêmes (peur & sur-confiance)
+- Anecdote utile : une IA qui invente une jurisprudence / une source inexistante
+- Ce cadre revient en fil rouge, notamment dans la section gouvernance
+-->
+
+---
+layout: default
+class: implementation m365
+---
+
 ### Copilot, là où vous travaillez déjà
 
 <br>

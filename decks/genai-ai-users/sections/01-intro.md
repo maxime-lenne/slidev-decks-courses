@@ -130,15 +130,19 @@ layout: default
 
 <div>
 
-#### Ce que ça change pour vous
+#### Template de base d'un prompt
 
-- ✍️ Rédiger plus vite (mails, posts, comptes-rendus)
-- 📊 Synthétiser (réunions, rapports, docs longs)
-- 💡 Idéer (brainstorm, angles, accroches)
-- 🌍 Traduire & reformuler (ton, cible, format)
-- 🔎 Interroger vos propres documents
+<div class="font-mono text-xs bg-[#1d3557]/10 rounded p-3 mt-1 space-y-1 leading-relaxed">
 
-<div class="text-xs opacity-70 mt-3">Un **copilote**, pas un pilote automatique : vous restez responsable du résultat.</div>
+<div>🎭 <strong>Rôle</strong> &nbsp;&nbsp;&nbsp;&nbsp;→ "Tu es un expert en..."</div>
+<div>📋 <strong>Contexte</strong> → "Dans ce projet..."</div>
+<div>🎯 <strong>Tâche</strong> &nbsp;&nbsp;&nbsp;→ "Génère / Analyse / Corrige..."</div>
+<div>📐 <strong>Format</strong> &nbsp;&nbsp;→ "En bullet points, max 5"</div>
+<div>💡 <strong>Exemple</strong> &nbsp;→ "Par exemple : ..."</div>
+
+</div>
+
+<div class="text-xs opacity-70 mt-3"><strong>Prompt Engineering</strong> = structurer ces éléments pour maximiser la pertinence de la réponse.</div>
 
 </div>
 
@@ -151,72 +155,32 @@ layout: default
 -->
 
 ---
-layout: default
+src: ../../templates/slides.md#3
 ---
 
-### La règle d'or : ni magie, ni oracle
+---
+src: ../../templates/slides.md#4
+---
 
-<br>
+---
+layout: center
+---
 
-<div class="grid grid-cols-2 gap-8 mt-4 text-sm">
+### Besoin de revoir les bases ?
 
-<div class="border-l-4 border-[#e63946] pl-4">
+<div class="text-center mt-6">
 
-#### Ce que l'IA n'est PAS
+<div class="text-base opacity-70 mb-6">GenAI · LLM · Tokenization · Embeddings · RAG · Tool calling</div>
 
-- ❌ Un moteur de recherche (elle **invente** parfois)
-- ❌ Une source de vérité vérifiée
-- ❌ À jour en temps réel (sauf outils connectés)
-- ❌ Confidentielle par défaut *(voir gouvernance)*
-
-<div class="text-xs opacity-70 mt-3">Elle produit du **plausible**, pas forcément du **vrai**.</div>
-
+<div class="text-[#457b9d] text-lg font-mono border border-[#457b9d]/40 px-8 py-4 rounded-lg inline-block">
+  <a href="https://decks.maxime-lenne.fr/decks/genai-llm-introduction">decks.maxime-lenne.fr/decks/genai-llm-introduction</a>
 </div>
 
-<div class="border-l-4 border-[#10b981] pl-4">
-
-#### Ce que l'IA EST
-
-- ✅ Un assistant de rédaction & synthèse
-- ✅ Un partenaire de brainstorming
-- ✅ Un accélérateur sur les tâches répétitives
-- ✅ Un traducteur / reformulateur instantané
-
-<div class="text-xs opacity-70 mt-3">**Vous validez toujours** ce qui sort — surtout chiffres, noms, sources.</div>
-
-</div>
+<div class="text-sm opacity-60 mt-6">Deck pré-requis · ~45 min</div>
 
 </div>
 
 <!--
-- Poser cette diapo tôt : elle désamorce les deux extrêmes (peur & sur-confiance)
-- Anecdote utile : une IA qui invente une jurisprudence / une source inexistante
-- Ce cadre revient en fil rouge, notamment dans la section gouvernance
--->
-
----
-layout: section
----
-
-### Démo d'ouverture
-
----
-layout: statement
----
-
-### Que vient-il de se passer ?
-
-<div class="text-3xl mt-6 opacity-90">Trois tâches métier en <span class="text-[#457b9d] font-bold">deux minutes</span>.</div>
-
-<div class="text-base mt-8 opacity-70 max-w-3xl mx-auto">
-Un <strong>document résumé</strong> · un <strong>mail rédigé</strong> au bon ton ·
-un <strong>tableau</strong> extrait d'un PDF — le tout en langage naturel, sans une ligne de code.
-</div>
-
-<div class="text-sm opacity-50 mt-8">→ C'est <strong>ça</strong> qu'on va outiller pendant la demi-journée.</div>
-
-<!--
-- Faire la démo en LIVE de préférence : coller un vrai PDF dans ChatGPT + demander résumé + mail + tableau
-- Laisser 20 secondes de silence, demander à la salle "qu'avez-vous vu se passer ?"
-- Backup si pas de connexion : screencast dans assets/
+- Partager ce lien dans le chat Teams/Slack en début de session
+- Ce deck couvre tout ce que cette formation suppose acquis
 -->

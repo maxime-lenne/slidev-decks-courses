@@ -417,6 +417,53 @@ slidev-layout.end {
   background-color: var(--ml-gradient-primary);
 }
 
+/*
+ * Implementation slides - vendor/tech-specific (non-agnostic) content.
+ * Add `class: implementation` to a slide's frontmatter to flag hands-on,
+ * tool-specific material (e.g. Microsoft Copilot, OpenAI) and set it apart
+ * from the agnostic, concept-level slides. Renders an amber-tinted background,
+ * a top accent bar, and a discreet "Implémentation" tag in the top-right.
+ * Works on top of any layout (default, two-cols, image-right, ...).
+ *
+ * The tag text can be specialised with a vendor modifier class, e.g.
+ * `class: implementation microsoft` -> tag reads "Microsoft 365".
+ */
+.slidev-layout.implementation {
+  background: linear-gradient(160deg, var(--ml-impl-bg) 0%, var(--ml-impl-bg-alt) 100%);
+  border-top: 4px solid var(--ml-impl-accent);
+  position: relative;
+}
+
+.slidev-layout.implementation::after {
+  content: 'Implémentation';
+  position: absolute;
+  top: 0.9rem;
+  right: 1.1rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ml-impl-accent-text);
+  background: color-mix(in srgb, var(--ml-impl-accent) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ml-impl-accent) 45%, transparent);
+  border-radius: var(--ml-radius-full);
+  pointer-events: none;
+}
+
+/* Vendor modifier classes - specialise the tag text.
+   Usage: `class: implementation microsoft` */
+.slidev-layout.implementation.microsoft::after { content: 'Microsoft'; }
+.slidev-layout.implementation.m365::after { content: 'Microsoft 365'; }
+.slidev-layout.implementation.copilot::after { content: 'Microsoft Copilot'; }
+.slidev-layout.implementation.openai::after { content: 'OpenAI'; }
+.slidev-layout.implementation.chatgpt::after { content: 'ChatGPT'; }
+.slidev-layout.implementation.google::after { content: 'Google'; }
+
 /* Navigation Dots - Custom styling */
 .slidev-nav-go-last,
 .slidev-nav-go-next,
