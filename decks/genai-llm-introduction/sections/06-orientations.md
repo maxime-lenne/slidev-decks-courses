@@ -1,8 +1,12 @@
 ---
-layout: section
+layout: section-liquid
+title: Orientations & Formations
+level: 2
 ---
 
-# Module 5
+## Module 5
+
+<div class="text-lg opacity-70 mt-4">30 min · takeaways · ressources · quiz d'orientation · les 3 formations · prochaine étape</div>
 
 ## Orientations & Formations
 
@@ -12,31 +16,102 @@ layout: section
 layout: default
 ---
 
-# Ce que vous savez maintenant
+<h3 class="text-3xl mb-4">Les 3 choses à retenir</h3>
 
-<v-clicks>
+<div class="grid grid-cols-3 gap-4 mt-6 text-sm">
 
-- **L'IA générative** : Transformer, LLM, les 3 familles, les limites — vous pouvez l'expliquer à quelqu'un d'autre
+<div class="border-l-4 border-[#457b9d] pl-4">
 
-- **Les tokens** : inférence, fenêtre de contexte, température — vous comprenez *pourquoi* les LLM se comportent ainsi
+<div class="text-3xl mb-2">🔮</div>
 
-- **Les modèles** : LLM vs SLM, 4 types, panorama, 4 tiers — vous savez choisir le bon outil pour la bonne tâche
+#### Le LLM prédit, il ne pense pas
 
-- **Le prompting** : anatomie, patterns, 4 stratégies Anthropic, économie des tokens — vous savez construire un prompt efficace
+Chaque réponse est une suite de **prédictions probabilistes**, token par token. Comprendre ça explique pourquoi la température, la fenêtre de contexte et le prompt changent tout.
 
-- **RAG, Agents, MCP** : comment étendre un LLM avec de la mémoire, des actions, et des intégrations — vous comprenez les architectures modernes
+</div>
 
-</v-clicks>
+<div class="border-l-4 border-[#10b981] pl-4">
 
-<div v-click class="mt-6 p-4 rounded-lg bg-orange-500/10 border border-orange-500/30 text-center">
+<div class="text-3xl mb-2">🧱</div>
+
+#### Un prompt structuré change tout
+
+**Rôle, contexte, tâche, format** : les 4 composantes d'un bon prompt. Combinées aux 4 stratégies Anthropic (Write / Select / Compress / Isolate), elles transforment une réponse générique en résultat actionnable.
+
+</div>
+
+<div class="border-l-4 border-[#e63946] pl-4">
+
+<div class="text-3xl mb-2">🔌</div>
+
+#### RAG, Agents, MCP ouvrent le LLM au monde
+
+Seul, un LLM est limité à sa connaissance figée. **RAG** lui donne de la mémoire, les **agents** lui donnent des actions, **MCP** lui donne des intégrations universelles.
+
+</div>
+
+</div>
+
+<div class="mt-6 p-4 rounded-lg bg-orange-500/10 border border-orange-500/30 text-center text-sm">
 
 **C'est le socle commun à toutes les formations.** La suite dépend de votre profil et de vos objectifs.
 
 </div>
 
 <!--
-Récap de la journée — permettre aux participants de réaliser ce qu'ils ont appris.
-Ce socle commun leur donne un avantage sur 90% des gens qui utilisent l'IA sans comprendre comment ça marche.
+- 3 cartes = 3 messages clés à mémoriser, un par grand bloc de la journée (tokens/inférence, prompting, RAG-agents-MCP)
+- Si on retient une seule chose : un LLM prédit, il ne raisonne pas comme un humain
+- Ce socle commun leur donne un avantage sur 90% des gens qui utilisent l'IA sans comprendre comment ça marche
+-->
+
+---
+layout: default
+---
+
+### Ressources pour aller plus loin
+
+<div class="grid grid-cols-2 gap-8 mt-4 text-sm">
+
+<div>
+
+#### Comprendre les fondamentaux
+
+- 🔢 [Tokenizer OpenAI](https://platform.openai.com/tokenizer) — visualiser la tokenisation en direct
+- 🧮 [Embedding Projector](https://projector.tensorflow.org) — explorer des embeddings en 3D
+- 📖 [Attention Is All You Need](https://arxiv.org/abs/1706.03762) — le paper fondateur du Transformer (2017)
+- 🎥 [3Blue1Brown — Neural Networks](https://www.3blue1brown.com/topics/neural-networks) — visualiser le fonctionnement d'un LLM
+
+#### Prompting
+
+- 📘 [Anthropic — Prompt Engineering Guide](https://docs.anthropic.com/claude/docs/prompt-engineering)
+- 📗 [OpenAI — Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)
+- 🧪 [Anthropic — Prompt Library](https://docs.anthropic.com/claude/prompt-library)
+
+</div>
+
+<div>
+
+#### Documentation officielle
+
+- [docs.anthropic.com](https://docs.anthropic.com) — Claude, API, prompting
+- [platform.openai.com/docs](https://platform.openai.com/docs) — GPT, API
+- [ai.google.dev](https://ai.google.dev) — Gemini
+- [modelcontextprotocol.io](https://modelcontextprotocol.io) — standard MCP
+
+#### Aller vers RAG & Agents
+
+- 🦜 [LangChain — Concepts](https://python.langchain.com/docs/concepts) — introduction RAG/agents
+- 🗂️ [LlamaIndex — RAG concepts](https://docs.llamaindex.ai)
+- 🔀 [ReAct paper](https://arxiv.org/abs/2210.03629) — Reasoning + Acting (2022), base des agents modernes
+
+</div>
+
+</div>
+
+<!--
+- Ces ressources sont volontairement centrées "fondamentaux" (tokens, embeddings, prompting, RAG/agents) — pas les formations elles-mêmes, qui sont traitées sur le slide suivant
+- Le tokenizer OpenAI est le même outil que la démo live du module 2 — le partager ici permet aux participants d'y revenir seuls
+- Pour ceux qui veulent creuser un seul lien : le guide de prompt engineering Anthropic
 -->
 
 ---
@@ -44,7 +119,7 @@ layout: default
 class: text-center
 ---
 
-# Quiz d'orientation — Votre profil
+### Quiz d'orientation — Votre profil
 
 <div class="grid grid-cols-2 gap-4 mt-6 text-left text-sm max-w-2xl mx-auto">
 
@@ -95,7 +170,7 @@ Sinon, demander aux participants de lever la main ou d'écrire leur trajectoire 
 layout: default
 ---
 
-# Les 3 formations
+### Les 3 formations
 
 | | Formation Métiers | Formation AI Builders | Formation AI Engineers |
 |---|---|---|---|
@@ -120,7 +195,7 @@ Les formations sont conçues pour être complémentaires et progressives.
 layout: default
 ---
 
-# Votre prochaine étape
+### Votre prochaine étape
 
 <div class="grid grid-cols-3 gap-4 mt-6 text-sm text-center">
 
@@ -169,33 +244,10 @@ Le plus important : passer à la pratique immédiatement.
 
 ---
 layout: cover
+background: <https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920>
 ---
 
-# Merci
-
-**Questions ? Retours ? Échanges ?**
-
-<div class="mt-8 grid grid-cols-2 gap-4 text-sm text-center max-w-xl mx-auto">
-
-<div class="p-3 rounded-lg bg-slate-800/50 border border-slate-700">
-
-**Socle commun**<br>
-Ce module ✅
-
-</div>
-
-<div class="p-3 rounded-lg bg-slate-800/50 border border-slate-700">
-
-**Formation**<br>
-Métiers · Builders · Engineers
-
-</div>
-
-</div>
-
-<div class="mt-10 text-slate-500 text-xs">
-  Bootcamp IA · Fondamentaux Gen AI · 2026
-</div>
+<ThankYou deck-slug="genai-llm-introduction" />
 
 <!--
 Q&A final — 45 minutes.

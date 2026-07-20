@@ -2,7 +2,7 @@
 layout: section
 ---
 
-# Les 8 piliers de la vérification
+## Les 8 piliers de la vérification
 
 <div class="text-lg opacity-70 mt-4">15 min · L'autonomie dépend de ce qu'on peut vérifier</div>
 
@@ -10,10 +10,9 @@ layout: section
 layout: quote
 ---
 
-« Software 1.0 easily automates what you can **specify**.<br/>
-Software 2.0 easily automates what you can **verify**. »
+### Software 1.0 easily automates what you can **specify**. Software 2.0 easily automates what you can **verify**.
 
-<div class="text-base opacity-70 mt-4">— Andrej Karpathy</div>
+> Andrej Karpathy, founding member of OpenAI and later the Director of AI at Tesla
 
 <!--
 - Quote fondateur : tout le deck converge ici

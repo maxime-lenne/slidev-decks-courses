@@ -1,8 +1,8 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Module 4
+## Module 4
 ## Grafana & dashboards
 
 <div class="text-sm opacity-60 mt-4">45 min · J2 matin · RED / USE / drill-down</div>
@@ -11,7 +11,7 @@ layout: section
 layout: default
 ---
 
-## Concepts Grafana
+### Concepts Grafana
 
 <div class="text-sm leading-tight">
 
@@ -29,7 +29,7 @@ layout: default
 layout: statement
 ---
 
-## « Un dashboard utile<br/>répond à une question<br/>en moins de <span class="text-[#10b981]">5 secondes</span>. »
+### « Un dashboard utile<br/>répond à une question<br/>en moins de <span class="text-[#10b981]">5 secondes</span>. »
 
 <div class="text-sm opacity-50 mt-8">— </div>
 
@@ -37,7 +37,7 @@ layout: statement
 layout: default
 ---
 
-## La règle des 3 questions
+### La règle des 3 questions
 
 <div class="grid grid-cols-3 gap-4 mt-6 text-sm">
 
@@ -65,7 +65,7 @@ layout: default
 layout: default
 ---
 
-## RED pour services · USE pour infra
+### RED pour services · USE pour infra
 
 <div class="grid grid-cols-2 gap-6 mt-6 text-sm">
 
@@ -97,7 +97,7 @@ layout: default
 layout: default
 ---
 
-## Hiérarchie drill-down
+### Hiérarchie drill-down
 
 ```mermaid {scale: 0.9}
 graph TD
@@ -119,7 +119,7 @@ en passant par **« quel symptôme ? »** et **« quelle ressource ? »**.
 layout: statement
 ---
 
-## « La moyenne <span class="text-[#e63946]">masque</span> les problèmes.<br/>Affichez toujours <span class="text-[#10b981]">p50 et p99</span>. »
+### « La moyenne <span class="text-[#e63946]">masque</span> les problèmes.<br/>Affichez toujours <span class="text-[#10b981]">p50 et p99</span>. »
 
 <div class="text-sm opacity-50 mt-8">— </div>
 
@@ -133,7 +133,7 @@ layout: statement
 layout: default
 ---
 
-## Recording rules — pré-calcul
+### Recording rules — pré-calcul
 
 ```yaml {all|1-3|4-9|all}
 groups:
@@ -158,7 +158,7 @@ Pré-calculer une fois côté Prometheus, lire X fois côté Grafana.<br/>
 layout: default
 ---
 
-## Annotations de déploiement
+### Annotations de déploiement
 
 ```bash {all|1-3|5-8|all}
 # Depuis votre CI/CD, après chaque release :
@@ -177,7 +177,7 @@ curl -X POST $URL \
 layout: default
 ---
 
-## Anti-patterns à éviter
+### Anti-patterns à éviter
 
 <div class="text-sm opacity-85 mt-4 space-y-2">
 
@@ -195,7 +195,7 @@ layout: default
 layout: statement
 ---
 
-## Dashboards = <span class="text-[#10b981]">lecture</span>.<br/>Alerting = <span class="text-[#e63946]">règles</span>.
+### Dashboards = <span class="text-[#10b981]">lecture</span>.<br/>Alerting = <span class="text-[#e63946]">règles</span>.
 
 <div class="text-xl opacity-85 mt-6">Ne jamais alerter <strong>depuis</strong> un dashboard.</div>
 
@@ -205,7 +205,7 @@ layout: statement
 layout: default
 ---
 
-## Pattern · dashboard API ML
+### Pattern · dashboard API ML
 
 <div class="text-sm opacity-85 mt-4">
 
@@ -239,7 +239,7 @@ layout: default
 layout: default
 ---
 
-## Provisioning · versionner les dashboards
+### Provisioning · versionner les dashboards
 
 ```text
 grafana/

@@ -1,8 +1,8 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Architecture
+## Architecture
 
 <div class="text-lg opacity-70 mt-4">Host, Client, Server — et deux couches</div>
 
@@ -48,7 +48,7 @@ graph TB
 layout: default
 ---
 
-## Trois composants — rôles détaillés
+### Trois composants — rôles détaillés
 
 <br>
 
@@ -190,7 +190,7 @@ layout: default
 layout: default
 ---
 
-## Synthèse architecture
+### Synthèse architecture
 
 <div class="text-sm leading-tight mt-4">
 

@@ -1,8 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Conclusion & What's Next
+## Conclusion & What's Next
+
+<div class="text-lg opacity-70 mt-4">20 min · récapitulatif · cheat sheet · take-aways · ressources · next steps</div>
 
 <!--
 Récapitulatif de tout ce qu'on a vu
@@ -10,16 +12,13 @@ Ouvrir les perspectives pour la suite
 -->
 
 ---
+layout: default
+---
 
 ### Récapitulatif Docker
 
 ```mermaid {scale: 0.8}
----
-config:
-  theme: 'base'
-  themeVariables:
-    nodeText: '#e3f2fd'
----
+%%{init: {'theme': 'base', 'themeVariables': {'nodeText': '#e3f2fd'}}}%%
 mindmap
   root((Docker))
     Images
@@ -53,6 +52,8 @@ Vue d'ensemble : tous les concepts couverts pendant la formation
 -->
 
 ---
+layout: default
+---
 
 ### Cheat sheet : commandes essentielles
 
@@ -74,6 +75,8 @@ Ce cheat sheet est un résumé à garder sous la main
 Partagez-le aux apprenants en fin de formation
 -->
 ---
+layout: default
+---
 
 ### Cheat sheet : commandes essentielles suite
 
@@ -94,6 +97,99 @@ Partagez-le aux apprenants en fin de formation
 Ce cheat sheet est un résumé à garder sous la main
 Partagez-le aux apprenants en fin de formation
 -->
+---
+layout: section
+---
+
+## Take-aways
+
+<div class="text-lg opacity-70 mt-4">3 choses à retenir + ressources pour aller plus loin</div>
+
+---
+layout: default
+---
+
+<h3 class="text-3xl mb-4">Les 3 choses à retenir</h3>
+
+<div class="grid grid-cols-3 gap-4 mt-6 text-sm">
+
+<div class="border-l-4 border-[#457b9d] pl-4">
+
+<div class="text-3xl mb-2">🧱</div>
+
+#### Une image, ce sont des couches
+
+Chaque instruction du **Dockerfile** crée une couche **cachée**. L'ordre compte : dépendances avant le code, **multi-stage builds** pour des images jusqu'à 80% plus légères.
+
+</div>
+
+<div class="border-l-4 border-[#1d3557] pl-4">
+
+<div class="text-3xl mb-2">🧩</div>
+
+#### Compose orchestre le multi-service
+
+Un seul `docker-compose.yml` remplace des dizaines de commandes `docker run`. **Services**, **volumes** et **réseaux** décrivent toute l'architecture de façon déclarative.
+
+</div>
+
+<div class="border-l-4 border-[#e63946] pl-4">
+
+<div class="text-3xl mb-2">🛡️</div>
+
+#### La sécurité est un réflexe
+
+Utilisateur **non-root**, secrets hors du Dockerfile, **réseaux isolés**, scan des images (Trivy, Docker Scout) : à appliquer dès le développement, pas seulement en production.
+
+</div>
+
+</div>
+
+<!--
+- 3 cartes = 3 messages clés à mémoriser
+- Si on retient une seule chose : le core message = "une image est une pile de couches cachées, l'ordre du Dockerfile compte"
+- Si on retient une seule action : auditer son Dockerfile de prod contre ces 3 points ce soir
+-->
+
+---
+layout: default
+---
+
+### Ressources pour aller plus loin
+
+<v-clicks>
+
+#### Documentation officielle
+
+- [docs.docker.com](https://docs.docker.com/) — Documentation complète
+- [Docker Hub](https://hub.docker.com/) — Explorer les images officielles
+- [Play with Docker](https://labs.play-with-docker.com/) — Environnement de test gratuit
+
+#### Formation
+
+- [Docker Getting Started](https://docs.docker.com/get-started/) — Tutoriel officiel pas à pas
+- [Docker Curriculum](https://docker-curriculum.com/) — Formation open-source
+
+#### Outils
+
+- [Dive](https://github.com/wagoodman/dive) — Analyser les couches de vos images
+- [Trivy](https://github.com/aquasecurity/trivy) — Scanner de vulnérabilités
+
+</v-clicks>
+
+<!--
+Play with Docker est idéal pour expérimenter sans installer
+Dive est très utile pour optimiser la taille des images
+-->
+
+---
+layout: section
+---
+
+## Next Steps
+
+<div class="text-lg opacity-70 mt-4">par où commencer</div>
+
 ---
 layout: two-cols-header
 ---
@@ -129,35 +225,6 @@ layout: two-cols-header
 <!--
 CI/CD est la prochaine étape logique
 Kubernetes est incontournable pour les grandes infrastructures
--->
-
----
-
-### Ressources pour aller plus loin
-
-<v-clicks>
-
-#### Documentation officielle
-
-- [docs.docker.com](https://docs.docker.com/) — Documentation complète
-- [Docker Hub](https://hub.docker.com/) — Explorer les images officielles
-- [Play with Docker](https://labs.play-with-docker.com/) — Environnement de test gratuit
-
-#### Formation
-
-- [Docker Getting Started](https://docs.docker.com/get-started/) — Tutoriel officiel pas à pas
-- [Docker Curriculum](https://docker-curriculum.com/) — Formation open-source
-
-#### Outils
-
-- [Dive](https://github.com/wagoodman/dive) — Analyser les couches de vos images
-- [Trivy](https://github.com/aquasecurity/trivy) — Scanner de vulnérabilités
-
-</v-clicks>
-
-<!--
-Play with Docker est idéal pour expérimenter sans installer
-Dive est très utile pour optimiser la taille des images
 -->
 
 ---

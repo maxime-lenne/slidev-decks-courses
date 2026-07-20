@@ -9,9 +9,9 @@ background: https://images.unsplash.com/photo-1743090660977-babf07732432?w=1920
 
 <div class="text-[#fbbf24] text-sm font-bold uppercase tracking-widest mb-4">🔥 Jour 3 · 90 min</div>
 
-<h1 class="text-7xl font-black mb-6">
+<h3 class="text-7xl font-black mb-6">
 Game Day<br/><span class="text-[#fbbf24]">Vos systèmes sont attaqués</span>
-</h1>
+</h3>
 
 <div class="text-xl opacity-90 max-w-3xl">
 3 incidents · 30 min par incident · diagnostic + mitigation<br/>
@@ -24,7 +24,7 @@ Game Day<br/><span class="text-[#fbbf24]">Vos systèmes sont attaqués</span>
 layout: default
 ---
 
-## Règles du Game Day
+### Règles du Game Day
 
 <div class="text-sm opacity-85 mt-6 space-y-2">
 
@@ -44,7 +44,7 @@ layout: default
 layout: statement
 ---
 
-## Incident <span class="text-[#fbbf24]">#1</span>
+### Incident <span class="text-[#fbbf24]">#1</span>
 
 <div class="text-2xl opacity-85 mt-6">Quelque chose ne va pas.</div>
 <div class="text-2xl opacity-85 mt-2">À vous de jouer.</div>
@@ -62,7 +62,7 @@ layout: statement
 layout: default
 ---
 
-## 🔍 Debrief · Incident #1
+### 🔍 Debrief · Incident #1
 
 <div class="text-sm opacity-85 mt-6">
 
@@ -90,7 +90,7 @@ layout: default
 layout: statement
 ---
 
-## Incident <span class="text-[#fbbf24]">#2</span>
+### Incident <span class="text-[#fbbf24]">#2</span>
 
 <div class="text-2xl opacity-85 mt-6">Encore un.</div>
 <div class="text-2xl opacity-85 mt-2">Vos alertes vont parler.</div>
@@ -107,7 +107,7 @@ layout: statement
 layout: default
 ---
 
-## 🔍 Debrief · Incident #2
+### 🔍 Debrief · Incident #2
 
 <div class="text-sm opacity-85 mt-6">
 
@@ -135,7 +135,7 @@ layout: default
 layout: statement
 ---
 
-## Incident <span class="text-[#fbbf24]">#3</span>
+### Incident <span class="text-[#fbbf24]">#3</span>
 
 <div class="text-2xl opacity-85 mt-6">Le piège silencieux.</div>
 <div class="text-2xl opacity-85 mt-2">Tout est vert.<br/>Vraiment ?</div>
@@ -153,7 +153,7 @@ layout: statement
 layout: default
 ---
 
-## 🔍 Debrief · Incident #3
+### 🔍 Debrief · Incident #3
 
 <div class="text-sm opacity-85 mt-6">
 
@@ -182,7 +182,7 @@ layout: default
 layout: center
 ---
 
-## 📝 Livrable post-mortem
+### 📝 Livrable post-mortem
 
 <div class="text-xl mt-6 max-w-3xl mx-auto">
 Choisissez **1 incident** parmi les 3 et rédigez un<br/>

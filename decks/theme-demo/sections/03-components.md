@@ -79,23 +79,16 @@ Composant `<Toc />` built-in Slidev — auto-détection à partir des titres
 <Toc maxDepth="1" />
 
 ---
-
-# TocCustom — items manuels (thème)
-
-`<TocCustom>` du thème `maxime-lenne` — entrées explicites avec layout custom
-
-<script setup>
-const tocItems = [
-  { title: 'Layouts', to: 2 },
-  { title: 'Markdown', to: 15 },
-  { title: 'Components', to: 25 },
-  { title: 'Diagrams', to: 50 },
-]
-</script>
-
-<TocCustom :items="tocItems" />
-
+layout: default
 ---
+
+<div class="toc-page">
+
+# Table of Contents
+
+<Toc :max-depth="1" />
+
+</div>
 
 # LightOrDark Component
 
@@ -236,7 +229,7 @@ Cliquez pour voir changer le contenu
 
 Éléments déplaçables
 
-<v-drag text-4xl>
+<v-drag text-4xl pos="-190,0,0,0">
   <div class="gradient-border inline-block">
     <div class="gradient-border-content">
       Déplacez-moi ! 👆

@@ -1,10 +1,52 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Le contexte est le nouveau code
+## Le contexte
 
 <div class="text-lg opacity-70 mt-4">20 min · 4 échecs · CLAUDE.md hiérarchique · ADRs</div>
+
+---
+layout: two-cols-header
+---
+
+### Le problème du prompting direct
+
+::left::
+
+#### Ce qu'on voudrait faire
+
+```text
+Fais-moi une feature de login
+```
+
+#### Ce que l'agent comprend
+
+- Login avec quoi ? Email ? OAuth ?
+- Quel design ? Quelle validation ?
+- Où stocker la session ?
+- Quelles erreurs gérer ?
+
+::right::
+
+#### Résultat
+
+- Code **bancal**
+- Manque de **cas limites**
+- Design **aléatoire**
+- **Refactoring** immédiat nécessaire
+
+<div class="border-l-4 border-[#e63946] pl-4 mt-3 text-sm">
+
+**Manque de contexte = agent qui improvise.**
+La spec, c'est précisément l'antidote.
+
+</div>
+
+<!--
+- Pour faire rire la salle : montrer le diff produit par un prompt vague, c'est toujours instructif
+- Le réflexe naturel du dev : "il fallait juste mieux prompter" — mais non, il fallait spécifier
+-->
 
 ---
 layout: default
@@ -407,6 +449,66 @@ Voir @components/ui/ pour shadcn
 layout: default
 ---
 
+### Imports `@` — memory files
+
+<div class="text-sm opacity-70 mt-2">Référencer d'autres fichiers depuis un <code>CLAUDE.md</code> — deux stratégies, deux coûts</div>
+
+<div class="grid grid-cols-2 gap-6 mt-4 text-sm">
+
+<div class="border-l-4 border-[#e63946] pl-4">
+
+#### 🔗 Import direct — `@fichier`
+
+```markdown
+# CLAUDE.md
+@docs/AGENTS.md
+@docs/CONVENTIONS.md
+```
+
+- Contenu **injecté** dans le contexte à chaque session
+- Officiellement appelé **memory file** par Anthropic
+- ✅ Fiable : l'agent a TOUJOURS la source sous les yeux
+- ⚠️ Coûteux : pèse sur le contexte même si non utilisé
+
+</div>
+
+<div class="border-l-4 border-[#10b981] pl-4">
+
+#### 📎 Référence douce — lien markdown
+
+```markdown
+# CLAUDE.md
+Full documentation:
+[`docs/AGENTS.md`](docs/AGENTS.md)
+```
+
+- L'agent **consulte si pertinent** (via Read)
+- ✅ Économique : zéro coût tant que non lu
+- ✅ Toujours à jour (lecture à la demande)
+- ⚠️ L'agent peut « oublier » de consulter
+
+</div>
+
+</div>
+
+<div class="border-l-4 border-[#457b9d] pl-4 mt-4 text-sm">
+
+**Règle de pouce** : `@import` pour les conventions critiques (style, sécurité) — lien doux pour la doc volumineuse ou rarement utile.
+
+</div>
+
+<!--
+- Le terme officiel Anthropic est "memory file" pour les fichiers importés via @
+- @ = chargement transitif : un CLAUDE.md qui @ un autre fichier qui @ encore un autre… tout est injecté
+- Piège : @docs/ENORME.md ajoute 10k tokens à CHAQUE conversation, même si tu fais une question triviale
+- Le CLAUDE.md de ce projet utilise volontairement l'option 2 (lien doux vers docs/AGENTS.md) pour rester léger
+- Bonne stratégie : @ pour 1-2 fichiers cruciaux (conventions, sécurité), lien doux pour le reste
+-->
+
+---
+layout: default
+---
+
 ### CLAUDE.md vs Auto-Memory
 
 <div class="border-l-4 border-[#457b9d] pl-4 mt-3 text-sm">
@@ -562,100 +664,4 @@ argument-hint: [titre-court]
 - Convention de numérotation strictement croissante pour avoir un historique linéaire
 - Pour les gros refactos : un ADR par décision majeure, pas un par PR
 - Alternative : skill `adr-writer` (auto-déclenchée) à la place du slash command
--->
-
----
-layout: default
----
-
-### PRD — Product Requirements Document
-
-<div class="text-sm opacity-70 mt-2">Adapté à l'agentic coding — la spec devient un artefact du repo</div>
-
-<div class="text-sm leading-tight mt-4">
-
-| Aspect | PRD traditionnel | PRD agentic |
-|--------|-------------------|-------------|
-| **Format** | Prose détaillée | Structure markdown |
-| **Audience** | Pour humains | Pour humains **ET** agents |
-| **Cycle de vie** | Statique, figé | Évolutif avec le code |
-| **Localisation** | Hors repo (Notion, Confluence) | Versionné dans le repo |
-
-</div>
-
-<div class="border-l-4 border-[#457b9d] pl-4 mt-6 text-sm">
-
-**Structure > Prose** — l'agent parse mieux les sections markdown structurées et y revient à chaque PR.
-
-</div>
-
-<!--
-- Le PRD agentic n'est pas un PRD product manager — c'est un contrat machine-lisible pour l'agent
-- Vit dans `docs/prds/` ou `specs/` du repo, à côté du code
-- Mise à jour à chaque évolution de feature : le PRD reflète l'état actuel, pas l'intention initiale
-- Lien direct avec les ADRs : les décisions techniques issues du PRD deviennent des ADRs
-- Source : Module 8 — PRD : Spécifier pour mieux générer
--->
-
----
-layout: default
----
-
-### Template PRD complet
-
-<div class="grid grid-cols-2 gap-4 mt-3 text-sm">
-
-<div>
-
-```markdown
-# Feature : [Nom explicite]
-
-## Contexte
-Pourquoi cette feature ?
-Quel problème résout-elle ?
-
-## User Stories
-- En tant que [user],
-  je veux [action]
-  pour [bénéfice]
-
-## Spécifications fonctionnelles
-- Comportement attendu (cas nominal)
-- Cas limites et erreurs
-```
-
-</div>
-
-<div>
-
-```markdown
-## Contraintes techniques
-- Stack, dépendances,
-  patterns à respecter
-
-## Critères d'acceptation
-- [ ] Checklist de validation
-- [ ] Tests à écrire
-- [ ] Métriques de succès
-
-## Hors-périmètre
-- Ce qu'on ne fait PAS
-```
-
-</div>
-
-</div>
-
-<div class="border-l-4 border-[#10b981] pl-4 mt-3 text-sm">
-
-**Le « pourquoi » avant le « quoi »** — l'agent comprend l'intention et arrête d'improviser sur les cas limites.
-
-</div>
-
-<!--
-- Template volontairement court : un PRD doit tenir sur 1-2 pages, sinon personne ne le lit ni ne le maintient
-- "Hors-périmètre" est aussi important que le périmètre — l'agent n'invente plus de features non demandées
-- Workflow : Spec Kit / Task Master parsent ce template pour générer automatiquement les tasks
-- Convention de stockage : `docs/prds/PRD-XXX-feature.md`, proche des ADRs
-- Pour l'écrire, utiliser un questionnement socratique avec l'agent avant de figer le doc
 -->

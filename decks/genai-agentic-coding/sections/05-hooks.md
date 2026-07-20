@@ -2,7 +2,7 @@
 layout: section
 ---
 
-# Hooks : fermer la boucle
+## Hooks : fermer la boucle
 
 <div class="text-lg opacity-70 mt-4">12 min · agent = vrai teammate</div>
 
@@ -185,7 +185,7 @@ layout: default
     "matcher": "permission_prompt",
     "hooks": [{
       "type": "command",
-      "command": "osascript -e 'display notification \"Human, I need your permission\" with title \"Claude Code\"'",
+      "command": "osascript -e 'display notification \"Human, I need your permission\" with title \"Claude \"'",
       "async": true
     }]
   }]

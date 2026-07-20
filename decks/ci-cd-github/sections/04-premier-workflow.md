@@ -1,8 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# 3 · Premier workflow CI Python
+## 3 · Premier workflow CI Python
+
+<div class="text-lg opacity-70 mt-4">8 min · checkout → setup-python → pytest → artifacts · exercice guidé</div>
 
 checkout → setup → install → pytest → artifacts
 
@@ -10,7 +12,7 @@ checkout → setup → install → pytest → artifacts
 layout: default
 ---
 
-## On va construire ce fichier ensemble
+### On va construire ce fichier ensemble
 
 <div class="text-sm opacity-85 mt-4">
 Objectif : à chaque <code>push</code> ou <code>pull_request</code>, lancer automatiquement <code>pytest</code> et garder le rapport en artefact.
@@ -47,7 +49,7 @@ mon-projet/
 layout: default
 ---
 
-## Construction guidée — étape par étape
+### Construction guidée — étape par étape
 
 ```yaml {1-2|4-8|10-12|13-15|16-19|20-22|all}{lines:true,maxHeight:'380px'}
 name: Python CI
@@ -92,7 +94,7 @@ jobs:
 layout: default
 ---
 
-## Workflow complet annoté
+### Workflow complet annoté
 
 ```yaml {all}{lines:true,maxHeight:'420px'}
 name: Python CI
@@ -142,7 +144,7 @@ jobs:
 layout: two-cols-header
 ---
 
-## Lecture des logs : ✅ ou ❌
+### Lecture des logs : ✅ ou ❌
 
 ::left::
 
@@ -192,7 +194,7 @@ Error: Process completed with exit code 1.
 layout: center
 ---
 
-# 🛠️ Exercice 1
+### 🛠️ Exercice 1
 
 <div class="text-base opacity-85 mt-6 max-w-2xl mx-auto">
 

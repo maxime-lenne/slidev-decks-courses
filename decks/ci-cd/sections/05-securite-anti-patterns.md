@@ -1,10 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Sécurité & Anti-patterns
+## Sécurité & Anti-patterns
 
-4 piliers · Top 5 des pièges à éviter
+<div class="text-lg opacity-70 mt-4">10 min · 4 piliers · Top 5 des pièges à éviter</div>
 
 <!--
 - Sécurité = survol uniquement, on n'a pas le temps pour un cours DevSecOps
@@ -15,7 +15,7 @@ layout: section
 layout: default
 ---
 
-## Sécurité · 4 piliers
+### Sécurité · 4 piliers
 
 <div class="text-sm mt-3">
 
@@ -62,7 +62,7 @@ Incidents récents : XZ Utils (2024), tj-actions/changed-files (2025) — <stron
 layout: default
 ---
 
-## Top 5 des anti-patterns
+### Top 5 des anti-patterns
 
 <div class="text-xs leading-tight mt-4">
 

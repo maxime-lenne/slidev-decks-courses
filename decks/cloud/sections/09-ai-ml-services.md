@@ -1,8 +1,8 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Module 8
+## Module 8
 ## Services AI/ML GCP
 
 <div class="text-sm opacity-60 mt-4">30 min · Panorama IA managée · Jeudi / Vendredi</div>
@@ -11,7 +11,7 @@ layout: section
 layout: fact
 ---
 
-# Vertex AI → Gemini Enterprise Agent Platform
+### Vertex AI → Gemini Enterprise Agent Platform
 
 <div class="text-xl opacity-70 mt-4">
 En <strong>2026</strong>, Google a renommé Vertex AI en<br/><strong>Gemini Enterprise Agent Platform</strong>.
@@ -31,7 +31,7 @@ Model Garden, Custom Training, AutoML, Model Registry, Endpoints, Pipelines — 
 layout: default
 ---
 
-## Gemini API — modèles multimodaux
+### Gemini API — modèles multimodaux
 
 <div class="text-sm opacity-85 mt-2">
 LLM <strong>multimodaux</strong> (texte, image, vidéo) accessibles via API.
@@ -70,7 +70,7 @@ print(response.text)
 layout: default
 ---
 
-## AutoML — ML sans coder
+### AutoML — ML sans coder
 
 <div class="text-sm opacity-85 mt-2">
 Workflows pré-configurés pour <strong>entraîner un modèle</strong> sans écrire de code ML.
@@ -130,7 +130,7 @@ Workflows pré-configurés pour <strong>entraîner un modèle</strong> sans écr
 layout: default
 ---
 
-## Vision AI + Document AI
+### Vision AI + Document AI
 
 <div class="grid grid-cols-2 gap-4 mt-4 text-xs">
 
@@ -183,7 +183,7 @@ result = client.process_document(request={
 layout: default
 ---
 
-## Speech + Translation + Text-to-Speech
+### Speech + Translation + Text-to-Speech
 
 <div class="grid grid-cols-3 gap-3 mt-4 text-xs">
 
@@ -233,7 +233,7 @@ layout: default
 layout: default
 ---
 
-## Model Garden — catalogue open-source
+### Model Garden — catalogue open-source
 
 <div class="text-sm opacity-85 mt-2">
 Catalogue de <strong>modèles open-source</strong> + <strong>partenaires</strong> déployables en 1 clic dans Gemini Enterprise Agent Platform.
@@ -286,7 +286,7 @@ Catalogue de <strong>modèles open-source</strong> + <strong>partenaires</strong
 layout: default
 ---
 
-## Quand utiliser quoi ?
+### Quand utiliser quoi ?
 
 <div class="text-xs mt-4">
 
@@ -317,7 +317,7 @@ layout: default
 layout: default
 ---
 
-## Intégration avec le brief
+### Intégration avec le brief
 
 ```mermaid {scale: 0.55}
 graph LR
@@ -352,7 +352,7 @@ graph LR
 layout: center
 ---
 
-# Recap Module 8
+### Recap Module 8
 
 <div class="text-sm opacity-85 mt-6 max-w-2xl mx-auto text-left">
 

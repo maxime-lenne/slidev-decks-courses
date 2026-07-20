@@ -20,9 +20,7 @@ background: https://images.unsplash.com/photo-1717386255777-ce60792a2a56?w=1920&
 
 <div class="text-[#457b9d] text-sm font-bold uppercase tracking-widest mb-4">Workshop</div>
 
-<h1 class="text-7xl font-black mb-6">
-CI<span class="opacity-50">/</span>CD avec<br/><span class="text-[#457b9d]">GitHub Actions</span>
-</h1>
+# <span class="font-black">CI<span class="opacity-50">/</span>CD avec<br/><span class="text-[#457b9d]">GitHub Actions</span></span>
 
 <div class="text-2xl opacity-90 max-w-3xl">
 Maîtrisez les <span class="text-[#457b9d] font-bold">workflows</span> GitHub Actions
@@ -72,4 +70,8 @@ src: ./sections/06-securite.md
 
 ---
 src: ./sections/07-conclusion.md
+---
+
+---
+src: ../templates/slides.md#2
 ---

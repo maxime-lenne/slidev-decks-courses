@@ -1,8 +1,8 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Module bonus
+## Module bonus
 ## OpenTelemetry & Collector
 
 <div class="text-sm opacity-60 mt-4">1h · J2 après-midi · Standard ouvert de l'instrumentation</div>
@@ -11,7 +11,7 @@ layout: section
 layout: statement
 ---
 
-## « OpenTelemetry sépare l'<span class="text-[#457b9d]">instrumentation</span><br/>du <span class="text-[#10b981]">stockage</span>. »
+### « OpenTelemetry sépare l'<span class="text-[#457b9d]">instrumentation</span><br/>du <span class="text-[#10b981]">stockage</span>. »
 
 <div class="text-xl opacity-85 mt-6">Et c'est cette séparation qui élimine le <strong>vendor lock-in</strong>.</div>
 
@@ -21,7 +21,7 @@ layout: statement
 layout: default
 ---
 
-## Origine
+### Origine
 
 <div class="text-sm opacity-85 mt-6 space-y-2">
 
@@ -38,7 +38,7 @@ layout: default
 layout: default
 ---
 
-## 4 composants
+### 4 composants
 
 ```mermaid {scale: 0.9}
 graph LR
@@ -64,7 +64,7 @@ graph LR
 layout: default
 ---
 
-## Maturité des signaux
+### Maturité des signaux
 
 <div class="text-sm leading-tight">
 
@@ -88,7 +88,7 @@ Aujourd'hui : <strong>traces, métriques, logs</strong> tous production-ready av
 layout: default
 ---
 
-## Auto-instrumentation par langage
+### Auto-instrumentation par langage
 
 <div class="text-sm leading-tight">
 
@@ -109,7 +109,7 @@ layout: default
 layout: statement
 ---
 
-## Auto = <span class="text-[#457b9d]">plomberie</span>.<br/>Manuel = <span class="text-[#10b981]">métier</span>.
+### Auto = <span class="text-[#457b9d]">plomberie</span>.<br/>Manuel = <span class="text-[#10b981]">métier</span>.
 
 <div class="text-xl opacity-85 mt-6">L'auto-instrumentation trace les tuyaux,<br/>pas la <strong>valeur métier</strong>.</div>
 
@@ -123,7 +123,7 @@ layout: statement
 layout: default
 ---
 
-## Semantic Conventions
+### Semantic Conventions
 
 <div class="text-sm opacity-85 mt-4">
 
@@ -151,7 +151,7 @@ Standardisation des attributs entre toutes les libs OTel :
 layout: default
 ---
 
-## OTel Collector — architecture
+### OTel Collector — architecture
 
 ```mermaid {scale: 0.95}
 graph LR
@@ -174,7 +174,7 @@ graph LR
 layout: default
 ---
 
-## 4 patterns de déploiement
+### 4 patterns de déploiement
 
 <div class="grid grid-cols-2 gap-4 mt-4 text-sm">
 
@@ -204,7 +204,7 @@ layout: default
 layout: default
 ---
 
-## Démo · span manuel Python
+### Démo · span manuel Python
 
 ```python {all|1-2|4-8|10-13|all}
 from opentelemetry import trace
@@ -227,7 +227,7 @@ def process_checkout(cart_id: str, user_id_hash: str):
 layout: default
 ---
 
-## Démo · gestion d'erreur
+### Démo · gestion d'erreur
 
 ```python
 from opentelemetry.trace import Status, StatusCode
@@ -252,7 +252,7 @@ except Exception as e:
 layout: default
 ---
 
-## Démo · Collector config 3 signaux
+### Démo · Collector config 3 signaux
 
 ```yaml {all|1-7|8-12|13-17|all}
 receivers:
@@ -281,7 +281,7 @@ service:
 layout: default
 ---
 
-## Anti-patterns Collector
+### Anti-patterns Collector
 
 <div class="text-sm opacity-85 mt-4 space-y-2">
 
@@ -299,7 +299,7 @@ layout: default
 layout: center
 ---
 
-## 🛠️ Exercice · 15 min
+### 🛠️ Exercice · 15 min
 
 <div class="text-xl mt-6 max-w-3xl mx-auto">
 Sur votre projet brief :

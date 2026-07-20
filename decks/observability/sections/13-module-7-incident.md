@@ -1,8 +1,8 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Module 7
+## Module 7
 ## Incident management & post-mortem
 
 <div class="text-sm opacity-60 mt-4">45 min · J3 après-midi · Runbook, SEV, blameless</div>
@@ -11,7 +11,7 @@ layout: section
 layout: default
 ---
 
-## Démarche de diagnostic
+### Démarche de diagnostic
 
 ```mermaid {scale: 0.9}
 graph LR
@@ -33,7 +33,7 @@ Mitiger <strong>d'abord</strong>. Corriger ensuite.
 layout: default
 ---
 
-## Triage 60 secondes
+### Triage 60 secondes
 
 <div class="grid grid-cols-2 gap-4 mt-4 text-sm">
 
@@ -63,7 +63,7 @@ layout: default
 layout: statement
 ---
 
-## « Ne pas chercher la <span class="text-[#e63946]">cause racine</span><br/>pendant que les <span class="text-[#10b981]">utilisateurs souffrent</span>. »
+### « Ne pas chercher la <span class="text-[#e63946]">cause racine</span><br/>pendant que les <span class="text-[#10b981]">utilisateurs souffrent</span>. »
 
 <div class="text-sm opacity-50 mt-8">— </div>
 
@@ -71,7 +71,7 @@ layout: statement
 layout: default
 ---
 
-## Grille de sévérité
+### Grille de sévérité
 
 <div class="text-sm leading-tight mt-4">
 
@@ -93,7 +93,7 @@ C'est l'<strong>impact</strong> qui décide. Pas l'alerte.
 layout: default
 ---
 
-## 4 rôles en SEV-1
+### 4 rôles en SEV-1
 
 <div class="grid grid-cols-2 gap-4 mt-4 text-sm">
 
@@ -123,7 +123,7 @@ layout: default
 layout: default
 ---
 
-## Lecture conjointe · logs + métriques + traces
+### Lecture conjointe · logs + métriques + traces
 
 <div class="text-sm opacity-85 mt-6 space-y-2">
 
@@ -147,7 +147,7 @@ métriques agrégées (horizontale) → trace précise (verticale).
 layout: default
 ---
 
-## Runbook · 5 sections
+### Runbook · 5 sections
 
 <div class="text-sm leading-tight">
 
@@ -172,7 +172,7 @@ Toolbox utile (K8s) :<br/>
 layout: statement
 ---
 
-## Post-mortem<br/><span class="text-[#10b981]">blameless</span> ≠ sans <span class="text-[#e63946]">responsabilité</span>.
+### Post-mortem<br/><span class="text-[#10b981]">blameless</span> ≠ sans <span class="text-[#e63946]">responsabilité</span>.
 
 <div class="text-xl opacity-85 mt-6">
 
@@ -190,7 +190,7 @@ Chaque <strong>action item</strong> a un <strong>owner</strong> et une <strong>d
 layout: default
 ---
 
-## Template post-mortem
+### Template post-mortem
 
 ```markdown
 # Post-mortem — [Titre de l'incident]
@@ -216,7 +216,7 @@ layout: default
 layout: default
 ---
 
-## 4 métriques · MTTD · MTTA · MTTR · MTBF
+### 4 métriques · MTTD · MTTA · MTTR · MTBF
 
 <div class="text-sm leading-tight mt-4">
 

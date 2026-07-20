@@ -27,6 +27,7 @@ Public : mixed technical, formation éducative
 -->
 
 ---
+hideInToc: true
 layout: two-cols-header
 ---
 
@@ -56,10 +57,17 @@ layout: two-cols-header
 - Orchestrer des applications multi-services avec **Docker Compose**
 
 ---
+hideInToc: true
 layout: default
 ---
 
-<Toc />
+<div class="toc-page">
+
+### Table of Contents
+
+<Toc :max-depth="2" />
+
+</div>
 
 ---
 src: ../templates/slides.md#1

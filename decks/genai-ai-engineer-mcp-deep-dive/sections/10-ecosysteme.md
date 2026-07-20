@@ -1,8 +1,8 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Écosystème
+## Écosystème
 
 <div class="text-lg opacity-70 mt-4">Agentic coding · LangChain · LangGraph</div>
 
@@ -38,7 +38,7 @@ layout: two-cols-header
 layout: default
 ---
 
-## OpenAPI / Swagger → MCP — pas besoin de coder
+### OpenAPI / Swagger → MCP — pas besoin de coder
 
 <div class="text-sm opacity-80 mb-3">N'importe quelle API REST documentée par une spec OpenAPI peut être exposée en MCP automatiquement.</div>
 
@@ -89,7 +89,7 @@ layout: default
 layout: default
 ---
 
-## Côté client — tous les frameworks AI savent parler MCP
+### Côté client — tous les frameworks AI savent parler MCP
 
 <div class="grid grid-cols-2 gap-6 mt-3">
 

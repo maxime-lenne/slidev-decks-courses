@@ -1,8 +1,9 @@
 ---
+hideInToc: true
 layout: default
 ---
 
-## Au programme
+### Au programme
 
 <div class="grid grid-cols-3 gap-6 mt-8 text-sm">
 
@@ -49,10 +50,11 @@ layout: default
 -->
 
 ---
+hideInToc: true
 layout: statement
 ---
 
-# Vendredi, 17h47.
+### Vendredi, 17h47.
 
 <div class="text-2xl mt-6 opacity-80">Quelqu'un push sur <code>main</code>.</div>
 <div class="text-2xl mt-2 opacity-80">La prod tombe.</div>
@@ -66,10 +68,11 @@ layout: statement
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
-## Le coût du chaos
+### Le coût du chaos
 
 <div class="grid grid-cols-2 gap-8 mt-6">
 
@@ -111,10 +114,14 @@ layout: default
 -->
 
 ---
+src: ../../templates/slides.md#1
+---
+
+---
 layout: section
 ---
 
-# Définitions
+## Définitions
 
 CI · Continuous Delivery · Continuous Deployment
 
@@ -128,7 +135,7 @@ CI · Continuous Delivery · Continuous Deployment
 layout: default
 ---
 
-## Trois niveaux d'automatisation
+### Trois niveaux d'automatisation
 
 ```mermaid {scale: 0.75}
 graph LR
@@ -158,7 +165,7 @@ Chaque niveau <strong>inclut</strong> le précédent. Plus on automatise, plus l
 layout: two-cols-header
 ---
 
-## CI · Continuous Integration
+### CI · Continuous Integration
 
 ::left::
 
@@ -200,7 +207,7 @@ Feedback en **minutes**, pas en jours.
 layout: two-cols-header
 ---
 
-## Continuous Delivery
+### Continuous Delivery
 
 ::left::
 
@@ -246,7 +253,7 @@ Un artefact testé, déployable **en un clic**.
 layout: two-cols-header
 ---
 
-## Continuous Deployment
+### Continuous Deployment
 
 ::left::
 
@@ -288,7 +295,7 @@ Netflix, Amazon, Etsy, GitHub : ce n'est pas un point de départ, c'est une dest
 layout: default
 ---
 
-## Comparaison côte à côte
+### Comparaison côte à côte
 
 <div class="text-sm leading-tight">
 
@@ -319,7 +326,7 @@ On commence par la CI. Toujours.
 layout: default
 ---
 
-## Pipeline ≠ Script
+### Pipeline ≠ Script
 
 <div class="text-sm leading-tight">
 
@@ -347,7 +354,7 @@ Mais une pipeline apporte ce qu'un script seul ne peut pas : <strong>orchestrati
 layout: section
 ---
 
-# Anatomie d'une pipeline
+## Anatomie d'une pipeline
 
 Jobs · Stages · Runners · Artefacts · Environnements
 
@@ -360,7 +367,7 @@ Jobs · Stages · Runners · Artefacts · Environnements
 layout: default
 ---
 
-## Jobs · l'unité atomique
+### Jobs · l'unité atomique
 
 <div class="grid grid-cols-2 gap-8 mt-4">
 
@@ -408,7 +415,7 @@ graph TD
 layout: default
 ---
 
-## Stages · organiser les jobs par phase
+### Stages · organiser les jobs par phase
 
 <div class="text-sm">
 
@@ -454,7 +461,7 @@ graph LR
 layout: default
 ---
 
-## Le DAG · graphe d'exécution
+### Le DAG · graphe d'exécution
 
 <div class="text-sm mb-4">
 Une pipeline complexe forme un <strong>graphe acyclique dirigé</strong>. Les <em>dépendances</em> définissent l'ordre — pas seulement les stages.
@@ -492,7 +499,7 @@ Deux jobs sans dépendance ? <strong>Ils peuvent tourner en parallèle.</strong>
 layout: default
 ---
 
-## Runners · qui exécute le code ?
+### Runners · qui exécute le code ?
 
 <div class="text-sm">
 
@@ -525,7 +532,7 @@ Un **runner** (ou **agent**) est la machine qui exécute vos jobs.
 layout: default
 ---
 
-## Cache vs Artefact · LA confusion classique
+### Cache vs Artefact · LA confusion classique
 
 <div class="text-sm leading-tight mt-4">
 
@@ -563,7 +570,7 @@ Sans artefact, le job <code>deploy</code> ne voit pas le <code>build</code>.
 layout: default
 ---
 
-## Environnements & secrets
+### Environnements & secrets
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
@@ -611,7 +618,7 @@ TOKEN_dev        ≠   TOKEN_prod
 layout: default
 ---
 
-## Les 3 invariants d'une pipeline
+### Les 3 invariants d'une pipeline
 
 <div class="grid grid-cols-3 gap-6 mt-8">
 
@@ -644,3 +651,24 @@ Si l'un de ces 3 piliers manque, vous avez un script à distance — pas une pip
 - Sans traçabilité, debugger devient de l'archéologie
 - Sans observabilité, une pipeline qui ralentit bloque l'équipe — silencieusement
 -->
+
+---
+hideInToc: true
+layout: default
+---
+
+<div class="toc-page">
+
+### Table of Contents
+
+<Toc :max-depth="2" />
+
+</div>
+
+---
+layout: quote
+---
+
+### Continuous Integration doesn't get rid of bugs, but it does make them dramatically easier to find and remove.
+
+> Martin Fowler

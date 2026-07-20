@@ -1,16 +1,16 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Take-aways
+## Conclusion
 
-<div class="text-lg opacity-70 mt-4">3 choses à retenir + Ressources</div>
+<div class="text-lg opacity-70 mt-4">3 key Take-aways - Ressources - Next Steps</div>
 
 ---
 layout: default
 ---
 
-## Les 3 choses à retenir
+<h3 class="text-3xl mb-4">3 key Take-aways</h3>
 
 <div class="grid grid-cols-3 gap-4 mt-6 text-sm">
 
@@ -38,17 +38,11 @@ Les **8 piliers** (Karpathy : *Software 2.0 automates what you can verify*). San
 
 <div class="text-3xl mb-2">🤝</div>
 
-#### Agent = teammate, pas oracle
+#### Spec Driven Development
 
-**Hooks** + **subagents** + **MCP** + **worktrees/sandbox** = stack 2026. C'est toi qui décides quand interagir.
-
-</div>
+Avec l'IA, la spécification est une étape **indispensable** ! PRD, Plan, framework avancé (BMAD, OpenSpec...)
 
 </div>
-
-<div class="text-center mt-8 text-[#457b9d] text-lg font-bold">
-
-Lancez les 2 chantiers cette semaine.
 
 </div>
 
@@ -70,8 +64,7 @@ layout: default
 
 #### À télécharger
 
-- 📋 **[8 Pillars Checklist](https://github.com/upsun/8-pillars)** (Upsun, Apache V2)
-- 📱 **LinkedIn Carousel** *Le pouvoir des hooks* — Maxime Lenne
+- 📋 **[8 Pillars Checklist](https://gist.github.com/maxime-lenne/dfce6ebe9f039c8b8bc1ea62b5f52be0)** (Upsun, Apache V2)
 - 📦 Frameworks spec-driven : [OpenSpec](https://github.com/openspec/openspec) · [Spec Kit](https://github.com/spec-kit/spec-kit) · [BMAD](https://github.com/bmad-method)
 
 #### Lectures fondatrices
@@ -92,9 +85,9 @@ layout: default
 
 #### Decks compagnons
 
-- 📦 `genai-llm-introduction` — bases LLM
-- 📦 `genai-ai-engineer-mcp-deep-dive` — protocole MCP en profondeur
-- 📦 `genai-ai-engineer-langchain` — création d'agents
+- 📦 [GenAI et LLM - introduction](https://decks.maxime-lenne.fr/decks/genai-llm-introduction)
+- 📦 [protocole MCP en profondeur](https://decks.maxime-lenne.fr/decks/genai-ai-engineer-mcp-deep-dive)
+- 📦 [LangChain LangGraph - introduction](https://decks.maxime-lenne.fr/decks/genai-ai-engineer-langchain)
 
 </div>
 
@@ -155,36 +148,151 @@ layout: default
 -->
 
 ---
-layout: cover
-background: https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1920
+layout: default
 ---
 
-<div class="absolute inset-0 bg-gradient-to-br from-[#0f172a]/92 via-[#0f172a]/80 to-[#1d3557]/85" />
+### Les 2 Next Steps
 
-<div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-8">
+<br>
 
-<h1 class="text-7xl font-black mb-6">
-Merci !
-</h1>
+<div class="grid grid-cols-2 gap-6 mt-4 text-sm">
 
-<div class="text-[#457b9d] text-2xl font-bold uppercase mb-6">Questions ?</div>
+<div class="border-l-4 border-[#457b9d] pl-4 bg-[#457b9d]/10 py-3 pr-4 rounded">
 
-<div class="text-xl max-w-3xl text-[#457b9d] font-bold">
-On a parcouru : context engineering · stack · skills · hooks ·<br/>
-MCP · spec-driven · 8 piliers · 2 chantiers
+<div class="text-3xl mb-2">🏗️</div>
+
+#### Chantier 1 — Contexte
+
+Construire le contexte de **tous vos projets**.
+
+- `CLAUDE.md` hiérarchique (racine + sous-dossiers)
+- Memory files `docs/*.md`
+- Choix de Skills propres au besoin **entreprise / projet / persona / workflow**
+- Choix MCPs propres au besoin **entreprise / projet / persona / workflow**
+- ADRs pour les décisions clés et PRDs pour les features
+
 </div>
 
-<div class="text-sm opacity-60 mt-12 max-w-2xl">
-Vos questions — et surtout : <strong>par où vous allez commencer demain</strong> ?
+<div class="border-l-4 border-[#10b981] pl-4 bg-[#10b981]/10 py-3 pr-4 rounded">
+
+<div class="text-3xl mb-2">🔄</div>
+
+#### Chantier 2 — Vérification
+
+Organiser & automatiser la boucle de **vérification**.
+
+- Audit **8 piliers**
+- Mettre en place le tooling permettant la vérification : tests, lint, types, build, observability
+- Éviter les dérapages : hooks + subagent reviewer
+
 </div>
 
 </div>
 
 <!--
-- Slide Q&A — laisser 5+ min minimum
-- Question piège utile à poser à la salle : "quel chantier en premier dans VOTRE équipe ?"
-- Si silence : démarrer par une question qui ouvre, ex : "qui ici a déjà un CLAUDE.md hiérarchique ?"
+- Reformuler les 2 CTA après tout le contenu — c'est maintenant qu'ils prennent leur sens
+- Insister sur la complémentarité : ce sont deux jambes d'un même corps
+- Chantier 1 = quoi/comment l'agent code. Chantier 2 = qui valide ce qu'il code.
 -->
+
+---
+layout: default
+---
+
+### Chantier 1 — Construire le contexte
+
+<br>
+
+<div class="grid grid-cols-2 gap-6 mt-2 text-sm">
+
+<div>
+
+#### Actions concrètes
+
+1. **Créer** les `CLAUDE.md` dans vos projets (Hiérarchique si besoin)
+2. **Identifier** 3-5 patterns récurrents → choisir / créer des **skills**
+3. **Identifier et sélectionner** les MCP indispensable (max 3 enable par projet) et CLI
+4. **Commiter** dans `.claude/skills/` et `.claude/commands/`
+5. **Documenter** vos projets (memory files dans `docs/`) et les décisions structurantes en **ADRs**
+
+</div>
+
+<div>
+
+#### Pièges à éviter
+
+- ❌ Un seul `CLAUDE.md` géant à la racine
+- ❌ Duplication entre niveaux
+- ❌ Skills à description trop vague (ne se déclenchent jamais)
+- ❌ ADRs en wiki externe (l'agent ne les lit pas)
+
+<div class="text-xs opacity-70 mt-3">
+
+**Règle d'or** : tout ce qui aide l'agent vit **dans le repo**.
+
+</div>
+
+</div>
+
+</div>
+
+<!--
+- Le piège #1 : "j'ai mis tout mon contexte dans CLAUDE.md" → trop gros, l'agent perd l'attention
+- Le piège #4 : décisions documentées dans Notion/Confluence → l'agent ne les voit pas, refait les mêmes débats
+- Pour démarrer : commencer petit, itérer chaque semaine
+-->
+
+---
+layout: default
+---
+
+### Chantier 2 — Organiser la vérification
+
+<br>
+
+<div class="grid grid-cols-2 gap-6 mt-2 text-sm">
+
+<div>
+
+#### Actions concrètes
+
+1. **Evaluer** les 8 piliers de la vérifications
+2. **Identifier** les piliers les plus faibles
+3. **Mettre en place** le tooling correspondant :
+   - Tests faibles → pre-commit hook + subagent test-writer
+   - Build flaky → CI deterministe + dependency lock
+   - Quality faible → linter strict + subagent reviewer
+4. **Itérer** par sprint (1 sprint = 1 pilier amélioré)
+
+</div>
+
+<div>
+
+#### Outils du deck à mobiliser
+
+- **Hooks** PreToolUse (bloquer rm -rf, secrets)
+- **Hooks** PostToolUse (lint, format, build)
+- **Subagent reviewer** déclenché PROACTIVELY
+- **Subagent test-writer** sur les fichiers modifiés
+- **MCP Sentry/Grafana** pour l'observability
+- **Spec-driven** workflow pour la documentation
+
+</div>
+
+</div>
+
+<!--
+- Le scoring est plus important que la perfection : savoir où on en est >> tout faire parfaitement
+- Pour les 2 piliers prioritaires : 1 atelier équipe + 1 sprint dédié = ça avance vraiment
+- Mesurer 6 mois plus tard pour voir l'évolution
+-->
+
+---
+layout: cover
+background: <https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920>
+---
+
+<ThankYou deck-slug="genai-agentic-coding" />
 
 ---
 src: ../../templates/slides.md#2

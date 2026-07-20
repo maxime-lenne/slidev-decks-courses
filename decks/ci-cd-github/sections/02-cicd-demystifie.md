@@ -1,8 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# 1 · CI/CD démystifié
+## 1 · CI/CD démystifié
+
+<div class="text-lg opacity-70 mt-4">5 min · CI vs CD · GitHub Actions · coûts · le pipeline</div>
 
 Concepts essentiels et positionnement de GitHub Actions
 
@@ -10,7 +12,7 @@ Concepts essentiels et positionnement de GitHub Actions
 layout: default
 ---
 
-## CI vs CD : trois mots, trois automatisations
+### CI vs CD : trois mots, trois automatisations
 
 <div class="grid grid-cols-3 gap-4 mt-6 text-sm">
 
@@ -52,7 +54,7 @@ plutôt que de grosses releases risquées tous les mois
 layout: default
 ---
 
-## GitHub Actions : le moteur de vos pipelines
+### GitHub Actions : le moteur de vos pipelines
 
 <div class="text-sm mt-4 opacity-85">
 Service CI/CD intégré nativement à GitHub depuis <strong>2019</strong>. Quand quelque chose se passe sur votre repo (push, PR, release...), GitHub Actions exécute des tâches automatisées.
@@ -93,7 +95,7 @@ Le Marketplace = un écosystème énorme... <span class="text-[#f59e0b]">mais ut
 layout: default
 ---
 
-## Combien ça coûte ?
+### Combien ça coûte ?
 
 <div class="text-sm opacity-85 mt-4">Modèle gratuit avec quotas qui couvre la majorité des projets perso et de classe.</div>
 
@@ -140,7 +142,7 @@ layout: default
 layout: default
 ---
 
-## Le pipeline en un schéma
+### Le pipeline en un schéma
 
 ```mermaid {scale: 0.85}
 flowchart LR

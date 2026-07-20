@@ -2,7 +2,7 @@
   "id": "genai-agentic-coding",
   "title": "GenAI - Agentic Coding",
   "description": "Coder avec des agents IA : context engineering, MCP, skills, hooks, spec-driven development, sub-agents, et workflows multi-agents (reviews, etc.).",
-  "status": "published",np
+  "status": "published",
   "objectives": [
     "Diagnostiquer les 4 types d'échec de contexte (Missing, Polluted, Stale, Conflicting) et structurer un CLAUDE.md hiérarchique + ADRs pour ses projets",
     "Choisir entre Skills, Slash Commands et Subagents selon le besoin, et configurer 2-3 subagents spécialisés pour son équipe",

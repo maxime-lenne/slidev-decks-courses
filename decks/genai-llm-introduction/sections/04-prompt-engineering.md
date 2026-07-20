@@ -1,8 +1,12 @@
 ---
-layout: section
+layout: section-liquid
+title: Prompt Engineering
+level: 2
 ---
 
-# Module 3
+## Module 3
+
+<div class="text-lg opacity-70 mt-4">1h30 · anatomie d'un prompt · patterns de prompting · stratégies Anthropic · économie des tokens</div>
 
 ## Prompt Engineering
 
@@ -12,7 +16,7 @@ layout: section
 layout: statement
 ---
 
-# "Un prompt, c'est un cahier des charges."
+### "Un prompt, c'est un cahier des charges."
 
 Garbage in, garbage out — la précision fait tout.
 
@@ -28,15 +32,15 @@ La plupart du temps, le problème vient du prompt, pas du modèle.
 layout: default
 ---
 
-# Anatomie d'un bon prompt
+### Anatomie d'un bon prompt
 
-<div class="grid grid-cols-2 gap-8 mt-4">
+<div class="grid grid-cols-2 gap-8 mt-3">
 
 <div>
 
 **Les 4 composantes**
 
-<div class="space-y-3 text-sm">
+<div class="space-y-2 text-sm">
 
 <div class="p-3 rounded-lg border border-orange-500/40 bg-orange-500/5">
 <strong class="text-orange-400">1. Rôle / Persona</strong><br>
@@ -95,29 +99,28 @@ La contrainte de format est souvent oubliée. Elle est pourtant cruciale pour l'
 layout: default
 ---
 
-# Les patterns de prompting essentiels
+### Les patterns de prompting essentiels
 
-<div class="grid grid-cols-3 gap-4 mt-4 text-sm">
+<div class="grid grid-cols-3 gap-4 mt-4 text-sm [&_h4]:mb-2 [&_pre]:!text-xs [&_pre]:!leading-snug">
 
 <div class="p-4 rounded-lg border border-slate-700 bg-slate-800/50">
 
-### Zero-shot
+#### Zero-shot
 
 Instruction directe, sans exemple.
 
 ```
-"Traduis ce texte en espagnol :
+"Traduis en espagnol :
 [texte]"
 ```
 
-Simple, rapide. Fonctionne bien
-sur des tâches connues.
+Simple, rapide. Fonctionne bien sur des tâches connues.
 
 </div>
 
 <div class="p-4 rounded-lg border border-orange-500/30 bg-orange-500/5">
 
-### Few-shot
+#### Few-shot
 
 Donner des exemples dans le prompt.
 
@@ -125,7 +128,7 @@ Donner des exemples dans le prompt.
 "Catégorise ces emails :
 'Offre spéciale' → Spam
 'Réunion vendredi' → Pro
-'Anniversaire demain' → [?]"
+'Anniv. demain' → [?]"
 ```
 
 Idéal pour calibrer le format de sortie.
@@ -134,7 +137,7 @@ Idéal pour calibrer le format de sortie.
 
 <div class="p-4 rounded-lg border border-slate-700 bg-slate-800/50">
 
-### Chain of Thought
+#### Chain of Thought
 
 "Pense étape par étape."
 
@@ -145,14 +148,13 @@ pas à pas avant de
 donner la réponse."
 ```
 
-Peut doubler la qualité sur
-les problèmes complexes.
+Peut doubler la qualité sur les problèmes complexes.
 
 </div>
 
 </div>
 
-<div class="mt-4 p-3 rounded-lg bg-slate-800 border border-slate-700 text-sm text-slate-400">
+<div class="highlight-box text-sm !my-3">
 
 **Chain of thought** : force le modèle à "montrer son travail" avant de conclure → réduit les erreurs de raisonnement.
 
@@ -168,13 +170,13 @@ Chain of thought = technique découverte par Google en 2022, maintenant intégr�
 layout: default
 ---
 
-# Les 4 stratégies Anthropic
+### Les 4 stratégies Anthropic
 
-<div class="grid grid-cols-2 gap-4 mt-4">
+<div class="grid grid-cols-2 gap-4 mt-4 text-sm [&_h4]:mb-1 [&_p]:my-1 [&_pre]:!text-xs [&_pre]:!leading-snug">
 
-<div class="p-4 rounded-lg border border-orange-500/40 bg-orange-500/5">
+<div class="p-3 rounded-lg border border-orange-500/40 bg-orange-500/5">
 
-### ✍️ Write — Générer
+#### ✍️ Write — Générer
 
 Créer du contenu original à partir d'instructions.
 
@@ -186,47 +188,44 @@ Créer du contenu original à partir d'instructions.
 
 </div>
 
-<div class="p-4 rounded-lg border border-slate-700 bg-slate-800/50">
+<div class="p-3 rounded-lg border border-slate-700 bg-slate-800/50">
 
-### 🔍 Select — Filtrer / Classer
+#### 🔍 Select — Filtrer / Classer
 
 Choisir parmi des options, router, classifier.
 
 *Triage, catégorisation, sentiment, pertinence...*
 
 ```
-"Parmi ces 10 emails, identifie
-les urgents."
+"Parmi ces 10 emails, identifie les urgents."
 ```
 
 </div>
 
-<div class="p-4 rounded-lg border border-slate-700 bg-slate-800/50">
+<div class="p-3 rounded-lg border border-slate-700 bg-slate-800/50">
 
-### 📦 Compress — Résumer / Extraire
+#### 📦 Compress — Résumer / Extraire
 
 Condenser, extraire l'essentiel d'un contenu.
 
 *Résumé, extraction d'entités, synthèse...*
 
 ```
-"Extrais les 5 points clés de
-ce rapport de 50 pages."
+"Extrais les 5 points clés de ce rapport."
 ```
 
 </div>
 
-<div class="p-4 rounded-lg border border-slate-700 bg-slate-800/50">
+<div class="p-3 rounded-lg border border-slate-700 bg-slate-800/50">
 
-### 🔀 Isolate — Séparer
+#### 🔀 Isolate — Séparer
 
 Décomposer un problème, séparer les préoccupations.
 
 *Preprocessing, routing multi-étapes, RAG...*
 
 ```
-"D'abord classe la demande,
-puis génère la réponse adaptée."
+"D'abord classe la demande, puis réponds."
 ```
 
 </div>
@@ -243,11 +242,11 @@ En combinant ces 4 stratégies, on peut construire des workflows complexes.
 layout: two-cols-header
 ---
 
-# System prompt vs User prompt
+### System prompt vs User prompt
 
 ::left::
 
-### System prompt
+#### System prompt
 
 La "notice d'instructions" invisible à l'utilisateur.
 
@@ -264,7 +263,7 @@ Tu ne donnes pas de conseils médicaux."
 
 ::right::
 
-### User prompt
+#### User prompt
 
 Ce que l'utilisateur envoie à chaque tour.
 
@@ -274,11 +273,10 @@ Ce que l'utilisateur envoie à chaque tour.
 
 ```
 User: "Quels sont les congés légaux
-en France pour un salarié
-en CDI ?"
+en France pour un salarié en CDI ?"
 ```
 
-<div class="mt-4 p-3 rounded-lg bg-slate-800 border border-slate-700 text-sm">
+<div class="highlight-box text-sm !mt-4">
 
 Claude.ai, ChatGPT, Notion AI... utilisent tous un **system prompt** que vous ne voyez pas. C'est lui qui "personnalise" l'assistant.
 
@@ -295,13 +293,13 @@ layout: default
 class: text-center
 ---
 
-# Exercice pratique — 15 min
+### Exercice pratique — 15 min
 
-<div class="mt-6 p-6 rounded-xl border-2 border-orange-500/40 bg-orange-500/5 max-w-2xl mx-auto text-left">
+<div class="mt-3 p-4 rounded-xl border-2 border-orange-500/40 bg-orange-500/5 max-w-2xl mx-auto text-left [&_li]:my-0.5">
 
 **Réécrivez ce mauvais prompt :**
 
-<div class="p-3 rounded-lg bg-red-500/10 border border-red-500/30 my-3">
+<div class="p-2 rounded-lg bg-red-500/10 border border-red-500/30 my-2">
 
 ❌ *"Aide-moi avec mon email"*
 
@@ -317,7 +315,7 @@ class: text-center
 
 </div>
 
-<div class="mt-4 text-slate-400 text-sm">
+<div class="mt-3 text-slate-400 text-sm">
   Partagez votre version avec le groupe · Comparez les résultats
 </div>
 
@@ -331,9 +329,9 @@ Comparer en groupe : quelles contraintes de format ont été ajoutées ?
 layout: default
 ---
 
-# Économie des tokens — L'essentiel
+### Économie des tokens — L'essentiel
 
-<div class="grid grid-cols-2 gap-6 mt-4">
+<div class="grid grid-cols-2 gap-6 mt-3 [&_td]:py-1 [&_th]:py-1">
 
 <div>
 
@@ -366,7 +364,7 @@ layout: default
 
 </div>
 
-<div class="mt-4 p-3 rounded-lg bg-orange-500/10 border border-orange-500/30 text-sm">
+<div class="highlight-box text-sm !my-3">
 
 **Un bon prompt = une bonne réponse du premier coup = la meilleure façon d'économiser des tokens.**
 
@@ -381,7 +379,7 @@ Le prompt caching (technique avancée) peut réduire les coûts de 70% sur un co
 layout: default
 ---
 
-# Choisir le bon modèle selon la tâche
+### Choisir le bon modèle selon la tâche
 
 <div class="space-y-3 mt-4 text-sm">
 

@@ -54,7 +54,7 @@ const qrCaption = computed(
 
 <template>
   <div class="h-full flex flex-col justify-center gap-10 px-4">
-    <h1 class="text-5xl font-black text-[#457b9d] mb-1">Merci !</h1>
+    <h3 class="text-5xl font-black text-[#457b9d] mb-1">Merci !</h3>
 
     <div class="grid grid-cols-2 gap-8 text-sm">
       <div class="flex flex-col items-center gap-2">

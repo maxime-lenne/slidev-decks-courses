@@ -1,8 +1,8 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Wrap-up
+## Wrap-up
 ## Ce qu'on a vu · ce qui vous attend
 
 <div class="text-sm opacity-60 mt-4">30 min · récap · ressources · livrables</div>
@@ -11,7 +11,53 @@ layout: section
 layout: default
 ---
 
-## Stack observability « idéale »
+<h3 class="text-3xl mb-4">3 choses à retenir</h3>
+
+<div class="grid grid-cols-3 gap-4 mt-6 text-sm">
+
+<div class="border-l-4 border-[#457b9d] pl-4">
+
+<div class="text-3xl mb-2">📊</div>
+
+#### Logs, métriques, traces : 3 rôles complémentaires
+
+Les métriques vous **alertent** qu'il y a un problème, les logs vous **expliquent** lequel, les traces montrent **où** dans la chaîne d'appels.
+
+</div>
+
+<div class="border-l-4 border-[#e63946] pl-4">
+
+<div class="text-3xl mb-2">🚨</div>
+
+#### Alertez sur les symptômes, pas les causes
+
+SLO + error budget + burn rate valent mieux qu'un seuil `CPU > 90 %`. Objectif : pas plus de 2-3 pages critiques par semaine.
+
+</div>
+
+<div class="border-l-4 border-[#10b981] pl-4">
+
+<div class="text-3xl mb-2">🤖</div>
+
+#### L'IA ajoute deux couches d'observability
+
+Drift modèle (souvent silencieux) et tracing LLM (coût, latence, qualité via Langfuse) s'ajoutent à la stack classique.
+
+</div>
+
+</div>
+
+<!--
+- 3 cartes = 3 messages clés à mémoriser
+- Si on retient une seule chose : les 3 signaux (logs/métriques/traces) répondent à 3 questions différentes
+- Si on retient une seule action : passer les alertes CPU/RAM en alertes symptom-first (SLO)
+-->
+
+---
+layout: default
+---
+
+### Stack observability « idéale »
 
 ```mermaid {scale: 0.85}
 graph TB
@@ -38,7 +84,7 @@ graph TB
 layout: default
 ---
 
-## Que choisir ? · récap par cas d'usage
+### Que choisir ? · récap par cas d'usage
 
 <div class="text-sm leading-tight">
 
@@ -60,30 +106,7 @@ layout: default
 layout: default
 ---
 
-## Niveaux de maturité · votre prochain palier
-
-<div class="text-sm leading-tight mt-4">
-
-| Niveau | Vous y êtes ? | Prochaine étape |
-|--------|---------------|------------------|
-| **1 · Réactif** | Logs en fichier + métriques infra | → Structurer les logs (M2) |
-| **2 · Structuré** | RED/USE + alerting | → Ajouter SLO + tracing (M5, M6, OTel) |
-| **3 · Proactif** ⭐ | SLO + traces + corrélation | → Gouvernance, multi-tenant (M-OTel avancé) |
-| **4 · Gouverné** | OTel + budgets cardinalité + RACI | → Optimisation continue |
-
-</div>
-
-<div class="text-center text-sm mt-6 opacity-70 text-[#457b9d] font-bold">
-
-Cible de cette formation : passer du niveau 1-2 au niveau **3**.
-
-</div>
-
----
-layout: default
----
-
-## Ressources
+### Ressources
 
 <div class="text-sm opacity-85 mt-4 space-y-1">
 
@@ -111,7 +134,30 @@ layout: default
 layout: default
 ---
 
-## Livrables attendus
+### Niveaux de maturité · votre prochain palier
+
+<div class="text-sm leading-tight mt-4">
+
+| Niveau | Vous y êtes ? | Prochaine étape |
+|--------|---------------|------------------|
+| **1 · Réactif** | Logs en fichier + métriques infra | → Structurer les logs (M2) |
+| **2 · Structuré** | RED/USE + alerting | → Ajouter SLO + tracing (M5, M6, OTel) |
+| **3 · Proactif** ⭐ | SLO + traces + corrélation | → Gouvernance, multi-tenant (M-OTel avancé) |
+| **4 · Gouverné** | OTel + budgets cardinalité + RACI | → Optimisation continue |
+
+</div>
+
+<div class="text-center text-sm mt-6 opacity-70 text-[#457b9d] font-bold">
+
+Cible de cette formation : passer du niveau 1-2 au niveau **3**.
+
+</div>
+
+---
+layout: default
+---
+
+### Livrables attendus
 
 <div class="text-sm leading-tight mt-4">
 
@@ -132,34 +178,8 @@ Retour individuel sur les rendus dans la semaine.
 </div>
 
 ---
-layout: end
-background: https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1920
-class: text-left
+layout: cover
+background: <https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1920>
 ---
 
-<div class="absolute inset-0 bg-gradient-to-r from-[#0f172a]/95 via-[#0f172a]/80 to-transparent" />
-
-<div class="relative z-10 h-full flex items-end pb-16 pl-4 gap-16">
-  <div class="flex-1">
-    <div class="text-[#457b9d] text-sm font-bold uppercase tracking-widest mb-4">Merci · Questions ?</div>
-    <h1 class="text-6xl font-black leading-tight mb-8">
-      Let's <br><span class="text-[#457b9d]">observe<br>together</span>
-    </h1>
-    <div class="text-sm opacity-60 mb-4">
-      <a href="mailto:hello@maxime-lenne.fr" class="flex items-center gap-2 no-underline opacity-75 hover:opacity-100">✉️ hello@maxime-lenne.fr</a>
-      <a href="https://maxime-lenne.fr" target="_blank" class="flex items-center gap-2 no-underline opacity-80 hover:opacity-100">🌐 maxime-lenne.fr</a>
-    </div>
-    <div class="flex flex-col items-center gap-2">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://www.linkedin.com/in/maximelenne/&bgcolor=0f172a&color=FFF&margin=6" class="w-40 h-40 rounded-lg" alt="LinkedIn QR" />
-      <div class="text-xs opacity-50">LinkedIn</div>
-    </div>
-  </div>
-</div>
-
-<div class="text-xs opacity-30">Slides built with <a href="https://sli.dev" class="no-underline">sli.dev</a> · Thème maxime-lenne</div>
-
-<!--
-- Call to action final — laisser le QR code visible pendant les questions
-- Rappeler les livrables et le retour sur les rendus
-- Encourager à partager le résultat sur LinkedIn (tag formateur)
--->
+<ThankYou deck-slug="observability" />

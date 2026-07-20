@@ -1,8 +1,8 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Module 4
+## Module 4
 ## Cloud SQL + pgvector
 
 <div class="text-sm opacity-60 mt-4">35 min · DBaaS pour l'IA · Mercredi après-midi</div>
@@ -11,7 +11,7 @@ layout: section
 layout: default
 ---
 
-## Pourquoi un DBaaS ?
+### Pourquoi un DBaaS ?
 
 <div class="text-sm opacity-85 mt-4">
 
@@ -58,7 +58,7 @@ Gérer un Postgres en prod, c'est :
 layout: default
 ---
 
-## Cloud SQL en 30 secondes
+### Cloud SQL en 30 secondes
 
 <div class="grid grid-cols-2 gap-6 mt-4 text-xs">
 
@@ -96,7 +96,7 @@ layout: default
 layout: default
 ---
 
-## Création d'une instance
+### Création d'une instance
 
 ```bash {1-7|9-10|all}
 gcloud sql instances create rag-db \
@@ -136,7 +136,7 @@ gcloud sql instances create rag-db \
 layout: default
 ---
 
-## Bases + utilisateurs (least privilege)
+### Bases + utilisateurs (least privilege)
 
 <div class="text-xs opacity-85 mt-2">
 Bonne pratique : ne <strong>pas</strong> utiliser <code>postgres</code> (root) depuis l'app. Créer un user dédié avec droits limités.
@@ -173,7 +173,7 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA public
 layout: default
 ---
 
-## Extension pgvector
+### Extension pgvector
 
 ```sql {1-2|4-5|7-13|all}
 -- Connecté à la base `rag`
@@ -213,7 +213,7 @@ CREATE INDEX ON chunks USING hnsw (embedding vector_cosine_ops);
 layout: default
 ---
 
-## Connecter Cloud Run à Cloud SQL
+### Connecter Cloud Run à Cloud SQL
 
 ```mermaid {scale: 0.55}
 graph LR
@@ -248,7 +248,7 @@ graph LR
 layout: default
 ---
 
-## DSN côté code
+### DSN côté code
 
 ```python {1-5|7-13|all}
 # Variables injectées par Cloud Run
@@ -288,7 +288,7 @@ DB_NAME=rag,DB_USER=rag_app \
 layout: default
 ---
 
-## Cloud SQL Auth Proxy (local dev)
+### Cloud SQL Auth Proxy (local dev)
 
 <div class="text-xs opacity-85 mt-2">
 Pour <strong>développer / migrer en local</strong>, on utilise le Cloud SQL Auth Proxy.
@@ -326,7 +326,7 @@ S'authentifie via <code>gcloud auth application-default login</code>.
 layout: default
 ---
 
-## Backups + pièges classiques
+### Backups + pièges classiques
 
 <div class="grid grid-cols-2 gap-4 mt-2 text-xs">
 
@@ -367,7 +367,7 @@ gcloud sql backups restore <ID> \
 layout: center
 ---
 
-# Recap Module 4
+### Recap Module 4
 
 <div class="text-sm opacity-85 mt-6 max-w-2xl mx-auto text-left">
 

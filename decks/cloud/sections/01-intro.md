@@ -1,4 +1,5 @@
 ---
+hideInToc: true
 layout: two-cols-header
 ---
 
@@ -36,10 +37,11 @@ layout: two-cols-header
 </div>
 
 ---
+hideInToc: true
 layout: default
 ---
 
-## Au programme — 8 modules
+### Au programme — 8 modules
 
 <div class="grid grid-cols-2 gap-4 mt-6 text-xs">
 
@@ -94,10 +96,11 @@ layout: default
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
-## Objectifs pédagogiques
+### Objectifs pédagogiques
 
 <div class="text-sm opacity-85 mt-4">
 
@@ -128,3 +131,25 @@ layout: default
 - Le brief valide tout ça en soutenance (7 min démo + 3 min Q&A)
 - Annoncer la rétrospective de vendredi 16h30 dès maintenant
 -->
+
+---
+hideInToc: true
+layout: default
+---
+
+<div class="toc-page">
+
+### Table of Contents
+
+<Toc :max-depth="2" />
+
+</div>
+
+---
+hideInToc: true
+layout: quote
+---
+
+### A distributed system is one in which the failure of a computer you didn't even know existed can render your own computer unusable.
+
+> Leslie Lamport, Turing Award laureate & pioneer of distributed systems theory

@@ -1,8 +1,8 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Extensions du protocole
+## Extensions du protocole
 
 <div class="text-lg opacity-70 mt-4">Auth · Apps · Tasks</div>
 
@@ -10,7 +10,7 @@ layout: section
 layout: default
 ---
 
-## Auth — OAuth 2.1 pour le remote
+### Auth — OAuth 2.1 pour le remote
 
 <v-clicks>
 
@@ -62,7 +62,7 @@ Wrappers d'**exécution durable**.
 layout: default
 ---
 
-## Récap extensions
+### Récap extensions
 
 <div class="grid grid-cols-3 gap-4 mt-6 text-sm">
 

@@ -1,8 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Installation
+## Installation
+
+<div class="text-lg opacity-70 mt-4">10 min · Linux · Windows + WSL2 · vérification · droits & dépannage</div>
 
 <!--
 Les apprenants suivent en même temps sur leur machine

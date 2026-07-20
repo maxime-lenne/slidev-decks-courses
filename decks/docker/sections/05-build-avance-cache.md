@@ -1,15 +1,25 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Build avancé & Cache
+## Build avancé & Cache
 
 Optimiser vos images pour la production
+
+<div class="text-lg opacity-70 mt-4">25 min · cache · multi-stage builds · ARG vs ENV · .dockerignore</div>
 
 <!--
 Cette section est la plus technique
 Le cache et le multi-stage build sont des compétences clés
 -->
+
+---
+layout: quote
+---
+
+### There are only two hard things in Computer Science: cache invalidation and naming things.
+
+> Phil Karlton, engineer, Netscape
 
 ---
 

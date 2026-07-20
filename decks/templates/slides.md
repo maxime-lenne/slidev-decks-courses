@@ -48,27 +48,109 @@ background: https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1920
 class: text-left
 ---
 
-<div class="absolute inset-0 bg-gradient-to-r from-[#0f172a]/95 via-[#0f172a]/80 to-transparent" />
-
-<div class="relative z-10 h-full flex items-end pb-16 pl-4 gap-16">
-  <div class="flex-1">
-    <div class="text-[#457b9d] text-sm font-bold uppercase tracking-widest mb-4"></div>
-    <h1 class="text-6xl font-black leading-tight mb-8">
-      Let's <br><span class="text-[#457b9d]">build <br>together</span>
-    </h1>
-    <div class="text-sm opacity-60 mb-4">
-      <a href="mailto:hello@maxime-lenne.fr" class="flex items-center gap-2 no-underline opacity-75 hover:opacity-100">✉️ hello@maxime-lenne.fr</a>
-      <a href="https://maxime-lenne.fr" target="_blank" class="flex items-center gap-2 no-underline opacity-80 hover:opacity-100">🌐 maxime-lenne.fr</a>
-    </div>
-    <div class="flex flex-col items-center gap-2">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://www.linkedin.com/in/maximelenne/&bgcolor=0f172a&color=FFF&margin=6" class="w-40 h-40 rounded-lg" alt="LinkedIn QR" />
-      <div class="text-xs opacity-50">LinkedIn</div>
-    </div>
-  </div>
-</div>
-
-<div class="text-xs opacity-30">Slides built with <a href="https://sli.dev" class="no-underline">sli.dev</a> · Thème maxime-lenne</div>
+<EndCTA />
 
 <!--
 Call to action final — laisser le QR code visible pendant les questions
+-->
+
+---
+layout: default
+id: rappel-agent
+---
+
+### Rappel : qu'est-ce qu'un agent ?
+
+<br>
+
+<div class="grid grid-cols-2 gap-8 mt-4 text-sm">
+
+<div>
+
+#### La boucle : raisonner → agir → observer
+
+```mermaid {scale: 0.6}
+graph TB
+    P[Demande] --> T[Réflexion<br/>Reasoning]
+    T --> A[Action<br/>Tool call]
+    A --> O[Observation<br/>Résultat]
+    O --> T
+    T --> R[Réponse<br/>finale]
+```
+
+<div class="text-xs opacity-70 mt-2">L'agent <strong>raisonne</strong>, <strong>agit</strong> (via des outils), <strong>observe</strong>, recommence — jusqu'à finir la tâche.</div>
+
+</div>
+
+<div>
+
+#### Les outils (*tools*) d'un agent
+
+- 📖 **Lire** — un fichier, un document, un mail
+- 🔍 **Chercher** — dans vos fichiers, sur le web
+- 🖥️ **Agir** — exécuter une commande, une action
+- 🌐 **Se connecter** — API & services externes *(MCP)*
+- 🤖 **Déléguer** — à un sous-agent spécialisé
+
+<div class="text-xs opacity-70 mt-3">Un chatbot <strong>répond</strong> ; un agent <strong>agit</strong> pour atteindre un but.</div>
+
+</div>
+
+</div>
+
+<!--
+- Tout agent moderne suit cette boucle ReAct : raisonner, agir, observer, recommencer
+- La bascule assistant → agent : l'agent peut AGIR (utiliser des outils), pas seulement répondre
+- Même schéma pour un coding agent (Claude Code, Cursor) et un agent no-code (Copilot Studio, GPTs)
+- Pour aller plus loin : deck genai-llm-introduction (tool calling)
+-->
+
+---
+layout: default
+id: rappel-rag
+---
+
+### Rappel : c'est quoi le RAG ?
+
+<br>
+
+<div class="grid grid-cols-2 gap-8 mt-4 text-sm">
+
+<div>
+
+#### Récupérer, puis générer
+
+```mermaid {scale: 0.50}
+graph LR
+    Q[Question] --> R[Recherche<br/>dans vos docs]
+    R --> C[Extraits<br/>pertinents]
+    C --> L[LLM]
+    Q --> L
+    L --> A[Réponse<br/>sourcée]
+```
+
+<div class="text-xs opacity-70 mt-2"><strong>RAG</strong> = <em>Retrieval-Augmented Generation</em> : on <strong>retrouve</strong> les bons extraits de vos documents, puis l'IA <strong>répond en s'appuyant dessus</strong>.</div>
+
+</div>
+
+<div>
+
+#### Pourquoi c'est utile
+
+- 📚 Le LLM ne connaît pas **vos** documents (internes, récents)
+- 🎯 Le RAG lui **fournit** les passages utiles au bon moment
+- 🔗 Réponses **ancrées sur vos sources** → moins d'hallucinations
+- 🔒 Vos données restent **votre contexte**, à jour
+
+<div class="text-xs opacity-70 mt-3">Analogie : un examen <strong>à livre ouvert</strong> plutôt que <strong>de mémoire</strong>.</div>
+
+</div>
+
+</div>
+
+<!--
+- RAG = "l'IA lit d'abord les bons extraits de vos docs, puis répond avec"
+- La brique derrière le grounding de Copilot M365, les GPTs sur fichiers, NotebookLM...
+- Aucun réentraînement du modèle : on injecte le contexte à la volée
+- Pour les bases : deck genai-llm-introduction (embeddings, recherche vectorielle)
 -->

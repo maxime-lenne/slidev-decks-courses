@@ -1,5 +1,6 @@
 
 ---
+hideInToc: true
 layout: two-cols-header
 ---
 
@@ -29,6 +30,7 @@ layout: two-cols-header
 - Appliquer les **3 réflexes sécurité** et les **5 règles d'or** pour éviter les erreurs courantes
 
 ---
+hideInToc: true
 layout: two-cols-header
 ---
 
@@ -66,10 +68,11 @@ layout: two-cols-header
 </div>
 
 ---
+hideInToc: true
 layout: statement
 ---
 
-# Vendredi, 17h47.
+### Vendredi, 17h47.
 
 <div class="text-2xl mt-6 opacity-80">Tu pousses sur <code>main</code>.</div>
 <div class="text-2xl mt-2 opacity-80">Tu as <em>oublié</em> de lancer les tests.</div>
@@ -83,10 +86,11 @@ layout: statement
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
-## Au programme
+### Au programme
 
 <div class="grid grid-cols-2 gap-6 mt-8 text-sm">
 
@@ -123,3 +127,25 @@ layout: default
 - Public mixte : adapter le débit aux nouveaux pendant la partie 1
 - Le CTA est explicite dès maintenant
 -->
+
+---
+hideInToc: true
+layout: default
+---
+
+<div class="toc-page">
+
+### Table of Contents
+
+<Toc :max-depth="2" />
+
+</div>
+
+---
+hideInToc: true
+layout: quote
+---
+
+### Continuous Integration doesn't get rid of bugs, but it does make them dramatically easier to find and remove.
+
+> Martin Fowler, Chief Scientist, ThoughtWorks

@@ -1,8 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# 5 · Sécurité — survol
+## 5 · Sécurité — survol
+
+<div class="text-lg opacity-70 mt-4">6 min · 3 réflexes sécurité · 5 règles d'or · erreurs classiques</div>
 
 Les 3 réflexes essentiels + les 5 règles d'or
 
@@ -10,7 +12,7 @@ Les 3 réflexes essentiels + les 5 règles d'or
 layout: default
 ---
 
-## 3 réflexes pour ne pas être dangereux
+### 3 réflexes pour ne pas être dangereux
 
 <div class="grid grid-cols-3 gap-4 mt-6 text-xs">
 
@@ -73,7 +75,7 @@ permissions:
 layout: default
 ---
 
-## Les 5 règles d'or des workflows
+### Les 5 règles d'or des workflows
 
 <div class="grid grid-cols-1 gap-2 mt-6 text-sm max-w-3xl mx-auto">
 
@@ -113,7 +115,7 @@ layout: default
 layout: default
 ---
 
-## Erreurs classiques
+### Erreurs classiques
 
 <table class="text-xs mt-4">
 <thead>

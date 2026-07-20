@@ -60,3 +60,4 @@ vite.proxy.config.json
 index/public/deck-ports.json
 
 /decks/*/sources/ignore/
+.aider*

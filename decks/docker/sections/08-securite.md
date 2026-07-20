@@ -1,10 +1,12 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Sécurité & Bonnes pratiques
+## Sécurité & Bonnes pratiques
 
 Sécuriser vos conteneurs dès le développement
+
+<div class="text-lg opacity-70 mt-4">10 min · utilisateur non-root · secrets & réseaux isolés · scan d'images</div>
 
 <!--
 La sécurité n'est pas optionnelle, même en développement

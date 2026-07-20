@@ -1,8 +1,8 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Module 6
+## Module 6
 ## APM & tracing distribué
 
 <div class="text-sm opacity-60 mt-4">30 min · J3 matin · Trace, span, sampling</div>
@@ -11,7 +11,7 @@ layout: section
 layout: default
 ---
 
-## APM vs monitoring infra
+### APM vs monitoring infra
 
 <div class="text-sm opacity-85 mt-6">
 
@@ -43,7 +43,7 @@ Un **APM** ajoute par rapport à un monitoring infra :
 layout: default
 ---
 
-## Vocabulaire
+### Vocabulaire
 
 <div class="text-sm leading-tight mt-4">
 
@@ -62,7 +62,7 @@ layout: default
 layout: default
 ---
 
-## Anatomie d'un span
+### Anatomie d'un span
 
 <div class="text-sm opacity-85 mt-4">
 
@@ -96,7 +96,7 @@ layout: default
 layout: default
 ---
 
-## W3C Trace Context
+### W3C Trace Context
 
 <div class="text-sm opacity-85 mt-6">
 
@@ -121,7 +121,7 @@ traceparent: 00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01
 layout: default
 ---
 
-## Exemple · arbre de spans
+### Exemple · arbre de spans
 
 ```text
 trace_id: 4bf92f3577b34da6a3ce929d0e0e4736
@@ -145,7 +145,7 @@ Sans tracing : 1h de grep dans 4 fichiers de logs.
 layout: default
 ---
 
-## Sampling — head vs tail
+### Sampling — head vs tail
 
 <div class="grid grid-cols-2 gap-4 mt-6 text-sm">
 
@@ -177,7 +177,7 @@ layout: default
 layout: statement
 ---
 
-## « Commencez avec un<br/><span class="text-[#10b981]">head-based à 100 %</span><br/>et réduisez progressivement. »
+### « Commencez avec un<br/><span class="text-[#10b981]">head-based à 100 %</span><br/>et réduisez progressivement. »
 
 <div class="text-sm opacity-50 mt-8">— </div>
 
@@ -191,7 +191,7 @@ layout: statement
 layout: default
 ---
 
-## Outils
+### Outils
 
 <div class="text-sm leading-tight">
 
@@ -211,7 +211,7 @@ layout: default
 layout: center
 ---
 
-## Pour votre brief
+### Pour votre brief
 
 <div class="text-xl mt-6 max-w-3xl mx-auto opacity-85">
 

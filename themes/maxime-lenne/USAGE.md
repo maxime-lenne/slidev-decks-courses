@@ -169,6 +169,35 @@ layout: full
 Contenu sans marges (vidéos, images full, etc.)
 ```
 
+## Slides d'implémentation (techno-spécifiques)
+
+Pour distinguer visuellement les slides **non agnostiques** (liées à une techno
+précise : Microsoft Copilot, OpenAI…) des slides conceptuelles, ajoutez la classe
+`implementation` dans le frontmatter. Le fond passe en dégradé ambré, avec une
+barre d'accent en haut et un badge « Implémentation » en haut à droite.
+
+```yaml
+---
+layout: default
+class: implementation
+---
+```
+
+Le texte du badge peut être précisé avec une classe éditeur :
+
+```yaml
+---
+layout: default
+class: implementation microsoft   # badge : « Microsoft 365 »
+---
+```
+
+Modificateurs disponibles : `microsoft` (Microsoft), `m365` (Microsoft 365),
+`copilot` (Microsoft Copilot), `openai` (OpenAI), `chatgpt` (ChatGPT),
+`google` (Google).
+La classe fonctionne par-dessus n'importe quel layout (`default`, `two-cols`,
+`image-right`…). Les couleurs sont pilotées par les variables `--ml-impl-*`.
+
 ## Composants personnalisés
 
 ### Boîte en surbrillance

@@ -1,8 +1,8 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Module 5
+## Module 5
 ## Alerting
 
 <div class="text-sm opacity-60 mt-4">1h · J3 matin · Alertmanager + SLO + burn rate</div>
@@ -11,7 +11,7 @@ layout: section
 layout: default
 ---
 
-## Architecture
+### Architecture
 
 ```mermaid {scale: 0.9}
 graph LR
@@ -34,7 +34,7 @@ graph LR
 layout: statement
 ---
 
-## « Alertez sur les <span class="text-[#10b981]">symptômes</span>,<br/>pas sur les <span class="text-[#e63946]">causes</span>. »
+### « Alertez sur les <span class="text-[#10b981]">symptômes</span>,<br/>pas sur les <span class="text-[#e63946]">causes</span>. »
 
 <div class="text-sm opacity-50 mt-8">
   —
@@ -44,7 +44,7 @@ layout: statement
 layout: default
 ---
 
-## Symptom-first · exemples
+### Symptom-first · exemples
 
 <div class="text-sm leading-tight">
   
@@ -68,7 +68,7 @@ layout: default
 layout: statement
 ---
 
-## « Alerter sur <code class="text-[#e63946]">CPU > 90 %</code><br/>est (presque) <span class="text-[#e63946]">toujours inutile</span>. »
+### « Alerter sur <code class="text-[#e63946]">CPU > 90 %</code><br/>est (presque) <span class="text-[#e63946]">toujours inutile</span>. »
 
 <div class="text-xl opacity-85 mt-6">
   Soit l'app va bien et c'est une bonne utilisation.<br/>
@@ -79,7 +79,7 @@ Soit elle va mal — et c'est <strong>la latence</strong> qui le dira.
 layout: default
 ---
 
-## Engrenage de l'alert fatigue
+### Engrenage de l'alert fatigue
 
 ```mermaid {scale: 0.9}
 graph LR
@@ -102,7 +102,7 @@ graph LR
 layout: default
 ---
 
-## Anatomie d'une règle Prometheus
+### Anatomie d'une règle Prometheus
 
 ```yaml {all|2-7|8-13|all}
 - alert: PaymentErrorRateHigh
@@ -128,7 +128,7 @@ layout: default
 layout: default
 ---
 
-## Valeurs `for:` par défaut
+### Valeurs `for:` par défaut
 
 <div class="text-sm leading-tight mt-6">
   
@@ -150,7 +150,7 @@ layout: default
 layout: default
 ---
 
-## Alertmanager — 5 mécanismes
+### Alertmanager — 5 mécanismes
 
 <div class="text-sm leading-tight">
   
@@ -168,7 +168,7 @@ layout: default
 layout: default
 ---
 
-## Routing avancé
+### Routing avancé
 
 ```yaml {all|1-3|4-10|all}
 route:
@@ -194,7 +194,7 @@ route:
 layout: default
 ---
 
-## Inhibition · pas double notification
+### Inhibition · pas double notification
 
 ```yaml
 inhibit_rules:
@@ -221,7 +221,7 @@ inhibit_rules:
 layout: default
 ---
 
-## SLO & Error Budget
+### SLO & Error Budget
 
 <div class="text-2xl opacity-85 mt-8 text-center">
 
@@ -246,7 +246,7 @@ layout: default
 layout: default
 ---
 
-## Burn rate · alerter sur la vitesse
+### Burn rate · alerter sur la vitesse
 
 <div class="text-sm opacity-85 mt-4">
 
@@ -272,7 +272,7 @@ Si SLO 99,5 % et erreur actuelle 7 % → burn rate = **14×**.<br/>
 layout: default
 ---
 
-## Watchdog · deadman switch
+### Watchdog · deadman switch
 
 ```yaml
 - alert: Watchdog
@@ -296,7 +296,7 @@ layout: default
 layout: default
 ---
 
-## 5 critères production-ready
+### 5 critères production-ready
 
 <div class="grid grid-cols-2 gap-4 mt-4 text-sm">
 
@@ -328,7 +328,7 @@ layout: default
 layout: statement
 ---
 
-## Une équipe ne devrait pas recevoir<br/>plus de <span class="text-[#e63946]">2-3 pages critical</span><br/>par semaine.
+### Une équipe ne devrait pas recevoir<br/>plus de <span class="text-[#e63946]">2-3 pages critical</span><br/>par semaine.
 
 <div class="text-sm opacity-50 mt-8">
   — Règle pragmatique
@@ -338,7 +338,7 @@ layout: statement
 layout: default
 ---
 
-## Métriques d'alerting · à monitorer
+### Métriques d'alerting · à monitorer
 
 <div class="text-sm leading-tight mt-4">
   
@@ -362,7 +362,7 @@ layout: default
 layout: center
 ---
 
-## 🛠️ Exercice · 20 min
+### 🛠️ Exercice · 20 min
 
 <div class="text-xl mt-6 max-w-3xl mx-auto">
   Sur votre projet brief :

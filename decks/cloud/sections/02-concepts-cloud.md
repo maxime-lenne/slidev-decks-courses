@@ -1,8 +1,8 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Module 1
+## Module 1
 ## Concepts cloud
 
 <div class="text-sm opacity-60 mt-4">45 min · Fondamentaux · Mardi matin</div>
@@ -11,7 +11,7 @@ layout: section
 layout: default
 ---
 
-## Le cloud, c'est quoi ?
+### Le cloud, c'est quoi ?
 
 <div class="text-base mt-4 opacity-90">
 Pas <em>« l'ordinateur de quelqu'un d'autre »</em>. C'est l'<strong>externalisation d'une partie de la chaîne d'exploitation IT</strong>, facturée à l'usage, accessible via une API.
@@ -43,7 +43,7 @@ Pas <em>« l'ordinateur de quelqu'un d'autre »</em>. C'est l'<strong>externalis
 layout: default
 ---
 
-## La pile XaaS — qui gère quoi ?
+### La pile XaaS — qui gère quoi ?
 
 ```mermaid {scale: 0.55}
 graph TD
@@ -73,7 +73,7 @@ graph TD
 layout: default
 ---
 
-## Tableau XaaS
+### Tableau XaaS
 
 <div class="text-xs mt-2">
 
@@ -104,7 +104,7 @@ layout: default
 layout: default
 ---
 
-## Comment choisir ? — grille Dev IA
+### Comment choisir ? — grille Dev IA
 
 <div class="text-xs mt-4">
 
@@ -133,7 +133,7 @@ layout: default
 layout: default
 ---
 
-## Modèles de déploiement
+### Modèles de déploiement
 
 <div class="grid grid-cols-5 gap-3 mt-6 text-xs">
 <div class="border-l-4 border-[#457b9d] pl-3">
@@ -176,7 +176,7 @@ layout: default
 layout: default
 ---
 
-## Cloud souverain France 2026
+### Cloud souverain France 2026
 
 <div class="grid grid-cols-2 gap-6 mt-4 text-xs">
 
@@ -216,7 +216,7 @@ layout: default
 layout: default
 ---
 
-## Comparatif hyperscalers 2026
+### Comparatif hyperscalers 2026
 
 <div class="text-xs mt-4">
 
@@ -243,7 +243,7 @@ layout: default
 layout: default
 ---
 
-## Équivalents services — AWS / Azure / GCP
+### Équivalents services — AWS / Azure / GCP
 
 <div class="text-xs mt-2">
 
@@ -273,7 +273,7 @@ layout: default
 layout: default
 ---
 
-## Shared responsibility model
+### Shared responsibility model
 
 <div class="text-base mt-2 opacity-90">
 💡 <em>« Le cloud déplace la responsabilité, il ne la fait jamais disparaître. »</em>
@@ -306,7 +306,7 @@ layout: default
 layout: default
 ---
 
-## FinOps light
+### FinOps light
 
 <div class="grid grid-cols-3 gap-4 mt-4 text-xs">
 
@@ -351,7 +351,7 @@ layout: default
 layout: default
 ---
 
-## Vocabulaire à connaître
+### Vocabulaire à connaître
 
 <div class="text-xs mt-4">
 
@@ -377,7 +377,7 @@ layout: default
 layout: default
 ---
 
-## IaC en 1 slide
+### IaC en 1 slide
 
 <div class="text-xs mt-2 opacity-85">
 💡 IaC = <strong>décrire l'infra en code versionné</strong>, qu'un outil matérialise de manière reproductible.
@@ -424,7 +424,7 @@ gcloud compute firewall-rules create ...</pre>
 layout: default
 ---
 
-## Patterns d'architecture cloud
+### Patterns d'architecture cloud
 
 <div class="grid grid-cols-3 gap-3 mt-4 text-xs">
 
@@ -484,7 +484,7 @@ graph TD
 layout: center
 ---
 
-# Recap Module 1
+### Recap Module 1
 
 <div class="text-sm opacity-85 mt-6 max-w-2xl mx-auto text-left">
 

@@ -1,8 +1,8 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# MCP
+## Tools, MCP & CLI
 
 <div class="text-lg opacity-70 mt-4">10 min · connecter l'agent au monde réel</div>
 
@@ -10,87 +10,99 @@ layout: section
 layout: default
 ---
 
-### Le problème : l'agent dans sa bulle
-
-<br>
-
-<div class="grid grid-cols-2 gap-8 mt-4 text-sm">
-
-<div class="border-l-4 border-[#e63946] pl-4">
-
-#### Sans MCP
-
-L'agent ne peut pas :
-
-- 🔍 Lire ton Jira / Linear
-- 🔀 Créer une PR GitHub
-- 🗄️ Interroger ta base de données
-- 📊 Consulter Sentry / Grafana
-- 🎨 Lire un fichier Figma
-
-<div class="text-xs opacity-70 mt-3">Chaque intégration = code custom à maintenir.</div>
-
-</div>
-
-<div class="border-l-4 border-[#10b981] pl-4">
-
-#### Avec MCP
-
-**Standard ouvert** d'Anthropic — adopté largement en 2026.
-
-- Connecteurs **standardisés** (tools, resources, prompts)
-- Architecture **host / client / server**
-- **N + M** intégrations au lieu de **N × M**
-
-<div class="text-xs opacity-70 mt-3">L'agent peut interagir avec tout service qui expose un MCP.</div>
-
-</div>
-
-</div>
-
-<!--
-- L'analogie qu'on entend partout : "USB-C pour les LLM"
-- Plus juste : MCP est un protocole stateful comme SMTP, IMAP, LSP — pas une API REST
-- Pour le détail, renvoi explicite au deck genai-ai-engineer-mcp-deep-dive
--->
-
----
-layout: default
----
-
-### Architecture MCP — 3 rôles
+### Architecture MCP — 3 acteurs
 
 <br>
 
 <div class="flex justify-center">
 
-```mermaid {scale: 0.7}
+```mermaid {scale: 0.9}
 graph TB
-    subgraph "MCP Host (l'app IA)"
+    subgraph Host["MCP Host - Agent IA"]
         Client1["MCP Client 1"]
         Client2["MCP Client 2"]
         Client3["MCP Client 3"]
     end
-    ServerA["MCP Server — Filesystem<br/>(local, stdio)"]
-    ServerB["MCP Server — GitHub<br/>(remote, HTTP)"]
-    ServerC["MCP Server — Linear<br/>(remote, HTTP)"]
-    Client1 ---|"Connexion<br/>dédiée"| ServerA
-    Client2 ---|"Connexion<br/>dédiée"| ServerB
-    Client3 ---|"Connexion<br/>dédiée"| ServerC
+    subgraph Local["🖥️ Local"]
+        ServerA["Filesystem"]
+        ServerB["Figma"]
+    end
+    subgraph Remote["☁️ Distant"]
+        ServerC["GitHub"]
+    end
+    Client1 ---|"subprocess"| ServerA
+    Client2 ---|"subprocess"| ServerB
+    Client3 ---|"HTTP/SSE"| ServerC
 ```
 
 </div>
 
 <div class="text-sm opacity-70 mt-2 text-center">
 
-<strong>Host</strong> = Claude Code / Cursor · <strong>Client</strong> = composant interne (1 par connexion) · <strong>Server</strong> = programme qui expose des primitives
+**🖥️ Local** = process enfant sur ta machine (stdio — même machine) · **☁️ Distant** = service réseau (HTTP/SSE) · même protocole MCP des deux côtés
 
 </div>
 
 <!--
-- 1 host → N clients → N servers (relation 1:1:1 par connexion)
-- Le host consolide les capabilities de tous les servers pour le modèle
-- Pour les AI Builders, le host = ton IDE/CLI ; tu n'écris que côté config
+- Figma MCP tourne en local : c'est un process Node qui lit le plugin Figma via l'API desktop
+- GitHub MCP peut être distant (hébergé par Anthropic/GitHub) ou local selon la config
+- stdio = stdin/stdout entre host et server, pas de port réseau → plus simple, plus sécurisé
+- HTTP/SSE = server déployé quelque part, le host s'y connecte comme à une API
+- Pour les AI Builders : la distinction n'impacte que la config (command vs url dans .mcp.json)
+-->
+
+---
+layout: two-cols
+---
+
+### MCP ou CLI — quand choisir ?
+
+<br>
+
+<div class="text-sm">
+
+#### Brancher un MCP
+
+Préférer quand l'agent doit **agir de façon autonome** :
+
+- Résultats **structurés** (JSON typé, pas du texte brut)
+- Pas de sous-processus shell — l'agent appelle directement
+- Erreurs **typées** et récupérables sans parser de stdout
+- L'agent peut **chaîner** plusieurs appels (lire → décider → écrire)
+
+<div class="text-xs opacity-70 mt-3">
+
+Exemple : `github MCP` → lire les issues, créer une PR, commenter — tout dans un seul contexte.
+
+</div>
+
+</div>
+
+::right::
+
+<div class="text-sm mt-8">
+
+#### Utiliser le CLI (ex. `gh`)
+
+Préférer quand **l'humain reste en boucle** ou en CI :
+
+- Setup minimal — aucune config MCP, juste `PATH`
+- Idéal pour les **scripts CI/CD** ou les hooks git
+- Output lisible par un humain (logs, PR URL…)
+- Universel : fonctionne là où il n'y a pas d'hôte MCP
+
+<div class="text-xs opacity-70 mt-3">
+
+Exemple : `gh pr create` dans un script de release — pas besoin d'un agent pour ça.
+
+</div>
+
+</div>
+
+<!--
+- Règle d'or : MCP si l'agent décide, CLI si le script décide
+- Éviter de dupliquer : si le MCP GitHub est actif, ne pas aussi appeler `gh` via Bash
+- CLI reste utile pour bootstrapper avant qu'un MCP existe (ex. nouveau service interne)
 -->
 
 ---
@@ -139,12 +151,6 @@ layout: default
 <div class="border-l-4 border-[#f59e0b] pl-4 mt-6 text-sm">
 
 **Recommandation** : limiter à ~10 MCPs actifs simultanément (Cursor) — au-delà, l'agent se perd dans les outils disponibles.
-
-</div>
-
-<div class="text-sm opacity-70 mt-4 text-center">
-
-→ Pour le deep-dive du protocole, voir le deck <code>genai-ai-engineer-mcp-deep-dive</code>.
 
 </div>
 

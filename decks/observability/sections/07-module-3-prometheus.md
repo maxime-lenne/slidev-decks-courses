@@ -1,8 +1,8 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Module 3
+## Module 3
 ## Métriques & Prometheus
 
 <div class="text-sm opacity-60 mt-4">1h · J2 matin · Counter, Gauge, Histogram, PromQL</div>
@@ -11,7 +11,7 @@ layout: section
 layout: default
 ---
 
-## Modèle pull
+### Modèle pull
 
 ```mermaid {scale: 0.9}
 graph LR
@@ -36,7 +36,7 @@ graph LR
 layout: default
 ---
 
-## Limites du pull
+### Limites du pull
 
 <div class="text-sm opacity-85 mt-6">
 
@@ -59,7 +59,7 @@ Ou push direct via <strong>OTLP</strong> (cf. module OpenTelemetry).
 layout: default
 ---
 
-## Définition · métrique
+### Définition · métrique
 
 <div class="text-xl opacity-85 mt-6 text-center">
 
@@ -82,7 +82,7 @@ Chaque **combinaison unique nom + labels** = une **série temporelle** stockée 
 layout: default
 ---
 
-## 4 types de métriques
+### 4 types de métriques
 
 <div class="text-sm leading-tight">
 
@@ -106,7 +106,7 @@ les Histograms s'agrègent, les Summary non.
 layout: default
 ---
 
-## Counter vs Gauge · la confusion classique
+### Counter vs Gauge · la confusion classique
 
 <div class="text-sm leading-tight mt-4">
 
@@ -138,7 +138,7 @@ Règle mnémo : <em>peut-il diminuer naturellement ?</em><br/>
 layout: statement
 ---
 
-## « Ne jamais lire un<br/><span class="text-[#457b9d]">counter brut</span>.<br/>Utiliser <code class="text-[#10b981]">rate()</code>. »
+### « Ne jamais lire un<br/><span class="text-[#457b9d]">counter brut</span>.<br/>Utiliser <code class="text-[#10b981]">rate()</code>. »
 
 <div class="text-sm opacity-50 mt-8">— Règle fondamentale Prometheus</div>
 
@@ -205,7 +205,7 @@ increase(http_requests_total[5m])
 layout: default
 ---
 
-## Cardinalité — le piège mortel
+### Cardinalité — le piège mortel
 
 <div class="text-sm opacity-85 mt-4">
 
@@ -249,7 +249,7 @@ Formule : `cardinalité = valeurs_label_1 × valeurs_label_2 × …`
 layout: default
 ---
 
-## Labels interdits vs autorisés
+### Labels interdits vs autorisés
 
 <div class="grid grid-cols-2 gap-6 mt-4 text-sm">
 
@@ -281,7 +281,7 @@ layout: default
 layout: default
 ---
 
-## Conventions de nommage
+### Conventions de nommage
 
 <div class="text-sm opacity-85 mt-4">
 
@@ -306,7 +306,7 @@ Format : `<namespace>_<nom>_<unité>_<suffixe>`
 layout: default
 ---
 
-## PromQL essentiel
+### PromQL essentiel
 
 <div class="text-sm leading-tight">
 
@@ -326,7 +326,7 @@ layout: default
 layout: default
 ---
 
-## Démo · prometheus_client (1/3)
+### Démo · prometheus_client (1/3)
 
 ```python {all|1|3-7|all}
 from prometheus_client import Counter, Histogram, Gauge
@@ -350,7 +350,7 @@ predictions_total = Counter(
 layout: default
 ---
 
-## Histogram · comment ça marche
+### Histogram · comment ça marche
 
 <div class="text-sm opacity-85 mt-2">
 
@@ -393,7 +393,7 @@ histogram_quantile(0.95, sum by(le) (rate(http_duration_seconds_bucket[5m])))
 layout: default
 ---
 
-## Démo · histogram + gauge (2/3)
+### Démo · histogram + gauge (2/3)
 
 ```python {all|1-6|8-13|all}
 prediction_duration = Histogram(
@@ -417,7 +417,7 @@ confidence_score = Histogram(
 layout: default
 ---
 
-## Démo · utiliser dans l'endpoint (3/3)
+### Démo · utiliser dans l'endpoint (3/3)
 
 ```python {all|2-3|5-9|all}
 @app.post("/predict")
@@ -438,7 +438,7 @@ app.mount("/metrics", make_asgi_app())
 layout: default
 ---
 
-## Démo · prometheus.yml
+### Démo · prometheus.yml
 
 ```yaml {all|1-3|5-13|all}
 global:
@@ -467,7 +467,7 @@ alerting:
 layout: statement
 ---
 
-## « Les métriques vous <span class="text-[#e63946]">alertent</span><br/>qu'il y a un problème.<br/>Les logs vous <span class="text-[#10b981]">expliquent</span> lequel. »
+### « Les métriques vous <span class="text-[#e63946]">alertent</span><br/>qu'il y a un problème.<br/>Les logs vous <span class="text-[#10b981]">expliquent</span> lequel. »
 
 <div class="text-sm opacity-50 mt-8">— </div>
 
@@ -475,7 +475,7 @@ layout: statement
 layout: center
 ---
 
-## 🛠️ Exercice · 20 min
+### 🛠️ Exercice · 20 min
 
 <div class="text-xl mt-6 max-w-3xl mx-auto">
 Sur votre projet brief :

@@ -1,8 +1,8 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Atelier
+## Atelier
 ## Brief — Déployer un RAG sur GCP
 
 <div class="text-sm opacity-60 mt-4">1,5 j · J4 PM → J5 · Binôme · Soutenance vendredi 15h30</div>
@@ -11,7 +11,7 @@ layout: section
 layout: default
 ---
 
-## Architecture cible
+### Architecture cible
 
 ```mermaid {scale: 0.5}
 graph TD
@@ -43,7 +43,7 @@ graph TD
 layout: default
 ---
 
-## Stack imposée + 5 phases
+### Stack imposée + 5 phases
 
 <div class="text-xs mt-2">
 
@@ -68,7 +68,7 @@ layout: default
 layout: default
 ---
 
-## Compétences évaluées
+### Compétences évaluées
 
 <div class="grid grid-cols-2 gap-4 mt-4 text-xs">
 
@@ -130,7 +130,7 @@ layout: default
 layout: default
 ---
 
-## Conditions de passage
+### Conditions de passage
 
 <div class="text-sm opacity-85 mt-4">
 
@@ -162,7 +162,7 @@ Une compétence est validée si <strong>tous</strong> ces critères sont remplis
 layout: default
 ---
 
-## Au boulot !
+### Au boulot !
 
 <div class="grid grid-cols-2 gap-6 mt-6 text-sm">
 

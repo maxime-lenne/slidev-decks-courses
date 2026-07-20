@@ -1,10 +1,12 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Dockerfile & Build
+## Dockerfile & Build
 
 De l'image de base à votre propre image
+
+<div class="text-lg opacity-70 mt-4">15 min · Dockerfile · instructions · ENV vs ENTRYPOINT vs CMD · docker build</div>
 
 <!--
 Le Dockerfile est le fichier le plus important de Docker

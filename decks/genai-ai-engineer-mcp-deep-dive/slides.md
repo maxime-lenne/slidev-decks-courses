@@ -19,9 +19,7 @@ background: https://images.unsplash.com/photo-1683322499436-f4383dd59f5a?w=1920
 
 <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-8">
 
-<h1 class="text-7xl font-black mb-6">
-MCP
-</h1>
+# <span class="font-black">MCP</span>
 <div class="text-[#457b9d] text-2xl font-bold uppercase mb-6">Deep Dive</div>
 
 <div class="text-xl max-w-3xl text-[#457b9d] font-bold">
@@ -49,24 +47,17 @@ Maxime Lenne · 2026
 -->
 
 ---
+hideInToc: true
 layout: default
 ---
 
-<script setup>
-const tocItems = [
-  { title: 'Présentation & Contexte', to: 5 },
-  { title: 'Architectures', to: 9 },
-  { title: 'Protocole et Spécifications', to: 15 },
-  { title: 'Server', to: 24 },
-  { title: 'Client', to: 30 },
-  { title: 'Extension du protocole', to: 36 },
-  { title: 'Build with FastMCP', to: 40 },
-  { title: 'Ecosystem', to: 48 },
-  { title: 'Conclusion', to: 53 },
-]
-</script>
+<div class="toc-page">
 
-<TocCustom :items="tocItems" />
+### Table of Contents
+
+<Toc :max-depth="2" />
+
+</div>
 
 ---
 src: ./sections/01-intro.md

@@ -1,8 +1,8 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# MCP : Model Control Protocol
+## MCP : Model Control Protocol
 
 <div class="text-lg opacity-70 mt-4">Intro</div>
 
@@ -10,7 +10,7 @@ layout: section
 layout: default
 ---
 
-## Le problème : N × M
+### Le problème : N × M
 
 <div class="grid grid-cols-2 gap-8 mt-6">
 
@@ -77,7 +77,7 @@ graph LR
 layout: statement
 ---
 
-# MCP n'est pas une API.
+### MCP n'est pas une API.
 
 <div class="text-3xl mt-6 opacity-90">C'est un <span class="text-[#457b9d] font-bold">protocole stateful</span>.</div>
 

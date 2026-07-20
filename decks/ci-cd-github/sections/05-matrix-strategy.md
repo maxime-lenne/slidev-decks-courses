@@ -1,8 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# 4 · Stratégie matrix
+## 4 · Stratégie matrix
+
+<div class="text-lg opacity-70 mt-4">12 min · produit cartésien · include/exclude · fail-fast · exercice</div>
 
 Tester sur plusieurs configurations sans dupliquer le code
 
@@ -10,7 +12,7 @@ Tester sur plusieurs configurations sans dupliquer le code
 layout: default
 ---
 
-## Le problème : « ça marche sur ma machine »
+### Le problème : « ça marche sur ma machine »
 
 <div class="text-sm opacity-85 mt-4">
 Vous avez écrit votre code en <strong>Python 3.10 sur macOS</strong>. Que se passe-t-il sur :
@@ -53,7 +55,7 @@ sans dupliquer le YAML 9 fois
 layout: two-cols-header
 ---
 
-## Avant / après : la puissance de la matrix
+### Avant / après : la puissance de la matrix
 
 ::left::
 
@@ -114,7 +116,7 @@ jobs:
 layout: default
 ---
 
-## Le produit cartésien : 3 × 3 = 9 jobs
+### Le produit cartésien : 3 × 3 = 9 jobs
 
 ```mermaid {scale: 0.7}
 flowchart TB
@@ -166,7 +168,7 @@ flowchart TB
 layout: default
 ---
 
-## Exemple complet commenté
+### Exemple complet commenté
 
 ```yaml {all}{lines:true,maxHeight:'420px'}
 name: Tests multi-configurations
@@ -211,7 +213,7 @@ jobs:
 layout: default
 ---
 
-## `include` : ajouter ou enrichir
+### `include` : ajouter ou enrichir
 
 <div class="grid grid-cols-2 gap-4 mt-4 text-xs">
 
@@ -268,7 +270,7 @@ strategy:
 layout: default
 ---
 
-## `exclude`, `fail-fast`, `max-parallel`
+### `exclude`, `fail-fast`, `max-parallel`
 
 <table class="text-xs mt-2">
 <thead><tr><th>Option</th><th>Effet</th><th>Quand l'utiliser ?</th></tr></thead>
@@ -324,7 +326,7 @@ strategy:
 layout: center
 ---
 
-# 🛠️ Exercice 2
+### 🛠️ Exercice 2
 
 <div class="text-base opacity-85 mt-6 max-w-2xl mx-auto">
 

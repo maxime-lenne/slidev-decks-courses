@@ -23,9 +23,7 @@ background: https://images.unsplash.com/photo-1567789884554-0b844b597180?w=1920&
 
 <div class="text-[#457b9d] text-sm font-bold uppercase tracking-widest mb-4">Formation</div>
 
-<h1 class="text-7xl font-black mb-6">
-CI <span class="opacity-50">/</span> CD
-</h1>
+# <span class="font-black">CI <span class="opacity-50">/</span> CD</span>
 
 <div class="text-2xl opacity-90 max-w-3xl">
 Une <span class="text-[#457b9d] font-bold">culture</span> avant d'être un outil
@@ -70,4 +68,8 @@ src: ./sections/05-securite-anti-patterns.md
 
 ---
 src: ./sections/06-conclusion.md
+---
+
+---
+src: ../templates/slides.md#2
 ---

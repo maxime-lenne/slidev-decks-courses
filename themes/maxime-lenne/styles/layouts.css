@@ -7,7 +7,8 @@
   padding: 2rem;
 }
 
-.slidev-layout h1 + p {
+.slidev-layout h1 + p,
+.slidev-layout h3 + p {
   @apply -mt-2 opacity-75 mb-4;
 }
 
@@ -30,10 +31,21 @@
   @apply text-2xl mb-3;
 }
 
-/* h3 as slide title in two-cols-header / default / end — same visual as h1 */
-.slidev-layout.two-cols-header > div:first-child > h3,
-.slidev-layout.default > h3,
-.slidev-layout.end > h3 {
+/*
+ * Heading hierarchy convention: h1 is reserved for the deck's cover slide only
+ * (one per deck). h2 is reserved for section dividers only. h3 is the slide
+ * title for every other layout — same visual weight as h1 used to have, kept
+ * identical here so no deck needs restyling, only its heading level bumped.
+ */
+.slidev-layout.default h3,
+.slidev-layout.two-cols-header div:first-child h3,
+.slidev-layout.two-cols h3,
+.slidev-layout.image-left h3,
+.slidev-layout.image-right h3,
+.slidev-layout.center h3,
+.slidev-layout.full h3,
+.slidev-layout.end h3,
+.slidev-layout.quote h3 {
   @apply text-5xl mb-6 -ml-[0.05em];
   line-height: 1.2;
 }
@@ -86,7 +98,8 @@
   pointer-events: none;
 }
 
-.slidev-layout.cover h1 {
+.slidev-layout.cover h1,
+.slidev-layout.cover h3 {
   @apply text-7xl leading-tight;
   color: white;
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -94,7 +107,8 @@
   background: none;
 }
 
-.slidev-layout.cover h1 + p {
+.slidev-layout.cover h1 + p,
+.slidev-layout.cover h3 + p {
   @apply text-xl opacity-90;
   color: white;
 }
@@ -136,7 +150,8 @@
 }
 
 .slidev-layout.section h1,
-.slidev-layout.section h2 {
+.slidev-layout.section h2,
+.slidev-layout.section h3 {
   @apply text-7xl font-700 leading-tight;
   color: white;
   text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
@@ -145,7 +160,8 @@
 }
 
 .slidev-layout.section h1 + p,
-.slidev-layout.section h2 + p {
+.slidev-layout.section h2 + p,
+.slidev-layout.section h3 + p {
   @apply text-xl opacity-90;
   color: white;
 }
@@ -153,6 +169,44 @@
 .slidev-layout.section * {
   position: relative;
   z-index: 1;
+}
+
+/* Section-Liquid Layout - Animated liquid chrome WebGL background */
+.slidev-layout.section-liquid {
+  @apply h-full grid place-items-center text-center;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  padding: 3rem;
+}
+
+.slidev-layout.section-liquid .section-liquid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.slidev-layout.section-liquid .section-liquid-content {
+  position: relative;
+  z-index: 1;
+}
+
+.slidev-layout.section-liquid h1,
+.slidev-layout.section-liquid h2,
+.slidev-layout.section-liquid h3 {
+  @apply text-7xl font-700 leading-tight;
+  color: white;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+  -webkit-text-fill-color: white;
+  background: none;
+}
+
+.slidev-layout.section-liquid h1 + p,
+.slidev-layout.section-liquid h2 + p,
+.slidev-layout.section-liquid h3 + p{
+  @apply text-xl opacity-90;
+  color: white;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
 }
 
 /* Default Layout - Standard content layout */
@@ -193,12 +247,81 @@
 }
 
 .slidev-layout.quote blockquote::before {
-  content: '"';
   @apply text-8xl absolute -left-4 -top-8 opacity-20;
   background: var(--ml-gradient-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+.slidev-layout.quote h3 {
+  @apply text-4xl mb-12 leading-[1.5];
+}
+.slidev-layout.quote h3::before {
+  content: '"';
+  @apply text-8xl relative -left-4 -top-2 opacity-20 italic;
+  background: var(--ml-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.slidev-layout.quote h3::after {
+  content: '"';
+  @apply text-8xl relative -right-4 top-2 opacity-20 italic;
+  background: var(--ml-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+/*
+ * TOC page - wraps Slidev's native <Toc /> component, styled via its own classes.
+ * The tree root (level-1) is the deck's own cover title, kept unhidden so its
+ * real children (the h2 sections, level-2) survive Slidev's hideInToc filtering
+ * (hiding a node also discards its children) — its own entry is just not shown.
+ */
+.slidev-layout.toc {
+  @apply h-full flex items-center gap-16 px-4;
+}
+
+.slidev-layout.toc .toc-title h3 {
+  @apply text-[4.5rem] font-black leading-[1.05] uppercase tracking-tight m-0;
+  color: #457b9d;
+}
+
+.slidev-layout.toc .slidev-toc-list-level-1 {
+  list-style: none;
+}
+
+.slidev-layout.toc .slidev-toc-list-level-1 > .slidev-toc-item > a {
+  display: none;
+}
+
+.slidev-layout.toc .slidev-toc-list-level-2 {
+  @apply space-y-3 text-lg;
+  list-style: none;
+  counter-reset: toc-counter;
+}
+
+.slidev-layout.toc .slidev-toc-list-level-2 .slidev-toc-item {
+  @apply flex gap-5 items-start;
+  counter-increment: toc-counter;
+}
+
+.slidev-layout.toc .slidev-toc-list-level-2 .slidev-toc-item::before {
+  content: counter(toc-counter, decimal-leading-zero);
+  @apply text-xl font-black;
+  color: #457b9d;
+  min-width: 2rem;
+}
+
+.slidev-layout.toc .slidev-toc-list-level-2 .slidev-toc-item a {
+  @apply opacity-80;
+  border: none;
+  transition: color 0.15s, opacity 0.15s;
+}
+
+.slidev-layout.toc .slidev-toc-list-level-2 .slidev-toc-item a:hover {
+  @apply opacity-100;
+  color: #457b9d;
 }
 
 /* Fact/Statement Layout - Big impact numbers or statements */
@@ -207,13 +330,20 @@
   @apply h-full grid place-items-center text-center;
 }
 
-.slidev-layout.fact h1,
-.slidev-layout.statement h1 {
-  @apply text-9xl font-900 leading-none;
+.slidev-layout.fact h3,
+.slidev-layout.statement h3 {
+  @apply text-7xl font-900 leading-none;
 }
 
-.slidev-layout.fact h1 + p,
-.slidev-layout.statement h1 + p {
+.slidev-layout.fact h4,
+.slidev-layout.statement h4 {
+  @apply text-4xl font-900 leading-none;
+}
+
+.slidev-layout.fact h3 + p,
+.slidev-layout.statement h3 + p,
+.slidev-layout.fact h4 + p,
+.slidev-layout.statement h4 + p{
   @apply text-3xl font-500 mt-8;
 }
 
@@ -286,6 +416,53 @@
 slidev-layout.end {
   background-color: var(--ml-gradient-primary);
 }
+
+/*
+ * Implementation slides - vendor/tech-specific (non-agnostic) content.
+ * Add `class: implementation` to a slide's frontmatter to flag hands-on,
+ * tool-specific material (e.g. Microsoft Copilot, OpenAI) and set it apart
+ * from the agnostic, concept-level slides. Renders an amber-tinted background,
+ * a top accent bar, and a discreet "Implémentation" tag in the top-right.
+ * Works on top of any layout (default, two-cols, image-right, ...).
+ *
+ * The tag text can be specialised with a vendor modifier class, e.g.
+ * `class: implementation microsoft` -> tag reads "Microsoft 365".
+ */
+.slidev-layout.implementation {
+  background: linear-gradient(160deg, var(--ml-impl-bg) 0%, var(--ml-impl-bg-alt) 100%);
+  border-top: 4px solid var(--ml-impl-accent);
+  position: relative;
+}
+
+.slidev-layout.implementation::after {
+  content: 'Implémentation';
+  position: absolute;
+  top: 0.9rem;
+  right: 1.1rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ml-impl-accent-text);
+  background: color-mix(in srgb, var(--ml-impl-accent) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ml-impl-accent) 45%, transparent);
+  border-radius: var(--ml-radius-full);
+  pointer-events: none;
+}
+
+/* Vendor modifier classes - specialise the tag text.
+   Usage: `class: implementation microsoft` */
+.slidev-layout.implementation.microsoft::after { content: 'Microsoft'; }
+.slidev-layout.implementation.m365::after { content: 'Microsoft 365'; }
+.slidev-layout.implementation.copilot::after { content: 'Microsoft Copilot'; }
+.slidev-layout.implementation.openai::after { content: 'OpenAI'; }
+.slidev-layout.implementation.chatgpt::after { content: 'ChatGPT'; }
+.slidev-layout.implementation.google::after { content: 'Google'; }
 
 /* Navigation Dots - Custom styling */
 .slidev-nav-go-last,

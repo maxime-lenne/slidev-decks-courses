@@ -57,6 +57,13 @@
   --ml-code-text: #22c55e;
   --ml-code-accent: #3b82f6;
 
+  /* Implementation slides - vendor/tech-specific (non-agnostic) content.
+     Amber tint, distinct from the blue-green agnostic signature. */
+  --ml-impl-bg: #fffaf2;
+  --ml-impl-bg-alt: #fdf1de;
+  --ml-impl-accent: #f59e0b;
+  --ml-impl-accent-text: #b45309;
+
   /* Shadows */
   --ml-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --ml-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -100,6 +107,12 @@ html.dark {
   --ml-code-bg: #000000;
   --ml-code-text: #00ff41;
   --ml-code-accent: #00d4ff;
+
+  /* Implementation slides - amber tint tuned for dark mode */
+  --ml-impl-bg: #1c1710;
+  --ml-impl-bg-alt: #241b0f;
+  --ml-impl-accent: #fbbf24;
+  --ml-impl-accent-text: #fcd34d;
 
   /* Inverted neutrals for dark mode */
   --ml-neutral-50: #0f172a;
@@ -193,6 +206,15 @@ strong code {
   -webkit-text-fill-color: var(--ml-code-accent);
   background-clip: border-box;
   -webkit-background-clip: border-box;
+}
+
+/* Emoji in headings must keep their native colors, not the heading gradient.
+   Wrapped automatically by setup/wrap-heading-emoji.ts */
+.ml-emoji {
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: initial;
 }
 
 pre {

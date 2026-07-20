@@ -1,10 +1,10 @@
 ---
-layout: section
+layout: section-liquid
 ---
 
-# Builder en CI
+## Builder en CI
 
-Build once · Immutabilité · SemVer · Registres
+<div class="text-lg opacity-70 mt-4">15 min · Build once · Immutabilité · SemVer · Registres</div>
 
 <!--
 - Le job build = transformer du code source en artefact déployable
@@ -15,7 +15,7 @@ Build once · Immutabilité · SemVer · Registres
 layout: statement
 ---
 
-# Build once,<br/>deploy many.
+### Build once,<br/>deploy many.
 
 <div class="text-xl mt-8 opacity-80">L'artefact testé est <em>exactement</em> celui qui part en production.</div>
 
@@ -29,7 +29,7 @@ layout: statement
 layout: default
 ---
 
-## Build once · le principe
+### Build once · le principe
 
 ```mermaid {scale: 0.65}
 graph LR
@@ -75,7 +75,7 @@ variables d'env, secrets, URLs.
 layout: default
 ---
 
-## Le piège du rebuild par environnement
+### Le piège du rebuild par environnement
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
@@ -128,7 +128,7 @@ L'artefact en production <strong>n'est pas</strong> celui qui a été testé.
 layout: default
 ---
 
-## Immutabilité · les tags ne mentent pas
+### Immutabilité · les tags ne mentent pas
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
@@ -191,7 +191,7 @@ Traçabilité : SHA Git = SHA image.
 layout: default
 ---
 
-## Idempotence · même commit, même artefact
+### Idempotence · même commit, même artefact
 
 <div class="text-sm mt-4">
 
@@ -228,7 +228,7 @@ Run 3 (vendredi) : commit abc123 → artefact xyz789 ✓ identique
 layout: default
 ---
 
-## Versioning sémantique · SemVer
+### Versioning sémantique · SemVer
 
 <div class="text-center text-3xl my-6 font-mono">
 <span class="text-[#e63946] font-bold">MAJEUR</span>.<span class="text-[#f4a261] font-bold">MINEUR</span>.<span class="text-[#2a9d8f] font-bold">PATCH</span>
@@ -270,7 +270,7 @@ Lisez la version → vous savez si la mise à jour casse quelque chose.
 layout: default
 ---
 
-## Tags Git & release notes
+### Tags Git & release notes
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
@@ -324,7 +324,7 @@ Outils : conventional-changelog, semantic-release, release-please…
 layout: default
 ---
 
-## Registres d'artefacts
+### Registres d'artefacts
 
 <div class="text-sm">
 
@@ -367,7 +367,7 @@ Quel que soit le type d'artefact : <strong>tag immutable + signature recommandé
 layout: default
 ---
 
-## Snippet · build avec tag immutable
+### Snippet · build avec tag immutable
 
 ```bash {all|2|3-4|6-8|all}
 # Tag par SHA du commit Git (immuable, traçable)
