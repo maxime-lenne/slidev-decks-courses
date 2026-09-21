@@ -42,7 +42,7 @@
     "release:dry": "semantic-release --dry-run"
   },
   "dependencies": {
-    "@slidev/cli": "^52.9.1",
+    "@slidev/cli": "^53.0.0",
     "@slidev/theme-default": "^0.25.0",
     "typescript": "^6.0.2",
     "vue": "^3.5.25"
